@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 팀원 정보: 제출 전 실제 값으로 교체 -->
+  <meta name="author" content="송다원(담당: 상영시간표, 예매), 팀원2, 팀원3">
+  <meta name="team" content="팀번호 / 팀명">
+  <title>결제 완료 - CINEMA</title>
+  <!-- 2차 미션(디자인)에서 CSS 연결: <link rel="stylesheet" href="style.css"> -->
+</head>
+<body>
+
+<!-- ===== 공통 머리글: 로고 + 메뉴 ===== -->
+<header>
+  <a href="schedule.html"><strong>CINEMA</strong></a>
+  <nav aria-label="주요 메뉴">
+    <ul>
+      <li><a href="schedule.html">상영시간표</a></li>
+      <li><a href="booking.html">예매</a></li>
+    </ul>
+  </nav>
+</header>
+<hr>
+
+<!-- 단계 표시줄 + 본문을 한 덩어리로 묶음 (CSS로 왼쪽/오른쪽 2단 배치할 때 사용) -->
+<div class="layout">
+  <!-- 예매 단계 표시줄 (2차 미션에서 CSS로 화면 왼쪽에 배치) -->
+  <nav aria-label="예매 단계">
+    <ol>
+      <li>✓ 01 상영시간 <small>(완료)</small></li>
+      <li>✓ 02 인원/좌석 <small>(완료)</small></li>
+      <li aria-current="step"><strong>03 결제</strong> <small>(현재 단계)</small></li>
+    </ol>
+  </nav>
+
+  <main>
+    <h1>결제가 완료되었습니다</h1>
+    <p>예매 내용은 이메일로 안내됩니다. (과제용 화면)</p>
+    <p><a href="schedule.html">다른 영화 예매하기</a></p>
+  </main>
+</div>
+
+<hr>
+<!-- ===== 공통 바닥글 ===== -->
+<footer>
+  <nav aria-label="하단 메뉴">
+    <ul>
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#">개인정보 처리방침</a></li>
+      <li><a href="#">고객센터</a></li>
+      <li><a href="#">극장 안내</a></li>
+    </ul>
+  </nav>
+  <address>
+    CINEMA (학습용 예시) · 대표 홍길동 · 사업자등록번호 000-00-00000<br>
+    고객센터 02-000-0000 (평일 09:00~18:00)
+  </address>
+  <p><small>© 2026 CINEMA · 웹프로그래밍 중간과제 (학습용)</small></p>
+</footer>
+
+</body>
+</html>
