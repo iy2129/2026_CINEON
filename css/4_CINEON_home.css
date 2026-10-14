@@ -52,7 +52,6 @@
   text-underline-offset: 4px;
 }
 
-/* 영화 순위: 한 화면에 다섯 편 */
 .movie-section {
   background: #fff;
 }
@@ -81,7 +80,6 @@
   background: #eee;
 }
 
-/* 이미지를 넣을 때 이 영역 안에 img 태그를 추가하면 됩니다. */
 .movie-poster img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
 
 .movie-rank { 
