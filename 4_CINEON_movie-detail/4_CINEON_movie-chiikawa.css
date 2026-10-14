@@ -1,0 +1,329 @@
+/* ====================
+   기본 설정
+==================== */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background-color: #ffffff;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* ====================
+   공통 제목
+==================== */
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 26px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+/* ====================
+   헤더
+==================== */
+
+.site-header {
+    border-bottom: 1px solid #dddddd;
+    background-color: #ffffff;
+}
+
+.header-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 80px;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+
+    color: #222222;
+    text-decoration: none;
+}
+
+.main-nav {
+    display: flex;
+    gap: 32px;
+}
+
+.main-nav a,
+.user-menu a {
+    color: #222222;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    color: #6f42c1;
+}
+
+.user-menu {
+    display: flex;
+    gap: 12px;
+}
+
+
+/* ====================
+   버튼
+==================== */
+
+.btn-primary {
+    display: inline-block;
+
+    padding: 12px 32px;
+
+    background-color: #6f42c1;
+    color: #ffffff;
+
+    text-decoration: none;
+
+    border-radius: 6px;
+
+    transition: 0.3s;
+}
+
+.btn-primary:hover {
+    opacity: 0.8;
+}
+
+
+/* ====================
+   영화 상단 소개
+==================== */
+
+.movie-hero {
+    padding: 60px 0;
+}
+
+.movie-summary {
+    display: flex;
+    gap: 60px;
+
+    margin-top: 30px;
+}
+
+.movie-poster {
+    width: 300px;
+    margin: 0;
+}
+
+.movie-poster img {
+    width: 100%;
+    display: block;
+
+    border-radius: 10px;
+}
+
+.movie-info {
+    flex: 1;
+}
+
+.movie-grade {
+    display: inline-block;
+
+    padding: 4px 8px;
+
+    border: 1px solid #4caf50;
+    border-radius: 4px;
+
+    color: #4caf50;
+}
+
+.movie-meta {
+    color: #777777;
+}
+
+.movie-description {
+    margin: 30px 0;
+}
+
+
+/* ====================
+   영화 주요 지표
+==================== */
+
+.movie-stats-section {
+    padding: 35px 0;
+
+    background-color: #f7f7f7;
+}
+
+.movie-stats {
+    display: flex;
+    justify-content: space-around;
+
+    text-align: center;
+}
+
+.stat-item {
+    padding: 20px 40px;
+}
+
+.stat-label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #666666;
+}
+
+.stat-value {
+    font-size: 28px;
+}
+
+
+/* ====================
+   영화 정보
+==================== */
+
+.movie-detail-section,
+.story-section,
+.trailer-section,
+.stillcut-section {
+    padding: 60px 0;
+}
+
+.movie-detail-box {
+    padding: 30px;
+
+    background-color: #f7f7f7;
+
+    border-radius: 8px;
+}
+
+.movie-detail-box strong {
+    display: inline-block;
+
+    width: 80px;
+}
+
+
+/* ====================
+   줄거리
+==================== */
+
+.story-text {
+    max-width: 900px;
+
+    line-height: 1.9;
+
+    color: #555555;
+}
+
+
+/* ====================
+   트레일러
+==================== */
+
+.trailer-list {
+    display: flex;
+    gap: 20px;
+}
+
+.trailer-card {
+    flex: 1;
+
+    margin: 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+.trailer-card img {
+    width: 100%;
+    height: 200px;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: 0.3s;
+}
+
+.trailer-card img:hover {
+    transform: scale(1.05);
+}
+
+.trailer-card figcaption {
+    padding: 12px 0;
+
+    font-weight: bold;
+}
+
+
+/* ====================
+   스틸컷
+==================== */
+
+.stillcut-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.stillcut-grid img {
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+
+    border-radius: 8px;
+}
+
+
+/* ====================
+   하단 예매
+==================== */
+
+.booking-section {
+    padding: 70px 0;
+
+    text-align: center;
+
+    background-color: #f7f7f7;
+}
+
+
+/* ====================
+   푸터
+==================== */
+
+.site-footer {
+    padding: 40px 0;
+
+    border-top: 1px solid #dddddd;
+
+    color: #777777;
+}
+
+.site-footer p {
+    margin: 5px 0;
+}
