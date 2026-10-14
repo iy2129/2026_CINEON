@@ -1,16 +1,17 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ko">
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 팀원 정보 -->
     <meta name="author" content="팀원3">
     <meta name="description" content="CINEON 영화 상세 소개 페이지">
 
-    <title>CINEON | 영화 소개</title>
+    <title>CINEON | 치이카와 영화 소개</title>
 
-    <link rel="stylesheet" href="4_CINEON_movie-chiikawa.css">
+    <link rel="stylesheet" href="css/4_movie-detail.css">
 </head>
 
 <body>
@@ -19,20 +20,21 @@
     <header class="site-header">
         <div class="container header-inner">
 
-            <a href="#" class="logo">
+            <a href="../4_CINEON_index.html" class="logo">
                 CINEON
             </a>
 
             <nav class="main-nav">
-                <a href="#">영화</a>
-                <a href="#">예매</a>
-                <a href="#">상영시간표</a>
-                <a href="#">이벤트</a>
+                <a href="movie01.html">치이카와</a>
+                <a href="movie02.html">타짜</a>
+                <a href="../booking.html">예매</a>
+                <a href="../schedule.html">상영시간표</a>
+                <span>이벤트</span>
             </nav>
 
             <div class="user-menu">
-                <a href="#">로그인</a>
-                <a href="#">회원가입</a>
+                <span>로그인</span>
+                <span>회원가입</span>
             </div>
 
         </div>
@@ -53,7 +55,7 @@
 
                     <figure class="movie-poster">
                         <img
-                            src="images/poster.jpg"
+                            src="images/4_movie-detail01_01.jpg"
                             alt="극장판 치이카와: 인어 섬의 비밀 영화 포스터"
                         >
                     </figure>
@@ -74,7 +76,7 @@
                             신비로운 인어 섬에서 펼쳐지는 새로운 이야기를 만나보세요.
                         </p>
 
-                        <a href="#" class="btn-primary">
+                        <a href="../schedule.html" class="btn-primary">
                             예매하기
                         </a>
 
@@ -172,15 +174,16 @@
             <div class="container">
 
                 <h2>트레일러</h2>
+                <p class="media-note">예고편 썸네일입니다. 재생 버튼과 재생바는 CSS 장식입니다.</p>
 
                 <div class="trailer-list">
 
                     <figure class="trailer-card">
 
-                        <img
-                            src="images/trailer01.jpg"
+                        <div class="trailer-preview"><img
+                            src="images/4_movie-detail01_02.jpg"
                             alt="극장판 치이카와 티저 예고편 장면"
-                        >
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></div>
 
                         <figcaption>
                             티저 예고편
@@ -191,10 +194,10 @@
 
                     <figure class="trailer-card">
 
-                        <img
-                            src="images/trailer02.jpg"
+                        <div class="trailer-preview"><img
+                            src="images/4_movie-detail01_03.jpg"
                             alt="극장판 치이카와 메인 예고편 장면"
-                        >
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></div>
 
                         <figcaption>
                             메인 예고편
@@ -205,10 +208,10 @@
 
                     <figure class="trailer-card">
 
-                        <img
-                            src="images/trailer03.jpg"
+                        <div class="trailer-preview"><img
+                            src="images/4_movie-detail01_02.jpg"
                             alt="극장판 치이카와 더빙 예고편 장면"
-                        >
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></div>
 
                         <figcaption>
                             더빙 예고편
@@ -223,39 +226,53 @@
         </section>
 
 
-        <!-- ⑥ 스틸컷 -->
+        <!-- ⑥ 스틸컷: 기존 사진을 재사용하여 27 장 표시 -->
         <section class="stillcut-section">
-
             <div class="container">
-
-                <h2>스틸컷</h2>
-
-                <div class="stillcut-grid">
-
-                    <img
-                        src="images/still01.jpg"
-                        alt="치이카와와 친구들이 함께 있는 영화 장면"
-                    >
-
-                    <img
-                        src="images/still02.jpg"
-                        alt="치이카와 캐릭터가 등장하는 영화 장면"
-                    >
-
-                    <img
-                        src="images/still03.jpg"
-                        alt="치이카와와 친구들의 야외 장면"
-                    >
-
-                    <img
-                        src="images/still04.jpg"
-                        alt="치이카와 영화관 장면"
-                    >
-
+                <h2>스틸컷 <span class="stillcut-count">(27)</span></h2>
+                <div class="stillcut-gallery">
+                    <div class="stillcut-grid">
+                        <img class="stillcut-poster" src="images/4_movie-detail01_01.jpg" alt="치이카와 영화 포스터">
+                        <img src="images/4_movie-detail01_02.jpg" alt="치이카와 영화 장면 1">
+                        <img src="images/4_movie-detail01_03.jpg" alt="치이카와 영화 장면 2">
+                    </div>
+                    <details class="stillcut-more">
+                        <summary><span class="more-label">더보기 ∨</span><span class="less-label">접기 ∧</span></summary>
+                        <div class="stillcut-grid stillcut-extra">
+                        <div class="stillcut-column">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 4" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 7" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 10" loading="lazy">
+                            <img src="images/4_movie-detail01_04.jpg" alt="치이카와 스틸컷 13" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 16" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 19" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 22" loading="lazy">
+                            <img src="images/4_movie-detail01_04.jpg" alt="치이카와 스틸컷 25" loading="lazy">
+                        </div>
+                        <div class="stillcut-column">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 5" loading="lazy">
+                            <img src="images/4_movie-detail01_04.jpg" alt="치이카와 스틸컷 8" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 11" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 14" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 17" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 20" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 23" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 26" loading="lazy">
+                        </div>
+                        <div class="stillcut-column">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 6" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 9" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 12" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 15" loading="lazy">
+                            <img src="images/4_movie-detail01_04.jpg" alt="치이카와 스틸컷 18" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 21" loading="lazy">
+                            <img src="images/4_movie-detail01_03.jpg" alt="치이카와 스틸컷 24" loading="lazy">
+                            <img src="images/4_movie-detail01_02.jpg" alt="치이카와 스틸컷 27" loading="lazy">
+                        </div>
+                    </div>
+                    </details>
                 </div>
-
             </div>
-
         </section>
 
 
@@ -270,7 +287,7 @@
                     상영 시간과 좌석을 확인하고 영화를 예매해보세요.
                 </p>
 
-                <a href="#" class="btn-primary">
+                <a href="../schedule.html" class="btn-primary">
                     예매하기
                 </a>
 
