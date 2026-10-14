@@ -3,22 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="남서영, 송다원, 윤인영">
+  <meta name="author" content="남서영(학번), 송다원(2315286), 윤인영(2511268)">
   <meta name="team" content="4조">
   <title>예매 - CINEON</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/4_CINEON_common.css">
+  <link rel="stylesheet" href="css/4_CINEON_reservation.css">
 </head>
 <body>
 
-<header>
-  <a href="schedule.html"><strong>CINEMA</strong></a>
-  <nav aria-label="주요 메뉴">
-    <ul>
-      <li><a href="schedule.html">상영시간표</a></li>
-      <li><a href="booking.html">예매</a></li>
-    </ul>
-  </nav>
-</header>
-<hr>
+        <header class="site-header">
+            <div class="header-inner">
+
+                <!-- 로고 -->
+                <a href="index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+
+                <!-- 내비게이션 -->
+                <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" title="영화">영화</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화">전체영화</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="예매">예매</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="상영시간표">상영시간표</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="영화관">영화관</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화관">전체영화관</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="이벤트">이벤트</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                        <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                        <li><a href="#" title="시사회">시사회</a></li>
+                        <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="스토어">스토어</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="매점">매점</a></li>
+                        <li><a href="#" title="굿즈">굿즈</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </nav>
+
+                <!-- 사용자 메뉴 -->
+                <div class="user-menu">
+                <a href="#" title="로그인">로그인</a>
+                <a href="#" title="회원가입">회원가입</a>
+
+                <!-- 검색 버튼 -->
+                <button type="button" class="icon-btn">
+                    <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                </button>
+
+                <!-- 햄버거 버튼 -->
+                <button type="button" class="icon-btn menu-toggle">
+                    <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
+                </button>
+                </div>
+            </div>
+        </header>
 
 <div class="layout">
   <nav aria-label="예매 단계">
@@ -30,19 +84,19 @@
   </nav>
 
   <main>
-    <p><a href="schedule.html">← 상영시간표로 돌아가기</a></p>
+    <p><a href="4_CINEON_timetable.html">← 상영시간표로 돌아가기</a></p>
     <h1>인원 / 좌석 선택</h1>
 
     <section aria-labelledby="info-title">
       <h2 id="info-title">선택한 상영</h2>
       <dl>
-        <dt>영화</dt><dd>겨울왕국 (전체 관람가 · 102분)</dd>
-        <dt>극장 / 상영관</dt><dd>강남점 1관 (2D)</dd>
-        <dt>일시</dt><dd>2026.10.14 (수) 10:00 ~ 11:42</dd>
+        <dt>영화</dt><dd>웨일폴: 고래에 먹힌 남자 (12세 관람가 · 106분)</dd>
+        <dt>극장 / 상영관</dt><dd>강남점 3관 (2D)</dd>
+        <dt>일시</dt><dd>2026.10.15 (목) 10:20 ~ 12:06</dd>
       </dl>
     </section>
 
-    <form action="done.html">
+    <form action="4_CINEON_done.html">
 
       <fieldset>
         <legend>1. 인원 선택 (최대 6명)</legend>
@@ -157,29 +211,22 @@
           <dt>결제 금액</dt><dd><strong>28,000원</strong></dd>
         </dl>
         <button type="submit">다음 단계: 결제하기</button>
-        <a href="schedule.html">시간 다시 선택</a>
+        <a href="4_CINEON_timetable.html">시간 다시 선택</a>
       </aside>
 
     </form>
   </main>
 </div>
 
-<hr>
-<footer>
-  <nav aria-label="하단 메뉴">
-    <ul>
-      <li><a href="#">이용약관</a></li>
-      <li><a href="#">개인정보 처리방침</a></li>
-      <li><a href="#">고객센터</a></li>
-      <li><a href="#">극장 안내</a></li>
-    </ul>
-  </nav>
-  <address>
-    CINEON · 대표 홍길동 · 사업자등록번호 000-00-00000<br>
-    고객센터 02-000-0000 (평일 09:00~18:00)
-  </address>
-  <p><small>© 2026 CINEON</small></p>
-</footer>
+<footer class="site-footer">
+            <div class="footer">
+                    <nav class="footer-links">
+                        <a href="#" title="회사소개">회사소개</a><a href="#" title="인재채용">인재채용</a><a href="#" title="사회공헌">사회공헌</a><a href="#" title="제휴/광고/부대사업문의">제휴/광고/부대사업문의</a><a href="#" title="이용약관">이용약관</a><a href="#" class="footer-policy" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a><a href="#" class="footer-policy" title="개인정보처리방침">개인정보처리방침</a><a href="#" title="윤리경영">윤리경영</a>
+                    </nav>
+                    <p>서울특별시 용산구 청파로47길 100 숙명여자대학교 505호 이메일 cineon@partner.cineon.co.kr</p>
+                    <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
+            </div>
+        </footer>
 
 </body>
 </html>
