@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="남서영(학번), 송다원(2315286), 윤인영(2511268)">
+  <meta name="team" content="4조">
+  <meta name="description" content="CINEON 영화관의 극장별 영화 상영 시간표를 확인하고 예매하는 페이지">
+  <title>상영시간표 - CINEON</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/4_CINEON_common.css">
+  <link rel="stylesheet" href="css/4_CINEON_reservation.css">
+</head>
+<body>
+
+        <header class="site-header">
+            <div class="header-inner">
+
+                <!-- 로고 -->
+                <a href="index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+
+                <!-- 내비게이션 -->
+                <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" title="영화">영화</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화">전체영화</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="예매">예매</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="상영시간표">상영시간표</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="영화관">영화관</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화관">전체영화관</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="이벤트">이벤트</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                        <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                        <li><a href="#" title="시사회">시사회</a></li>
+                        <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="스토어">스토어</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="매점">매점</a></li>
+                        <li><a href="#" title="굿즈">굿즈</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </nav>
+
+                <!-- 사용자 메뉴 -->
+                <div class="user-menu">
+                <a href="#" title="로그인">로그인</a>
+                <a href="#" title="회원가입">회원가입</a>
+
+                <!-- 검색 버튼 -->
+                <button type="button" class="icon-btn">
+                    <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                </button>
+
+                <!-- 햄버거 버튼 -->
+                <button type="button" class="icon-btn menu-toggle">
+                    <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
+                </button>
+                </div>
+            </div>
+        </header>
+
+<div class="layout">
+
+  <nav aria-label="예매 단계">
+    <ol>
+      <li aria-current="step"><strong>01 상영시간</strong> <small>(현재 단계)</small></li>
+      <li>02 인원/좌석</li>
+      <li>03 결제</li>
+    </ol>
+  </nav>
+
+  <main>
+    <h1>상영시간표</h1>
+    <p>원하는 영화의 상영 시간을 선택하면 인원/좌석 선택 화면으로 이동합니다.</p>
+
+    <nav aria-label="날짜 선택">
+      <h2>날짜</h2>
+      <ul>
+        <li><a href="#" aria-current="date"><time datetime="2026-10-15">목 15일</time></a> <small>(조회 중)</small></li>
+        <li><a href="#"><time datetime="2026-10-16">금 16일</time></a></li>
+        <li><a href="#"><time datetime="2026-10-17">토 17일</time></a></li>
+        <li><a href="#"><time datetime="2026-10-18">일 18일</time></a></li>
+        <li><a href="#"><time datetime="2026-10-19">월 19일</time></a></li>
+        <li><a href="#"><time datetime="2026-10-20">화 20일</time></a></li>
+        <li><a href="#"><time datetime="2026-10-21">수 21일</time></a></li>
+      </ul>
+    </nav>
+
+    <section aria-labelledby="filter-title">
+      <h2 id="filter-title">조회 조건</h2>
+      <form action="#" method="get">
+        <p>
+          <label for="region">지역</label>
+          <select id="region" name="region">
+            <option value="" selected disabled>지역 선택</option>
+            <option value="seoul">서울</option>
+            <option value="gyeonggi">경기</option>
+            <option value="incheon">인천</option>
+          </select>
+
+          <label for="theater">극장</label>
+          <select id="theater" name="theater">
+            <option value="" selected disabled>극장 선택</option>
+            <optgroup label="서울">
+              <option value="gangnam">강남점</option>
+              <option value="sinchon">신촌점</option>
+            </optgroup>
+          </select>
+        </p>
+
+        <fieldset>
+          <legend>상영 방식</legend>
+          <input type="radio" id="f-2d" name="format" value="2d"><label for="f-2d">2D</label>
+          <input type="radio" id="f-imax" name="format" value="imax"><label for="f-imax">IMAX</label>
+          <input type="radio" id="f-4dx" name="format" value="4dx"><label for="f-4dx">4DX</label>
+        </fieldset>
+
+        <p>
+          <input type="checkbox" id="early" name="early" value="1">
+          <label for="early">조조 상영만 보기</label>
+        </p>
+
+        <p>
+          <label for="q">영화 검색</label>
+          <input type="search" id="q" name="q" list="movie-list" placeholder="영화 제목">
+          <datalist id="movie-list">
+            <option value="오디세이">
+            <option value="웨일폴: 고래에 먹힌 남자">
+            <option value="극장판 치이카와: 인어섬의 비밀">
+          </datalist>
+        </p>
+
+        <p>
+          <button type="submit">조회</button>
+          <button type="reset">초기화</button>
+        </p>
+      </form>
+    </section>
+
+    <section aria-labelledby="legend-title">
+      <h2 id="legend-title">표시 안내</h2>
+      <dl>
+        <dt>조조</dt><dd>11시 이전에 시작하는 상영 (할인 요금 적용)</dd>
+        <dt>▲ 마감 임박</dt><dd>남은 좌석이 10석 이하</dd>
+        <dt>[매진]</dt><dd>남은 좌석이 없어 예매할 수 없음</dd>
+        <dt>잔여 40/48석</dt><dd>남은 좌석 수 / 전체 좌석 수</dd>
+      </dl>
+    </section>
+
+    <section aria-labelledby="table-title">
+      <h2 id="table-title">2026.10.15 (목) 상영 시간표</h2>
+      <table>
+        <caption>영화별 극장 상영 시간표 (시작 ~ 종료 시각, 잔여석)</caption>
+        <thead>
+          <tr>
+            <th scope="col">영화 정보</th>
+            <th scope="col">극장</th>
+            <th scope="col">상영관 / 방식</th>
+            <th scope="col">상영 시간</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <th scope="row" rowspan="2">
+              <img src="images/poster-odyssey.jpg" width="100" height="125" alt="오디세이 포스터">
+              <br><strong>오디세이</strong>
+              <br><abbr title="15세 관람가">15세</abbr> · 172분
+              <br><small>전쟁 · 드라마 · 서사시 · 크리스토퍼 놀란 감독</small>
+            </th>
+            <td>강남점</td>
+            <td>IMAX관<br><small>IMAX · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="10:00">10:00</time></strong> ~ <time datetime="12:52">12:52</time><br><small>잔여 30/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="13:20">13:20</time></strong> ~ <time datetime="16:12">16:12</time><br><small>잔여 22/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="16:40">16:40</time></strong> ~ <time datetime="19:32">19:32</time><br><small>잔여 15/48석</small></a></li>
+                <li><s>20:00 ~ 22:52</s> <strong>[매진]</strong></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>신촌점</td>
+            <td>2관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="10:30">10:30</time></strong> ~ <time datetime="13:22">13:22</time><br><small>잔여 26/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="14:00">14:00</time></strong> ~ <time datetime="16:52">16:52</time><br><small>잔여 33/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="17:30">17:30</time></strong> ~ <time datetime="20:22">20:22</time><br><small>잔여 18/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="21:00">21:00</time></strong> ~ <time datetime="23:52">23:52</time><br><small>▲ 잔여 9/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" rowspan="2">
+              <img src="images/poster-whalefall.jpg" width="100" height="143" alt="웨일폴: 고래에 먹힌 남자 포스터">
+              <br><strong>웨일폴: 고래에 먹힌 남자</strong>
+              <br><abbr title="12세 관람가">12세</abbr> · 106분
+              <br><small>모험 · 스릴러 · 브라이언 더필드 감독</small>
+            </th>
+            <td>강남점</td>
+            <td>3관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="10:20">10:20</time></strong> ~ <time datetime="12:06">12:06</time><br><small>잔여 21/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="12:50">12:50</time></strong> ~ <time datetime="14:36">14:36</time><br><small>잔여 28/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="15:20">15:20</time></strong> ~ <time datetime="17:06">17:06</time><br><small>잔여 35/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="17:50">17:50</time></strong> ~ <time datetime="19:36">19:36</time><br><small>잔여 16/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="20:20">20:20</time></strong> ~ <time datetime="22:06">22:06</time><br><small>▲ 잔여 8/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>신촌점</td>
+            <td>4DX관<br><small>4DX · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="10:40">10:40</time></strong> ~ <time datetime="12:26">12:26</time><br><small>잔여 19/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="13:10">13:10</time></strong> ~ <time datetime="14:56">14:56</time><br><small>잔여 27/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="15:40">15:40</time></strong> ~ <time datetime="17:26">17:26</time><br><small>잔여 14/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="18:10">18:10</time></strong> ~ <time datetime="19:56">19:56</time><br><small>▲ 잔여 7/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="20:40">20:40</time></strong> ~ <time datetime="22:26">22:26</time><br><small>잔여 23/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <th scope="row" rowspan="2">
+              <img src="images/poster-chiikawa.jpg" width="100" height="143" alt="극장판 치이카와: 인어섬의 비밀 포스터">
+              <br><strong>극장판 치이카와: 인어섬의 비밀</strong>
+              <br><abbr title="전체 관람가">전체</abbr> · 99분
+              <br><small>애니메이션 · 모험 · 2026년 9월 30일 개봉</small>
+            </th>
+            <td>강남점</td>
+            <td>5관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="09:40">09:40</time></strong> ~ <time datetime="11:19">11:19</time><br><small>잔여 24/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="11:50">11:50</time></strong> ~ <time datetime="13:29">13:29</time><br><small>잔여 31/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="14:00">14:00</time></strong> ~ <time datetime="15:39">15:39</time><br><small>잔여 40/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="16:10">16:10</time></strong> ~ <time datetime="17:49">17:49</time><br><small>잔여 29/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="18:20">18:20</time></strong> ~ <time datetime="19:59">19:59</time><br><small>잔여 12/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>신촌점</td>
+            <td>1관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="10:00">10:00</time></strong> ~ <time datetime="11:39">11:39</time><br><small>잔여 17/48석 · 조조</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="12:20">12:20</time></strong> ~ <time datetime="13:59">13:59</time><br><small>잔여 34/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="14:40">14:40</time></strong> ~ <time datetime="16:19">16:19</time><br><small>잔여 26/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="17:00">17:00</time></strong> ~ <time datetime="18:39">18:39</time><br><small>잔여 11/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="theater-title">
+      <h2 id="theater-title">극장 안내</h2>
+      <table>
+        <caption>극장별 정보</caption>
+        <thead>
+          <tr><th scope="col">극장</th><th scope="col">지역</th><th scope="col">상영 방식</th><th scope="col">문의</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">강남점</th><td>서울</td><td>2D · IMAX</td><td>02-000-0001</td></tr>
+          <tr><th scope="row">신촌점</th><td>서울</td><td>2D · 4DX</td><td>02-000-0002</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="price-title">
+      <h2 id="price-title">요금 안내</h2>
+      <table>
+        <caption>관람 요금 (단위: 원)</caption>
+        <thead>
+          <tr><th scope="col">구분</th><th scope="col">일반 상영</th><th scope="col">조조 상영</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">일반</th><td>14,000</td><td>11,000</td></tr>
+          <tr><th scope="row">청소년</th><td>11,000</td><td>9,000</td></tr>
+          <tr><th scope="row">우대</th><td>7,000</td><td>7,000</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <aside aria-labelledby="notice-title">
+      <h2 id="notice-title">이용 안내</h2>
+      <ol>
+        <li>상영 시작 20분 전까지 예매를 취소할 수 있습니다.</li>
+        <li>관람 등급에 맞지 않는 관객은 입장이 제한될 수 있습니다.</li>
+        <li>좌석 수와 상영 정보는 극장 사정에 따라 변경될 수 있습니다.</li>
+        <li>청소년·우대 요금은 입장 시 증빙이 필요할 수 있습니다.</li>
+      </ol>
+    </aside>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+            <div class="footer">
+                    <nav class="footer-links">
+                        <a href="#" title="회사소개">회사소개</a><a href="#" title="인재채용">인재채용</a><a href="#" title="사회공헌">사회공헌</a><a href="#" title="제휴/광고/부대사업문의">제휴/광고/부대사업문의</a><a href="#" title="이용약관">이용약관</a><a href="#" class="footer-policy" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a><a href="#" class="footer-policy" title="개인정보처리방침">개인정보처리방침</a><a href="#" title="윤리경영">윤리경영</a>
+                    </nav>
+                    <p>서울특별시 용산구 청파로47길 100 숙명여자대학교 505호 이메일 cineon@partner.cineon.co.kr</p>
+                    <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
+            </div>
+        </footer>
+
+</body>
+</html>
