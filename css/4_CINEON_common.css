@@ -21,7 +21,7 @@
 }
 
 .btn-booking {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -31,13 +31,11 @@
   border-radius: 8px;
   background: #e53935;
   color: #fff;
-  font-family: inherit;
   font-size: 15px;
   text-decoration: none;
-  cursor: pointer;
 }
 
-.btn-booking:hover { background: #c62828; box-shadow: 0 2px 4px rgba(135, 135, 135, 0.2); }
+.btn-booking:hover { background: #c62828; }
 
 
 body {
@@ -110,56 +108,47 @@ body {
 }
 
 .nav-list > li:hover > a {
-  box-shadow: inset 0 -3px #111111;
+  border-bottom: 3px solid #111111;
   font-weight: 700;
 }
-
 .submenu {
   position: absolute;
   top: 100%;
   left: 50%;
-  width: max-content;
+  width: 650px;
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 12px 28px;
+
   min-height: 52px;
   padding: 15px 0;
   margin: 0;
   list-style: none;
-  transform: translateX(-50%);
+  margin-left: -325px;
   opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
   z-index: 20;
 }
 
-.main-nav::before {
-  content: "";
+.nav-background {
   position: absolute;
   top: 100%;
   height: 52px;
-  left: 50%;
-  width: max(1000px, 100vw);
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
   background: #f8f8fa;
   border-top: 1px solid #eee;
-  box-shadow: 0 8px 12px rgb(0 0 0 / 6%);
   z-index: 10;
-  visibility: hidden;
-  pointer-events: none;
+  display: none;
 }
 
-.main-nav:hover::before {
-  visibility: visible;
-}
+.main-nav:hover + .nav-background { display: block; }
 
 .nav-list > li:hover > .submenu {
   opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
+  display: flex;
 }
 
 .submenu a {
@@ -174,13 +163,11 @@ body {
 .submenu a:hover {
   color: #111;
   text-decoration: underline;
-  text-underline-offset: 4px;
 }
-
 .user-menu {
   display: flex;
   align-items: center;
-  gap: 18px;
+
   margin-left: auto;
 }
 
@@ -194,7 +181,6 @@ body {
 .user-menu > a:hover {
   color: #222222;
   text-decoration: underline;
-  text-underline-offset: 4px;
 
 }
 
@@ -205,7 +191,6 @@ body {
   padding: 0;
   border: none;
   background: none;
-  cursor: pointer;
 }
 
 
@@ -217,13 +202,20 @@ body {
 .site-footer {
   background: #f8f8fa;
   color: #333;
-  font: 400 14px Arial, "Malgun Gothic", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
   text-align: left;
 }
 
 .footer { max-width: 1236px; margin: 0 auto; padding: 33px 24px 53px; }
-.footer-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-bottom: 30px; }
+.footer-links { display: flex; flex-wrap: wrap;  margin-bottom: 30px; }
 .footer-links a { color: #111; font-weight: 400; text-decoration: none; }
 .footer-links .footer-policy { font-weight: 700; }
 .footer-links a:hover { text-decoration: underline; }
 .site-footer p { margin: 0; text-align: left; line-height: 18px; font-weight: 400; }
+
+.submenu > * + * { margin-left: 28px; }
+.user-menu > * + * { margin-left: 18px; }
+.footer-links a { margin-right: 16px; margin-bottom: 8px; }
+
+.icon-btn { cursor: pointer; }
