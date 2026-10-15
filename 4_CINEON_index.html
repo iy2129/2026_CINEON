@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="남서영, 송다원, 윤인영(2511268)">
+
+        <title>CINEON</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/4_CINEON_common.css">
+        <link rel="stylesheet" href="css/4_CINEON_home.css">
+    </head>
+
+    <body>
+        <header class="site-header">
+            <div class="header-inner">
+
+                <!-- 로고 -->
+                <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+
+                <!-- 내비게이션 -->
+                <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#" title="영화">영화</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화">전체영화</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="4_CINEON_quick.html" title="예매">예매</a>
+                    <ul class="submenu">
+                        <li><a href="4_CINEON_quick.html" title="상영시간표">상영시간표</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="영화관">영화관</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="전체영화관">전체영화관</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="이벤트">이벤트</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                        <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                        <li><a href="#" title="시사회">시사회</a></li>
+                        <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                    </ul>
+                    </li>
+                    <li><a href="#" title="스토어">스토어</a>
+                    <ul class="submenu">
+                        <li><a href="#" title="매점">매점</a></li>
+                        <li><a href="#" title="굿즈">굿즈</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </nav>
+
+                <!-- 사용자 메뉴 -->
+                <div class="user-menu">
+                <a href="#" title="로그인">로그인</a>
+                <a href="#" title="회원가입">회원가입</a>
+
+                <!-- 검색 버튼 -->
+                <button type="button" class="icon-btn">
+                    <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                </button>
+
+                <!-- 햄버거 버튼 -->
+                <button type="button" class="icon-btn menu-toggle">
+                    <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
+                </button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <section class="movie-section">
+                <div class="movie-status-tabs">
+                    <label class="movie-status-tab">
+                        <input type="radio" name="movie-status" value="now" checked>
+                        <span>현재 상영작</span>
+                    </label>
+                    <label class="movie-status-tab">
+                        <input type="radio" name="movie-status" value="coming-soon">
+                        <span>상영 예정작</span>
+                    </label>
+                </div>
+                <div class="movie-slider ranking-slider">
+                    <a class="more-movies" href="#" title="더 많은 영화 보기">더 많은 영화 보기</a>
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-1" checked>
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-2">
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-3">
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-4">
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-5">
+                    <input class="movie-slide-state" type="radio" name="movie-slide" id="movie-slide-6">
+                    <div class="movie-window">
+                        <div class="movie-track">
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-1.html" title="영화 제목 1 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">1</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">1위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-1.html" title="극장판 치이카와: 인어 섬의 비밀">극장판 치이카와: 인어 섬의 비밀</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-2.html" title="영화 제목 2 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">2</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">2위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-2.html" title="영화 제목 2">영화 제목 2</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-3.html" title="영화 제목 3 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">3</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">3위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-3.html" title="영화 제목 3">영화 제목 3</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-4.html" title="영화 제목 4 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">4</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">4위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-4.html" title="영화 제목 4">영화 제목 4</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-5.html" title="영화 제목 5 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">5</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">5위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-5.html" title="영화 제목 5">영화 제목 5</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-6.html" title="영화 제목 6 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">6</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">6위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-6.html" title="영화 제목 6">영화 제목 6</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-7.html" title="영화 제목 7 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">7</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">7위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-7.html" title="영화 제목 7">영화 제목 7</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-8.html" title="영화 제목 8 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">8</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">8위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-8.html" title="영화 제목 8">영화 제목 8</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-9.html" title="영화 제목 9 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">9</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">9위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-9.html" title="영화 제목 9">영화 제목 9</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-10.html" title="영화 제목 10 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <span class="movie-rank">10</span>
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">10위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-10.html" title="영화 제목 10">영화 제목 10</a></h3>
+                                <div class="movie-actions">
+                                    <label class="movie-like">
+                                        <input type="checkbox">
+                                        <span class="movie-like-off"><span class="movie-heart">♡</span> 0</span>
+                                        <span class="movie-like-on"><span class="movie-heart">♥</span> 1</span>
+                                    </label>
+                                    <a class="btn-booking" href="4_CINEON_quick.html" title="영화 예매하기">예매하기</a>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="movie-controls movie-controls-1">
+                        <span class="movie-arrow movie-prev disabled">‹</span>
+                        <label class="movie-arrow movie-next" for="movie-slide-2">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-2">
+                        <label class="movie-arrow movie-prev" for="movie-slide-1">‹</label>
+                        <label class="movie-arrow movie-next" for="movie-slide-3">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-3">
+                        <label class="movie-arrow movie-prev" for="movie-slide-2">‹</label>
+                        <label class="movie-arrow movie-next" for="movie-slide-4">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-4">
+                        <label class="movie-arrow movie-prev" for="movie-slide-3">‹</label>
+                        <label class="movie-arrow movie-next" for="movie-slide-5">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-5">
+                        <label class="movie-arrow movie-prev" for="movie-slide-4">‹</label>
+                        <label class="movie-arrow movie-next" for="movie-slide-6">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-6">
+                        <label class="movie-arrow movie-prev" for="movie-slide-5">‹</label>
+                        <span class="movie-arrow movie-next disabled">›</span>
+                    </div>
+                </div>
+                <div class="movie-shortcuts">
+                    <div class="movie-search">
+                        <input type="search" id="movie-search-input" placeholder="영화명을 입력해 주세요">
+                        <button type="button"><img src="images/icon_search.svg" alt="" width="24" height="24"></button>
+                    </div>
+                    <a href="#" title="▦ 상영시간표">▦ <span>상영시간표</span></a>
+                    <div class="movie-search">
+                        <input type="search" id="theater-search-input" placeholder="영화관명을 입력해 주세요">
+                        <button type="button"><img src="images/icon_search.svg" alt="" width="24" height="24"></button>
+                    </div>
+                </div>
+
+                <div class="movie-slider exclusive-slider">
+                    <h2 class="section-heading"><a href="#" title="오직 CINE:ON에서만! 더 보기">오직 <span class="heading-brand">CINE:ON</span>에서만! <span class="heading-arrow">›</span></a></h2>
+                    <input class="movie-slide-state" type="radio" name="exclusive-slide" id="exclusive-slide-1" checked>
+                    <input class="movie-slide-state" type="radio" name="exclusive-slide" id="exclusive-slide-2">
+                    <input class="movie-slide-state" type="radio" name="exclusive-slide" id="exclusive-slide-3">
+                    <input class="movie-slide-state" type="radio" name="exclusive-slide" id="exclusive-slide-4">
+                    <div class="movie-window">
+                        <div class="movie-track">
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-1.html" title="영화 제목 1 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">1위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-1.html" title="극장판 치이카와: 인어 섬의 비밀">극장판 치이카와: 인어 섬의 비밀</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-2.html" title="영화 제목 2 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">2위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-2.html" title="영화 제목 2">영화 제목 2</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-3.html" title="영화 제목 3 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">3위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-3.html" title="영화 제목 3">영화 제목 3</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-4.html" title="영화 제목 4 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">4위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-4.html" title="영화 제목 4">영화 제목 4</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-5.html" title="영화 제목 5 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">5위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-5.html" title="영화 제목 5">영화 제목 5</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-6.html" title="영화 제목 6 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">6위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-6.html" title="영화 제목 6">영화 제목 6</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-7.html" title="영화 제목 7 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">7위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-7.html" title="영화 제목 7">영화 제목 7</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-8.html" title="영화 제목 8 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">8위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-8.html" title="영화 제목 8">영화 제목 8</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-9.html" title="영화 제목 9 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">9위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-9.html" title="영화 제목 9">영화 제목 9</a></h3>
+                            </article>
+                            <article class="movie-card">
+                                <a class="movie-poster" href="movie-detail-10.html" title="영화 제목 10 상세 보기">
+                                    <!-- 이곳에 포스터 img 태그를 넣으세요. -->
+                                    <div class="movie-overlay">
+                                        <p class="movie-summary">10위 영화의 줄거리가 들어갈 자리입니다. 영화 소개 내용을 이곳에 입력해 주세요.</p>
+                                        <div class="movie-review">관람평 <strong>—</strong></div>
+                                    </div>
+                                </a>
+                                <h3 class="movie-title"><a href="movie-detail-10.html" title="영화 제목 10">영화 제목 10</a></h3>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="movie-controls movie-controls-1">
+                        <span class="movie-arrow movie-prev disabled">‹</span>
+                        <label class="movie-arrow movie-next" for="exclusive-slide-2">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-2">
+                        <label class="movie-arrow movie-prev" for="exclusive-slide-1">‹</label>
+                        <label class="movie-arrow movie-next" for="exclusive-slide-3">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-3">
+                        <label class="movie-arrow movie-prev" for="exclusive-slide-2">‹</label>
+                        <label class="movie-arrow movie-next" for="exclusive-slide-4">›</label>
+                    </div>
+                    <div class="movie-controls movie-controls-4">
+                        <label class="movie-arrow movie-prev" for="exclusive-slide-3">‹</label>
+                        <span class="movie-arrow movie-next disabled">›</span>
+                    </div>
+                </div>
+
+
+
+            </section>
+            <section class="curation-section">
+                <div class="curation-inner">
+                    <div class="curation-header">
+                        <h2 class="section-heading"><a href="#" title="큐레이션 더 보기">큐레이션 <span class="heading-arrow">›</span></a></h2>
+                        <a href="#" class="curation-more" title="큐레이션 더보기 ＋">큐레이션 더보기 ＋</a>
+                    </div>
+                    <div class="curation-content">
+                        <div class="curation-featured">
+                            <a class="movie-poster" href="#" title="영화 상세 보기">
+                                <!-- 추천 영화의 포스터 img 태그를 넣으세요. -->
+                            </a>
+                        </div>
+                        <div class="curation-info">
+                            <p class="curation-category">#가을에_꼭_봐야하는_영화</p>
+                            <h3 class="curation-title"><a href="#" title="큐레이션 영화 제목">큐레이션 영화 제목</a></h3>
+                            <div class="curation-summary">
+                                <p>추천 영화의 줄거리가 들어갈 자리입니다.</p>
+                                <p>영화 속 인물과 이야기를 소개하는 내용을 입력해 주세요.</p>
+                                <p>CINE:ON이 추천하는 특별한 영화를 만나보세요.</p>
+                            </div>
+                            <div class="curation-cards">
+                                <article class="curation-card">
+                                    <a class="movie-poster" href="#" title="영화 상세 보기">
+                                        <!-- 큐레이션 포스터 img 태그를 넣으세요. -->
+                                    </a>
+                                    <h4><a href="#" title="큐레이션 영화 제목 2">큐레이션 영화 제목 2</a></h4>
+                                </article>
+                                <article class="curation-card">
+                                    <a class="movie-poster" href="#" title="영화 상세 보기">
+                                        <!-- 큐레이션 포스터 img 태그를 넣으세요. -->
+                                    </a>
+                                    <h4><a href="#" title="큐레이션 영화 제목 3">큐레이션 영화 제목 3</a></h4>
+                                </article>
+                                <article class="curation-card">
+                                    <a class="movie-poster" href="#" title="영화 상세 보기">
+                                        <!-- 큐레이션 포스터 img 태그를 넣으세요. -->
+                                    </a>
+                                    <h4><a href="#" title="큐레이션 영화 제목 4">큐레이션 영화 제목 4</a></h4>
+                                </article>
+                                <article class="curation-card">
+                                    <a class="movie-poster" href="#" title="영화 상세 보기">
+                                        <!-- 큐레이션 포스터 img 태그를 넣으세요. -->
+                                    </a>
+                                    <h4><a href="#" title="큐레이션 영화 제목 5">큐레이션 영화 제목 5</a></h4>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="event-section">
+                <div class="event-inner">
+                    <h2 class="section-heading" id="event-heading"><a href="#" title="이벤트 더 보기">이벤트 <span class="heading-arrow">›</span></a></h2>
+                    <div class="event-list">
+                        <a class="event-card" href="#" title="이벤트 1 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">리미티드</span><h3 class="event-title">이벤트 제목 1</h3></div>
+                        </a>
+                        <a class="event-card" href="#" title="이벤트 2 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">굿즈</span><h3 class="event-title">이벤트 제목 2</h3></div>
+                        </a>
+                        <a class="event-card" href="#" title="이벤트 3 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">리미티드</span><h3 class="event-title">이벤트 제목 3</h3></div>
+                        </a>
+                        <a class="event-card" href="#" title="이벤트 4 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">굿즈</span><h3 class="event-title">이벤트 제목 4</h3></div>
+                        </a>
+                        <a class="event-card" href="#" title="이벤트 5 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">리미티드</span><h3 class="event-title">이벤트 제목 5</h3></div>
+                        </a>
+                        <a class="event-card" href="#" title="이벤트 6 상세 보기">
+                            <div class="event-image"><!-- 이벤트 이미지 img 태그를 넣으세요. --></div>
+                            <div class="event-info"><span class="event-category">굿즈</span><h3 class="event-title">이벤트 제목 6</h3></div>
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="notice-section">
+                <div class="notice-inner">
+                    <h2 class="section-heading" id="notice-heading"><a href="#" title="공지사항 더 보기">공지사항 <span class="heading-arrow">›</span></a></h2>
+                    <ul class="notice-list">
+                        <li>
+                            <a class="notice-card" href="#" title="공지사항 1 상세 보기">
+                                <h3 class="notice-title">CINE:ON 홈페이지 이용 안내</h3>
+                                <time datetime="2026-09-27">2026.09.27</time>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="notice-card" href="#" title="공지사항 2 상세 보기">
+                                <h3 class="notice-title">멤버십 포인트 적립 및 사용 안내</h3>
+                                <time datetime="2026-09-11">2026.09.11</time>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="notice-card" href="#" title="공지사항 3 상세 보기">
+                                <h3 class="notice-title">개인정보처리방침 변경 안내</h3>
+                                <time datetime="2026-09-01">2026.09.01</time>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <nav class="support-links">
+                <a href="#" title="고객센터">
+                    <img src="images/icon_search.svg" alt="">
+                    <span>고객센터</span>
+                </a>
+                <a href="#" title="자주 묻는 질문">
+                    <img src="images/icon_search.svg" alt="">
+                    <span>자주 묻는 질문</span>
+                </a>
+                <a href="#" title="1:1 문의">
+                    <img src="images/icon_search.svg" alt="">
+                    <span>1:1 문의</span>
+                </a>
+                <a href="#" title="단체/대관문의">
+                    <img src="images/icon_search.svg" alt="">
+                    <span>단체/대관문의</span>
+                </a>
+                <a href="#" title="분실물 문의/접수">
+                    <img src="images/icon_search.svg" alt="">
+                    <span>분실물 문의/접수</span>
+                </a>
+            </nav>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer">
+                    <nav class="footer-links">
+                        <a href="#" title="회사소개">회사소개</a><a href="#" title="인재채용">인재채용</a><a href="#" title="사회공헌">사회공헌</a><a href="#" title="제휴/광고/부대사업문의">제휴/광고/부대사업문의</a><a href="#" title="이용약관">이용약관</a><a href="#" class="footer-policy" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a><a href="#" class="footer-policy" title="개인정보처리방침">개인정보처리방침</a><a href="#" title="윤리경영">윤리경영</a>
+                    </nav>
+                    <p>서울특별시 용산구 청파로47길 100 숙명여자대학교 505호 이메일 cineon@partner.cineon.co.kr</p>
+                    <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
+            </div>
+        </footer>
+
+    </body>
+
+
+
+
+
+</html>

@@ -20,7 +20,7 @@
             <div class="header-inner">
 
                 <!-- 로고 -->
-                <a href="index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+                <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
 
                 <!-- 내비게이션 -->
                 <nav class="main-nav">
@@ -30,9 +30,9 @@
                         <li><a href="#" title="전체영화">전체영화</a></li>
                     </ul>
                     </li>
-                    <li><a href="#" title="예매">예매</a>
+                    <li><a href="4_CINEON_quick.html" title="예매">예매</a>
                     <ul class="submenu">
-                        <li><a href="#" title="상영시간표">상영시간표</a></li>
+                        <li><a href="4_CINEON_quick.html" title="빠른예매">빠른예매</a></li>
                     </ul>
                     </li>
                     <li><a href="#" title="영화관">영화관</a>
@@ -127,8 +127,6 @@
         <fieldset>
           <legend>상영 방식</legend>
           <input type="radio" id="f-2d" name="format" value="2d"><label for="f-2d">2D</label>
-          <input type="radio" id="f-imax" name="format" value="imax"><label for="f-imax">IMAX</label>
-          <input type="radio" id="f-4dx" name="format" value="4dx"><label for="f-4dx">4DX</label>
         </fieldset>
 
         <p>
@@ -143,6 +141,7 @@
             <option value="오디세이">
             <option value="웨일폴: 고래에 먹힌 남자">
             <option value="극장판 치이카와: 인어섬의 비밀">
+            <option value="타짜: 벨제붑의 노래">
           </datalist>
         </p>
 
@@ -185,7 +184,7 @@
               <br><small>전쟁 · 드라마 · 서사시 · 크리스토퍼 놀란 감독</small>
             </th>
             <td>강남점</td>
-            <td>IMAX관<br><small>IMAX · 총 48석</small></td>
+            <td>1관<br><small>2D · 총 48석</small></td>
             <td>
               <ul>
                 <li><a href="4_CINEON_booking.html"><strong><time datetime="10:00">10:00</time></strong> ~ <time datetime="12:52">12:52</time><br><small>잔여 30/48석 · 조조</small></a></li>
@@ -228,7 +227,7 @@
           </tr>
           <tr>
             <td>신촌점</td>
-            <td>4DX관<br><small>4DX · 총 48석</small></td>
+            <td>3관<br><small>2D · 총 48석</small></td>
             <td>
               <ul>
                 <li><a href="4_CINEON_booking.html"><strong><time datetime="10:40">10:40</time></strong> ~ <time datetime="12:26">12:26</time><br><small>잔여 19/48석 · 조조</small></a></li>
@@ -270,6 +269,35 @@
               </ul>
             </td>
           </tr>
+          <tr>
+            <th scope="row" rowspan="2">
+              <img src="images/poster-tazza.jpg" width="100" height="143" alt="타짜: 벨제붑의 노래 포스터">
+              <br><strong>타짜: 벨제붑의 노래</strong>
+              <br><abbr title="청소년 관람불가">19세</abbr> · 129분
+              <br><small>범죄 · 드라마 · 스릴러 · 2026년 9월 23일 개봉</small>
+            </th>
+            <td>강남점</td>
+            <td>3관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="12:30">12:30</time></strong> ~ <time datetime="14:39">14:39</time><br><small>잔여 31/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="15:20">15:20</time></strong> ~ <time datetime="17:29">17:29</time><br><small>잔여 26/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="18:10">18:10</time></strong> ~ <time datetime="20:19">20:19</time><br><small>잔여 14/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="21:00">21:00</time></strong> ~ <time datetime="23:09">23:09</time><br><small>▲ 잔여 9/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td>신촌점</td>
+            <td>2관<br><small>2D · 총 48석</small></td>
+            <td>
+              <ul>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="13:00">13:00</time></strong> ~ <time datetime="15:09">15:09</time><br><small>잔여 22/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="16:00">16:00</time></strong> ~ <time datetime="18:09">18:09</time><br><small>잔여 17/48석</small></a></li>
+                <li><a href="4_CINEON_booking.html"><strong><time datetime="19:00">19:00</time></strong> ~ <time datetime="21:09">21:09</time><br><small>잔여 28/48석</small></a></li>
+              </ul>
+            </td>
+          </tr>
         </tbody>
       </table>
     </section>
@@ -282,8 +310,8 @@
           <tr><th scope="col">극장</th><th scope="col">지역</th><th scope="col">상영 방식</th><th scope="col">문의</th></tr>
         </thead>
         <tbody>
-          <tr><th scope="row">강남점</th><td>서울</td><td>2D · IMAX</td><td>02-000-0001</td></tr>
-          <tr><th scope="row">신촌점</th><td>서울</td><td>2D · 4DX</td><td>02-000-0002</td></tr>
+          <tr><th scope="row">강남점</th><td>서울</td><td>2D</td><td>02-000-0001</td></tr>
+          <tr><th scope="row">신촌점</th><td>서울</td><td>2D</td><td>02-000-0002</td></tr>
         </tbody>
       </table>
     </section>
