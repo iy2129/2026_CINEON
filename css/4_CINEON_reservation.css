@@ -882,3 +882,6 @@ form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:c
 /* 인원 미선택 시 좌석 안내 */
 .seat-hint { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #f3f3f5; color: #555; font-size: 14px; text-align: center; }
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
+
+/* 서브메뉴(52px)가 내려와도 본문이 가려지지 않도록 헤더 아래 공간 확보 (이 페이지에만 적용) */
+.site-header { margin-bottom: 52px; }

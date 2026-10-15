@@ -185,3 +185,6 @@ form:has(#m-tazza:checked):has(#t-sinchon:checked):has(#h-20:checked) .times-non
 /* 상영관이 없는 지역은 선택 불가 */
 .regions input:disabled + label { color: #bbb; cursor: not-allowed; background: none; }
 .regions input:disabled + label:hover { background: none; }
+
+/* 서브메뉴(52px)가 내려와도 본문이 가려지지 않도록 헤더 아래 공간 확보 (이 페이지에만 적용) */
+.site-header { margin-bottom: 52px; }
