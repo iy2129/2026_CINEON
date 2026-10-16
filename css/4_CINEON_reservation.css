@@ -602,7 +602,6 @@ form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):ha
 .people .p-name { width: 210px; }
 
 /* 좌석표 (격자) */
-.seat-cap { margin: 0 0 10px; text-align: center; font-size: 13px; color: #777; }
 .seat-grid { position: relative; display: grid; grid-template-columns: 28px repeat(4, 38px) 22px repeat(4, 38px); gap: 6px; justify-content: center; }
 .seat-grid .row-name { text-align: center; font-size: 16px; font-weight: 700; line-height: 38px; }
 .seat-grid input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -875,13 +874,10 @@ form:has(#a5:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:c
 form:has(#a5:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
 form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"] { background: #333; color: #fff; cursor: pointer; pointer-events: auto; }
 
-/* 스크린 표시 (좌석 배치 이미지 제거 후) */
 .screen-label { margin: 0 0 14px; }
 .screen-label strong { display: block; padding: 12px; border-radius: 60px 60px 0 0; background: #ccc; color: #333; text-align: center; font-size: 14px; }
 
-/* 인원 미선택 시 좌석 안내 */
 .seat-hint { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #f3f3f5; color: #555; font-size: 14px; text-align: center; }
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
 
-/* 서브메뉴(52px)가 내려와도 본문이 가려지지 않도록 헤더 아래 공간 확보 (이 페이지에만 적용) */
 .site-header { margin-bottom: 52px; }
