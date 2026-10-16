@@ -1,3 +1,12 @@
+.booking-page {
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+.booking-page .layout > main {
+  min-width: 0;
+}
+
 .layout {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);

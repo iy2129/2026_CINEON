@@ -165,18 +165,25 @@
 }
 
 .movie-poster:hover .movie-overlay {
-  opacity: 0.8;
+  opacity: 0.9;
 }
 
 .movie-summary {
+  flex: 1;
+  min-height: 0;
   margin: 0;
+  padding-right: 12px;
   font-size: 14px;
   line-height: 1.6;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-width: thin;
 }
 
 .movie-review {
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
   gap: 10px;
@@ -195,7 +202,7 @@
 .movie-title {
   margin: 15px 0 12px 0;
   text-align: center;
-  font-size: 19px;
+  font-size: 18px;
   font-weight: 700;
   overflow: hidden;
   white-space: nowrap;
@@ -287,12 +294,7 @@
   border-left: 1px solid #ddd;
   border-right: 1px solid #ddd;
   color: #333;
-  font-size: 28px;
   text-decoration: none;
-}
-
-.movie-shortcuts > a span {
-  font-size: 16px;
 }
 
 .movie-search {
@@ -338,7 +340,8 @@
   justify-content: center;
   gap: 12px;
   color: #333;
-  font-size: 20px;
+  font-size: 18px;
+  font-weight: 600;
   text-decoration: none;
 }
 
@@ -586,7 +589,7 @@
 }
 
 .notice-section {
-  padding: 40px 24px 48px;
+  padding: 48px 24px 56px;
   background: #fff;
 }
 
@@ -645,8 +648,9 @@
   display: flex;
   max-width: 1236px;
   margin: 0 auto;
-  padding: 40px 0 56px;
+  padding: 50px 0 56px;
   background: #fff;
+  border-top: 1px solid #eee;
 }
 
 .support-links a {
