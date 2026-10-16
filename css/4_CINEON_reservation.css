@@ -208,7 +208,6 @@ section[aria-labelledby="info-title"] {
   border-radius: 12px;
 }
 
-/* 선택한 상영: 포스터 + 텍스트박스 */
 section.show-info {
   display: flex;
   align-items: center;
@@ -415,7 +414,6 @@ aside[aria-labelledby="notice-title"] ol { margin: 0; padding-left: 20px; color:
   .layout fieldset table { display: table; }
 }
 
-/* 인원 선택 버튼 (0~6명) */
 .people { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .people .p-name { width: 150px; font-weight: 600; }
 .people .count { position: relative; display: inline-flex; gap: 6px; }
@@ -508,7 +506,6 @@ form:has(#F6:checked) .st-F6 { display: inline-block; }
 form:has(#F7:checked) .st-F7 { display: inline-block; }
 form:has(#F8:checked) .st-F8 { display: inline-block; }
 
-/* 선택 상태 톤다운: 무채색 + 빨간 포인트 */
 fieldset .people .count label:hover { border-color: #111; color: #111; }
 fieldset .people .count input:checked + label { background: #111; border-color: #111; color: #fff; }
 .layout fieldset table input:checked + label { border-color: #222; background: #222; color: #fff; }
@@ -600,7 +597,6 @@ form:has(#a5:checked):has(#t0:checked) label[for="s2"], form:has(#a5:checked):ha
 form:has(#a5:checked):has(#t1:checked) label[for="s1"], form:has(#a5:checked):has(#t1:checked) label[for="s2"], form:has(#a5:checked):has(#t1:checked) label[for="s3"], form:has(#a5:checked):has(#t1:checked) label[for="s4"], form:has(#a5:checked):has(#t1:checked) label[for="s5"], form:has(#a5:checked):has(#t1:checked) label[for="s6"],
 form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):has(#t0:checked) label[for="s2"], form:has(#a6:checked):has(#t0:checked) label[for="s3"], form:has(#a6:checked):has(#t0:checked) label[for="s4"], form:has(#a6:checked):has(#t0:checked) label[for="s5"], form:has(#a6:checked):has(#t0:checked) label[for="s6"] { color: #ccc; background: #f5f5f5; border-color: #e5e5e5; cursor: not-allowed; pointer-events: none; }
 
-/* 요금 구분 안내 */
 .people .p-name small { display: block; margin-top: 2px; color: #888; font-size: 12px; font-weight: 400; }
 .price-guide { margin-top: 14px; padding: 12px 16px; border-radius: 12px; background: #f8f8fa; font-size: 14px; }
 .price-guide summary { cursor: pointer; font-weight: 600; color: #333; }
@@ -610,7 +606,7 @@ form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):ha
 .price-guide p { margin: 0; color: #888; font-size: 12px; text-align: left; }
 .people .p-name { width: 210px; }
 
-/* 좌석표 (격자) */
+.seat-cap { margin: 0 0 10px; text-align: center; font-size: 13px; color: #777; }
 .seat-grid { position: relative; display: grid; grid-template-columns: 28px repeat(4, 38px) 22px repeat(4, 38px); gap: 6px; justify-content: center; }
 .seat-grid .row-name { text-align: center; font-size: 16px; font-weight: 700; line-height: 38px; }
 .seat-grid input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -889,4 +885,5 @@ form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:c
 .seat-hint { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #f3f3f5; color: #555; font-size: 14px; text-align: center; }
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
 
+/* 헤더 서브메뉴가 본문을 가리지 않도록 여백 확보 */
 .site-header { margin-bottom: 52px; }

@@ -1,4 +1,3 @@
-/* 상영시간표 페이지 */
 .quick { max-width: 1236px; margin: 0 auto; padding: 24px 24px 80px; color: #333; }
 .quick a { color: inherit; }
 .quick .crumb { margin: 0 0 24px; padding: 12px 0; color: #777; font-size: 14px; }
@@ -11,7 +10,6 @@
 .quick input[type="radio"] { position: absolute; opacity: 0; width: 1px; height: 1px; }
 .quick legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 
-/* 날짜 바 */
 .date-bar { display: flex; align-items: flex-end; gap: 16px; padding: 0 16px; border-bottom: 1px solid #ddd; }
 .date-bar .month { flex: none; align-self: center; margin: 0 0 4px; padding: 3px 12px; border: 1px solid #ccc; border-radius: 14px; background: #fff; font-size: 13px; color: #555; }
 .date-bar ul { display: flex; flex: 1; min-width: 0; overflow-x: auto; }
@@ -27,7 +25,6 @@
 .date-bar input:checked + label { border-bottom-color: #e53935; font-weight: 700; }
 .date-bar input:focus-visible + label { outline: 2px solid #333; }
 
-/* 3단 */
 .q-grid { display: grid; grid-template-columns: 0.9fr 1.1fr 1.35fr; }
 .col { min-width: 0; padding: 14px 18px 18px; border-right: 1px solid #ddd; }
 .col:last-child { border-right: 0; }
@@ -46,12 +43,10 @@
 .age.a15 { background: #ea8a3a; }
 .age.a19 { background: #d9363e; }
 
-/* 극장 */
 .theater-pick { display: grid; grid-template-columns: 1fr 1fr; }
 .regions input:checked + label { background: #eee; color: #333; }
 .theaters input:checked + label { background: #555; color: #fff; }
 
-/* 선택 슬롯 */
 .slots { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 16px; min-height: 100px; }
 .slot { display: none; width: 70px; height: 100px; overflow: hidden; border: 1px solid #ddd; background: #fff; }
 .slot img { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -59,7 +54,6 @@
 .chip { display: none; align-items: center; padding: 0 16px; height: 44px; border-radius: 22px; background: #eee; font-size: 14px; }
 .col-theater .slot.empty { width: 120px; height: 44px; border-radius: 6px; }
 
-/* 시간 */
 .col-time .legend { margin: -34px 0 10px; text-align: right; font-size: 12px; color: #777; }
 .col-time .legend span { margin-left: 8px; }
 .hours { display: flex; flex-wrap: wrap; margin-bottom: 8px; border-bottom: 1px solid #eee; }
@@ -79,7 +73,6 @@
 .times input:checked + label small { color: #ffe3e2; }
 .times-empty { margin: 0; padding: 60px 0; text-align: center; color: #999; font-size: 14px; line-height: 1.7; }
 
-/* 제출 */
 .q-submit { display: flex; justify-content: flex-end; align-items: center; gap: 20px; padding: 16px 18px; border-top: 1px solid #ddd; background: #f8f8fa; }
 .q-submit a { font-size: 14px; color: #777; }
 .q-submit button { height: 48px; padding: 0 32px; border: 0; border-radius: 8px; background: #e53935; color: #fff; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; }
@@ -116,7 +109,6 @@ form:has(#m-tazza:checked) .sm-tazza { display: block; }
   .col-time .legend { margin-top: 0; }
 }
 
-/* 선택(눌림) 상태: 모든 버튼에 뚜렷한 색 변화 */
 .date-bar input:checked + label { background: #e53935; color: #fff; border-bottom-color: #e53935; border-radius: 12px 12px 0 0; }
 .date-bar .sat input:checked + label span,
 .date-bar .sun input:checked + label span { color: #fff; }
@@ -130,7 +122,6 @@ form:has(#m-tazza:checked) .sm-tazza { display: block; }
 .date-bar label:active, .list label:active, .hours label:active, .times label:active { transform: scale(0.96); }
 .q-submit button:active { transform: scale(0.97); }
 
-/* 시간대 필터 (선택 시각 이후 시작 상영만 표시) */
 .hour-note { margin: 0 0 8px; color: #888; font-size: 12px; }
 .times-none { display: none; margin: 0; padding: 60px 0; text-align: center; color: #e53935; font-size: 14px; line-height: 1.7; }
 form:has(#h-9:checked) .times li[data-hour="0"], form:has(#h-9:checked) .times li[data-hour="1"], form:has(#h-9:checked) .times li[data-hour="2"], form:has(#h-9:checked) .times li[data-hour="3"], form:has(#h-9:checked) .times li[data-hour="4"], form:has(#h-9:checked) .times li[data-hour="5"], form:has(#h-9:checked) .times li[data-hour="6"], form:has(#h-9:checked) .times li[data-hour="7"], form:has(#h-9:checked) .times li[data-hour="8"] { display: none; }
@@ -156,7 +147,6 @@ form:has(#m-odyssey:checked):has(#t-gangnam:checked):has(#h-19:checked) .times-n
 form:has(#m-odyssey:checked):has(#t-gangnam:checked):has(#h-20:checked) .times-none { display: block; }
 form:has(#m-tazza:checked):has(#t-sinchon:checked):has(#h-20:checked) .times-none { display: block; }
 
-/* 선택 상태 톤다운: 무채색 + 빨간 포인트 */
 .date-bar input:checked + label { background: transparent; color: #111; border-bottom-color: #e53935; border-radius: 0; font-weight: 800; }
 .date-bar .sat input:checked + label span,
 .date-bar .sun input:checked + label span { color: inherit; }
@@ -171,20 +161,17 @@ form:has(#m-tazza:checked):has(#t-sinchon:checked):has(#h-20:checked) .times-non
 .times input:checked + label { background: #fafafa; color: #111; border-color: #111; box-shadow: 0 0 0 1px #111, 0 4px 10px rgba(0, 0, 0, 0.08); }
 .times input:checked + label small { color: #666; }
 
-/* 선택한 영화 포스터 크게 */
 .col-movie .slots { min-height: 240px; }
 .col-movie .slot { width: 160px; height: 229px; border: 0; border-radius: 10px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18); }
 
-/* 조조/심야 아이콘 */
 .times .t-main::before { margin-right: 4px; font-size: 14px; }
 .times li[data-hour="0"] .t-main::before, .times li[data-hour="1"] .t-main::before, .times li[data-hour="2"] .t-main::before, .times li[data-hour="3"] .t-main::before, .times li[data-hour="4"] .t-main::before, .times li[data-hour="5"] .t-main::before, .times li[data-hour="6"] .t-main::before, .times li[data-hour="7"] .t-main::before, .times li[data-hour="8"] .t-main::before, .times li[data-hour="9"] .t-main::before, .times li[data-hour="10"] .t-main::before { content: "☀"; color: #f0a020; }
 .times li[data-hour="21"] .t-main::before, .times li[data-hour="22"] .t-main::before, .times li[data-hour="23"] .t-main::before, .times li[data-hour="24"] .t-main::before { content: "☾"; color: #5b63b7; }
 .col-time .legend span:first-child { color: #c98410; }
 .col-time .legend span:last-child { color: #5b63b7; }
 
-/* 상영관이 없는 지역은 선택 불가 */
 .regions input:disabled + label { color: #bbb; cursor: not-allowed; background: none; }
 .regions input:disabled + label:hover { background: none; }
 
-/* 서브메뉴(52px)가 내려와도 본문이 가려지지 않도록 헤더 아래 공간 확보 (이 페이지에만 적용) */
+/* 헤더 서브메뉴가 본문을 가리지 않도록 여백 확보 */
 .site-header { margin-bottom: 52px; }

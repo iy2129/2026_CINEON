@@ -1,218 +1,243 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)" />
 
-  <title>예매 - CINEON</title>
+    <title>예매 - CINEON</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/4_CINEON_common.css">
-  <link rel="stylesheet" href="css/4_CINEON_reservation.css">
-</head>
-<body class="booking-page">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/4_CINEON_common.css" />
+    <link rel="stylesheet" href="css/4_CINEON_reservation.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
 
-        <header class="site-header">
-            <div class="header-inner">
-
-                <!-- 로고 -->
-                <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
-
-                <!-- 내비게이션 -->
-                <nav class="main-nav">
-                <ul class="nav-list">
-                    <li><a href="#" title="영화">영화</a>
-                    <ul class="submenu">
-                        <li><a href="#" title="전체영화">전체영화</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="4_CINEON_timetable.html" title="예매">예매</a>
-                    <ul class="submenu">
-                        <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#" title="영화관">영화관</a>
-                    <ul class="submenu">
-                        <li><a href="#" title="전체영화관">전체영화관</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#" title="이벤트">이벤트</a>
-                    <ul class="submenu">
-                        <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
-                        <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
-                        <li><a href="#" title="시사회">시사회</a></li>
-                        <li><a href="#" title="제휴/할인">제휴/할인</a></li>
-                    </ul>
-                    </li>
-                    <li><a href="#" title="스토어">스토어</a>
-                    <ul class="submenu">
-                        <li><a href="#" title="매점">매점</a></li>
-                        <li><a href="#" title="굿즈">굿즈</a></li>
-                    </ul>
-                    </li>
-                </ul>
-                </nav>
-
-                <!-- 사용자 메뉴 -->
-                <div class="user-menu">
-                <a href="#" title="로그인">로그인</a>
-                <a href="#" title="회원가입">회원가입</a>
-
-                <!-- 검색 버튼 -->
-                <button type="button" class="icon-btn">
-                    <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24">
-                </button>
-
-                <!-- 햄버거 버튼 -->
-                <button type="button" class="icon-btn menu-toggle">
-                    <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
-                </button>
-                </div>
-            </div>
-        </header>
-
-<div class="layout">
-  <nav aria-label="예매 단계">
-    <ol>
-      <li>✓ 01 상영시간 <small>(완료)</small></li>
-      <li aria-current="step"><strong>02 인원/좌석</strong> <small>(현재 단계)</small></li>
-      <li>03 결제</li>
-    </ol>
-  </nav>
-
-  <main>
-    <p><a href="4_CINEON_timetable.html">← 상영시간표로 돌아가기</a></p>
-    <h1>인원 / 좌석 선택</h1>
-
-    <section aria-labelledby="info-title" class="show-info">
-      <img class="show-poster" src="images/poster-chiikawa.jpg" width="150" height="214" alt="극장판 치이카와: 인어섬의 비밀 포스터">
-      <div class="show-text">
-        <h2 id="info-title">선택한 상영</h2>
-        <dl>
-          <dt>영화</dt><dd><strong>극장판 치이카와: 인어섬의 비밀</strong> (전체 관람가 · 99분)</dd>
-          <dt>극장 / 상영관</dt><dd>강남점 5관 (2D)</dd>
-          <dt>일시</dt><dd>2026.10.15 (목) 11:50 ~ 13:29</dd>
-        </dl>
-      </div>
-    </section>
-
-    <form action="4_CINEON_done.html">
-
-      <fieldset>
-        <legend>1. 인원 선택 (총 6명까지)</legend>
-        <p class="people"><span class="p-name">일반 (14,000원)<small>만 19세 이상</small></span><span class="count" role="radiogroup" aria-label="일반 인원"><input type="radio" id="a0" name="adult" value="0" checked><label for="a0">0</label><input type="radio" id="a1" name="adult" value="1"><label for="a1">1</label><input type="radio" id="a2" name="adult" value="2"><label for="a2">2</label><input type="radio" id="a3" name="adult" value="3"><label for="a3">3</label><input type="radio" id="a4" name="adult" value="4"><label for="a4">4</label><input type="radio" id="a5" name="adult" value="5"><label for="a5">5</label><input type="radio" id="a6" name="adult" value="6"><label for="a6">6</label></span> 명</p>
-        <p class="people"><span class="p-name">청소년 (11,000원)<small>만 13세 ~ 18세</small></span><span class="count" role="radiogroup" aria-label="청소년 인원"><input type="radio" id="t0" name="teen" value="0" checked><label for="t0">0</label><input type="radio" id="t1" name="teen" value="1"><label for="t1">1</label><input type="radio" id="t2" name="teen" value="2"><label for="t2">2</label><input type="radio" id="t3" name="teen" value="3"><label for="t3">3</label><input type="radio" id="t4" name="teen" value="4"><label for="t4">4</label><input type="radio" id="t5" name="teen" value="5"><label for="t5">5</label><input type="radio" id="t6" name="teen" value="6"><label for="t6">6</label></span> 명</p>
-        <p class="people"><span class="p-name">우대 (7,000원)<small>만 65세 이상 · 장애인 · 국가유공자</small></span><span class="count" role="radiogroup" aria-label="우대 인원"><input type="radio" id="s0" name="senior" value="0" checked><label for="s0">0</label><input type="radio" id="s1" name="senior" value="1"><label for="s1">1</label><input type="radio" id="s2" name="senior" value="2"><label for="s2">2</label><input type="radio" id="s3" name="senior" value="3"><label for="s3">3</label><input type="radio" id="s4" name="senior" value="4"><label for="s4">4</label><input type="radio" id="s5" name="senior" value="5"><label for="s5">5</label><input type="radio" id="s6" name="senior" value="6"><label for="s6">6</label></span> 명</p>
-              <details class="price-guide">
-          <summary>나는 어떤 요금에 해당하나요?</summary>
-          <ul>
-            <li><strong>일반</strong> 만 19세 이상 관람객 (청소년·우대에 해당하지 않는 경우)</li>
-            <li><strong>청소년</strong> 만 13세 이상 만 18세 이하</li>
-            <li><strong>우대</strong> 만 65세 이상, 장애인(동반 1인 포함), 국가유공자 — 입장 시 신분증·증빙 서류 확인</li>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li>
+              <a href="#" title="영화">영화</a>
+              <ul class="submenu">
+                <li><a href="#" title="전체영화">전체영화</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="4_CINEON_timetable.html" title="예매">예매</a>
+              <ul class="submenu">
+                <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="영화관">영화관</a>
+              <ul class="submenu">
+                <li><a href="#" title="전체영화관">전체영화관</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="이벤트">이벤트</a>
+              <ul class="submenu">
+                <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                <li><a href="#" title="시사회">시사회</a></li>
+                <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#" title="스토어">스토어</a>
+              <ul class="submenu">
+                <li><a href="#" title="매점">매점</a></li>
+                <li><a href="#" title="굿즈">굿즈</a></li>
+              </ul>
+            </li>
           </ul>
-          <p>※ 청소년 관람불가 영화는 청소년 요금으로 예매할 수 없습니다. 연령 확인을 위해 입장 시 신분증을 지참해 주세요.</p>
-        </details>
-      </fieldset>
+        </nav>
 
-      <fieldset>
-        <legend>2. 좌석 선택</legend>
+        <div class="user-menu">
+          <a href="#" title="로그인">로그인</a>
+          <a href="#" title="회원가입">회원가입</a>
 
-        <p class="screen-label"><strong>▲ 스크린</strong></p>
-        <p class="seat-hint">먼저 위에서 관람 인원을 선택하면 좌석을 고를 수 있어요.</p>
-        <div class="seat-grid" role="group" aria-label="좌석 선택">
-          <span class="row-name">A</span>
-          <input type="checkbox" id="A1" name="seat" value="A1"><label for="A1">1</label>
-          <input type="checkbox" id="A2" name="seat" value="A2"><label for="A2">2</label>
-          <input type="checkbox" id="A3" name="seat" value="A3"><label for="A3">3</label>
-          <input type="checkbox" id="A4" name="seat" value="A4"><label for="A4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="A5" name="seat" value="A5"><label for="A5">5</label>
-          <input type="checkbox" id="A6" name="seat" value="A6"><label for="A6">6</label>
-          <input type="checkbox" id="A7" name="seat" value="A7"><label for="A7">7</label>
-          <input type="checkbox" id="A8" name="seat" value="A8"><label for="A8">8</label>
-          <span class="row-name">B</span>
-          <input type="checkbox" id="B1" name="seat" value="B1"><label for="B1">1</label>
-          <input type="checkbox" id="B2" name="seat" value="B2"><label for="B2">2</label>
-          <input type="checkbox" id="B3" name="seat" value="B3" disabled><label for="B3">3</label>
-          <input type="checkbox" id="B4" name="seat" value="B4" disabled><label for="B4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="B5" name="seat" value="B5"><label for="B5">5</label>
-          <input type="checkbox" id="B6" name="seat" value="B6"><label for="B6">6</label>
-          <input type="checkbox" id="B7" name="seat" value="B7"><label for="B7">7</label>
-          <input type="checkbox" id="B8" name="seat" value="B8"><label for="B8">8</label>
-          <span class="row-name">C</span>
-          <input type="checkbox" id="C1" name="seat" value="C1"><label for="C1">1</label>
-          <input type="checkbox" id="C2" name="seat" value="C2"><label for="C2">2</label>
-          <input type="checkbox" id="C3" name="seat" value="C3"><label for="C3">3</label>
-          <input type="checkbox" id="C4" name="seat" value="C4"><label for="C4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="C5" name="seat" value="C5"><label for="C5">5</label>
-          <input type="checkbox" id="C6" name="seat" value="C6" disabled><label for="C6">6</label>
-          <input type="checkbox" id="C7" name="seat" value="C7"><label for="C7">7</label>
-          <input type="checkbox" id="C8" name="seat" value="C8"><label for="C8">8</label>
-          <span class="row-name">D</span>
-          <input type="checkbox" id="D1" name="seat" value="D1"><label for="D1">1</label>
-          <input type="checkbox" id="D2" name="seat" value="D2"><label for="D2">2</label>
-          <input type="checkbox" id="D3" name="seat" value="D3"><label for="D3">3</label>
-          <input type="checkbox" id="D4" name="seat" value="D4"><label for="D4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="D5" name="seat" value="D5"><label for="D5">5</label>
-          <input type="checkbox" id="D6" name="seat" value="D6"><label for="D6">6</label>
-          <input type="checkbox" id="D7" name="seat" value="D7"><label for="D7">7</label>
-          <input type="checkbox" id="D8" name="seat" value="D8"><label for="D8">8</label>
-          <span class="row-name">E</span>
-          <input type="checkbox" id="E1" name="seat" value="E1"><label for="E1">1</label>
-          <input type="checkbox" id="E2" name="seat" value="E2"><label for="E2">2</label>
-          <input type="checkbox" id="E3" name="seat" value="E3"><label for="E3">3</label>
-          <input type="checkbox" id="E4" name="seat" value="E4"><label for="E4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="E5" name="seat" value="E5"><label for="E5">5</label>
-          <input type="checkbox" id="E6" name="seat" value="E6"><label for="E6">6</label>
-          <input type="checkbox" id="E7" name="seat" value="E7" disabled><label for="E7">7</label>
-          <input type="checkbox" id="E8" name="seat" value="E8" disabled><label for="E8">8</label>
-          <span class="row-name">F</span>
-          <input type="checkbox" id="F1" name="seat" value="F1"><label for="F1">1</label>
-          <input type="checkbox" id="F2" name="seat" value="F2"><label for="F2">2</label>
-          <input type="checkbox" id="F3" name="seat" value="F3"><label for="F3">3</label>
-          <input type="checkbox" id="F4" name="seat" value="F4"><label for="F4">4</label>
-          <span class="aisle"></span>
-          <input type="checkbox" id="F5" name="seat" value="F5"><label for="F5">5</label>
-          <input type="checkbox" id="F6" name="seat" value="F6"><label for="F6">6</label>
-          <input type="checkbox" id="F7" name="seat" value="F7"><label for="F7">7</label>
-          <input type="checkbox" id="F8" name="seat" value="F8"><label for="F8">8</label>
+          <button type="button" class="icon-btn">
+            <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24" />
+          </button>
+
+          <button type="button" class="icon-btn menu-toggle">
+            <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24" />
+          </button>
         </div>
-      </fieldset>
+      </div>
+    </header>
 
-      <aside aria-labelledby="sum-title">
-        <h2 id="sum-title">예매 정보</h2>
-        <dl>
-          <dt>인원</dt><dd class="sum-people"><span class="pp pp-none">선택 안 함 (0명)</span><span class="pp pp-adult"></span><span class="pp pp-teen"></span><span class="pp pp-senior"></span></dd>
-          <dt>선택 좌석</dt><dd class="sum-seats"><span class="st st-none">-</span><span class="st st-A1">A1</span><span class="st st-A2">A2</span><span class="st st-A3">A3</span><span class="st st-A4">A4</span><span class="st st-A5">A5</span><span class="st st-A6">A6</span><span class="st st-A7">A7</span><span class="st st-A8">A8</span><span class="st st-B1">B1</span><span class="st st-B2">B2</span><span class="st st-B3">B3</span><span class="st st-B4">B4</span><span class="st st-B5">B5</span><span class="st st-B6">B6</span><span class="st st-B7">B7</span><span class="st st-B8">B8</span><span class="st st-C1">C1</span><span class="st st-C2">C2</span><span class="st st-C3">C3</span><span class="st st-C4">C4</span><span class="st st-C5">C5</span><span class="st st-C6">C6</span><span class="st st-C7">C7</span><span class="st st-C8">C8</span><span class="st st-D1">D1</span><span class="st st-D2">D2</span><span class="st st-D3">D3</span><span class="st st-D4">D4</span><span class="st st-D5">D5</span><span class="st st-D6">D6</span><span class="st st-D7">D7</span><span class="st st-D8">D8</span><span class="st st-E1">E1</span><span class="st st-E2">E2</span><span class="st st-E3">E3</span><span class="st st-E4">E4</span><span class="st st-E5">E5</span><span class="st st-E6">E6</span><span class="st st-E7">E7</span><span class="st st-E8">E8</span><span class="st st-F1">F1</span><span class="st st-F2">F2</span><span class="st st-F3">F3</span><span class="st st-F4">F4</span><span class="st st-F5">F5</span><span class="st st-F6">F6</span><span class="st st-F7">F7</span><span class="st st-F8">F8</span></dd>
-          <dt>결제 금액</dt><dd><strong class="sum-total"></strong></dd>
-        </dl>
-        <p class="need need-people">인원을 선택해 주세요.</p>
-        <p class="need need-seat"></p>
-        <button type="submit">다음 단계: 결제하기</button>
-        <a href="4_CINEON_timetable.html">시간 다시 선택</a>
-      </aside>
+    <div class="layout">
+      <nav aria-label="예매 단계">
+        <ol>
+          <li>✓ 01 상영시간 <small>(완료)</small></li>
+          <li aria-current="step"><strong>02 인원/좌석</strong> <small>(현재 단계)</small></li>
+          <li>03 결제</li>
+        </ol>
+      </nav>
 
-    </form>
-  </main>
-</div>
+      <main>
+        <p><a href="4_CINEON_timetable.html">← 상영시간표로 돌아가기</a></p>
+        <h1>인원 / 좌석 선택</h1>
 
-<footer class="site-footer">
-            <div class="footer">
-                    <nav class="footer-links">
-                        <a href="#" title="회사소개">회사소개</a><a href="#" title="인재채용">인재채용</a><a href="#" title="사회공헌">사회공헌</a><a href="#" title="제휴/광고/부대사업문의">제휴/광고/부대사업문의</a><a href="#" title="이용약관">이용약관</a><a href="#" class="footer-policy" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a><a href="#" class="footer-policy" title="개인정보처리방침">개인정보처리방침</a><a href="#" title="윤리경영">윤리경영</a>
-                    </nav>
-                    <p>서울특별시 용산구 청파로47길 100 숙명여자대학교 505호 이메일 cineon@partner.cineon.co.kr</p>
-                    <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
+        <section aria-labelledby="info-title" class="show-info">
+          <img class="show-poster" src="images/poster-chiikawa.jpg" width="150" height="214" alt="극장판 치이카와: 인어섬의 비밀 포스터" />
+          <div class="show-text">
+            <h2 id="info-title">선택한 상영</h2>
+            <dl>
+              <dt>영화</dt>
+              <dd><strong>극장판 치이카와: 인어섬의 비밀</strong> (전체 관람가 · 99분)</dd>
+              <dt>극장 / 상영관</dt>
+              <dd>강남점 5관 (2D)</dd>
+              <dt>일시</dt>
+              <dd>2026.10.15 (목) 11:50 ~ 13:29</dd>
+            </dl>
+          </div>
+        </section>
+
+        <form action="4_CINEON_done.html">
+          <fieldset>
+            <legend>1. 인원 선택 (총 6명까지)</legend>
+            <p class="people">
+              <span class="p-name">일반 (14,000원)<small>만 19세 이상</small></span
+              ><span class="count" role="radiogroup" aria-label="일반 인원"
+                ><input type="radio" id="a0" name="adult" value="0" checked /><label for="a0">0</label><input type="radio" id="a1" name="adult" value="1" /><label for="a1">1</label
+                ><input type="radio" id="a2" name="adult" value="2" /><label for="a2">2</label><input type="radio" id="a3" name="adult" value="3" /><label for="a3">3</label
+                ><input type="radio" id="a4" name="adult" value="4" /><label for="a4">4</label><input type="radio" id="a5" name="adult" value="5" /><label for="a5">5</label
+                ><input type="radio" id="a6" name="adult" value="6" /><label for="a6">6</label></span
+              >
+              명
+            </p>
+            <p class="people">
+              <span class="p-name">청소년 (11,000원)<small>만 13세 ~ 18세</small></span
+              ><span class="count" role="radiogroup" aria-label="청소년 인원"
+                ><input type="radio" id="t0" name="teen" value="0" checked /><label for="t0">0</label><input type="radio" id="t1" name="teen" value="1" /><label for="t1">1</label
+                ><input type="radio" id="t2" name="teen" value="2" /><label for="t2">2</label><input type="radio" id="t3" name="teen" value="3" /><label for="t3">3</label
+                ><input type="radio" id="t4" name="teen" value="4" /><label for="t4">4</label><input type="radio" id="t5" name="teen" value="5" /><label for="t5">5</label
+                ><input type="radio" id="t6" name="teen" value="6" /><label for="t6">6</label></span
+              >
+              명
+            </p>
+            <p class="people">
+              <span class="p-name">우대 (7,000원)<small>만 65세 이상 · 장애인 · 국가유공자</small></span
+              ><span class="count" role="radiogroup" aria-label="우대 인원"
+                ><input type="radio" id="s0" name="senior" value="0" checked /><label for="s0">0</label><input type="radio" id="s1" name="senior" value="1" /><label for="s1">1</label
+                ><input type="radio" id="s2" name="senior" value="2" /><label for="s2">2</label><input type="radio" id="s3" name="senior" value="3" /><label for="s3">3</label
+                ><input type="radio" id="s4" name="senior" value="4" /><label for="s4">4</label><input type="radio" id="s5" name="senior" value="5" /><label for="s5">5</label
+                ><input type="radio" id="s6" name="senior" value="6" /><label for="s6">6</label></span
+              >
+              명
+            </p>
+            <details class="price-guide">
+              <summary>나는 어떤 요금에 해당하나요?</summary>
+              <ul>
+                <li><strong>일반</strong> 만 19세 이상 관람객 (청소년·우대에 해당하지 않는 경우)</li>
+                <li><strong>청소년</strong> 만 13세 이상 만 18세 이하</li>
+                <li><strong>우대</strong> 만 65세 이상, 장애인(동반 1인 포함), 국가유공자 — 입장 시 신분증·증빙 서류 확인</li>
+              </ul>
+              <p>※ 청소년 관람불가 영화는 청소년 요금으로 예매할 수 없습니다. 연령 확인을 위해 입장 시 신분증을 지참해 주세요.</p>
+            </details>
+          </fieldset>
+
+          <fieldset>
+            <legend>2. 좌석 선택</legend>
+
+            <p class="screen-label"><strong>▲ 스크린 (이 방향이 화면입니다)</strong></p>
+            <p class="seat-cap">A열이 스크린에서 가장 가깝습니다 · 비활성 좌석 = 예매 완료</p>
+            <p class="seat-hint">먼저 위에서 관람 인원을 선택하면 좌석을 고를 수 있어요.</p>
+            <div class="seat-grid" role="group" aria-label="좌석 선택">
+              <span class="row-name">A</span>
+              <input type="checkbox" id="A1" name="seat" value="A1" /><label for="A1">1</label> <input type="checkbox" id="A2" name="seat" value="A2" /><label for="A2">2</label>
+              <input type="checkbox" id="A3" name="seat" value="A3" /><label for="A3">3</label> <input type="checkbox" id="A4" name="seat" value="A4" /><label for="A4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="A5" name="seat" value="A5" /><label for="A5">5</label> <input type="checkbox" id="A6" name="seat" value="A6" /><label for="A6">6</label>
+              <input type="checkbox" id="A7" name="seat" value="A7" /><label for="A7">7</label> <input type="checkbox" id="A8" name="seat" value="A8" /><label for="A8">8</label>
+              <span class="row-name">B</span>
+              <input type="checkbox" id="B1" name="seat" value="B1" /><label for="B1">1</label> <input type="checkbox" id="B2" name="seat" value="B2" /><label for="B2">2</label>
+              <input type="checkbox" id="B3" name="seat" value="B3" disabled /><label for="B3">3</label> <input type="checkbox" id="B4" name="seat" value="B4" disabled /><label for="B4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="B5" name="seat" value="B5" /><label for="B5">5</label> <input type="checkbox" id="B6" name="seat" value="B6" /><label for="B6">6</label>
+              <input type="checkbox" id="B7" name="seat" value="B7" /><label for="B7">7</label> <input type="checkbox" id="B8" name="seat" value="B8" /><label for="B8">8</label>
+              <span class="row-name">C</span>
+              <input type="checkbox" id="C1" name="seat" value="C1" /><label for="C1">1</label> <input type="checkbox" id="C2" name="seat" value="C2" /><label for="C2">2</label>
+              <input type="checkbox" id="C3" name="seat" value="C3" /><label for="C3">3</label> <input type="checkbox" id="C4" name="seat" value="C4" /><label for="C4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="C5" name="seat" value="C5" /><label for="C5">5</label> <input type="checkbox" id="C6" name="seat" value="C6" disabled /><label for="C6">6</label>
+              <input type="checkbox" id="C7" name="seat" value="C7" /><label for="C7">7</label> <input type="checkbox" id="C8" name="seat" value="C8" /><label for="C8">8</label>
+              <span class="row-name">D</span>
+              <input type="checkbox" id="D1" name="seat" value="D1" /><label for="D1">1</label> <input type="checkbox" id="D2" name="seat" value="D2" /><label for="D2">2</label>
+              <input type="checkbox" id="D3" name="seat" value="D3" /><label for="D3">3</label> <input type="checkbox" id="D4" name="seat" value="D4" /><label for="D4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="D5" name="seat" value="D5" /><label for="D5">5</label> <input type="checkbox" id="D6" name="seat" value="D6" /><label for="D6">6</label>
+              <input type="checkbox" id="D7" name="seat" value="D7" /><label for="D7">7</label> <input type="checkbox" id="D8" name="seat" value="D8" /><label for="D8">8</label>
+              <span class="row-name">E</span>
+              <input type="checkbox" id="E1" name="seat" value="E1" /><label for="E1">1</label> <input type="checkbox" id="E2" name="seat" value="E2" /><label for="E2">2</label>
+              <input type="checkbox" id="E3" name="seat" value="E3" /><label for="E3">3</label> <input type="checkbox" id="E4" name="seat" value="E4" /><label for="E4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="E5" name="seat" value="E5" /><label for="E5">5</label> <input type="checkbox" id="E6" name="seat" value="E6" /><label for="E6">6</label>
+              <input type="checkbox" id="E7" name="seat" value="E7" disabled /><label for="E7">7</label> <input type="checkbox" id="E8" name="seat" value="E8" disabled /><label for="E8">8</label>
+              <span class="row-name">F</span>
+              <input type="checkbox" id="F1" name="seat" value="F1" /><label for="F1">1</label> <input type="checkbox" id="F2" name="seat" value="F2" /><label for="F2">2</label>
+              <input type="checkbox" id="F3" name="seat" value="F3" /><label for="F3">3</label> <input type="checkbox" id="F4" name="seat" value="F4" /><label for="F4">4</label>
+              <span class="aisle"></span>
+              <input type="checkbox" id="F5" name="seat" value="F5" /><label for="F5">5</label> <input type="checkbox" id="F6" name="seat" value="F6" /><label for="F6">6</label>
+              <input type="checkbox" id="F7" name="seat" value="F7" /><label for="F7">7</label> <input type="checkbox" id="F8" name="seat" value="F8" /><label for="F8">8</label>
             </div>
-        </footer>
 
+            <ul>
+              <li>[ ] 선택 가능</li>
+              <li>[✓] 선택한 좌석</li>
+              <li>[×] 예매 완료 (선택 불가)</li>
+            </ul>
+            <p><small>※ 좌석 번호는 열(A~F)과 번호(1~8)로 표시됩니다. 예: A열 3번 = A3</small></p>
+          </fieldset>
 
-</body>
+          <aside aria-labelledby="sum-title">
+            <h2 id="sum-title">예매 정보</h2>
+            <dl>
+              <dt>인원</dt>
+              <dd class="sum-people"><span class="pp pp-none">선택 안 함 (0명)</span><span class="pp pp-adult"></span><span class="pp pp-teen"></span><span class="pp pp-senior"></span></dd>
+              <dt>선택 좌석</dt>
+              <dd class="sum-seats">
+                <span class="st st-none">-</span><span class="st st-A1">A1</span><span class="st st-A2">A2</span><span class="st st-A3">A3</span><span class="st st-A4">A4</span
+                ><span class="st st-A5">A5</span><span class="st st-A6">A6</span><span class="st st-A7">A7</span><span class="st st-A8">A8</span><span class="st st-B1">B1</span
+                ><span class="st st-B2">B2</span><span class="st st-B3">B3</span><span class="st st-B4">B4</span><span class="st st-B5">B5</span><span class="st st-B6">B6</span
+                ><span class="st st-B7">B7</span><span class="st st-B8">B8</span><span class="st st-C1">C1</span><span class="st st-C2">C2</span><span class="st st-C3">C3</span
+                ><span class="st st-C4">C4</span><span class="st st-C5">C5</span><span class="st st-C6">C6</span><span class="st st-C7">C7</span><span class="st st-C8">C8</span
+                ><span class="st st-D1">D1</span><span class="st st-D2">D2</span><span class="st st-D3">D3</span><span class="st st-D4">D4</span><span class="st st-D5">D5</span
+                ><span class="st st-D6">D6</span><span class="st st-D7">D7</span><span class="st st-D8">D8</span><span class="st st-E1">E1</span><span class="st st-E2">E2</span
+                ><span class="st st-E3">E3</span><span class="st st-E4">E4</span><span class="st st-E5">E5</span><span class="st st-E6">E6</span><span class="st st-E7">E7</span
+                ><span class="st st-E8">E8</span><span class="st st-F1">F1</span><span class="st st-F2">F2</span><span class="st st-F3">F3</span><span class="st st-F4">F4</span
+                ><span class="st st-F5">F5</span><span class="st st-F6">F6</span><span class="st st-F7">F7</span><span class="st st-F8">F8</span>
+              </dd>
+              <dt>결제 금액</dt>
+              <dd><strong class="sum-total"></strong></dd>
+            </dl>
+            <p class="need need-people">인원을 선택해 주세요.</p>
+            <p class="need need-seat"></p>
+            <button type="submit">다음 단계: 결제하기</button>
+            <a href="4_CINEON_timetable.html">시간 다시 선택</a>
+          </aside>
+        </form>
+      </main>
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer">
+        <nav class="footer-links">
+          <a href="#" title="회사소개">회사소개</a><a href="#" title="인재채용">인재채용</a><a href="#" title="사회공헌">사회공헌</a
+          ><a href="#" title="제휴/광고/부대사업문의">제휴/광고/부대사업문의</a><a href="#" title="이용약관">이용약관</a
+          ><a href="#" class="footer-policy" title="위치기반서비스 이용약관">위치기반서비스 이용약관</a><a href="#" class="footer-policy" title="개인정보처리방침">개인정보처리방침</a
+          ><a href="#" title="윤리경영">윤리경영</a>
+        </nav>
+        <p>서울특별시 용산구 청파로47길 100 숙명여자대학교 505호 이메일 cineon@partner.cineon.co.kr</p>
+        <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
+      </div>
+    </footer>
+  </body>
 </html>
