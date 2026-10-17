@@ -1,0 +1,605 @@
+.layout {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 48px;
+  max-width: 1236px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  color: #333;
+}
+
+.layout h1 {
+  margin: 0 0 8px;
+  font-size: 32px;
+  font-weight: 800;
+}
+
+.layout h2 {
+  margin: 0 0 14px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.layout a { color: inherit; }
+
+.layout small { color: #777; font-size: 13px; }
+
+.layout > nav { align-self: start; position: sticky; top: 24px; }
+
+.layout > nav ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 3px solid #eee;
+}
+
+.layout > nav li {
+  position: relative;
+  padding: 14px 0 14px 20px;
+  color: #aaa;
+  font-size: 17px;
+}
+
+.layout > nav li small { display: block; margin-top: 2px; color: #aaa; }
+
+.layout > nav li[aria-current="step"] {
+  color: #e53935;
+  font-size: 19px;
+}
+
+.layout > nav li[aria-current="step"]::before {
+  content: "";
+  position: absolute;
+  left: -3px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: #e53935;
+}
+
+.layout > nav li[aria-current="step"] small { color: #e53935; }
+
+.layout > nav li:not([aria-current]):not(:last-child) { color: #555; }
+
+.layout main > p { margin: 0 0 28px; color: #666; }
+
+fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
+
+form aside dl { display: grid; grid-template-columns: 76px 1fr; gap: 8px 12px; margin: 0; }
+dt { color: #777; font-size: 14px; }
+dd { margin: 0; }
+
+.layout form[action*="done"] {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 24px 32px;
+  align-items: start;
+}
+.layout form[action*="done"] > fieldset {
+  grid-column: 1;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+}
+.layout form[action*="done"] legend { padding: 0 8px; font-size: 18px; font-weight: 700; }
+
+fieldset p { margin: 0 0 10px; }
+fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
+
+form aside {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  position: sticky;
+  top: 24px;
+  padding: 24px;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  background: #fff;
+}
+form aside h2 { margin-bottom: 16px; }
+form aside dd strong { color: #e53935; font-size: 26px; }
+form aside .btn-booking { width: 100%; height: 52px; margin-top: 24px; border-radius: 12px; font-size: 17px; font-weight: 700; opacity: .35; }
+form aside > a { display: block; margin-top: 14px; text-align: center; font-size: 14px; color: #777; }
+.show-info { display: flex; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #eee; }
+.show-poster { flex: none; width: 84px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
+.show-text { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-width: 0; font-size: 14px; color: #555; }
+.show-title { display: block; color: #111; font-size: 16px; line-height: 1.4; }
+.show-title .age { margin-right: 6px; vertical-align: -4px; }
+
+main.done { text-align: center; padding: 40px 0; }
+main.done h1::before {
+  content: "✓";
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  background: #e53935;
+  color: #fff;
+  font-size: 40px;
+  line-height: 72px;
+}
+main.done p a {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 10px;
+  background: #e53935;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+main.done p a:hover { background: #c62828; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px 16px 60px; }
+  .layout > nav { position: static; }
+  .layout > nav ol { display: flex; border-left: 0; border-bottom: 3px solid #eee; }
+  .layout > nav li { flex: 1; padding: 10px 6px; font-size: 14px; text-align: center; }
+  .layout > nav li small { display: none; }
+  .layout > nav li[aria-current="step"] { font-size: 15px; }
+  .layout > nav li[aria-current="step"]::before { left: 0; right: 0; top: auto; bottom: -3px; width: auto; height: 3px; }
+  .layout form[action*="done"] { grid-template-columns: minmax(0, 1fr); }
+  aside { grid-column: 1; grid-row: auto; position: static; }
+}
+
+.people { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.people .p-name { width: 150px; font-weight: 600; }
+.people .count { position: relative; display: inline-flex; gap: 6px; }
+.people .count input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+fieldset .people .count label { width: 40px; height: 40px; line-height: 38px; border: 1px solid #ccc; border-radius: 999px; background: #fff; text-align: center; font-weight: 500; cursor: pointer; transition: background .15s, color .15s, transform .08s; }
+fieldset .people .count label:hover { border-color: #e53935; color: #e53935; }
+fieldset .people .count input:checked + label { background: #e53935; border-color: #e53935; color: #fff; font-weight: 700; }
+fieldset .people .count input:focus-visible + label { outline: 2px solid #333; outline-offset: 2px; }
+fieldset .people .count label:active { transform: scale(0.94); }
+
+form { --a: 0; --t: 0; --s: 0; }
+.pp, .st { display: none; }
+.sum-people .pp { margin-bottom: 2px; }
+.st { margin: 0 6px 4px 0; padding: 1px 8px; border-radius: 999px; background: #fdecec; color: #e53935; font-size: 14px; font-weight: 700; }
+.pp-adult::before { counter-set: ca var(--a); content: "일반 " counter(ca) "명"; }
+.pp-teen::before { counter-set: ct var(--t); content: "청소년 " counter(ct) "명"; }
+.pp-senior::before { counter-set: cs var(--s); content: "우대 " counter(cs) "명"; }
+.sum-total::before { counter-set: tot calc(var(--a) * 14 + var(--t) * 11 + var(--s) * 7); content: counter(tot) ",000원"; }
+form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .sum-total::before { content: "0원"; }
+form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .pp-none { display: inline; }
+form:has(#a0:not(:checked)) .pp-adult,
+form:has(#t0:not(:checked)) .pp-teen,
+form:has(#s0:not(:checked)) .pp-senior { display: block; }
+form:not(:has(input[name="seat"]:checked)) .st-none { display: inline; background: none; padding: 0; color: inherit; }
+form:has(#a1:checked) { --a: 1; }
+form:has(#t1:checked) { --t: 1; }
+form:has(#s1:checked) { --s: 1; }
+form:has(#a2:checked) { --a: 2; }
+form:has(#t2:checked) { --t: 2; }
+form:has(#s2:checked) { --s: 2; }
+form:has(#a3:checked) { --a: 3; }
+form:has(#t3:checked) { --t: 3; }
+form:has(#s3:checked) { --s: 3; }
+form:has(#a4:checked) { --a: 4; }
+form:has(#t4:checked) { --t: 4; }
+form:has(#s4:checked) { --s: 4; }
+form:has(#a5:checked) { --a: 5; }
+form:has(#t5:checked) { --t: 5; }
+form:has(#s5:checked) { --s: 5; }
+form:has(#a6:checked) { --a: 6; }
+form:has(#t6:checked) { --t: 6; }
+form:has(#s6:checked) { --s: 6; }
+form:has(#A1:checked) .st-A1 { display: inline-block; }
+form:has(#A2:checked) .st-A2 { display: inline-block; }
+form:has(#A3:checked) .st-A3 { display: inline-block; }
+form:has(#A4:checked) .st-A4 { display: inline-block; }
+form:has(#A5:checked) .st-A5 { display: inline-block; }
+form:has(#A6:checked) .st-A6 { display: inline-block; }
+form:has(#A7:checked) .st-A7 { display: inline-block; }
+form:has(#A8:checked) .st-A8 { display: inline-block; }
+form:has(#B1:checked) .st-B1 { display: inline-block; }
+form:has(#B2:checked) .st-B2 { display: inline-block; }
+form:has(#B3:checked) .st-B3 { display: inline-block; }
+form:has(#B4:checked) .st-B4 { display: inline-block; }
+form:has(#B5:checked) .st-B5 { display: inline-block; }
+form:has(#B6:checked) .st-B6 { display: inline-block; }
+form:has(#B7:checked) .st-B7 { display: inline-block; }
+form:has(#B8:checked) .st-B8 { display: inline-block; }
+form:has(#C1:checked) .st-C1 { display: inline-block; }
+form:has(#C2:checked) .st-C2 { display: inline-block; }
+form:has(#C3:checked) .st-C3 { display: inline-block; }
+form:has(#C4:checked) .st-C4 { display: inline-block; }
+form:has(#C5:checked) .st-C5 { display: inline-block; }
+form:has(#C6:checked) .st-C6 { display: inline-block; }
+form:has(#C7:checked) .st-C7 { display: inline-block; }
+form:has(#C8:checked) .st-C8 { display: inline-block; }
+form:has(#D1:checked) .st-D1 { display: inline-block; }
+form:has(#D2:checked) .st-D2 { display: inline-block; }
+form:has(#D3:checked) .st-D3 { display: inline-block; }
+form:has(#D4:checked) .st-D4 { display: inline-block; }
+form:has(#D5:checked) .st-D5 { display: inline-block; }
+form:has(#D6:checked) .st-D6 { display: inline-block; }
+form:has(#D7:checked) .st-D7 { display: inline-block; }
+form:has(#D8:checked) .st-D8 { display: inline-block; }
+form:has(#E1:checked) .st-E1 { display: inline-block; }
+form:has(#E2:checked) .st-E2 { display: inline-block; }
+form:has(#E3:checked) .st-E3 { display: inline-block; }
+form:has(#E4:checked) .st-E4 { display: inline-block; }
+form:has(#E5:checked) .st-E5 { display: inline-block; }
+form:has(#E6:checked) .st-E6 { display: inline-block; }
+form:has(#E7:checked) .st-E7 { display: inline-block; }
+form:has(#E8:checked) .st-E8 { display: inline-block; }
+form:has(#F1:checked) .st-F1 { display: inline-block; }
+form:has(#F2:checked) .st-F2 { display: inline-block; }
+form:has(#F3:checked) .st-F3 { display: inline-block; }
+form:has(#F4:checked) .st-F4 { display: inline-block; }
+form:has(#F5:checked) .st-F5 { display: inline-block; }
+form:has(#F6:checked) .st-F6 { display: inline-block; }
+form:has(#F7:checked) .st-F7 { display: inline-block; }
+form:has(#F8:checked) .st-F8 { display: inline-block; }
+
+fieldset .people .count label:hover { border-color: #111; color: #111; }
+fieldset .people .count input:checked + label { background: #111; border-color: #111; color: #fff; }
+.st { background: #f3f3f5; color: #111; }
+
+form:has(#t0:checked):has(#s1:checked) label[for="a6"],
+form:has(#t0:checked):has(#s2:checked) label[for="a5"], form:has(#t0:checked):has(#s2:checked) label[for="a6"],
+form:has(#t0:checked):has(#s3:checked) label[for="a4"], form:has(#t0:checked):has(#s3:checked) label[for="a5"], form:has(#t0:checked):has(#s3:checked) label[for="a6"],
+form:has(#t0:checked):has(#s4:checked) label[for="a3"], form:has(#t0:checked):has(#s4:checked) label[for="a4"], form:has(#t0:checked):has(#s4:checked) label[for="a5"], form:has(#t0:checked):has(#s4:checked) label[for="a6"],
+form:has(#t0:checked):has(#s5:checked) label[for="a2"], form:has(#t0:checked):has(#s5:checked) label[for="a3"], form:has(#t0:checked):has(#s5:checked) label[for="a4"], form:has(#t0:checked):has(#s5:checked) label[for="a5"], form:has(#t0:checked):has(#s5:checked) label[for="a6"],
+form:has(#t0:checked):has(#s6:checked) label[for="a1"], form:has(#t0:checked):has(#s6:checked) label[for="a2"], form:has(#t0:checked):has(#s6:checked) label[for="a3"], form:has(#t0:checked):has(#s6:checked) label[for="a4"], form:has(#t0:checked):has(#s6:checked) label[for="a5"], form:has(#t0:checked):has(#s6:checked) label[for="a6"],
+form:has(#t1:checked):has(#s0:checked) label[for="a6"],
+form:has(#t1:checked):has(#s1:checked) label[for="a5"], form:has(#t1:checked):has(#s1:checked) label[for="a6"],
+form:has(#t1:checked):has(#s2:checked) label[for="a4"], form:has(#t1:checked):has(#s2:checked) label[for="a5"], form:has(#t1:checked):has(#s2:checked) label[for="a6"],
+form:has(#t1:checked):has(#s3:checked) label[for="a3"], form:has(#t1:checked):has(#s3:checked) label[for="a4"], form:has(#t1:checked):has(#s3:checked) label[for="a5"], form:has(#t1:checked):has(#s3:checked) label[for="a6"],
+form:has(#t1:checked):has(#s4:checked) label[for="a2"], form:has(#t1:checked):has(#s4:checked) label[for="a3"], form:has(#t1:checked):has(#s4:checked) label[for="a4"], form:has(#t1:checked):has(#s4:checked) label[for="a5"], form:has(#t1:checked):has(#s4:checked) label[for="a6"],
+form:has(#t1:checked):has(#s5:checked) label[for="a1"], form:has(#t1:checked):has(#s5:checked) label[for="a2"], form:has(#t1:checked):has(#s5:checked) label[for="a3"], form:has(#t1:checked):has(#s5:checked) label[for="a4"], form:has(#t1:checked):has(#s5:checked) label[for="a5"], form:has(#t1:checked):has(#s5:checked) label[for="a6"],
+form:has(#t2:checked):has(#s0:checked) label[for="a5"], form:has(#t2:checked):has(#s0:checked) label[for="a6"],
+form:has(#t2:checked):has(#s1:checked) label[for="a4"], form:has(#t2:checked):has(#s1:checked) label[for="a5"], form:has(#t2:checked):has(#s1:checked) label[for="a6"],
+form:has(#t2:checked):has(#s2:checked) label[for="a3"], form:has(#t2:checked):has(#s2:checked) label[for="a4"], form:has(#t2:checked):has(#s2:checked) label[for="a5"], form:has(#t2:checked):has(#s2:checked) label[for="a6"],
+form:has(#t2:checked):has(#s3:checked) label[for="a2"], form:has(#t2:checked):has(#s3:checked) label[for="a3"], form:has(#t2:checked):has(#s3:checked) label[for="a4"], form:has(#t2:checked):has(#s3:checked) label[for="a5"], form:has(#t2:checked):has(#s3:checked) label[for="a6"],
+form:has(#t2:checked):has(#s4:checked) label[for="a1"], form:has(#t2:checked):has(#s4:checked) label[for="a2"], form:has(#t2:checked):has(#s4:checked) label[for="a3"], form:has(#t2:checked):has(#s4:checked) label[for="a4"], form:has(#t2:checked):has(#s4:checked) label[for="a5"], form:has(#t2:checked):has(#s4:checked) label[for="a6"],
+form:has(#t3:checked):has(#s0:checked) label[for="a4"], form:has(#t3:checked):has(#s0:checked) label[for="a5"], form:has(#t3:checked):has(#s0:checked) label[for="a6"],
+form:has(#t3:checked):has(#s1:checked) label[for="a3"], form:has(#t3:checked):has(#s1:checked) label[for="a4"], form:has(#t3:checked):has(#s1:checked) label[for="a5"], form:has(#t3:checked):has(#s1:checked) label[for="a6"],
+form:has(#t3:checked):has(#s2:checked) label[for="a2"], form:has(#t3:checked):has(#s2:checked) label[for="a3"], form:has(#t3:checked):has(#s2:checked) label[for="a4"], form:has(#t3:checked):has(#s2:checked) label[for="a5"], form:has(#t3:checked):has(#s2:checked) label[for="a6"],
+form:has(#t3:checked):has(#s3:checked) label[for="a1"], form:has(#t3:checked):has(#s3:checked) label[for="a2"], form:has(#t3:checked):has(#s3:checked) label[for="a3"], form:has(#t3:checked):has(#s3:checked) label[for="a4"], form:has(#t3:checked):has(#s3:checked) label[for="a5"], form:has(#t3:checked):has(#s3:checked) label[for="a6"],
+form:has(#t4:checked):has(#s0:checked) label[for="a3"], form:has(#t4:checked):has(#s0:checked) label[for="a4"], form:has(#t4:checked):has(#s0:checked) label[for="a5"], form:has(#t4:checked):has(#s0:checked) label[for="a6"],
+form:has(#t4:checked):has(#s1:checked) label[for="a2"], form:has(#t4:checked):has(#s1:checked) label[for="a3"], form:has(#t4:checked):has(#s1:checked) label[for="a4"], form:has(#t4:checked):has(#s1:checked) label[for="a5"], form:has(#t4:checked):has(#s1:checked) label[for="a6"],
+form:has(#t4:checked):has(#s2:checked) label[for="a1"], form:has(#t4:checked):has(#s2:checked) label[for="a2"], form:has(#t4:checked):has(#s2:checked) label[for="a3"], form:has(#t4:checked):has(#s2:checked) label[for="a4"], form:has(#t4:checked):has(#s2:checked) label[for="a5"], form:has(#t4:checked):has(#s2:checked) label[for="a6"],
+form:has(#t5:checked):has(#s0:checked) label[for="a2"], form:has(#t5:checked):has(#s0:checked) label[for="a3"], form:has(#t5:checked):has(#s0:checked) label[for="a4"], form:has(#t5:checked):has(#s0:checked) label[for="a5"], form:has(#t5:checked):has(#s0:checked) label[for="a6"],
+form:has(#t5:checked):has(#s1:checked) label[for="a1"], form:has(#t5:checked):has(#s1:checked) label[for="a2"], form:has(#t5:checked):has(#s1:checked) label[for="a3"], form:has(#t5:checked):has(#s1:checked) label[for="a4"], form:has(#t5:checked):has(#s1:checked) label[for="a5"], form:has(#t5:checked):has(#s1:checked) label[for="a6"],
+form:has(#t6:checked):has(#s0:checked) label[for="a1"], form:has(#t6:checked):has(#s0:checked) label[for="a2"], form:has(#t6:checked):has(#s0:checked) label[for="a3"], form:has(#t6:checked):has(#s0:checked) label[for="a4"], form:has(#t6:checked):has(#s0:checked) label[for="a5"], form:has(#t6:checked):has(#s0:checked) label[for="a6"],
+form:has(#a0:checked):has(#s1:checked) label[for="t6"],
+form:has(#a0:checked):has(#s2:checked) label[for="t5"], form:has(#a0:checked):has(#s2:checked) label[for="t6"],
+form:has(#a0:checked):has(#s3:checked) label[for="t4"], form:has(#a0:checked):has(#s3:checked) label[for="t5"], form:has(#a0:checked):has(#s3:checked) label[for="t6"],
+form:has(#a0:checked):has(#s4:checked) label[for="t3"], form:has(#a0:checked):has(#s4:checked) label[for="t4"], form:has(#a0:checked):has(#s4:checked) label[for="t5"], form:has(#a0:checked):has(#s4:checked) label[for="t6"],
+form:has(#a0:checked):has(#s5:checked) label[for="t2"], form:has(#a0:checked):has(#s5:checked) label[for="t3"], form:has(#a0:checked):has(#s5:checked) label[for="t4"], form:has(#a0:checked):has(#s5:checked) label[for="t5"], form:has(#a0:checked):has(#s5:checked) label[for="t6"],
+form:has(#a0:checked):has(#s6:checked) label[for="t1"], form:has(#a0:checked):has(#s6:checked) label[for="t2"], form:has(#a0:checked):has(#s6:checked) label[for="t3"], form:has(#a0:checked):has(#s6:checked) label[for="t4"], form:has(#a0:checked):has(#s6:checked) label[for="t5"], form:has(#a0:checked):has(#s6:checked) label[for="t6"],
+form:has(#a1:checked):has(#s0:checked) label[for="t6"],
+form:has(#a1:checked):has(#s1:checked) label[for="t5"], form:has(#a1:checked):has(#s1:checked) label[for="t6"],
+form:has(#a1:checked):has(#s2:checked) label[for="t4"], form:has(#a1:checked):has(#s2:checked) label[for="t5"], form:has(#a1:checked):has(#s2:checked) label[for="t6"],
+form:has(#a1:checked):has(#s3:checked) label[for="t3"], form:has(#a1:checked):has(#s3:checked) label[for="t4"], form:has(#a1:checked):has(#s3:checked) label[for="t5"], form:has(#a1:checked):has(#s3:checked) label[for="t6"],
+form:has(#a1:checked):has(#s4:checked) label[for="t2"], form:has(#a1:checked):has(#s4:checked) label[for="t3"], form:has(#a1:checked):has(#s4:checked) label[for="t4"], form:has(#a1:checked):has(#s4:checked) label[for="t5"], form:has(#a1:checked):has(#s4:checked) label[for="t6"],
+form:has(#a1:checked):has(#s5:checked) label[for="t1"], form:has(#a1:checked):has(#s5:checked) label[for="t2"], form:has(#a1:checked):has(#s5:checked) label[for="t3"], form:has(#a1:checked):has(#s5:checked) label[for="t4"], form:has(#a1:checked):has(#s5:checked) label[for="t5"], form:has(#a1:checked):has(#s5:checked) label[for="t6"],
+form:has(#a2:checked):has(#s0:checked) label[for="t5"], form:has(#a2:checked):has(#s0:checked) label[for="t6"],
+form:has(#a2:checked):has(#s1:checked) label[for="t4"], form:has(#a2:checked):has(#s1:checked) label[for="t5"], form:has(#a2:checked):has(#s1:checked) label[for="t6"],
+form:has(#a2:checked):has(#s2:checked) label[for="t3"], form:has(#a2:checked):has(#s2:checked) label[for="t4"], form:has(#a2:checked):has(#s2:checked) label[for="t5"], form:has(#a2:checked):has(#s2:checked) label[for="t6"],
+form:has(#a2:checked):has(#s3:checked) label[for="t2"], form:has(#a2:checked):has(#s3:checked) label[for="t3"], form:has(#a2:checked):has(#s3:checked) label[for="t4"], form:has(#a2:checked):has(#s3:checked) label[for="t5"], form:has(#a2:checked):has(#s3:checked) label[for="t6"],
+form:has(#a2:checked):has(#s4:checked) label[for="t1"], form:has(#a2:checked):has(#s4:checked) label[for="t2"], form:has(#a2:checked):has(#s4:checked) label[for="t3"], form:has(#a2:checked):has(#s4:checked) label[for="t4"], form:has(#a2:checked):has(#s4:checked) label[for="t5"], form:has(#a2:checked):has(#s4:checked) label[for="t6"],
+form:has(#a3:checked):has(#s0:checked) label[for="t4"], form:has(#a3:checked):has(#s0:checked) label[for="t5"], form:has(#a3:checked):has(#s0:checked) label[for="t6"],
+form:has(#a3:checked):has(#s1:checked) label[for="t3"], form:has(#a3:checked):has(#s1:checked) label[for="t4"], form:has(#a3:checked):has(#s1:checked) label[for="t5"], form:has(#a3:checked):has(#s1:checked) label[for="t6"],
+form:has(#a3:checked):has(#s2:checked) label[for="t2"], form:has(#a3:checked):has(#s2:checked) label[for="t3"], form:has(#a3:checked):has(#s2:checked) label[for="t4"], form:has(#a3:checked):has(#s2:checked) label[for="t5"], form:has(#a3:checked):has(#s2:checked) label[for="t6"],
+form:has(#a3:checked):has(#s3:checked) label[for="t1"], form:has(#a3:checked):has(#s3:checked) label[for="t2"], form:has(#a3:checked):has(#s3:checked) label[for="t3"], form:has(#a3:checked):has(#s3:checked) label[for="t4"], form:has(#a3:checked):has(#s3:checked) label[for="t5"], form:has(#a3:checked):has(#s3:checked) label[for="t6"],
+form:has(#a4:checked):has(#s0:checked) label[for="t3"], form:has(#a4:checked):has(#s0:checked) label[for="t4"], form:has(#a4:checked):has(#s0:checked) label[for="t5"], form:has(#a4:checked):has(#s0:checked) label[for="t6"],
+form:has(#a4:checked):has(#s1:checked) label[for="t2"], form:has(#a4:checked):has(#s1:checked) label[for="t3"], form:has(#a4:checked):has(#s1:checked) label[for="t4"], form:has(#a4:checked):has(#s1:checked) label[for="t5"], form:has(#a4:checked):has(#s1:checked) label[for="t6"],
+form:has(#a4:checked):has(#s2:checked) label[for="t1"], form:has(#a4:checked):has(#s2:checked) label[for="t2"], form:has(#a4:checked):has(#s2:checked) label[for="t3"], form:has(#a4:checked):has(#s2:checked) label[for="t4"], form:has(#a4:checked):has(#s2:checked) label[for="t5"], form:has(#a4:checked):has(#s2:checked) label[for="t6"],
+form:has(#a5:checked):has(#s0:checked) label[for="t2"], form:has(#a5:checked):has(#s0:checked) label[for="t3"], form:has(#a5:checked):has(#s0:checked) label[for="t4"], form:has(#a5:checked):has(#s0:checked) label[for="t5"], form:has(#a5:checked):has(#s0:checked) label[for="t6"],
+form:has(#a5:checked):has(#s1:checked) label[for="t1"], form:has(#a5:checked):has(#s1:checked) label[for="t2"], form:has(#a5:checked):has(#s1:checked) label[for="t3"], form:has(#a5:checked):has(#s1:checked) label[for="t4"], form:has(#a5:checked):has(#s1:checked) label[for="t5"], form:has(#a5:checked):has(#s1:checked) label[for="t6"],
+form:has(#a6:checked):has(#s0:checked) label[for="t1"], form:has(#a6:checked):has(#s0:checked) label[for="t2"], form:has(#a6:checked):has(#s0:checked) label[for="t3"], form:has(#a6:checked):has(#s0:checked) label[for="t4"], form:has(#a6:checked):has(#s0:checked) label[for="t5"], form:has(#a6:checked):has(#s0:checked) label[for="t6"],
+form:has(#a0:checked):has(#t1:checked) label[for="s6"],
+form:has(#a0:checked):has(#t2:checked) label[for="s5"], form:has(#a0:checked):has(#t2:checked) label[for="s6"],
+form:has(#a0:checked):has(#t3:checked) label[for="s4"], form:has(#a0:checked):has(#t3:checked) label[for="s5"], form:has(#a0:checked):has(#t3:checked) label[for="s6"],
+form:has(#a0:checked):has(#t4:checked) label[for="s3"], form:has(#a0:checked):has(#t4:checked) label[for="s4"], form:has(#a0:checked):has(#t4:checked) label[for="s5"], form:has(#a0:checked):has(#t4:checked) label[for="s6"],
+form:has(#a0:checked):has(#t5:checked) label[for="s2"], form:has(#a0:checked):has(#t5:checked) label[for="s3"], form:has(#a0:checked):has(#t5:checked) label[for="s4"], form:has(#a0:checked):has(#t5:checked) label[for="s5"], form:has(#a0:checked):has(#t5:checked) label[for="s6"],
+form:has(#a0:checked):has(#t6:checked) label[for="s1"], form:has(#a0:checked):has(#t6:checked) label[for="s2"], form:has(#a0:checked):has(#t6:checked) label[for="s3"], form:has(#a0:checked):has(#t6:checked) label[for="s4"], form:has(#a0:checked):has(#t6:checked) label[for="s5"], form:has(#a0:checked):has(#t6:checked) label[for="s6"],
+form:has(#a1:checked):has(#t0:checked) label[for="s6"],
+form:has(#a1:checked):has(#t1:checked) label[for="s5"], form:has(#a1:checked):has(#t1:checked) label[for="s6"],
+form:has(#a1:checked):has(#t2:checked) label[for="s4"], form:has(#a1:checked):has(#t2:checked) label[for="s5"], form:has(#a1:checked):has(#t2:checked) label[for="s6"],
+form:has(#a1:checked):has(#t3:checked) label[for="s3"], form:has(#a1:checked):has(#t3:checked) label[for="s4"], form:has(#a1:checked):has(#t3:checked) label[for="s5"], form:has(#a1:checked):has(#t3:checked) label[for="s6"],
+form:has(#a1:checked):has(#t4:checked) label[for="s2"], form:has(#a1:checked):has(#t4:checked) label[for="s3"], form:has(#a1:checked):has(#t4:checked) label[for="s4"], form:has(#a1:checked):has(#t4:checked) label[for="s5"], form:has(#a1:checked):has(#t4:checked) label[for="s6"],
+form:has(#a1:checked):has(#t5:checked) label[for="s1"], form:has(#a1:checked):has(#t5:checked) label[for="s2"], form:has(#a1:checked):has(#t5:checked) label[for="s3"], form:has(#a1:checked):has(#t5:checked) label[for="s4"], form:has(#a1:checked):has(#t5:checked) label[for="s5"], form:has(#a1:checked):has(#t5:checked) label[for="s6"],
+form:has(#a2:checked):has(#t0:checked) label[for="s5"], form:has(#a2:checked):has(#t0:checked) label[for="s6"],
+form:has(#a2:checked):has(#t1:checked) label[for="s4"], form:has(#a2:checked):has(#t1:checked) label[for="s5"], form:has(#a2:checked):has(#t1:checked) label[for="s6"],
+form:has(#a2:checked):has(#t2:checked) label[for="s3"], form:has(#a2:checked):has(#t2:checked) label[for="s4"], form:has(#a2:checked):has(#t2:checked) label[for="s5"], form:has(#a2:checked):has(#t2:checked) label[for="s6"],
+form:has(#a2:checked):has(#t3:checked) label[for="s2"], form:has(#a2:checked):has(#t3:checked) label[for="s3"], form:has(#a2:checked):has(#t3:checked) label[for="s4"], form:has(#a2:checked):has(#t3:checked) label[for="s5"], form:has(#a2:checked):has(#t3:checked) label[for="s6"],
+form:has(#a2:checked):has(#t4:checked) label[for="s1"], form:has(#a2:checked):has(#t4:checked) label[for="s2"], form:has(#a2:checked):has(#t4:checked) label[for="s3"], form:has(#a2:checked):has(#t4:checked) label[for="s4"], form:has(#a2:checked):has(#t4:checked) label[for="s5"], form:has(#a2:checked):has(#t4:checked) label[for="s6"],
+form:has(#a3:checked):has(#t0:checked) label[for="s4"], form:has(#a3:checked):has(#t0:checked) label[for="s5"], form:has(#a3:checked):has(#t0:checked) label[for="s6"],
+form:has(#a3:checked):has(#t1:checked) label[for="s3"], form:has(#a3:checked):has(#t1:checked) label[for="s4"], form:has(#a3:checked):has(#t1:checked) label[for="s5"], form:has(#a3:checked):has(#t1:checked) label[for="s6"],
+form:has(#a3:checked):has(#t2:checked) label[for="s2"], form:has(#a3:checked):has(#t2:checked) label[for="s3"], form:has(#a3:checked):has(#t2:checked) label[for="s4"], form:has(#a3:checked):has(#t2:checked) label[for="s5"], form:has(#a3:checked):has(#t2:checked) label[for="s6"],
+form:has(#a3:checked):has(#t3:checked) label[for="s1"], form:has(#a3:checked):has(#t3:checked) label[for="s2"], form:has(#a3:checked):has(#t3:checked) label[for="s3"], form:has(#a3:checked):has(#t3:checked) label[for="s4"], form:has(#a3:checked):has(#t3:checked) label[for="s5"], form:has(#a3:checked):has(#t3:checked) label[for="s6"],
+form:has(#a4:checked):has(#t0:checked) label[for="s3"], form:has(#a4:checked):has(#t0:checked) label[for="s4"], form:has(#a4:checked):has(#t0:checked) label[for="s5"], form:has(#a4:checked):has(#t0:checked) label[for="s6"],
+form:has(#a4:checked):has(#t1:checked) label[for="s2"], form:has(#a4:checked):has(#t1:checked) label[for="s3"], form:has(#a4:checked):has(#t1:checked) label[for="s4"], form:has(#a4:checked):has(#t1:checked) label[for="s5"], form:has(#a4:checked):has(#t1:checked) label[for="s6"],
+form:has(#a4:checked):has(#t2:checked) label[for="s1"], form:has(#a4:checked):has(#t2:checked) label[for="s2"], form:has(#a4:checked):has(#t2:checked) label[for="s3"], form:has(#a4:checked):has(#t2:checked) label[for="s4"], form:has(#a4:checked):has(#t2:checked) label[for="s5"], form:has(#a4:checked):has(#t2:checked) label[for="s6"],
+form:has(#a5:checked):has(#t0:checked) label[for="s2"], form:has(#a5:checked):has(#t0:checked) label[for="s3"], form:has(#a5:checked):has(#t0:checked) label[for="s4"], form:has(#a5:checked):has(#t0:checked) label[for="s5"], form:has(#a5:checked):has(#t0:checked) label[for="s6"],
+form:has(#a5:checked):has(#t1:checked) label[for="s1"], form:has(#a5:checked):has(#t1:checked) label[for="s2"], form:has(#a5:checked):has(#t1:checked) label[for="s3"], form:has(#a5:checked):has(#t1:checked) label[for="s4"], form:has(#a5:checked):has(#t1:checked) label[for="s5"], form:has(#a5:checked):has(#t1:checked) label[for="s6"],
+form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):has(#t0:checked) label[for="s2"], form:has(#a6:checked):has(#t0:checked) label[for="s3"], form:has(#a6:checked):has(#t0:checked) label[for="s4"], form:has(#a6:checked):has(#t0:checked) label[for="s5"], form:has(#a6:checked):has(#t0:checked) label[for="s6"] { color: #ccc; background: #f5f5f5; border-color: #e5e5e5; cursor: not-allowed; pointer-events: none; }
+
+.people .p-name { width: 210px; }
+
+.seat-cap { margin: 0 0 10px; text-align: center; font-size: 13px; color: #777; }
+.seat-grid { position: relative; display: grid; grid-template-columns: 28px repeat(4, 38px) 22px repeat(4, 38px); gap: 6px; justify-content: center; }
+.seat-grid .row-name { text-align: center; font-size: 16px; font-weight: 700; line-height: 38px; }
+.seat-grid input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.seat-grid label { position: relative; display: block; width: 38px; height: 38px; line-height: 36px; border: 1px solid #999; border-radius: 6px 6px 3px 3px; background: #fff; text-align: center; font-size: 13px; cursor: pointer; transition: opacity .15s; }
+.seat-grid label:hover { border-color: #e53935; }
+.seat-grid input:checked + label { border-color: #e53935; background: #e53935; color: #fff; font-weight: 700; }
+.seat-grid input:focus-visible + label { outline: 2px solid #333; outline-offset: 2px; }
+.seat-grid input:disabled + label { border-color: #ddd; background: #e5e5e5; color: #aaa; cursor: not-allowed; }
+.seat-grid input:disabled + label::after { content: "×"; position: absolute; inset: 0; color: #888; font-size: 22px; line-height: 36px; }
+.seat-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin: 18px 0 8px; padding: 0; list-style: none; font-size: 14px; }
+.seat-legend li { display: flex; align-items: center; gap: 6px; }
+.seat-legend li::before { content: ""; width: 16px; height: 16px; border: 1px solid #999; border-radius: 4px 4px 2px 2px; background: #fff; }
+.seat-legend .lg-pick::before { border-color: #e53935; background: #e53935; }
+.seat-legend .lg-taken::before { border-color: #ddd; background: #e5e5e5; }
+.seat-grid ~ p { margin: 0; text-align: center; }
+
+.need { display: none; margin: 14px 0 0; color: #e53935; font-size: 13px; text-align: left; }
+.need + .need { margin-top: 4px; }
+.need-seat::before { counter-set: cn calc(var(--a) + var(--t) + var(--s)); content: "인원 수(" counter(cn) "명)와 같은 수의 좌석을 선택해 주세요."; }
+form aside .need ~ .btn-booking { margin-top: 16px; }
+.layout form aside .btn-booking { cursor: not-allowed; pointer-events: none; }
+form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .need-people { display: block; }
+form:not(:has(#a0:checked):has(#t0:checked):has(#s0:checked)) .need-seat { display: block; }
+form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-grid label { pointer-events: none; opacity: .45; }
+form:has(#a0:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t0:checked):has(#s6:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t1:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t2:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t3:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t4:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t5:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a0:checked):has(#t6:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a1:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a2:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a3:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a4:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a5:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a5:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a5:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label,
+form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked) .seat-grid input:not(:checked) + label { pointer-events: none; opacity: .45; }
+form:has(#a0:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t0:checked):has(#s6:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t1:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t2:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t3:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t4:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t5:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a0:checked):has(#t6:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a1:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a2:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a3:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a4:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a5:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a5:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a5:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat,
+form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) .need-seat { display: none; }
+form:has(#a0:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t0:checked):has(#s6:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t1:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t2:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t3:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t4:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t5:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a0:checked):has(#t6:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked):not(:has(.seat-grid > input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t0:checked):has(#s5:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t1:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t2:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t3:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t4:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a1:checked):has(#t5:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t0:checked):has(#s4:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t1:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t2:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t3:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a2:checked):has(#t4:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t0:checked):has(#s3:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t1:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t2:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a3:checked):has(#t3:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t0:checked):has(#s2:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t1:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a4:checked):has(#t2:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a5:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a5:checked):has(#t0:checked):has(#s1:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a5:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside button[type="submit"],
+form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside .btn-booking { opacity: 1; cursor: pointer; pointer-events: auto; }
+
+.screen-label { margin: 0 0 14px; }
+.screen-label strong { display: block; padding: 12px; border-radius: 60px 60px 0 0; background: #ccc; color: #333; text-align: center; font-size: 14px; }
+
+.seat-hint { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #f3f3f5; color: #555; font-size: 14px; text-align: center; }
+form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
+
+.site-header { margin-bottom: 52px; }
