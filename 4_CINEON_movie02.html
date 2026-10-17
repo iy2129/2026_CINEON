@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)">
+    <meta name="team" content="4조">
 
     <title>타짜: 벨제붑의 노래 | CINE:ON</title>
 
@@ -32,7 +33,7 @@
                         <li><a href="#" title="전체영화">전체영화</a></li>
                     </ul>
                     </li>
-                    <li><a href="#" title="예매">예매</a>
+                    <li><a href="4_CINEON_timetable.html" title="예매">예매</a>
                     <ul class="submenu">
                         <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
                     </ul>
@@ -80,37 +81,20 @@
 
     <!-- ==================== 메인 ==================== -->
     <main>
-
-        <!-- ① 영화 기본 소개 -->
-        <section class="movie-hero">
-
-            <div class="container">
-
-
-                <div class="movie-summary">
-
+        <div class="movie-layout">
+            <div class="movie-content">
+                <section class="movie-poster-section" aria-label="영화 포스터">
                     <figure class="movie-poster">
                         <img
                             src="images/poster-tazza.jpg"
-                            alt="타짜: 벨제붑의 노래 영화 포스터"
+                            alt="타짜: 벨제붑의 노래 포스터. 검은 배경의 붉은 제목 아래, 두 남자가 카드와 칩이 놓인 도박 테이블을 사이에 두고 마주 앉아 있다."
+                            title="타짜: 벨제붑의 노래 포스터"
                         >
                     </figure>
-
-
-                    <div class="movie-info">
-
-                        <span class="movie-grade movie-grade-adult">19</span>
-
-                        <h2>타짜: 벨제붑의 노래</h2>
-
-                        <p class="movie-meta">
-                            <span><strong>2026.09.23</strong> 개봉</span>
-                            <span><span class="meta-clock" aria-hidden="true"></span><strong>129</strong>분</span>
-                            <span class="meta-grade meta-grade-adult">청소년관람불가</span>
-                            <span><strong>178.3</strong>만명</span>
-                        </p>
-
-                        <p class="movie-description" tabindex="0" role="region" aria-label="영화 소개 줄거리">
+                </section>
+                <section class="movie-story-section" aria-labelledby="story-title">
+                    <h2 class="section-heading" id="story-title">줄거리</h2>
+                    <p class="movie-description">
 <strong>중세 유럽, 종교인들은 카드가 악마의 도구라고 생각했다.</strong><br>
 <strong>특히 죽음을 뜻하는 스페이드 13장엔 모두 악마의 이름이 들어 있다.</strong><br>
 <strong>지옥으로 떨어진 추락한 천사 '루시퍼'와 지옥의 기존 지배자 '벨제붑'.</strong><br>
@@ -135,119 +119,45 @@
 <strong>원작 팬들이 가장 극찬한 &lt;타짜&gt; 시리즈의 피날레</strong><br>
 <strong>추석은 타짜!</strong>
                         </p>
-
-                        <a href="schedule.html" class="btn-booking">
-                            예매하기
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ② 평점 / 예매율 / 누적 관객 -->
-        <section class="movie-stats-section">
-
-            <div class="container">
-
-                <div class="movie-stats">
-
-                    <div class="stat-item">
-                        <span class="stat-label">실관람 평점</span>
-                        <strong class="stat-value">8.4</strong>
-                    </div>
-
-                    <div class="stat-item">
-                        <span class="stat-label">예매율</span>
-                        <strong class="stat-value">5.3% <small>(8위)</small></strong>
-                    </div>
-
-                    <div class="stat-item">
-                        <span class="stat-label">누적관객수</span>
-                        <strong class="stat-value">1,783,337명</strong>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ③ 영화 정보 -->
-        <section class="movie-detail-section">
-
-            <div class="container">
-
-                <h2 class="section-heading">영화정보</h2>
-
-                <div class="movie-detail-box">
-
-                    <p>
-                        <strong>장르</strong>
-                        범죄 / 드라마 / 한국
-                    </p>
-
-                    <p>
-                        <strong>감독</strong>
-                        <a href="#" class="person-name">최국희</a>
-                    </p>
-
-                    <p>
-                        <strong>출연</strong>
-                        <a href="#" class="person-name">변요한</a>, <a href="#" class="person-name">노재원</a>, <a href="#" class="person-name">미요시 아야카</a>, <a href="#" class="person-name">조우진</a>, <a href="#" class="person-name">윤경호</a>, <a href="#" class="person-name">문지후</a>, <a href="#" class="person-name">이하라 초우시</a>
-                    </p>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ④ 영화 관련 이벤트 -->
-        <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
+                </section>
+                <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
             <div class="container">
                 <h2 class="section-heading" id="movie-events-title">이벤트</h2>
                 <div class="event-list">
                     <div class="event-entry">
-                        <div class="event-card">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
                             <div class="event-image"><img src="images/movie02_02.jpg" alt="" loading="lazy"></div>
                             <div class="event-info">
                                 <span class="event-category">관람 특전</span>
                                 <h3 class="event-title">승부의 순간을 담은 한정 포스터</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-14">26.10.14(수)</time> ~ <time datetime="2026-10-27">26.10.27(화)</time></p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="event-entry">
-                        <div class="event-card">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
                             <div class="event-image"><img src="images/movie02_03.jpg" alt="" loading="lazy"></div>
                             <div class="event-info">
                                 <span class="event-category">특별 상영</span>
                                 <h3 class="event-title">영화가 끝난 뒤, 더 깊어지는 이야기</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-17">26.10.17(토)</time> ~ <time datetime="2026-10-25">26.10.25(일)</time></p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                     <div class="event-entry">
-                        <div class="event-card">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
                             <div class="event-image"><img src="images/movie02_04.jpg" alt="" loading="lazy"></div>
                             <div class="event-info">
                                 <span class="event-category">소장 굿즈</span>
                                 <h3 class="event-title">당신의 한 수, 컬렉션 티켓</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-21">26.10.21(수)</time> ~ <time datetime="2026-11-03">26.11.03(화)</time></p>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-
-        <!-- ⑤ 트레일러 -->
-        <section class="trailer-section">
+                <section class="trailer-section">
 
             <div class="container">
 
@@ -301,106 +211,118 @@
             </div>
 
         </section>
-
-
-        <!-- ⑥ 스틸컷: 기존 사진을 재사용하여 56 장 표시 -->
-        <section id="stillcuts" class="stillcut-section stillcut-tazza">
+                <section id="stillcuts" class="stillcut-section stillcut-tazza">
             <div class="container">
-                <h2 class="section-heading">스틸컷 <span class="stillcut-count">(56)</span></h2>
-                <div class="stillcut-gallery">
-                    <div class="stillcut-grid">
-                        <a class="stillcut-link" href="#view-movie02-shot-01" aria-label="스틸컷 1 / 56 크게 보기"><img class="stillcut-poster" src="images/poster-tazza.jpg" alt="타짜 영화 포스터"></a>
-                        <a class="stillcut-link" href="#view-movie02-shot-02" aria-label="스틸컷 2 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 영화 장면 1"></a>
-                        <a class="stillcut-link" href="#view-movie02-shot-03" aria-label="스틸컷 3 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 영화 장면 2"></a>
-                    </div>
-                    <details class="stillcut-more">
-                        <summary><span class="more-label">더보기 ∨</span><span class="less-label">접기 ∧</span></summary>
-                        <div class="stillcut-grid stillcut-extra">
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie02-shot-04" aria-label="스틸컷 4 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 4" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-07" aria-label="스틸컷 7 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 7" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-10" aria-label="스틸컷 10 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 9" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-13" aria-label="스틸컷 13 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 11" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-16" aria-label="스틸컷 16 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 16" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-19" aria-label="스틸컷 19 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 18" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-22" aria-label="스틸컷 22 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 20" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-25" aria-label="스틸컷 25 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 25" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-28" aria-label="스틸컷 28 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 27" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-31" aria-label="스틸컷 31 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 29" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-34" aria-label="스틸컷 34 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 34" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-37" aria-label="스틸컷 37 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 36" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-40" aria-label="스틸컷 40 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 38" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-43" aria-label="스틸컷 43 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 43" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-46" aria-label="스틸컷 46 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 45" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-49" aria-label="스틸컷 49 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 47" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-52" aria-label="스틸컷 52 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 52" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-55" aria-label="스틸컷 55 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 54" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-56" aria-label="스틸컷 56 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 56" loading="lazy"></a>
-                        </div>
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie02-shot-05" aria-label="스틸컷 5 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 5" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-08" aria-label="스틸컷 8 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 10" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-11" aria-label="스틸컷 11 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 12" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-14" aria-label="스틸컷 14 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 14" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-17" aria-label="스틸컷 17 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 19" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-20" aria-label="스틸컷 20 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 21" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-23" aria-label="스틸컷 23 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 23" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-26" aria-label="스틸컷 26 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 28" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-29" aria-label="스틸컷 29 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 30" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-32" aria-label="스틸컷 32 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 32" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-35" aria-label="스틸컷 35 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 37" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-38" aria-label="스틸컷 38 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 39" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-41" aria-label="스틸컷 41 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 41" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-44" aria-label="스틸컷 44 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 46" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-47" aria-label="스틸컷 47 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 48" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-50" aria-label="스틸컷 50 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 50" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-53" aria-label="스틸컷 53 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 55" loading="lazy"></a>
-                        </div>
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie02-shot-06" aria-label="스틸컷 6 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 6" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-09" aria-label="스틸컷 9 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 8" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-12" aria-label="스틸컷 12 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 13" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-15" aria-label="스틸컷 15 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 15" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-18" aria-label="스틸컷 18 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 17" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-21" aria-label="스틸컷 21 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 22" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-24" aria-label="스틸컷 24 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 24" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-27" aria-label="스틸컷 27 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 26" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-30" aria-label="스틸컷 30 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 31" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-33" aria-label="스틸컷 33 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 33" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-36" aria-label="스틸컷 36 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 35" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-39" aria-label="스틸컷 39 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 40" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-42" aria-label="스틸컷 42 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 42" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-45" aria-label="스틸컷 45 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 44" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-48" aria-label="스틸컷 48 / 56 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 49" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-51" aria-label="스틸컷 51 / 56 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 51" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie02-shot-54" aria-label="스틸컷 54 / 56 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 53" loading="lazy"></a>
-                        </div>
-                    </div>
-                    </details>
+                <h2 class="section-heading">스틸컷 <span class="stillcut-count">(20)</span></h2>
+                <div class="stillcut-gallery stillcut-continuous">
+<div class="stillcut-grid">
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie02-shot-01" aria-label="스틸컷 1 / 20 크게 보기"><img class="stillcut-poster" src="images/poster-tazza.jpg" alt="타짜 영화 포스터"></a>
+<a class="stillcut-link" href="#view-movie02-shot-06" aria-label="스틸컷 6 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 6" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-09" aria-label="스틸컷 9 / 20 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 8" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-12" aria-label="스틸컷 12 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 13" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-15" aria-label="스틸컷 15 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 15" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-18" aria-label="스틸컷 18 / 20 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 17" loading="lazy"></a>
+</div>
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie02-shot-02" aria-label="스틸컷 2 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 영화 장면 1"></a>
+<a class="stillcut-link" href="#view-movie02-shot-04" aria-label="스틸컷 4 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 4" loading="lazy"></a>
+<a class="stillcut-link" href="#view-movie02-shot-07" aria-label="스틸컷 7 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 7" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-10" aria-label="스틸컷 10 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 9" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-13" aria-label="스틸컷 13 / 20 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 11" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-16" aria-label="스틸컷 16 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 16" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-19" aria-label="스틸컷 19 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 18" loading="lazy"></a>
+</div>
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie02-shot-03" aria-label="스틸컷 3 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 영화 장면 2"></a>
+<a class="stillcut-link" href="#view-movie02-shot-05" aria-label="스틸컷 5 / 20 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 5" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-08" aria-label="스틸컷 8 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 10" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-11" aria-label="스틸컷 11 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 12" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-14" aria-label="스틸컷 14 / 20 크게 보기"><img src="images/movie02_04.jpg" alt="타짜 스틸컷 14" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-17" aria-label="스틸컷 17 / 20 크게 보기"><img src="images/movie02_03.jpg" alt="타짜 스틸컷 19" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie02-shot-20" aria-label="스틸컷 20 / 20 크게 보기"><img src="images/movie02_02.jpg" alt="타짜 스틸컷 21" loading="lazy"></a>
+</div>
+</div>
+<details class="stillcut-more">
+<summary><span class="more-label">더보기 ∨</span><span class="less-label">접기 ∧</span></summary>
+</details>
                 </div>
             </div>
         </section>
-
-
-        <!-- ⑦ 하단 예매 -->
-        <section class="booking-section">
+            </div>
+            <aside class="movie-sidebar" aria-label="영화 정보 및 예매">
+                <div class="sidebar-heading">
+                    
+                    <div class="sidebar-heading-copy"><img class="movie-grade" src="images/icon_19.svg" alt="청소년관람불가"><h1 class="sidebar-title">타짜: 벨제붑의 노래</h1></div>
+                </div>
+                <p class="movie-meta">
+                            <span><strong>2026.09.23</strong> 개봉</span>
+                            <span><span class="meta-clock" aria-hidden="true"></span><strong>129</strong>분</span>
+                            <span class="meta-grade meta-grade-adult">청소년관람불가</span>
+                            <span><strong>178.3</strong>만명</span>
+                        </p>
+                <section class="movie-detail-section">
 
             <div class="container">
 
-                <h2>지금 CINEON에서 만나보세요</h2>
+                <h2 class="section-heading">영화정보</h2>
 
-                <p>
-                    상영 시간과 좌석을 확인하고 영화를 예매해보세요.
-                </p>
+                <div class="movie-detail-box">
 
-                <a href="schedule.html" class="btn-booking">
-                    예매하기
-                </a>
+                    <p>
+                        <strong>장르</strong>
+                        범죄 / 드라마 / 한국
+                    </p>
+
+                    <p>
+                        <strong>감독</strong>
+                        <a href="#" class="person-name">최국희</a>
+                    </p>
+
+                    <p>
+                        <strong>출연</strong>
+                        <a href="#" class="person-name">변요한</a>, <a href="#" class="person-name">노재원</a>, <a href="#" class="person-name">미요시 아야카</a>, <a href="#" class="person-name">조우진</a>, <a href="#" class="person-name">윤경호</a>, <a href="#" class="person-name">문지후</a>, <a href="#" class="person-name">이하라 초우시</a>
+                    </p>
+
+                </div>
 
             </div>
 
         </section>
+                <section class="movie-stats-section">
 
+            <div class="container">
+
+                <div class="movie-stats">
+
+                    <div class="stat-item">
+                        <span class="stat-label">실관람 평점</span>
+                        <strong class="stat-value">8.4</strong>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-label">예매율</span>
+                        <strong class="stat-value">5.3% <small>(8위)</small></strong>
+                    </div>
+
+                    <div class="stat-item">
+                        <span class="stat-label audience-label">누적관객수
+                            <span class="audience-help">
+                                <button type="button" class="audience-help-button" aria-label="누적관객수 안내" aria-describedby="audience-tooltip">?</button>
+                                <span class="audience-tooltip" id="audience-tooltip" role="tooltip">누적관객 및 전일관객은 영화진흥 위원회<br>영화관 입장권 통합전산망제공 기준입니다.</span>
+                            </span>
+                        </span>
+                        <strong class="stat-value">1,783,337명</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+                <a href="4_CINEON_timetable.html" class="btn-booking sidebar-booking" aria-label="타짜 예매를 위한 상영시간표로 이동">예매하기 →</a>
+            </aside>
+        </div>
     </main>
 
 
@@ -420,566 +342,242 @@
 
 
 
-    <div class="stillcut-lightbox" id="view-movie02-shot-01" role="dialog" aria-modal="true" aria-label="스틸컷 1 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-01" role="dialog" aria-modal="true" aria-label="스틸컷 1 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_01.jpg" alt="타짜 영화 포스터">
-            <a class="lightbox-prev" href="#view-movie02-shot-56" aria-label="이전 사진">❮</a>
+            <img src="images/poster-tazza.jpg" alt="타짜 영화 포스터">
+            <a class="lightbox-prev" href="#view-movie02-shot-20" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-02" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">1 / 56</span>
+            <span class="lightbox-counter">1 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-02" role="dialog" aria-modal="true" aria-label="스틸컷 2 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-02" role="dialog" aria-modal="true" aria-label="스틸컷 2 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 영화 장면 1">
             <a class="lightbox-prev" href="#view-movie02-shot-01" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-03" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">2 / 56</span>
+            <span class="lightbox-counter">2 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-03" role="dialog" aria-modal="true" aria-label="스틸컷 3 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-03" role="dialog" aria-modal="true" aria-label="스틸컷 3 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 영화 장면 2">
             <a class="lightbox-prev" href="#view-movie02-shot-02" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-04" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">3 / 56</span>
+            <span class="lightbox-counter">3 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-04" role="dialog" aria-modal="true" aria-label="스틸컷 4 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-04" role="dialog" aria-modal="true" aria-label="스틸컷 4 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 4">
             <a class="lightbox-prev" href="#view-movie02-shot-03" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-05" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">4 / 56</span>
+            <span class="lightbox-counter">4 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-05" role="dialog" aria-modal="true" aria-label="스틸컷 5 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-05" role="dialog" aria-modal="true" aria-label="스틸컷 5 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_04.jpg" alt="타짜 스틸컷 5">
             <a class="lightbox-prev" href="#view-movie02-shot-04" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-06" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">5 / 56</span>
+            <span class="lightbox-counter">5 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-06" role="dialog" aria-modal="true" aria-label="스틸컷 6 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-06" role="dialog" aria-modal="true" aria-label="스틸컷 6 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 6">
             <a class="lightbox-prev" href="#view-movie02-shot-05" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-07" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">6 / 56</span>
+            <span class="lightbox-counter">6 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-07" role="dialog" aria-modal="true" aria-label="스틸컷 7 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-07" role="dialog" aria-modal="true" aria-label="스틸컷 7 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 스틸컷 7">
             <a class="lightbox-prev" href="#view-movie02-shot-06" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-08" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">7 / 56</span>
+            <span class="lightbox-counter">7 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-08" role="dialog" aria-modal="true" aria-label="스틸컷 8 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-08" role="dialog" aria-modal="true" aria-label="스틸컷 8 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 스틸컷 10">
             <a class="lightbox-prev" href="#view-movie02-shot-07" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-09" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">8 / 56</span>
+            <span class="lightbox-counter">8 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-09" role="dialog" aria-modal="true" aria-label="스틸컷 9 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-09" role="dialog" aria-modal="true" aria-label="스틸컷 9 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_04.jpg" alt="타짜 스틸컷 8">
             <a class="lightbox-prev" href="#view-movie02-shot-08" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-10" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">9 / 56</span>
+            <span class="lightbox-counter">9 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-10" role="dialog" aria-modal="true" aria-label="스틸컷 10 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-10" role="dialog" aria-modal="true" aria-label="스틸컷 10 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 9">
             <a class="lightbox-prev" href="#view-movie02-shot-09" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-11" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">10 / 56</span>
+            <span class="lightbox-counter">10 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-11" role="dialog" aria-modal="true" aria-label="스틸컷 11 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-11" role="dialog" aria-modal="true" aria-label="스틸컷 11 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 12">
             <a class="lightbox-prev" href="#view-movie02-shot-10" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-12" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">11 / 56</span>
+            <span class="lightbox-counter">11 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-12" role="dialog" aria-modal="true" aria-label="스틸컷 12 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-12" role="dialog" aria-modal="true" aria-label="스틸컷 12 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 스틸컷 13">
             <a class="lightbox-prev" href="#view-movie02-shot-11" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-13" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">12 / 56</span>
+            <span class="lightbox-counter">12 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-13" role="dialog" aria-modal="true" aria-label="스틸컷 13 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-13" role="dialog" aria-modal="true" aria-label="스틸컷 13 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_04.jpg" alt="타짜 스틸컷 11">
             <a class="lightbox-prev" href="#view-movie02-shot-12" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-14" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">13 / 56</span>
+            <span class="lightbox-counter">13 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-14" role="dialog" aria-modal="true" aria-label="스틸컷 14 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-14" role="dialog" aria-modal="true" aria-label="스틸컷 14 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_04.jpg" alt="타짜 스틸컷 14">
             <a class="lightbox-prev" href="#view-movie02-shot-13" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-15" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">14 / 56</span>
+            <span class="lightbox-counter">14 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-15" role="dialog" aria-modal="true" aria-label="스틸컷 15 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-15" role="dialog" aria-modal="true" aria-label="스틸컷 15 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 15">
             <a class="lightbox-prev" href="#view-movie02-shot-14" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-16" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">15 / 56</span>
+            <span class="lightbox-counter">15 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-16" role="dialog" aria-modal="true" aria-label="스틸컷 16 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-16" role="dialog" aria-modal="true" aria-label="스틸컷 16 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 스틸컷 16">
             <a class="lightbox-prev" href="#view-movie02-shot-15" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-17" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">16 / 56</span>
+            <span class="lightbox-counter">16 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-17" role="dialog" aria-modal="true" aria-label="스틸컷 17 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-17" role="dialog" aria-modal="true" aria-label="스틸컷 17 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_03.jpg" alt="타짜 스틸컷 19">
             <a class="lightbox-prev" href="#view-movie02-shot-16" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-18" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">17 / 56</span>
+            <span class="lightbox-counter">17 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-18" role="dialog" aria-modal="true" aria-label="스틸컷 18 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-18" role="dialog" aria-modal="true" aria-label="스틸컷 18 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_04.jpg" alt="타짜 스틸컷 17">
             <a class="lightbox-prev" href="#view-movie02-shot-17" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-19" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">18 / 56</span>
+            <span class="lightbox-counter">18 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-19" role="dialog" aria-modal="true" aria-label="스틸컷 19 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-19" role="dialog" aria-modal="true" aria-label="스틸컷 19 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 18">
             <a class="lightbox-prev" href="#view-movie02-shot-18" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-20" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">19 / 56</span>
+            <span class="lightbox-counter">19 / 20</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-20" role="dialog" aria-modal="true" aria-label="스틸컷 20 / 56">
+    <div class="stillcut-lightbox" id="view-movie02-shot-20" role="dialog" aria-modal="true" aria-label="스틸컷 20 / 20">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie02_02.jpg" alt="타짜 스틸컷 21">
             <a class="lightbox-prev" href="#view-movie02-shot-19" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-21" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">20 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-21" role="dialog" aria-modal="true" aria-label="스틸컷 21 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 22">
-            <a class="lightbox-prev" href="#view-movie02-shot-20" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-22" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">21 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-22" role="dialog" aria-modal="true" aria-label="스틸컷 22 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 20">
-            <a class="lightbox-prev" href="#view-movie02-shot-21" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-23" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">22 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-23" role="dialog" aria-modal="true" aria-label="스틸컷 23 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 23">
-            <a class="lightbox-prev" href="#view-movie02-shot-22" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-24" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">23 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-24" role="dialog" aria-modal="true" aria-label="스틸컷 24 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 24">
-            <a class="lightbox-prev" href="#view-movie02-shot-23" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-25" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">24 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-25" role="dialog" aria-modal="true" aria-label="스틸컷 25 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 25">
-            <a class="lightbox-prev" href="#view-movie02-shot-24" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-26" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">25 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-26" role="dialog" aria-modal="true" aria-label="스틸컷 26 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 28">
-            <a class="lightbox-prev" href="#view-movie02-shot-25" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-27" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">26 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-27" role="dialog" aria-modal="true" aria-label="스틸컷 27 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 26">
-            <a class="lightbox-prev" href="#view-movie02-shot-26" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-28" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">27 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-28" role="dialog" aria-modal="true" aria-label="스틸컷 28 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 27">
-            <a class="lightbox-prev" href="#view-movie02-shot-27" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-29" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">28 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-29" role="dialog" aria-modal="true" aria-label="스틸컷 29 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 30">
-            <a class="lightbox-prev" href="#view-movie02-shot-28" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-30" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">29 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-30" role="dialog" aria-modal="true" aria-label="스틸컷 30 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 31">
-            <a class="lightbox-prev" href="#view-movie02-shot-29" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-31" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">30 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-31" role="dialog" aria-modal="true" aria-label="스틸컷 31 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 29">
-            <a class="lightbox-prev" href="#view-movie02-shot-30" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-32" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">31 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-32" role="dialog" aria-modal="true" aria-label="스틸컷 32 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 32">
-            <a class="lightbox-prev" href="#view-movie02-shot-31" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-33" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">32 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-33" role="dialog" aria-modal="true" aria-label="스틸컷 33 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 33">
-            <a class="lightbox-prev" href="#view-movie02-shot-32" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-34" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">33 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-34" role="dialog" aria-modal="true" aria-label="스틸컷 34 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 34">
-            <a class="lightbox-prev" href="#view-movie02-shot-33" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-35" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">34 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-35" role="dialog" aria-modal="true" aria-label="스틸컷 35 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 37">
-            <a class="lightbox-prev" href="#view-movie02-shot-34" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-36" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">35 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-36" role="dialog" aria-modal="true" aria-label="스틸컷 36 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 35">
-            <a class="lightbox-prev" href="#view-movie02-shot-35" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-37" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">36 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-37" role="dialog" aria-modal="true" aria-label="스틸컷 37 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 36">
-            <a class="lightbox-prev" href="#view-movie02-shot-36" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-38" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">37 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-38" role="dialog" aria-modal="true" aria-label="스틸컷 38 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 39">
-            <a class="lightbox-prev" href="#view-movie02-shot-37" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-39" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">38 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-39" role="dialog" aria-modal="true" aria-label="스틸컷 39 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 40">
-            <a class="lightbox-prev" href="#view-movie02-shot-38" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-40" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">39 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-40" role="dialog" aria-modal="true" aria-label="스틸컷 40 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 38">
-            <a class="lightbox-prev" href="#view-movie02-shot-39" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-41" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">40 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-41" role="dialog" aria-modal="true" aria-label="스틸컷 41 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 41">
-            <a class="lightbox-prev" href="#view-movie02-shot-40" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-42" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">41 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-42" role="dialog" aria-modal="true" aria-label="스틸컷 42 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 42">
-            <a class="lightbox-prev" href="#view-movie02-shot-41" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-43" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">42 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-43" role="dialog" aria-modal="true" aria-label="스틸컷 43 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 43">
-            <a class="lightbox-prev" href="#view-movie02-shot-42" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-44" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">43 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-44" role="dialog" aria-modal="true" aria-label="스틸컷 44 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 46">
-            <a class="lightbox-prev" href="#view-movie02-shot-43" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-45" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">44 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-45" role="dialog" aria-modal="true" aria-label="스틸컷 45 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 44">
-            <a class="lightbox-prev" href="#view-movie02-shot-44" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-46" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">45 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-46" role="dialog" aria-modal="true" aria-label="스틸컷 46 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 45">
-            <a class="lightbox-prev" href="#view-movie02-shot-45" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-47" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">46 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-47" role="dialog" aria-modal="true" aria-label="스틸컷 47 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 48">
-            <a class="lightbox-prev" href="#view-movie02-shot-46" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-48" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">47 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-48" role="dialog" aria-modal="true" aria-label="스틸컷 48 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 49">
-            <a class="lightbox-prev" href="#view-movie02-shot-47" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-49" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">48 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-49" role="dialog" aria-modal="true" aria-label="스틸컷 49 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 47">
-            <a class="lightbox-prev" href="#view-movie02-shot-48" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-50" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">49 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-50" role="dialog" aria-modal="true" aria-label="스틸컷 50 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 50">
-            <a class="lightbox-prev" href="#view-movie02-shot-49" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-51" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">50 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-51" role="dialog" aria-modal="true" aria-label="스틸컷 51 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 51">
-            <a class="lightbox-prev" href="#view-movie02-shot-50" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-52" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">51 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-52" role="dialog" aria-modal="true" aria-label="스틸컷 52 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 52">
-            <a class="lightbox-prev" href="#view-movie02-shot-51" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-53" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">52 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-53" role="dialog" aria-modal="true" aria-label="스틸컷 53 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_03.jpg" alt="타짜 스틸컷 55">
-            <a class="lightbox-prev" href="#view-movie02-shot-52" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-54" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">53 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-54" role="dialog" aria-modal="true" aria-label="스틸컷 54 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 53">
-            <a class="lightbox-prev" href="#view-movie02-shot-53" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-55" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">54 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-55" role="dialog" aria-modal="true" aria-label="스틸컷 55 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_02.jpg" alt="타짜 스틸컷 54">
-            <a class="lightbox-prev" href="#view-movie02-shot-54" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie02-shot-56" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">55 / 56</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie02-shot-56" role="dialog" aria-modal="true" aria-label="스틸컷 56 / 56">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie02_04.jpg" alt="타짜 스틸컷 56">
-            <a class="lightbox-prev" href="#view-movie02-shot-55" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie02-shot-01" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">56 / 56</span>
+            <span class="lightbox-counter">20 / 20</span>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
