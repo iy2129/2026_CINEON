@@ -43,7 +43,7 @@ html {
 
 .btn-booking:hover {
   background: #c62828;
-  box-shadow: 0 2px 4px rgba(135, 135, 135, 0.2);
+  box-shadow: 0 2px 4px rgba(184, 184, 184, 0.2);
 }
 
 body {
@@ -55,9 +55,10 @@ body {
 .site-header {
   width: 100%;
   background-color: white;
-  border-bottom: 1px solid #eeeeee;
+  border-bottom: 1px solid #e3e3e3;
   position: relative;
   z-index: 10;
+  box-shadow: 0 2px 12px rgba(194, 194, 194, 0.2);
 }
 
 .header-inner {
@@ -108,7 +109,7 @@ body {
   justify-content: center;
   height: 100%;
   box-sizing: border-box;
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 500;
   color: #111111;
   text-decoration: none;
@@ -150,9 +151,10 @@ body {
   left: 50%;
   margin-left: -50vw;
   width: max(1000px, 100vw);
-  background: #f8f8fa;
-  border-top: 1px solid #eee;
-  box-shadow: 0 8px 12px rgb(0 0 0 / 6%);
+  background: #fff;
+  border-top: 1px solid #e3e3e3;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 6px 12px rgba(89, 89, 89, 0.06);
   visibility: hidden;
 }
 
@@ -169,7 +171,7 @@ body {
 .submenu a {
   display: inline-block;
   color: #555;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   text-decoration: none;
   word-break: keep-all;
