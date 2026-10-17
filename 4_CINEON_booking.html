@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)" />
-
+    <meta name="team" content="4조" />
     <title>예매 - CINEON</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -85,26 +85,11 @@
         <p><a href="4_CINEON_timetable.html">← 상영시간표로 돌아가기</a></p>
         <h1>인원 / 좌석 선택</h1>
 
-        <section aria-labelledby="info-title" class="show-info">
-          <img class="show-poster" src="images/poster-chiikawa.jpg" width="150" height="214" alt="극장판 치이카와: 인어섬의 비밀 포스터" />
-          <div class="show-text">
-            <h2 id="info-title">선택한 상영</h2>
-            <dl>
-              <dt>영화</dt>
-              <dd><strong>극장판 치이카와: 인어섬의 비밀</strong> (전체 관람가 · 99분)</dd>
-              <dt>극장 / 상영관</dt>
-              <dd>강남점 5관 (2D)</dd>
-              <dt>일시</dt>
-              <dd>2026.10.15 (목) 11:50 ~ 13:29</dd>
-            </dl>
-          </div>
-        </section>
-
         <form action="4_CINEON_done.html">
           <fieldset>
             <legend>1. 인원 선택 (총 6명까지)</legend>
             <p class="people">
-              <span class="p-name">일반 (14,000원)<small>만 19세 이상</small></span
+              <span class="p-name">일반 (14,000원)</span
               ><span class="count" role="radiogroup" aria-label="일반 인원"
                 ><input type="radio" id="a0" name="adult" value="0" checked /><label for="a0">0</label><input type="radio" id="a1" name="adult" value="1" /><label for="a1">1</label
                 ><input type="radio" id="a2" name="adult" value="2" /><label for="a2">2</label><input type="radio" id="a3" name="adult" value="3" /><label for="a3">3</label
@@ -114,7 +99,7 @@
               명
             </p>
             <p class="people">
-              <span class="p-name">청소년 (11,000원)<small>만 13세 ~ 18세</small></span
+              <span class="p-name">청소년 (11,000원)</span
               ><span class="count" role="radiogroup" aria-label="청소년 인원"
                 ><input type="radio" id="t0" name="teen" value="0" checked /><label for="t0">0</label><input type="radio" id="t1" name="teen" value="1" /><label for="t1">1</label
                 ><input type="radio" id="t2" name="teen" value="2" /><label for="t2">2</label><input type="radio" id="t3" name="teen" value="3" /><label for="t3">3</label
@@ -124,7 +109,7 @@
               명
             </p>
             <p class="people">
-              <span class="p-name">우대 (7,000원)<small>만 65세 이상 · 장애인 · 국가유공자</small></span
+              <span class="p-name">우대 (7,000원)</span
               ><span class="count" role="radiogroup" aria-label="우대 인원"
                 ><input type="radio" id="s0" name="senior" value="0" checked /><label for="s0">0</label><input type="radio" id="s1" name="senior" value="1" /><label for="s1">1</label
                 ><input type="radio" id="s2" name="senior" value="2" /><label for="s2">2</label><input type="radio" id="s3" name="senior" value="3" /><label for="s3">3</label
@@ -133,15 +118,6 @@
               >
               명
             </p>
-            <details class="price-guide">
-              <summary>나는 어떤 요금에 해당하나요?</summary>
-              <ul>
-                <li><strong>일반</strong> 만 19세 이상 관람객 (청소년·우대에 해당하지 않는 경우)</li>
-                <li><strong>청소년</strong> 만 13세 이상 만 18세 이하</li>
-                <li><strong>우대</strong> 만 65세 이상, 장애인(동반 1인 포함), 국가유공자 — 입장 시 신분증·증빙 서류 확인</li>
-              </ul>
-              <p>※ 청소년 관람불가 영화는 청소년 요금으로 예매할 수 없습니다. 연령 확인을 위해 입장 시 신분증을 지참해 주세요.</p>
-            </details>
           </fieldset>
 
           <fieldset>
@@ -189,16 +165,24 @@
               <input type="checkbox" id="F7" name="seat" value="F7" /><label for="F7">7</label> <input type="checkbox" id="F8" name="seat" value="F8" /><label for="F8">8</label>
             </div>
 
-            <ul>
-              <li>[ ] 선택 가능</li>
-              <li>[✓] 선택한 좌석</li>
-              <li>[×] 예매 완료 (선택 불가)</li>
+            <ul class="seat-legend">
+              <li class="lg-free">선택 가능</li>
+              <li class="lg-pick">선택한 좌석</li>
+              <li class="lg-taken">예매 완료</li>
             </ul>
             <p><small>※ 좌석 번호는 열(A~F)과 번호(1~8)로 표시됩니다. 예: A열 3번 = A3</small></p>
           </fieldset>
 
           <aside aria-labelledby="sum-title">
             <h2 id="sum-title">예매 정보</h2>
+            <div class="show-info">
+              <img class="show-poster" src="images/poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
+              <div class="show-text">
+                <strong class="show-title"><img class="age" src="images/icon_all.svg" alt="전체 이용가" width="20" height="20" />극장판 치이카와: 인어 섬의 비밀</strong>
+                <span>강남점 5관 (2D)</span>
+                <span>2026.10.15 (목) 11:50 ~ 13:29</span>
+              </div>
+            </div>
             <dl>
               <dt>인원</dt>
               <dd class="sum-people"><span class="pp pp-none">선택 안 함 (0명)</span><span class="pp pp-adult"></span><span class="pp pp-teen"></span><span class="pp pp-senior"></span></dd>
@@ -220,7 +204,7 @@
             </dl>
             <p class="need need-people">인원을 선택해 주세요.</p>
             <p class="need need-seat"></p>
-            <button type="submit">다음 단계: 결제하기</button>
+            <button type="submit" class="btn-booking">다음 단계: 결제하기</button>
             <a href="4_CINEON_timetable.html">시간 다시 선택</a>
           </aside>
         </form>
