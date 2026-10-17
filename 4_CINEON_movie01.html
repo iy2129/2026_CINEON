@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)>
+    <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)">
     <meta name="team" content="4조">
 
     <title>극장판 치이카와-인어 섬의 비밀 | CINE:ON</title>
@@ -33,7 +33,7 @@
                         <li><a href="#" title="전체영화">전체영화</a></li>
                     </ul>
                     </li>
-                    <li><a href="#" title="예매">예매</a>
+                    <li><a href="4_CINEON_timetable.html" title="예매">예매</a>
                     <ul class="submenu">
                         <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
                     </ul>
@@ -81,37 +81,20 @@
 
     <!-- ==================== 메인 ==================== -->
     <main>
-
-        <!-- ① 영화 기본 소개 -->
-        <section class="movie-hero">
-
-            <div class="container">
-
-
-                <div class="movie-summary">
-
+        <div class="movie-layout">
+            <div class="movie-content">
+                <section class="movie-poster-section" aria-label="영화 포스터">
                     <figure class="movie-poster">
                         <img
                             src="images/movie01_01.jpg"
-                            alt="극장판 치이카와: 인어 섬의 비밀 영화 포스터"
+                            alt="극장판 치이카와: 인어 섬의 비밀 포스터. 푸른 바다와 초록빛 섬을 배경으로 치이카와와 친구들이 모여 있다."
+                            title="극장판 치이카와: 인어 섬의 비밀 포스터"
                         >
                     </figure>
-
-
-                    <div class="movie-info">
-
-                        <span class="movie-grade">ALL</span>
-
-                        <h2>극장판 치이카와: 인어 섬의 비밀</h2>
-
-                        <p class="movie-meta">
-                            <span><strong>2026.09.30</strong> 개봉</span>
-                            <span><span class="meta-clock" aria-hidden="true"></span><strong>99</strong>분</span>
-                            <span class="meta-grade">전체관람가</span>
-                            <span><strong>116.2</strong>만명</span>
-                        </p>
-
-                        <p class="movie-description" tabindex="0" role="region" aria-label="영화 소개 줄거리">
+                </section>
+                <section class="movie-story-section" aria-labelledby="story-title">
+                    <h2 class="section-heading" id="story-title">줄거리</h2>
+                    <p class="movie-description">
 어느 날, 광장에서 쉬고 있던 치이카와와 가르마 앞에 얼굴에 전단지를 붙인 토끼가 나타난다.<br>
 그곳엔 “특별한 섬으로의 초대”라는 글귀가 적혀 있는데...<br>
 <br>
@@ -125,51 +108,145 @@
 모두가 기대를 안은 채 특별한 섬에 도착하는데!<br>
 과연 그 섬에는 어떤 비밀이 숨겨져 있을까...?!
                         </p>
-
-                        <a href="schedule.html" class="btn-booking">
-                            예매하기
+                </section>
+                <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
+            <div class="container">
+                <h2 class="section-heading" id="movie-events-title">이벤트</h2>
+                <div class="event-list">
+                    <div class="event-entry">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
+                            <div class="event-image"><img src="images/movie01_02.jpg" alt="" loading="lazy"></div>
+                            <div class="event-info">
+                                <span class="event-category">관람 특전</span>
+                                <h3 class="event-title">인어 섬의 추억을 담은 한정 포스터</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-07">26.10.07(수)</time> ~ <time datetime="2026-11-07">26.11.07(토)</time></p>
+                            </div>
                         </a>
-
                     </div>
-
+                    <div class="event-entry">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
+                            <div class="event-image"><img src="images/movie01_03.jpg" alt="" loading="lazy"></div>
+                            <div class="event-info">
+                                <span class="event-category">현장 이벤트</span>
+                                <h3 class="event-title">친구들과 함께하는 특별한 상영회</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-14">26.10.14(수)</time> ~ <time datetime="2026-10-20">26.10.20(화)</time></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="event-entry">
+                        <a class="event-card" href="#" title="이벤트 상세 보기">
+                            <div class="event-image"><img src="images/movie01_04.jpg" alt="" loading="lazy"></div>
+                            <div class="event-info">
+                                <span class="event-category">소장 굿즈</span>
+                                <h3 class="event-title">작은 티켓에 담은 커다란 모험</h3>
+                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-17">26.10.17(토)</time> ~ <time datetime="2026-10-20">26.10.20(화)</time></p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-
-            </div>
-
+        </div>
         </section>
-
-
-        <!-- ② 평점 / 예매율 / 누적 관객 -->
-        <section class="movie-stats-section">
+                <section class="trailer-section">
 
             <div class="container">
 
-                <div class="movie-stats">
+                <h2 class="section-heading">트레일러</h2>
 
-                    <div class="stat-item">
-                        <span class="stat-label">실관람 평점</span>
-                        <strong class="stat-value">9.1</strong>
-                    </div>
+                <div class="trailer-list">
 
-                    <div class="stat-item">
-                        <span class="stat-label">예매율</span>
-                        <strong class="stat-value">20.1%</strong>
-                    </div>
+                    <figure class="trailer-card">
 
-                    <div class="stat-item">
-                        <span class="stat-label">누적관객수</span>
-                        <strong class="stat-value">1,161,527명</strong>
-                    </div>
+                        <a href="https://youtu.be/rpq0SLwpMmQ?si=pHWqxB9AV60M5bdt" class="trailer-preview" target="_blank" rel="noopener noreferrer"><img
+                            src="images/movie01_02.jpg"
+                            alt="극장판 치이카와 티저 예고편 장면"
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
+
+                        <figcaption>
+                            티저 예고편
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="trailer-card">
+
+                        <a href="https://youtu.be/-DjykB2XImc?si=kAp3A04GRzE7cdqu" class="trailer-preview" target="_blank" rel="noopener noreferrer"><img
+                            src="images/movie01_03.jpg"
+                            alt="극장판 치이카와 메인 예고편 장면"
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
+
+                        <figcaption>
+                            메인 예고편
+                        </figcaption>
+
+                    </figure>
+
+
+                    <figure class="trailer-card">
+
+                        <a href="https://youtu.be/WH3pagKiHQU?si=xrIzenFyOUzCls3f" class="trailer-preview" target="_blank" rel="noopener noreferrer"><img
+                            src="images/movie01_02.jpg"
+                            alt="극장판 치이카와 더빙 예고편 장면"
+                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
+
+                        <figcaption>
+                            더빙 예고편
+                        </figcaption>
+
+                    </figure>
 
                 </div>
 
             </div>
 
         </section>
-
-
-        <!-- ③ 영화 정보 -->
-        <section class="movie-detail-section">
+                <section id="stillcuts" class="stillcut-section">
+            <div class="container">
+                <h2 class="section-heading">스틸컷 <span class="stillcut-count">(16)</span></h2>
+                <div class="stillcut-gallery stillcut-continuous">
+<div class="stillcut-grid">
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie01-shot-01" aria-label="스틸컷 1 / 16 크게 보기"><img class="stillcut-poster" src="images/movie01_01.jpg" alt="치이카와 영화 포스터"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-06" aria-label="스틸컷 6 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 6" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-09" aria-label="스틸컷 9 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 9" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-12" aria-label="스틸컷 12 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 12" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-15" aria-label="스틸컷 15 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 15" loading="lazy"></a>
+</div>
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie01-shot-02" aria-label="스틸컷 2 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 영화 장면 1"></a>
+<a class="stillcut-link" href="#view-movie01-shot-04" aria-label="스틸컷 4 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 4" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-07" aria-label="스틸컷 7 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 7" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-10" aria-label="스틸컷 10 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 10" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-13" aria-label="스틸컷 13 / 16 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 13" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-16" aria-label="스틸컷 16 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 16" loading="lazy"></a>
+</div>
+<div class="stillcut-column">
+<a class="stillcut-link" href="#view-movie01-shot-03" aria-label="스틸컷 3 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 영화 장면 2"></a>
+<a class="stillcut-link" href="#view-movie01-shot-05" aria-label="스틸컷 5 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 5" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-08" aria-label="스틸컷 8 / 16 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 8" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-11" aria-label="스틸컷 11 / 16 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 11" loading="lazy"></a>
+<a class="stillcut-link stillcut-hidden" href="#view-movie01-shot-14" aria-label="스틸컷 14 / 16 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 14" loading="lazy"></a>
+</div>
+</div>
+<details class="stillcut-more">
+<summary><span class="more-label">더보기 ∨</span><span class="less-label">접기 ∧</span></summary>
+</details>
+                </div>
+            </div>
+        </section>
+            </div>
+            <aside class="movie-sidebar" aria-label="영화 정보 및 예매">
+                <div class="sidebar-heading">
+                    
+                    <div class="sidebar-heading-copy"><img class="movie-grade" src="images/icon_all.svg" alt="전체관람가"><h1 class="sidebar-title">극장판 치이카와: 인어 섬의 비밀</h1></div>
+                </div>
+                <p class="movie-meta">
+                            <span><strong>2026.09.30</strong> 개봉</span>
+                            <span><span class="meta-clock" aria-hidden="true"></span><strong>99</strong>분</span>
+                            <span class="meta-grade">전체관람가</span>
+                            <span><strong>116.2</strong>만명</span>
+                        </p>
+                <section class="movie-detail-section">
 
             <div class="container">
 
@@ -197,173 +274,40 @@
             </div>
 
         </section>
-
-
-        <!-- ④ 영화 관련 이벤트 -->
-        <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
-            <div class="container">
-                <h2 class="section-heading" id="movie-events-title">이벤트</h2>
-                <div class="event-list">
-                    <div class="event-entry">
-                        <div class="event-card">
-                            <div class="event-image"><img src="images/movie01_02.jpg" alt="" loading="lazy"></div>
-                            <div class="event-info">
-                                <span class="event-category">관람 특전</span>
-                                <h3 class="event-title">인어 섬의 추억을 담은 한정 포스터</h3>
-                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-07">26.10.07(수)</time> ~ <time datetime="2026-11-07">26.11.07(토)</time></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-entry">
-                        <div class="event-card">
-                            <div class="event-image"><img src="images/movie01_03.jpg" alt="" loading="lazy"></div>
-                            <div class="event-info">
-                                <span class="event-category">현장 이벤트</span>
-                                <h3 class="event-title">친구들과 함께하는 특별한 상영회</h3>
-                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-14">26.10.14(수)</time> ~ <time datetime="2026-10-20">26.10.20(화)</time></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-entry">
-                        <div class="event-card">
-                            <div class="event-image"><img src="images/movie01_04.jpg" alt="" loading="lazy"></div>
-                            <div class="event-info">
-                                <span class="event-category">소장 굿즈</span>
-                                <h3 class="event-title">작은 티켓에 담은 커다란 모험</h3>
-                                <p class="event-period" aria-label="이벤트 진행 기간"><time datetime="2026-10-17">26.10.17(토)</time> ~ <time datetime="2026-10-20">26.10.20(화)</time></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-        </section>
-
-
-        <!-- ⑤ 트레일러 -->
-        <section class="trailer-section">
+                <section class="movie-stats-section">
 
             <div class="container">
 
-                <h2 class="section-heading">트레일러</h2>
+                <div class="movie-stats">
 
-                <div class="trailer-list">
+                    <div class="stat-item">
+                        <span class="stat-label">실관람 평점</span>
+                        <strong class="stat-value">9.1</strong>
+                    </div>
 
-                    <figure class="trailer-card">
+                    <div class="stat-item">
+                        <span class="stat-label">예매율</span>
+                        <strong class="stat-value">20.1%</strong>
+                    </div>
 
-                        <a href="#" class="trailer-preview"><img
-                            src="images/movie01_02.jpg"
-                            alt="극장판 치이카와 티저 예고편 장면"
-                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
-
-                        <figcaption>
-                            티저 예고편
-                        </figcaption>
-
-                    </figure>
-
-
-                    <figure class="trailer-card">
-
-                        <a href="#" class="trailer-preview"><img
-                            src="images/movie01_03.jpg"
-                            alt="극장판 치이카와 메인 예고편 장면"
-                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
-
-                        <figcaption>
-                            메인 예고편
-                        </figcaption>
-
-                    </figure>
-
-
-                    <figure class="trailer-card">
-
-                        <a href="#" class="trailer-preview"><img
-                            src="images/movie01_02.jpg"
-                            alt="극장판 치이카와 더빙 예고편 장면"
-                        ><span class="play-button" aria-hidden="true">▶</span><span class="video-bar" aria-hidden="true"></span></a>
-
-                        <figcaption>
-                            더빙 예고편
-                        </figcaption>
-
-                    </figure>
+                    <div class="stat-item">
+                        <span class="stat-label audience-label">누적관객수
+                            <span class="audience-help">
+                                <button type="button" class="audience-help-button" aria-label="누적관객수 안내" aria-describedby="audience-tooltip">?</button>
+                                <span class="audience-tooltip" id="audience-tooltip" role="tooltip">누적관객 및 전일관객은 영화진흥 위원회<br>영화관 입장권 통합전산망제공 기준입니다.</span>
+                            </span>
+                        </span>
+                        <strong class="stat-value">1,161,527명</strong>
+                    </div>
 
                 </div>
 
             </div>
 
         </section>
-
-
-        <!-- ⑥ 스틸컷: 기존 사진을 재사용하여 27 장 표시 -->
-        <section id="stillcuts" class="stillcut-section">
-            <div class="container">
-                <h2 class="section-heading">스틸컷 <span class="stillcut-count">(27)</span></h2>
-                <div class="stillcut-gallery">
-                    <div class="stillcut-grid">
-                        <a class="stillcut-link" href="#view-movie01-shot-01" aria-label="스틸컷 1 / 27 크게 보기"><img class="stillcut-poster" src="images/movie01_01.jpg" alt="치이카와 영화 포스터"></a>
-                        <a class="stillcut-link" href="#view-movie01-shot-02" aria-label="스틸컷 2 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 영화 장면 1"></a>
-                        <a class="stillcut-link" href="#view-movie01-shot-03" aria-label="스틸컷 3 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 영화 장면 2"></a>
-                    </div>
-                    <details class="stillcut-more">
-                        <summary><span class="more-label">더보기 ∨</span><span class="less-label">접기 ∧</span></summary>
-                        <div class="stillcut-grid stillcut-extra">
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie01-shot-04" aria-label="스틸컷 4 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 4" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-07" aria-label="스틸컷 7 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 7" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-10" aria-label="스틸컷 10 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 10" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-13" aria-label="스틸컷 13 / 27 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 13" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-16" aria-label="스틸컷 16 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 16" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-19" aria-label="스틸컷 19 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 19" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-22" aria-label="스틸컷 22 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 22" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-25" aria-label="스틸컷 25 / 27 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 25" loading="lazy"></a>
-                        </div>
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie01-shot-05" aria-label="스틸컷 5 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 5" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-08" aria-label="스틸컷 8 / 27 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 8" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-11" aria-label="스틸컷 11 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 11" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-14" aria-label="스틸컷 14 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 14" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-17" aria-label="스틸컷 17 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 17" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-20" aria-label="스틸컷 20 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 20" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-23" aria-label="스틸컷 23 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 23" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-26" aria-label="스틸컷 26 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 26" loading="lazy"></a>
-                        </div>
-                        <div class="stillcut-column">
-                            <a class="stillcut-link" href="#view-movie01-shot-06" aria-label="스틸컷 6 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 6" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-09" aria-label="스틸컷 9 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 9" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-12" aria-label="스틸컷 12 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 12" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-15" aria-label="스틸컷 15 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 15" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-18" aria-label="스틸컷 18 / 27 크게 보기"><img src="images/movie01_04.jpg" alt="치이카와 스틸컷 18" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-21" aria-label="스틸컷 21 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 21" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-24" aria-label="스틸컷 24 / 27 크게 보기"><img src="images/movie01_03.jpg" alt="치이카와 스틸컷 24" loading="lazy"></a>
-                            <a class="stillcut-link" href="#view-movie01-shot-27" aria-label="스틸컷 27 / 27 크게 보기"><img src="images/movie01_02.jpg" alt="치이카와 스틸컷 27" loading="lazy"></a>
-                        </div>
-                    </div>
-                    </details>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- ⑦ 하단 예매 -->
-        <section class="booking-section">
-
-            <div class="container">
-
-                <h2>지금 CINEON에서 만나보세요</h2>
-
-                <p>
-                    상영 시간과 좌석을 확인하고 영화를 예매해보세요.
-                </p>
-
-                <a href="schedule.html" class="btn-booking">
-                    예매하기
-                </a>
-
-            </div>
-
-        </section>
-
+                <a href="4_CINEON_timetable.html" class="btn-booking sidebar-booking" aria-label="치이카와 예매를 위한 상영시간표로 이동">예매하기 →</a>
+            </aside>
+        </div>
     </main>
 
 
@@ -383,276 +327,177 @@
 
 
 
-    <div class="stillcut-lightbox" id="view-movie01-shot-01" role="dialog" aria-modal="true" aria-label="스틸컷 1 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-01" role="dialog" aria-modal="true" aria-label="스틸컷 1 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_01.jpg" alt="치이카와 영화 포스터">
-            <a class="lightbox-prev" href="#view-movie01-shot-27" aria-label="이전 사진">❮</a>
+            <a class="lightbox-prev" href="#view-movie01-shot-16" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-02" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">1 / 27</span>
+            <span class="lightbox-counter">1 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-02" role="dialog" aria-modal="true" aria-label="스틸컷 2 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-02" role="dialog" aria-modal="true" aria-label="스틸컷 2 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 영화 장면 1">
             <a class="lightbox-prev" href="#view-movie01-shot-01" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-03" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">2 / 27</span>
+            <span class="lightbox-counter">2 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-03" role="dialog" aria-modal="true" aria-label="스틸컷 3 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-03" role="dialog" aria-modal="true" aria-label="스틸컷 3 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 영화 장면 2">
             <a class="lightbox-prev" href="#view-movie01-shot-02" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-04" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">3 / 27</span>
+            <span class="lightbox-counter">3 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-04" role="dialog" aria-modal="true" aria-label="스틸컷 4 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-04" role="dialog" aria-modal="true" aria-label="스틸컷 4 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 4">
             <a class="lightbox-prev" href="#view-movie01-shot-03" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-05" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">4 / 27</span>
+            <span class="lightbox-counter">4 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-05" role="dialog" aria-modal="true" aria-label="스틸컷 5 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-05" role="dialog" aria-modal="true" aria-label="스틸컷 5 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 5">
             <a class="lightbox-prev" href="#view-movie01-shot-04" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-06" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">5 / 27</span>
+            <span class="lightbox-counter">5 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-06" role="dialog" aria-modal="true" aria-label="스틸컷 6 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-06" role="dialog" aria-modal="true" aria-label="스틸컷 6 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 6">
             <a class="lightbox-prev" href="#view-movie01-shot-05" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-07" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">6 / 27</span>
+            <span class="lightbox-counter">6 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-07" role="dialog" aria-modal="true" aria-label="스틸컷 7 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-07" role="dialog" aria-modal="true" aria-label="스틸컷 7 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 7">
             <a class="lightbox-prev" href="#view-movie01-shot-06" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-08" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">7 / 27</span>
+            <span class="lightbox-counter">7 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-08" role="dialog" aria-modal="true" aria-label="스틸컷 8 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-08" role="dialog" aria-modal="true" aria-label="스틸컷 8 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_04.jpg" alt="치이카와 스틸컷 8">
             <a class="lightbox-prev" href="#view-movie01-shot-07" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-09" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">8 / 27</span>
+            <span class="lightbox-counter">8 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-09" role="dialog" aria-modal="true" aria-label="스틸컷 9 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-09" role="dialog" aria-modal="true" aria-label="스틸컷 9 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 9">
             <a class="lightbox-prev" href="#view-movie01-shot-08" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-10" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">9 / 27</span>
+            <span class="lightbox-counter">9 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-10" role="dialog" aria-modal="true" aria-label="스틸컷 10 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-10" role="dialog" aria-modal="true" aria-label="스틸컷 10 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 10">
             <a class="lightbox-prev" href="#view-movie01-shot-09" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-11" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">10 / 27</span>
+            <span class="lightbox-counter">10 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-11" role="dialog" aria-modal="true" aria-label="스틸컷 11 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-11" role="dialog" aria-modal="true" aria-label="스틸컷 11 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 11">
             <a class="lightbox-prev" href="#view-movie01-shot-10" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-12" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">11 / 27</span>
+            <span class="lightbox-counter">11 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-12" role="dialog" aria-modal="true" aria-label="스틸컷 12 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-12" role="dialog" aria-modal="true" aria-label="스틸컷 12 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 12">
             <a class="lightbox-prev" href="#view-movie01-shot-11" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-13" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">12 / 27</span>
+            <span class="lightbox-counter">12 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-13" role="dialog" aria-modal="true" aria-label="스틸컷 13 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-13" role="dialog" aria-modal="true" aria-label="스틸컷 13 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_04.jpg" alt="치이카와 스틸컷 13">
             <a class="lightbox-prev" href="#view-movie01-shot-12" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-14" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">13 / 27</span>
+            <span class="lightbox-counter">13 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-14" role="dialog" aria-modal="true" aria-label="스틸컷 14 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-14" role="dialog" aria-modal="true" aria-label="스틸컷 14 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 14">
             <a class="lightbox-prev" href="#view-movie01-shot-13" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-15" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">14 / 27</span>
+            <span class="lightbox-counter">14 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-15" role="dialog" aria-modal="true" aria-label="스틸컷 15 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-15" role="dialog" aria-modal="true" aria-label="스틸컷 15 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 15">
             <a class="lightbox-prev" href="#view-movie01-shot-14" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-16" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">15 / 27</span>
+            <span class="lightbox-counter">15 / 16</span>
         </div>
     </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-16" role="dialog" aria-modal="true" aria-label="스틸컷 16 / 27">
+    <div class="stillcut-lightbox" id="view-movie01-shot-16" role="dialog" aria-modal="true" aria-label="스틸컷 16 / 16">
         <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
         <div class="lightbox-content">
             <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
             <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 16">
             <a class="lightbox-prev" href="#view-movie01-shot-15" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-17" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">16 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-17" role="dialog" aria-modal="true" aria-label="스틸컷 17 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 17">
-            <a class="lightbox-prev" href="#view-movie01-shot-16" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-18" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">17 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-18" role="dialog" aria-modal="true" aria-label="스틸컷 18 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_04.jpg" alt="치이카와 스틸컷 18">
-            <a class="lightbox-prev" href="#view-movie01-shot-17" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-19" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">18 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-19" role="dialog" aria-modal="true" aria-label="스틸컷 19 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 19">
-            <a class="lightbox-prev" href="#view-movie01-shot-18" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-20" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">19 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-20" role="dialog" aria-modal="true" aria-label="스틸컷 20 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 20">
-            <a class="lightbox-prev" href="#view-movie01-shot-19" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-21" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">20 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-21" role="dialog" aria-modal="true" aria-label="스틸컷 21 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 21">
-            <a class="lightbox-prev" href="#view-movie01-shot-20" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-22" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">21 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-22" role="dialog" aria-modal="true" aria-label="스틸컷 22 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 22">
-            <a class="lightbox-prev" href="#view-movie01-shot-21" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-23" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">22 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-23" role="dialog" aria-modal="true" aria-label="스틸컷 23 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 23">
-            <a class="lightbox-prev" href="#view-movie01-shot-22" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-24" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">23 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-24" role="dialog" aria-modal="true" aria-label="스틸컷 24 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 24">
-            <a class="lightbox-prev" href="#view-movie01-shot-23" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-25" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">24 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-25" role="dialog" aria-modal="true" aria-label="스틸컷 25 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_04.jpg" alt="치이카와 스틸컷 25">
-            <a class="lightbox-prev" href="#view-movie01-shot-24" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-26" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">25 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-26" role="dialog" aria-modal="true" aria-label="스틸컷 26 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_03.jpg" alt="치이카와 스틸컷 26">
-            <a class="lightbox-prev" href="#view-movie01-shot-25" aria-label="이전 사진">❮</a>
-            <a class="lightbox-next" href="#view-movie01-shot-27" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">26 / 27</span>
-        </div>
-    </div>
-    <div class="stillcut-lightbox" id="view-movie01-shot-27" role="dialog" aria-modal="true" aria-label="스틸컷 27 / 27">
-        <a class="lightbox-backdrop" href="#stillcuts" aria-label="확대 사진 닫기"></a>
-        <div class="lightbox-content">
-            <a class="lightbox-close" href="#stillcuts" aria-label="확대 사진 닫기">×</a>
-            <img src="images/movie01_02.jpg" alt="치이카와 스틸컷 27">
-            <a class="lightbox-prev" href="#view-movie01-shot-26" aria-label="이전 사진">❮</a>
             <a class="lightbox-next" href="#view-movie01-shot-01" aria-label="다음 사진">❯</a>
-            <span class="lightbox-counter">27 / 27</span>
+            <span class="lightbox-counter">16 / 16</span>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 
