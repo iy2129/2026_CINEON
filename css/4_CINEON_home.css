@@ -554,7 +554,7 @@
 .event-image {
   flex: 0 0 120px;
   width: 120px;
-  aspect-ratio: 1 / 1;
+  height: 120px;
   overflow: hidden;
   border-radius: 8px;
   background: #eee;

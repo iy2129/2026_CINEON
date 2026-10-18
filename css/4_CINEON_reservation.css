@@ -1,22 +1,29 @@
 .layout {
   display: grid;
-  grid-template-columns: 200px minmax(0, 1fr);
-  gap: 48px;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: start;
+  gap: 32px;
   max-width: 1236px;
   margin: 0 auto;
   padding: 40px 24px 80px;
   color: #333;
 }
 
+.layout main {
+  min-width: 0;
+}
+
 .layout h1 {
-  margin: 0 0 8px;
+  grid-column: 1;
+  margin: 0;
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
+  line-height: 1.4;
 }
 
 .layout h2 {
   margin: 0 0 14px;
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 700;
 }
 
@@ -65,46 +72,159 @@
 
 fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 
-form aside dl { display: grid; grid-template-columns: 76px 1fr; gap: 8px 12px; margin: 0; }
-dt { color: #777; font-size: 14px; }
-dd { margin: 0; }
 
 .layout form[action] {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
-  gap: 24px 32px;
+  gap: 28px 32px;
   align-items: start;
 }
 .layout form[action] > fieldset {
   grid-column: 1;
   padding: 24px;
-  border: 1px solid #ddd;
+  border: 1px solid #c0c0c0;
   border-radius: 12px;
 }
-.layout form[action] legend { padding: 0 8px; font-size: 18px; font-weight: 700; }
+.layout form[action] legend { padding: 0 8px; font-size: 24px; font-weight: 700; }
 
 fieldset p { margin: 0 0 10px; }
 fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
 
-form aside {
-  grid-column: 2;
-  grid-row: 1 / span 2;
+/* 예매 정보 박스 */
+.booking-summary {
+  box-sizing: border-box;
   position: sticky;
   top: 24px;
+  min-width: 0;
   padding: 24px;
-  border: 1px solid #ddd;
+  border: 2.5px solid #f17e7e;
   border-radius: 16px;
   background: #fff;
+  color: #333;
+  box-shadow: 0 2px 8px rgba(160, 123, 123, 0.18);
 }
-form aside h2 { margin-bottom: 16px; }
-form aside dd strong { color: #e53935; font-size: 26px; }
-form aside .btn-booking { width: 100%; height: 52px; margin-top: 24px; border-radius: 12px; font-size: 17px; font-weight: 700; opacity: .35; }
-form aside > a { display: block; margin-top: 14px; text-align: center; font-size: 14px; color: #777; }
-.show-info { display: flex; gap: 14px; margin-bottom: 18px; padding-bottom: 18px; border-bottom: 1px solid #eee; }
-.show-poster { flex: none; width: 84px; height: auto; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18); }
-.show-text { display: flex; flex-direction: column; justify-content: center; gap: 4px; min-width: 0; font-size: 14px; color: #555; }
-.show-title { display: block; color: #111; font-size: 16px; line-height: 1.4; }
-.show-title .age { margin-right: 6px; vertical-align: -4px; }
+
+.booking-summary h2 {
+  margin: 0 0 16px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.booking-summary .show-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.booking-summary .show-poster {
+  flex: none;
+  width: 84px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
+}
+
+.booking-summary .show-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #555;
+  overflow-wrap: anywhere;
+}
+
+.booking-summary .show-title {
+  color: #111;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.booking-summary .show-title .age {
+  width: 20px;
+  height: 20px;
+  margin-right: 6px;
+  vertical-align: -4px;
+}
+
+.booking-summary dl {
+  display: grid;
+  grid-template-columns: 64px minmax(0, 1fr);
+  grid-template-rows: 48px 48px 48px;
+  column-gap: 12px;
+  margin: 0;
+}
+
+.booking-summary dt,
+.booking-summary dd {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 4px 0;
+  line-height: 24px;
+}
+
+.booking-summary dt {
+  color: #777;
+  font-size: 14px;
+}
+
+.booking-summary dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.booking-summary .sum-people,
+.booking-summary .sum-seats {
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.booking-summary dd strong {
+  color: #e53935;
+  font-size: 26px;
+  line-height: 40px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.booking-summary .pp {
+  margin-bottom: 0;
+}
+
+.booking-summary .st {
+  display: none;
+  margin: 0 6px 4px 0;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #f3f3f5;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+.booking-summary .btn-booking {
+  width: 100%;
+  height: 52px;
+  margin-top: 16px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.layout form[action] > .booking-summary {
+  grid-column: 2;
+  grid-row: 1 / span 3;
+}
+
+.layout .booking-summary .btn-booking {
+  opacity: .35;
+}
 
 main.done { text-align: center; padding: 40px 0; }
 main.done h1::before {
@@ -142,8 +262,6 @@ fieldset .people .count label:active { transform: scale(0.94); }
 
 form { --a: 0; --t: 0; --s: 0; }
 .pp, .st { display: none; }
-.sum-people .pp { margin-bottom: 2px; }
-.st { margin: 0 6px 4px 0; padding: 1px 8px; border-radius: 999px; background: #fdecec; color: #e53935; font-size: 14px; font-weight: 700; }
 .pp-adult::before { counter-set: ca var(--a); content: "일반 " counter(ca) "명"; }
 .pp-teen::before { counter-set: ct var(--t); content: "청소년 " counter(ct) "명"; }
 .pp-senior::before { counter-set: cs var(--s); content: "우대 " counter(cs) "명"; }
@@ -223,7 +341,6 @@ form:has(#F8:checked) .st-F8 { display: inline-block; }
 
 fieldset .people .count label:hover { border-color: #111; color: #111; }
 fieldset .people .count input:checked + label { background: #111; border-color: #111; color: #fff; }
-.st { background: #f3f3f5; color: #111; }
 
 form:has(#t0:checked):has(#s1:checked) label[for="a6"],
 form:has(#t0:checked):has(#s2:checked) label[for="a5"], form:has(#t0:checked):has(#s2:checked) label[for="a6"],
@@ -309,7 +426,6 @@ form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):ha
 
 .people .p-name { width: 210px; }
 
-.seat-cap { margin: 0 0 10px; text-align: center; font-size: 13px; color: #777; }
 .seat-grid { position: relative; display: grid; grid-template-columns: 28px repeat(4, 38px) 22px repeat(4, 38px); gap: 6px; justify-content: center; }
 .seat-grid .row-name { text-align: center; font-size: 16px; font-weight: 700; line-height: 38px; }
 .seat-grid input { position: absolute; opacity: 0; width: 1px; height: 1px; }
@@ -326,10 +442,6 @@ form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):ha
 .seat-legend .lg-taken::before { border-color: #ddd; background: #e5e5e5; }
 .seat-grid ~ p { margin: 0; text-align: center; }
 
-.need { display: none; margin: 14px 0 0; color: #e53935; font-size: 13px; text-align: left; }
-.need + .need { margin-top: 4px; }
-.need-seat::before { counter-set: cn calc(var(--a) + var(--t) + var(--s)); content: "인원 수(" counter(cn) "명)와 같은 수의 좌석을 선택해 주세요."; }
-form aside .need ~ .btn-booking { margin-top: 16px; }
 .layout form aside .btn-booking { cursor: not-allowed; pointer-events: none; }
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .need-people { display: block; }
 form:not(:has(#a0:checked):has(#t0:checked):has(#s0:checked)) .need-seat { display: block; }
@@ -587,7 +699,4 @@ form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:c
 .screen-label { margin: 0 0 14px; }
 .screen-label strong { display: block; padding: 12px; border-radius: 60px 60px 0 0; background: #ccc; color: #333; text-align: center; font-size: 14px; }
 
-.seat-hint { display: none; margin: 0 0 12px; padding: 10px 14px; border-radius: 10px; background: #f3f3f5; color: #555; font-size: 14px; text-align: center; }
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
-
-.site-header { margin-bottom: 52px; }

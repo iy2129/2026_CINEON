@@ -98,7 +98,7 @@
                 <div class="payment-header">
                     <h2 class="section-heading">결제</h2>
                 </div>
-                <form class="payment-form">
+                <form id="payment-form" class="payment-form" action="4_CINEON_done.html" method="get">
                     <section class="payment-section">
                         <div class="payment-section-heading">
                             <h3 class="payment-subtitle">할인 적용</h3>
@@ -197,7 +197,40 @@
                 </form>
             </main>
 
-            <aside class="payment-side"></aside>
+            <aside class="payment-summary payment-side" aria-labelledby="sum-title">
+            <h2 id="sum-title">예매 정보</h2>
+            <div class="show-info">
+              <img class="show-poster" src="images/poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
+              <div class="show-text">
+                <strong class="show-title"><img class="age" src="images/icon_all.svg" alt="전체 이용가" width="20" height="20" />극장판 치이카와: 인어 섬의 비밀</strong>
+                <span>강남점 5관 (2D)</span>
+                <span>2026.10.15 (목) 11:50 ~ 13:29</span>
+              </div>
+            </div>
+            <dl>
+              <div class="payment-info-row">
+                <dt>인원</dt>
+                <dd class="sum-people">일반 2명</dd>
+              </div>
+              <div class="payment-info-row">
+                <dt>선택 좌석</dt>
+                <dd class="sum-seats"><span class="payment-seat">D5</span><span class="payment-seat">D6</span></dd>
+              </div>
+              <div class="payment-info-row">
+                <dt>금액</dt>
+                <dd>28,000원</dd>
+              </div>
+              <div class="payment-info-row payment-info-row-discount">
+                <dt class="payment-discount-label">할인 적용</dt>
+                <dd class="payment-discount-amount">-3,000원</dd>
+              </div>
+              <div class="payment-info-row">
+                <dt>결제 금액</dt>
+                <dd><strong class="sum-total">25,000원</strong></dd>
+              </div>
+            </dl>
+            <button type="submit" form="payment-form" class="btn-booking">결제하기</button>
+          </aside>
         </div>
 
         <footer class="site-footer">

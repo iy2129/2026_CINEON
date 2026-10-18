@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)" />
     <meta name="team" content="4조" />
-    <title>예매 - CINEON</title>
+    <title>예매 - CINE:ON</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -72,6 +72,20 @@
       </div>
     </header>
 
+    <nav class="page-path" aria-label="현재 위치">
+      <ol>
+        <li>
+          <a href="4_CINEON_index.html" class="page-path-home" aria-label="홈">
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" focusable="false">
+              <path d="M2 11 12 2l10 9h-3v10h-5v-7h-4v7H5V11Z" fill="currentColor" />
+            </svg>
+          </a>
+        </li>
+        <li><span>예매</span></li>
+        <li><a href="4_CINEON_timetable.html">상영시간표</a></li>
+      </ol>
+    </nav>
+
     <div class="layout">
       <nav aria-label="예매 단계">
         <ol>
@@ -82,12 +96,10 @@
       </nav>
 
       <main>
-        <p><a href="4_CINEON_timetable.html">← 상영시간표로 돌아가기</a></p>
-        <h1>인원 / 좌석 선택</h1>
-
         <form action="4_CINEON_payment.html">
+          <h1>인원 / 좌석 선택</h1>
           <fieldset>
-            <legend>1. 인원 선택 (총 6명까지)</legend>
+            <legend>인원 선택 (총 6명까지)</legend>
             <p class="people">
               <span class="p-name">일반 (14,000원)</span
               ><span class="count" role="radiogroup" aria-label="일반 인원"
@@ -121,11 +133,9 @@
           </fieldset>
 
           <fieldset>
-            <legend>2. 좌석 선택</legend>
+            <legend>좌석 선택</legend>
 
-            <p class="screen-label"><strong>▲ 스크린 (이 방향이 화면입니다)</strong></p>
-            <p class="seat-cap">A열이 스크린에서 가장 가깝습니다 · 비활성 좌석 = 예매 완료</p>
-            <p class="seat-hint">먼저 위에서 관람 인원을 선택하면 좌석을 고를 수 있어요.</p>
+            <p class="screen-label"><strong>▲ 스크린</strong></p>
             <div class="seat-grid" role="group" aria-label="좌석 선택">
               <span class="row-name">A</span>
               <input type="checkbox" id="A1" name="seat" value="A1" /><label for="A1">1</label> <input type="checkbox" id="A2" name="seat" value="A2" /><label for="A2">2</label>
@@ -170,10 +180,9 @@
               <li class="lg-pick">선택한 좌석</li>
               <li class="lg-taken">예매 완료</li>
             </ul>
-            <p><small>※ 좌석 번호는 열(A~F)과 번호(1~8)로 표시됩니다. 예: A열 3번 = A3</small></p>
           </fieldset>
 
-          <aside aria-labelledby="sum-title">
+          <aside class="booking-summary" aria-labelledby="sum-title">
             <h2 id="sum-title">예매 정보</h2>
             <div class="show-info">
               <img class="show-poster" src="images/poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
@@ -202,10 +211,7 @@
               <dt>결제 금액</dt>
               <dd><strong class="sum-total"></strong></dd>
             </dl>
-            <p class="need need-people">인원을 선택해 주세요.</p>
-            <p class="need need-seat"></p>
-            <button type="submit" class="btn-booking">다음 단계: 결제하기</button>
-            <a href="4_CINEON_timetable.html">시간 다시 선택</a>
+            <button type="submit" class="btn-booking">다음</button>
           </aside>
         </form>
       </main>
