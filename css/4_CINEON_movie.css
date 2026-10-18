@@ -19,8 +19,6 @@ main p {
     z-index: 100;
 }
 
-
-
 .movie-layout {
     display: flex;
     align-items: flex-start;
@@ -37,7 +35,7 @@ main p {
 .movie-sidebar {
     width: 40%;
     position: sticky;
-    top: 104px;
+    top: 124px;
 }
 
 .movie-layout .container {
@@ -51,8 +49,6 @@ main p {
     margin: 0 0 20px;
 }
 
-
-
 .movie-story-section,
 .movie-events-section,
 .trailer-section,
@@ -61,8 +57,6 @@ main p {
     margin-top: 50px;
     border-top: 1px solid #e8e8e8;
 }
-
-
 
 .movie-poster {
     width: 100%;
@@ -75,16 +69,54 @@ main p {
     width: 100%;
     height: auto;
     border-radius: 10px;
+    box-shadow: 2px 4px 8px rgba(6, 6, 6, 0.1);
 }
 
+.movie-section-nav {
+    width: 98%;
+    position: sticky;
+    top: 80px;
+    z-index: 90;
+    margin-top: 50px;
+    padding: 8px 0 0;
+    border-radius: 0 0 12px 12px;
+    background-color: #ffffff;
+}
 
+.movie-section-nav-links {
+    display: flex;
+    padding: 4px;
+    border-radius: 12px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 
-.movie-grade {
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin-left: 8px;
-    object-fit: contain;
+.movie-section-nav a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    min-height: 48px;
+    padding: 8px 4px;
+    border-radius: 8px;
+    color: #666666;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+}
+
+.movie-section-nav a:hover,
+.movie-section-nav a:focus {
+    color: #e53935;
+    background-color: #ffffff;
+}
+
+.movie-section-anchor {
+    display: block;
+    position: relative;
+    top: -168px;
+    height: 0;
 }
 
 .sidebar-title {
@@ -95,24 +127,52 @@ main p {
     line-height: 1.4;
 }
 
+.movie-grade {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    object-fit: contain;
+}
+
+.movie-meta {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3px 0 0;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.movie-meta span {
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #cccccc;
+}
+
+.movie-meta span:first-child {
+    padding-left: 0;
+    border-left: 0;
+}
+
+.meta-grade {
+    color: #20a65a;
+    font-weight: 700;
+}
+
+.meta-grade-adult {
+    color: #c62828;
+}
+
+.movie-detail-section {
+    margin-top: 42px;
+}
+
 .movie-detail-box {
     padding: 20px 20px 10px;
     border: 1px solid #cccccc;
     border-radius: 14px;
     background-color: white;
-}
-
-.person-name {
-    color: #222222;
-    text-decoration: none;
-}
-
-.person-name:hover {
-    text-decoration: underline;
-}
-
-.movie-detail-section {
-    margin-top: 40px;
 }
 
 .detail-row {
@@ -136,36 +196,14 @@ main p {
     line-height: 1.7;
 }
 
-.meta-grade {
-    color: #20a65a;
-    font-weight: 700;
+.person-name {
+    color: #222222;
+    text-decoration: none;
 }
 
-.meta-grade-adult {
-    color: #c62828;
+.person-name:hover {
+    text-decoration: underline;
 }
-
-.movie-meta {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 3px 0 0;
-    font-size: 19px;
-    line-height: 1.7;
-}
-
-.movie-meta span {
-    display: inline-block;
-    margin-right: 10px;
-    padding-left: 10px;
-    border-left: 1px solid #cccccc;
-}
-
-.movie-meta span:first-child {
-    padding-left: 0;
-    border-left: 0;
-}
-
-
 
 .movie-stats-section {
     margin-top: 20px;
@@ -195,53 +233,10 @@ main p {
     font-size: 20px;
 }
 
-
-
-.movie-sidebar .sidebar-booking {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    height: 48px;
-    margin-top: 0;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.movie-sidebar .sidebar-booking:hover {
-    background-color: #c62828;
-}
-
-.movie-sidebar .sidebar-booking:active {
-    background-color: #a51e1e;
-}
-
 .movie-actions {
     display: flex;
     align-items: center;
     margin-top: 20px;
-}
-
-.share-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 48px;
-    height: 48px;
-    margin-right: 8px;
-    border: 1px solid #dddddd;
-    border-radius: 12px;
-    background-color: #ffffff;
-}
-
-.share-button img {
-    display: block;
-    width: 24px;
-    height: 24px;
-}
-
-.share-button:hover {
-    background-color: #eeeeee;
 }
 
 .detail-like {
@@ -292,7 +287,52 @@ main p {
     display: block;
 }
 
+.share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    margin-right: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
 
+.share-button img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.share-button:hover {
+    background-color: #eeeeee;
+}
+
+.movie-sidebar .sidebar-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 48px;
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.movie-sidebar .sidebar-booking:hover {
+    background-color: #c62828;
+}
+
+.movie-sidebar .sidebar-booking:active {
+    background-color: #a51e1e;
+}
+
+.movie-story-section {
+    margin-top: 43px;
+    padding-top: 0;
+    border-top: 0;
+}
 
 .movie-content .movie-story-section .section-heading {
     margin-bottom: 14px;
@@ -302,8 +342,6 @@ main p {
     margin: 0;
     line-height: 1.6;
 }
-
-
 
 .movie-events-section {
     margin-top: 43px;
@@ -350,7 +388,7 @@ main p {
     display: inline-block;
     padding: 3px 6px;
     border-radius: 4px;
-    background-color: #eeeeee;
+    background-color: #f5f5f5;
     color: #666666;
     font-size: 14px;
     font-weight: 700;
@@ -374,8 +412,6 @@ main .event-period {
     text-decoration: underline;
 }
 
-
-
 .trailer-list {
     display: flex;
     flex-wrap: wrap;
@@ -384,7 +420,11 @@ main .event-period {
 
 .trailer-card {
     width: 31%;
-    margin: 0 2% 0 0;
+    margin: 0 2.5% 0 0;
+}
+
+.trailer-card:last-child {
+    margin-right: 0;
 }
 
 .trailer-preview {
@@ -420,8 +460,6 @@ main .event-period {
     opacity: 0.65;
 }
 
-
-
 .stillcut-section {
     margin-top: 44px;
 }
@@ -445,6 +483,9 @@ main .event-period {
 .stillcut-link {
     display: block;
     margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #000000;
 }
 
 .stillcut-link img {
@@ -452,4 +493,8 @@ main .event-period {
     width: 100%;
     height: auto;
     border-radius: 6px;
+}
+
+.stillcut-link:hover img {
+    opacity: 0.8;
 }
