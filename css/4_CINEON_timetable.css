@@ -16,7 +16,7 @@
   min-width: 160px;
   margin-right: 24px;
   position: sticky;
-  top: 24px;
+  top: 96px;
 }
 .t-layout nav ol {
   margin: 0;
@@ -29,12 +29,6 @@
   color: #aaa;
   font-size: 17px;
 }
-.t-layout nav small {
-  display: block;
-  margin-top: 2px;
-  color: #aaa;
-  font-size: 13px;
-}
 /* 현재 단계: 빨간 줄 + 빨간 글씨 */
 .t-layout nav li.step-current {
   margin-left: -3px;
@@ -43,10 +37,6 @@
   color: #e53935;
   font-size: 19px;
 }
-.t-layout nav li.step-current small {
-  color: #e53935;
-}
-
 /* 오른쪽 본문 */
 .quick {
   flex-grow: 1;
@@ -56,6 +46,7 @@
   margin: 0 0 24px;
   font-size: 32px;
   font-weight: 800;
+  letter-spacing: -0.4px;
 }
 .quick form {
   border: 1px solid #c0c0c0;
@@ -109,10 +100,10 @@
   display: block;
   box-sizing: border-box;
   height: 60px;
-  padding: 0 8px;
-  border-bottom: 5px solid transparent;
+  padding: 4px 8px 0;
+  border-bottom: 3px solid transparent;
   border-radius: 12px 12px 0 0;
-  line-height: 55px;
+  line-height: 53px;
   font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
@@ -133,11 +124,9 @@
 }
 /* 선택된 날짜: 아래에 빨간 줄 */
 .date-bar input:checked + label {
+  background-color: #fff;
   border-bottom-color: #e53935;
   font-weight: 800;
-}
-.date-bar input:focus + label {
-  background-color: #f5f5f7;
 }
 /* 달력 입력칸 */
 .date-bar li.cal {
@@ -146,6 +135,7 @@
 }
 /* 달력 입력칸은 숨기지 않고 그대로 보여 준다 */
 .date-bar li.cal input {
+  font-family: inherit;
   position: static;
   opacity: 1;
   width: auto;
@@ -287,9 +277,6 @@
   background-color: #fff5f5;
   color: #e53935;
 }
-.times input:focus + label {
-  border-color: #333;
-}
 .t-main {
   font-size: 15px;
 }
@@ -317,4 +304,25 @@
   border-radius: 12px;
   font-size: 16px;
   font-weight: 700;
+}
+
+.date-bar label,
+.list label,
+.times label {
+  cursor: pointer;
+}
+
+.date-bar li.cal input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+}
+
+.time-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.time-heading-row .legend {
+  margin: 0 6px 0 0;
+  font-weight: 400;
 }

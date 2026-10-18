@@ -18,15 +18,17 @@
 }
 .layout main {
   flex-grow: 1;
+  width: 0;
   min-width: 0;
 }
 
 /* 왼쪽 단계 안내 */
 .layout nav {
   width: 160px;
+  flex-shrink: 0;
   margin-right: 24px;
   position: sticky;
-  top: 24px;
+  top: 96px;
 }
 .layout nav ol {
   margin: 0;
@@ -39,11 +41,6 @@
   color: #aaa;
   font-size: 17px;
 }
-.layout nav li small {
-  display: block;
-  margin-top: 2px;
-  color: #aaa;
-}
 /* 끝난 단계는 조금 진하게, 현재 단계는 빨갛게 */
 .layout nav li.step-done {
   color: #555;
@@ -55,10 +52,6 @@
   color: #e53935;
   font-size: 19px;
 }
-.layout nav li.step-current small {
-  color: #e53935;
-}
-
 /* ---------- 예매 폼: 왼쪽 선택 영역 + 오른쪽 예매 정보 ---------- */
 .layout form {
   display: flex;
@@ -66,13 +59,15 @@
 }
 .booking-main {
   flex-grow: 1;
+  width: 0;
   min-width: 0;
 }
 .booking-main h1 {
   margin: 0 0 24px;
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
+  letter-spacing: -0.4px;
 }
 .booking-main fieldset {
   margin: 0 0 28px;
@@ -210,155 +205,6 @@
   text-decoration: line-through;
 }
 
-/* ---------- 선택한 좌석 이름 줄 ---------- */
-/* 처음에는 좌석 이름이 모두 숨겨져 있다가, 체크박스를 선택하면 그 좌석 이름만 나타난다 */
-.picked {
-  width: 100%;
-  margin: 14px 0 0;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
-}
-.picked span {
-  display: none;
-  margin-left: 6px;
-  padding: 1px 8px;
-  border-radius: 999px;
-  background-color: #f3f3f4;
-  color: #111;
-  font-weight: 700;
-}
-/* ~ : 이 체크박스 "뒤에 오는" 같은 부모 안의 요소를 선택한다 (+ 는 바로 다음 요소 하나만) */
-#A1:checked ~ .picked .p-A1 {
-  display: inline-block;
-}
-#A2:checked ~ .picked .p-A2 {
-  display: inline-block;
-}
-#A3:checked ~ .picked .p-A3 {
-  display: inline-block;
-}
-#A4:checked ~ .picked .p-A4 {
-  display: inline-block;
-}
-#A5:checked ~ .picked .p-A5 {
-  display: inline-block;
-}
-#A6:checked ~ .picked .p-A6 {
-  display: inline-block;
-}
-#A7:checked ~ .picked .p-A7 {
-  display: inline-block;
-}
-#A8:checked ~ .picked .p-A8 {
-  display: inline-block;
-}
-#B1:checked ~ .picked .p-B1 {
-  display: inline-block;
-}
-#B2:checked ~ .picked .p-B2 {
-  display: inline-block;
-}
-#B5:checked ~ .picked .p-B5 {
-  display: inline-block;
-}
-#B6:checked ~ .picked .p-B6 {
-  display: inline-block;
-}
-#B7:checked ~ .picked .p-B7 {
-  display: inline-block;
-}
-#B8:checked ~ .picked .p-B8 {
-  display: inline-block;
-}
-#C1:checked ~ .picked .p-C1 {
-  display: inline-block;
-}
-#C2:checked ~ .picked .p-C2 {
-  display: inline-block;
-}
-#C3:checked ~ .picked .p-C3 {
-  display: inline-block;
-}
-#C4:checked ~ .picked .p-C4 {
-  display: inline-block;
-}
-#C5:checked ~ .picked .p-C5 {
-  display: inline-block;
-}
-#C7:checked ~ .picked .p-C7 {
-  display: inline-block;
-}
-#C8:checked ~ .picked .p-C8 {
-  display: inline-block;
-}
-#D1:checked ~ .picked .p-D1 {
-  display: inline-block;
-}
-#D2:checked ~ .picked .p-D2 {
-  display: inline-block;
-}
-#D3:checked ~ .picked .p-D3 {
-  display: inline-block;
-}
-#D4:checked ~ .picked .p-D4 {
-  display: inline-block;
-}
-#D5:checked ~ .picked .p-D5 {
-  display: inline-block;
-}
-#D6:checked ~ .picked .p-D6 {
-  display: inline-block;
-}
-#D7:checked ~ .picked .p-D7 {
-  display: inline-block;
-}
-#D8:checked ~ .picked .p-D8 {
-  display: inline-block;
-}
-#E1:checked ~ .picked .p-E1 {
-  display: inline-block;
-}
-#E2:checked ~ .picked .p-E2 {
-  display: inline-block;
-}
-#E3:checked ~ .picked .p-E3 {
-  display: inline-block;
-}
-#E4:checked ~ .picked .p-E4 {
-  display: inline-block;
-}
-#E5:checked ~ .picked .p-E5 {
-  display: inline-block;
-}
-#E6:checked ~ .picked .p-E6 {
-  display: inline-block;
-}
-#F1:checked ~ .picked .p-F1 {
-  display: inline-block;
-}
-#F2:checked ~ .picked .p-F2 {
-  display: inline-block;
-}
-#F3:checked ~ .picked .p-F3 {
-  display: inline-block;
-}
-#F4:checked ~ .picked .p-F4 {
-  display: inline-block;
-}
-#F5:checked ~ .picked .p-F5 {
-  display: inline-block;
-}
-#F6:checked ~ .picked .p-F6 {
-  display: inline-block;
-}
-#F7:checked ~ .picked .p-F7 {
-  display: inline-block;
-}
-#F8:checked ~ .picked .p-F8 {
-  display: inline-block;
-}
-
 /* 좌석 범례 (선택 가능 / 선택한 좌석 / 예매 완료) */
 .seat-legend {
   display: flex;
@@ -395,8 +241,9 @@
 .booking-summary {
   box-sizing: border-box;
   position: sticky;
-  top: 24px;
+  top: 96px;
   width: 300px;
+  flex-shrink: 0;
   margin-left: 24px;
   padding: 24px;
   border-radius: 16px;
@@ -411,11 +258,12 @@
 .show-info {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #555;
 }
 .show-poster {
+  flex-shrink: 0;
   width: 84px;
   height: 120px;
   margin-right: 14px;
@@ -426,7 +274,7 @@
   display: flex;
   flex-direction: column;
   min-width: 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   color: #ddd;
 }
@@ -434,8 +282,9 @@
   margin-top: 8px;
 }
 .show-title {
+  overflow-wrap: anywhere;
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.4;
 }
 .show-title .age {
@@ -450,32 +299,34 @@
 }
 .info-row {
   display: flex;
-  min-height: 48px;
+  min-height: 44px;
 }
 .info-row dt {
   width: 76px;
-  padding: 4px 0;
+  padding: 2px 0;
   color: #ccc;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 24px;
 }
 .info-row dd {
   flex-grow: 1;
   min-width: 0;
   margin: 0;
-  padding: 4px 0;
+  padding: 2px 0;
   line-height: 24px;
 }
 .sum-total {
-  color: #ff9995;
+  color: #ff7770;
   font-size: 26px;
   line-height: 40px;
   white-space: nowrap;
 }
 .booking-summary .btn-booking {
-  width: 100%;
+  width: 0;
+  flex-grow: 1;
+  padding: 0 8px;
   height: 52px;
-  margin-top: 16px;
+  margin-top: 0;
   border-radius: 12px;
   font-size: 17px;
   font-weight: 700;
@@ -548,7 +399,18 @@ main.done p {
 }
 
 .done-secondary-actions .done-secondary:hover {
-  border-color: #111;
+  border-color: #999;
   background: #f3f3f4;
   color: #111;
+}
+
+.booking-summary .booking-seat {
+  display: inline-block;
+  margin: 0 6px 4px 0;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: #f3f3f4;
+  color: #111;
+  font-size: 14px;
+  font-weight: 700;
 }

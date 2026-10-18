@@ -60,11 +60,11 @@
                 <a href="#" title="회원가입">회원가입</a>
 
                 <button type="button" class="icon-btn">
-                    <img src="images/icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                    <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
                 </button>
 
                 <button type="button" class="icon-btn menu-toggle">
-                    <img src="images/icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
+                    <img src="images/4_icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
                 </button>
                 </div>
             </div>
@@ -74,23 +74,21 @@
       <ol>
         <li>
           <a href="4_CINEON_index.html" class="page-path-home" title="홈">
-            <svg viewBox="0 0 24 24" width="18" height="18" focusable="false">
-              <path d="M2 11 12 2l10 9h-3v10h-5v-7h-4v7H5V11Z" fill="currentColor">
-            </svg>
+            <img src="images/4_icon_home.svg" alt="홈" width="18" height="18" />
           </a>
         </li>
-        <li><span>예매</span></li>
-        <li><a href="4_CINEON_timetable.html">상영시간표</a></li>
-        <li><span>결제</span></li>
+        <li><span class="page-path-separator">&gt;</span><span>예매</span></li>
+        <li><span class="page-path-separator">&gt;</span><a href="4_CINEON_timetable.html">상영시간표</a></li>
+        <li><span class="page-path-separator">&gt;</span><span>결제</span></li>
       </ol>
     </nav>
 
         <div class="payment-layout">
             <nav class="payment-steps" title="예매 단계">
                 <ol>
-                    <li>✓ 01 상영시간<small>(완료)</small></li>
-                    <li>✓ 02 인원/좌석<small>(완료)</small></li>
-                    <li class="payment-step-current"><strong>03 결제</strong><small>(현재 단계)</small></li>
+                    <li>01 상영시간</li>
+                    <li>02 인원/좌석</li>
+                    <li class="payment-step-current"><strong>03 결제</strong></li>
                 </ol>
             </nav>
 
@@ -102,30 +100,30 @@
                     <section class="payment-section">
                         <div class="payment-section-heading">
                             <h3 class="payment-subtitle">할인 적용</h3>
-                            <button type="reset" class="payment-discount-reset">초기화</button>
+                            <button type="reset" class="payment-discount-reset" title="선택한 결제 항목을 초기 상태로 되돌리기">초기화</button>
                         </div>
 
                         <div class="payment-discount-tabs">
-                            <label class="payment-discount-tab">
+                            <label class="payment-discount-tab" title="쿠폰 및 관람권 할인 항목 선택">
                                 <input type="radio" name="discount-tab" value="coupon" checked>
                                 <span>쿠폰/관람권/기타</span>
                             </label>
-                            <label class="payment-discount-tab">
+                            <label class="payment-discount-tab" title="포인트 할인 항목 선택">
                                 <input type="radio" name="discount-tab" value="point">
                                 <span>포인트</span>
                             </label>
                         </div>
                         <div class="payment-coupons">
-                            <label><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-4"><span>스토어 교환권</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-5"><span>모바일 관람권</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-6"><span>페이즈 금액권</span></label>
-                            <label><input type="radio" name="discount-coupon" value="coupon-7"><span>중앙패밀리</span></label>
+                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
+                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
+                            <label title="스토어 교환권 선택"><input type="radio" name="discount-coupon" value="coupon-4"><span>스토어 교환권</span></label>
+                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-5"><span>모바일 관람권</span></label>
+                            <label title="페이즈 금액권 선택"><input type="radio" name="discount-coupon" value="coupon-6"><span>페이즈 금액권</span></label>
+                            <label title="중앙패밀리 선택"><input type="radio" name="discount-coupon" value="coupon-7"><span>중앙패밀리</span></label>
                         </div>
                         <div class="payment-coupon-options">
-                            <label><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
+                            <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
                         </div>
                         <p class="payment-hint">· 기프티콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은 [모바일 관람권]에서 사용하실 수 있습니다.</p>
                     </section>
@@ -134,9 +132,9 @@
                         <h3 class="payment-subtitle">결제수단 선택</h3>
                         <fieldset class="payment-methods">
                             <legend>결제수단</legend>
-                            <label><input type="radio" name="payment-method" value="card" checked><span>신용/체크카드</span></label>
-                            <label><input type="radio" name="payment-method" value="simple"><span>간편결제</span></label>
-                            <label><input type="radio" name="payment-method" value="mobile"><span>휴대폰 결제</span></label>
+                            <label title="신용·체크카드 선택"><input type="radio" name="payment-method" value="card" checked><span>신용/체크카드</span></label>
+                            <label title="간편결제 선택"><input type="radio" name="payment-method" value="simple"><span>간편결제</span></label>
+                            <label title="휴대폰 결제 선택"><input type="radio" name="payment-method" value="mobile"><span>휴대폰 결제</span></label>
                         </fieldset>
 
                         <div class="payment-method-panel">
@@ -157,7 +155,7 @@
 
                     <section class="payment-consent">
                         <h3 class="payment-subtitle">
-                            <label class="payment-consent-heading">
+                            <label class="payment-consent-heading" title="결제를 진행하려면 서비스 약관에 동의해 주세요">
                                 <input type="checkbox" name="service-agreement" required>
                                 <span>결제대행 서비스 약관 필수 동의</span>
                             </label>
@@ -165,26 +163,26 @@
                         <div class="payment-terms">
                             <div class="payment-term-row">
                                 <span>전자금융거래 기본약관</span>
-                                <button type="button" class="payment-terms-view">내용보기</button>
+                                <button type="button" class="payment-terms-view" title="전자금융거래 기본약관 내용 보기">내용보기</button>
                             </div>
                             <div class="payment-term-row">
                                 <span>개인정보 수집 및 이용에 대한 동의</span>
-                                <button type="button" class="payment-terms-view">내용보기</button>
+                                <button type="button" class="payment-terms-view" title="개인정보 수집 및 이용에 대한 동의 내용 보기">내용보기</button>
                             </div>
                             <div class="payment-term-row">
                                 <span>개인정보의 제 3자 제공 동의</span>
-                                <button type="button" class="payment-terms-view">내용보기</button>
+                                <button type="button" class="payment-terms-view" title="개인정보의 제 3자 제공 동의 내용 보기">내용보기</button>
                             </div>
                             <div class="payment-term-row">
                                 <span>개인정보의 처리 위탁 동의</span>
-                                <button type="button" class="payment-terms-view">내용보기</button>
+                                <button type="button" class="payment-terms-view" title="개인정보의 처리 위탁 동의 내용 보기">내용보기</button>
                             </div>
                         </div>
                     </section>
 
                     <section class="payment-consent payment-refund">
                         <h3 class="payment-subtitle">
-                            <label class="payment-consent-heading">
+                            <label class="payment-consent-heading" title="결제를 진행하려면 취소·환불 정책에 동의해 주세요">
                                 <input type="checkbox" name="refund-agreement" required>
                                 <span>취소/환불 정책에 대한 동의</span>
                             </label>
@@ -197,14 +195,14 @@
                 </form>
             </main>
 
-            <aside class="payment-summary payment-side" aria-labelledby="sum-title">
+            <aside class="payment-summary payment-side">
             <h2 id="sum-title">예매 정보</h2>
             <div class="show-info">
-              <img class="show-poster" src="images/poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
+              <img class="show-poster" src="images/4_poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
               <div class="show-text">
-                <strong class="show-title"><img class="age" src="images/icon_all.svg" alt="전체 이용가" width="20" height="20" />극장판 치이카와: 인어 섬의 비밀</strong>
+                <strong class="show-title"><img class="age" src="images/4_icon_all.svg" alt="전체 이용가" width="20" height="20" />극장판 치이카와: 인어 섬의 비밀</strong>
                 <span>강남점 5관 (2D)</span>
-                <span>2026.10.15 (목) 11:50 ~ 13:29</span>
+                <span>2026.10.15 (목)<br />11:50 ~ 13:29</span>
               </div>
             </div>
             <dl>
@@ -229,7 +227,10 @@
                 <dd><strong class="sum-total">25,000원</strong></dd>
               </div>
             </dl>
-            <button type="submit" form="payment-form" class="btn-booking">결제하기</button>
+            <div class="summary-actions">
+              <a href="4_CINEON_booking.html" class="summary-back" title="인원·좌석 선택 페이지로 돌아가기">이전</a>
+              <button type="submit" form="payment-form" class="btn-booking" title="필수 약관 동의 후 결제 완료 페이지로 이동">결제하기</button>
+            </div>
           </aside>
         </div>
 

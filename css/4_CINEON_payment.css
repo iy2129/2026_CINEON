@@ -14,7 +14,7 @@
 .payment-steps,
 .payment-side {
   position: sticky;
-  top: 24px;
+  top: 96px;
 }
 
 .payment-steps ol {
@@ -31,20 +31,9 @@
   color: #555;
 }
 
-.payment-steps small {
-  display: block;
-  margin-top: 2px;
-  color: #aaa;
-  font-size: 13px;
-}
-
 .payment-steps .payment-step-current {
   color: #e53935;
   font-size: 19px;
-}
-
-.payment-steps .payment-step-current small {
-  color: inherit;
 }
 
 .payment-steps .payment-step-current::before {
@@ -74,7 +63,12 @@
 }
 
 .payment-header {
-  margin-bottom: 28px;
+  margin-bottom: 16px;
+}
+
+.payment-header .section-heading {
+  font-size: 32px;
+  font-weight: 800;
 }
 
 .payment-subtitle {
@@ -161,7 +155,7 @@
 }
 
 .payment-method-panel {
-  padding: 20px;
+  padding: 12px;
   border-radius: 12px;
   background: #f3f3f4;
 }
@@ -198,44 +192,19 @@
 }
 
 .payment-consent-heading input {
-  appearance: none;
-  position: relative;
-  flex: none;
-  width: 30px;
-  height: 30px;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
   margin: 0;
-  border: 2px solid #d0d0d0;
-  border-radius: 50%;
-  background: #fff;
+  accent-color: #e53935;
   cursor: pointer;
-}
-
-.payment-consent-heading input::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 9px;
-  width: 7px;
-  height: 12px;
-  border-right: 2px solid #bcbcbc;
-  border-bottom: 2px solid #bcbcbc;
-  transform: rotate(45deg);
-}
-
-.payment-consent-heading input:checked {
-  border-color: #e53935;
-  background: #e53935;
-}
-
-.payment-consent-heading input:checked::after {
-  border-color: #fff;
 }
 
 .payment-terms {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  margin-top: 24px;
+  margin-top: 12px;
 }
 
 .payment-term-row {
@@ -264,11 +233,11 @@
 }
 
 .payment-refund {
-  margin-top: 64px;
+  margin-top: 56px;
 }
 
 .payment-refund-notice {
-  margin: 24px 0 0;
+  margin: 12px 0 0;
   padding-left: 20px;
   color: #999;
   font-size: 14px;
@@ -283,7 +252,9 @@
 
 
 .payment-discount-reset {
-  padding: 6px 12px;
+  align-self: flex-end;
+  padding: 0 12px;
+  line-height: 24px;
   background: #fff;
   color: #777;
   cursor: pointer;
@@ -294,7 +265,7 @@
 
 .payment-discount-tabs {
   display: flex;
-  margin: 16px 0;
+  margin: 14px 0 16px;
   padding: 4px;
   border-radius: 12px;
   background: #f3f3f4;
@@ -333,7 +304,6 @@
   font-size: 16px;
   text-align: center;
   word-break: keep-all;
-  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .payment-discount-tab span {
@@ -400,7 +370,6 @@
 
 .payment-methods span {
   color: #333;
-  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
 .payment-method-panel select {
@@ -417,7 +386,7 @@
 .payment-summary {
   box-sizing: border-box;
   position: sticky;
-  top: 24px;
+  top: 96px;
   min-width: 0;
   padding: 24px;
   border: 0;
@@ -437,8 +406,8 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
-  margin-bottom: 18px;
-  padding-bottom: 18px;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
   border-bottom: 1px solid #555;
 }
 
@@ -447,7 +416,7 @@
   width: 84px;
   height: 120px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
 }
 
@@ -456,7 +425,7 @@
   flex-direction: column;
   gap: 8px;
   min-width: 0;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.5;
   color: #ddd;
   overflow-wrap: anywhere;
@@ -464,7 +433,7 @@
 
 .payment-summary .show-title {
   color: #fff;
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.4;
 }
 
@@ -482,14 +451,15 @@
 .payment-info-row {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 8px;
+  min-height: 44px;
+  margin-bottom: 0;
 }
 
 .payment-summary dt,
 .payment-summary dd {
   box-sizing: border-box;
   margin: 0;
-  padding: 4px 0;
+  padding: 2px 0;
   line-height: 24px;
 }
 
@@ -498,7 +468,7 @@
   margin-right: 12px;
   flex-shrink: 0;
   color: #ccc;
-  font-size: 14px;
+  font-size: 15px;
 }
 
 .payment-summary dd {
@@ -515,7 +485,7 @@
 }
 
 .payment-summary dd strong {
-  color: #ff9995;
+  color: #ff7770;
   font-size: 26px;
   line-height: 40px;
   white-space: nowrap;
@@ -523,21 +493,24 @@
 }
 
 .payment-info-row-discount {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  padding-top: 14px;
+  padding-bottom: 0px;
+  margin-bottom: 14px;
   border-top: 1px solid #555;
   border-bottom: 1px solid #555;
 }
 
 .payment-summary .payment-discount-amount {
-  color: #ff9995;
+  color: #ff7770;
   font-weight: 700;
 }
 
 .payment-summary .btn-booking {
-  width: 100%;
+  width: 0;
+  flex-grow: 1;
+  padding: 0 8px;
   height: 52px;
-  margin-top: 24px;
+  margin-top: 0;
   border-radius: 12px;
   font-size: 17px;
   font-weight: 700;
@@ -552,4 +525,8 @@
   color: #111;
   font-size: 14px;
   font-weight: 700;
+}
+
+.payment-section-heading .payment-subtitle {
+  margin-bottom: 0;
 }

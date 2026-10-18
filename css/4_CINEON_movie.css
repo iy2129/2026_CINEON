@@ -13,12 +13,6 @@ main p {
     font-size: 16px;
 }
 
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
 .movie-layout {
     display: flex;
     align-items: flex-start;
@@ -35,7 +29,7 @@ main p {
 .movie-sidebar {
     width: 40%;
     position: sticky;
-    top: 124px;
+    top: 116px;
 }
 
 .movie-layout .container {
@@ -44,7 +38,8 @@ main p {
 }
 
 .movie-content .section-heading {
-    font-size: 26px;
+    font-size: 24px;
+    font-weight: 600;
     line-height: 1.4;
     margin: 0 0 20px;
 }
@@ -86,7 +81,7 @@ main p {
 .movie-section-nav {
     width: 98%;
     position: sticky;
-    top: 80px;
+    top: 72px;
     z-index: 90;
     margin-top: 56px;
     padding: 8px 0 0;
@@ -106,11 +101,11 @@ main p {
     align-items: center;
     justify-content: center;
     width: 25%;
-    min-height: 56px;
+    min-height: 52px;
     padding: 8px;
     border-radius: 12px;
     color: #333;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 400;
     text-align: center;
     text-decoration: none;
@@ -131,7 +126,7 @@ main p {
 .movie-section-anchor {
     display: block;
     position: relative;
-    top: -168px;
+    top: -160px;
     height: 0;
 }
 
@@ -139,8 +134,10 @@ main p {
     display: flex;
     align-items: center;
     margin: 0;
-    font-size: 28px;
+    font-size: 32px;
+    font-weight: 800;
     line-height: 1.4;
+    letter-spacing: -0.4px;
 }
 
 .movie-grade {
@@ -202,7 +199,7 @@ main p {
     display: block;
     width: 72px;
     min-width: 72px;
-    font-size: 16px;
+    font-size: 15px;
     color: #666666;
     line-height: 1.7;
 }
@@ -333,7 +330,7 @@ main p {
     flex-grow: 1;
     height: 48px;
     margin-top: 0;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
 }
 
@@ -346,7 +343,7 @@ main p {
 }
 
 .movie-story-section {
-    margin-top: 56px;
+    margin-top: 44px;
     padding-top: 0;
     border-top: 0;
 }
@@ -376,6 +373,7 @@ main p {
 }
 
 .event-image {
+    position: relative;
     width: 120px;
     height: 120px;
     margin-right: 20px;
@@ -393,6 +391,21 @@ main p {
     object-fit: cover;
 }
 
+.event-image::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: #000;
+    opacity: 0;
+}
+
+.event-card:hover .event-image::after {
+    opacity: 0.2;
+}
+
 .event-info {
     flex-grow: 1;
 }
@@ -401,8 +414,8 @@ main p {
     display: inline-block;
     padding: 3px 6px;
     border-radius: 4px;
-    background-color: #f7f7f8;
-    color: #666666;
+    background-color: #e4e4e6;
+    color: #444;
     font-size: 14px;
     font-weight: 700;
     line-height: normal;
@@ -410,15 +423,15 @@ main p {
 
 .event-title {
     margin: 8px 0 0;
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 18px;
+    font-weight: 500;
     line-height: 1.5;
 }
 
 main .event-period {
     margin: 8px 0 0;
     color: #777777;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .event-card:hover .event-title {
@@ -459,6 +472,7 @@ main .event-period {
 .trailer-card figcaption {
     margin-top: 10px;
     font-size: 16px;
+    font-weight: 500;
 }
 
 .play-button {

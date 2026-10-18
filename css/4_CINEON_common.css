@@ -1,12 +1,13 @@
 html {
-  overflow-x: hidden;
+  overflow-x: auto;
+  overflow-y: scroll;
 }
 
 .section-heading {
   margin: 0;
   color: #161616;
-  font-size: 34px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   line-height: 1.4;
   letter-spacing: -0.4px;
 }
@@ -17,7 +18,7 @@ html {
 }
 
 .section-heading a:hover {
-  font-weight: 700;
+  font-weight: 900;
 }
 
 .heading-arrow {
@@ -37,7 +38,7 @@ html {
   background: #e53935;
   color: #fff;
   font-family: inherit;
-  font-size: 15px;
+  font-size: 16px;
   text-decoration: none;
   cursor: pointer;
 }
@@ -57,9 +58,10 @@ body {
   width: 100%;
   background-color: white;
   border-bottom: 1px solid #e3e3e3;
-  position: relative;
-  z-index: 10;
-  box-shadow: 0 2px 12px rgba(194, 194, 194, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
 }
 
 .header-inner {
@@ -67,7 +69,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: relative;
-  height: 80px;
+  height: 72px;
   padding: 0 24px;
 }
 
@@ -133,8 +135,8 @@ body {
   align-items: center;
   justify-content: center;
   gap: 12px 28px;
-  min-height: 52px;
-  padding: 15px 0;
+  height: 52px;
+  padding: 0;
   margin: 0;
   list-style: none;
   transform: translateX(-50%);
@@ -144,22 +146,22 @@ body {
   z-index: 20;
 }
 
-.main-nav::before {
+.site-header::before {
   content: "";
   position: absolute;
   top: 100%;
   height: 52px;
-  left: 50%;
-  margin-left: -50vw;
-  width: max(1000px, 100vw);
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
   background: #fff;
   border-top: 1px solid #e3e3e3;
   border-bottom: 1px solid #eee;
-  box-shadow: 0 6px 12px rgba(89, 89, 89, 0.06);
+  box-shadow: 0 3px 6px rgba(89, 89, 89, 0.04);
   visibility: hidden;
 }
 
-.main-nav:hover::before {
+.site-header:has(.main-nav:hover)::before {
   visibility: visible;
 }
 
@@ -215,6 +217,7 @@ body {
 }
 
 .page-path {
+  box-sizing: border-box;
   height: 52px;
   background: #f7f7f8;
   color: #666;
@@ -240,13 +243,9 @@ body {
   font-size: 16px;
 }
 
-.page-path li + li::before {
-  content: "";
-  width: 6px;
-  height: 6px;
-  border-top: 1px solid #bbb;
-  border-right: 1px solid #bbb;
-  transform: rotate(45deg);
+.page-path-separator {
+  color: #bbb;
+  font-size: 14px;
 }
 
 .page-path a {
@@ -310,4 +309,55 @@ body {
   text-align: left;
   line-height: 18px;
   font-weight: 400;
+}
+
+/* 클릭 가능한 공통 컨트롤 */
+button:not(:disabled),
+select:not(:disabled),
+input[type="button"]:not(:disabled),
+input[type="submit"]:not(:disabled),
+input[type="reset"]:not(:disabled),
+input[type="checkbox"]:not(:disabled),
+input[type="radio"]:not(:disabled),
+input[type="date"]:not(:disabled),
+a[href],
+label[for] {
+  cursor: pointer;
+}
+
+button:disabled,
+input:disabled,
+input:disabled + label {
+  cursor: not-allowed;
+}
+
+/* 예매·결제 정보 박스의 이전 / 진행 버튼 */
+.summary-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.summary-actions .summary-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 0;
+  height: 52px;
+  padding: 0 8px;
+  border: 1px solid #aaa;
+  border-radius: 12px;
+  background: #f3f3f4;
+  color: #333;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.summary-actions .summary-back:hover {
+  border-color: #777;
+  background: #ddd;
+  color: #111;
 }
