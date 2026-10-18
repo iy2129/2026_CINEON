@@ -73,7 +73,7 @@ main p {
 }
 
 .movie-section-nav {
-    width: 100%;
+    width: 98%;
     position: sticky;
     top: 80px;
     z-index: 90;
