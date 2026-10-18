@@ -89,98 +89,81 @@
     <div class="layout">
       <nav aria-label="예매 단계">
         <ol>
-          <li>✓ 01 상영시간 <small>(완료)</small></li>
-          <li aria-current="step"><strong>02 인원/좌석</strong> <small>(현재 단계)</small></li>
+          <li class="step-done">✓ 01 상영시간 <small>(완료)</small></li>
+          <li class="step-current" aria-current="step"><strong>02 인원/좌석</strong> <small>(현재 단계)</small></li>
           <li>03 결제</li>
         </ol>
       </nav>
 
       <main>
-        <form action="4_CINEON_payment.html">
-          <h1>인원 / 좌석 선택</h1>
-          <fieldset>
-            <legend>인원 선택 (총 6명까지)</legend>
-            <p class="people">
-              <span class="p-name">일반 (14,000원)</span
-              ><span class="count" role="radiogroup" aria-label="일반 인원"
-                ><input type="radio" id="a0" name="adult" value="0" checked /><label for="a0">0</label><input type="radio" id="a1" name="adult" value="1" /><label for="a1">1</label
-                ><input type="radio" id="a2" name="adult" value="2" /><label for="a2">2</label><input type="radio" id="a3" name="adult" value="3" /><label for="a3">3</label
-                ><input type="radio" id="a4" name="adult" value="4" /><label for="a4">4</label><input type="radio" id="a5" name="adult" value="5" /><label for="a5">5</label
-                ><input type="radio" id="a6" name="adult" value="6" /><label for="a6">6</label></span
-              >
-              명
-            </p>
-            <p class="people">
-              <span class="p-name">청소년 (11,000원)</span
-              ><span class="count" role="radiogroup" aria-label="청소년 인원"
-                ><input type="radio" id="t0" name="teen" value="0" checked /><label for="t0">0</label><input type="radio" id="t1" name="teen" value="1" /><label for="t1">1</label
-                ><input type="radio" id="t2" name="teen" value="2" /><label for="t2">2</label><input type="radio" id="t3" name="teen" value="3" /><label for="t3">3</label
-                ><input type="radio" id="t4" name="teen" value="4" /><label for="t4">4</label><input type="radio" id="t5" name="teen" value="5" /><label for="t5">5</label
-                ><input type="radio" id="t6" name="teen" value="6" /><label for="t6">6</label></span
-              >
-              명
-            </p>
-            <p class="people">
-              <span class="p-name">우대 (7,000원)</span
-              ><span class="count" role="radiogroup" aria-label="우대 인원"
-                ><input type="radio" id="s0" name="senior" value="0" checked /><label for="s0">0</label><input type="radio" id="s1" name="senior" value="1" /><label for="s1">1</label
-                ><input type="radio" id="s2" name="senior" value="2" /><label for="s2">2</label><input type="radio" id="s3" name="senior" value="3" /><label for="s3">3</label
-                ><input type="radio" id="s4" name="senior" value="4" /><label for="s4">4</label><input type="radio" id="s5" name="senior" value="5" /><label for="s5">5</label
-                ><input type="radio" id="s6" name="senior" value="6" /><label for="s6">6</label></span
-              >
-              명
-            </p>
-          </fieldset>
+        <form action="4_CINEON_payment.html" autocomplete="off">
+          <div class="booking-main">
+            <h1>인원 / 좌석 선택</h1>
 
-          <fieldset>
-            <legend>좌석 선택</legend>
+            <fieldset>
+              <legend>인원 및 좌석 선택</legend>
 
-            <p class="screen-label"><strong>▲ 스크린</strong></p>
-            <div class="seat-grid" role="group" aria-label="좌석 선택">
-              <span class="row-name">A</span>
-              <input type="checkbox" id="A1" name="seat" value="A1" /><label for="A1">1</label> <input type="checkbox" id="A2" name="seat" value="A2" /><label for="A2">2</label>
-              <input type="checkbox" id="A3" name="seat" value="A3" /><label for="A3">3</label> <input type="checkbox" id="A4" name="seat" value="A4" /><label for="A4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="A5" name="seat" value="A5" /><label for="A5">5</label> <input type="checkbox" id="A6" name="seat" value="A6" /><label for="A6">6</label>
-              <input type="checkbox" id="A7" name="seat" value="A7" /><label for="A7">7</label> <input type="checkbox" id="A8" name="seat" value="A8" /><label for="A8">8</label>
-              <span class="row-name">B</span>
-              <input type="checkbox" id="B1" name="seat" value="B1" /><label for="B1">1</label> <input type="checkbox" id="B2" name="seat" value="B2" /><label for="B2">2</label>
-              <input type="checkbox" id="B3" name="seat" value="B3" disabled /><label for="B3">3</label> <input type="checkbox" id="B4" name="seat" value="B4" disabled /><label for="B4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="B5" name="seat" value="B5" /><label for="B5">5</label> <input type="checkbox" id="B6" name="seat" value="B6" /><label for="B6">6</label>
-              <input type="checkbox" id="B7" name="seat" value="B7" /><label for="B7">7</label> <input type="checkbox" id="B8" name="seat" value="B8" /><label for="B8">8</label>
-              <span class="row-name">C</span>
-              <input type="checkbox" id="C1" name="seat" value="C1" /><label for="C1">1</label> <input type="checkbox" id="C2" name="seat" value="C2" /><label for="C2">2</label>
-              <input type="checkbox" id="C3" name="seat" value="C3" /><label for="C3">3</label> <input type="checkbox" id="C4" name="seat" value="C4" /><label for="C4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="C5" name="seat" value="C5" /><label for="C5">5</label> <input type="checkbox" id="C6" name="seat" value="C6" disabled /><label for="C6">6</label>
-              <input type="checkbox" id="C7" name="seat" value="C7" /><label for="C7">7</label> <input type="checkbox" id="C8" name="seat" value="C8" /><label for="C8">8</label>
-              <span class="row-name">D</span>
-              <input type="checkbox" id="D1" name="seat" value="D1" /><label for="D1">1</label> <input type="checkbox" id="D2" name="seat" value="D2" /><label for="D2">2</label>
-              <input type="checkbox" id="D3" name="seat" value="D3" /><label for="D3">3</label> <input type="checkbox" id="D4" name="seat" value="D4" /><label for="D4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="D5" name="seat" value="D5" /><label for="D5">5</label> <input type="checkbox" id="D6" name="seat" value="D6" /><label for="D6">6</label>
-              <input type="checkbox" id="D7" name="seat" value="D7" /><label for="D7">7</label> <input type="checkbox" id="D8" name="seat" value="D8" /><label for="D8">8</label>
-              <span class="row-name">E</span>
-              <input type="checkbox" id="E1" name="seat" value="E1" /><label for="E1">1</label> <input type="checkbox" id="E2" name="seat" value="E2" /><label for="E2">2</label>
-              <input type="checkbox" id="E3" name="seat" value="E3" /><label for="E3">3</label> <input type="checkbox" id="E4" name="seat" value="E4" /><label for="E4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="E5" name="seat" value="E5" /><label for="E5">5</label> <input type="checkbox" id="E6" name="seat" value="E6" /><label for="E6">6</label>
-              <input type="checkbox" id="E7" name="seat" value="E7" disabled /><label for="E7">7</label> <input type="checkbox" id="E8" name="seat" value="E8" disabled /><label for="E8">8</label>
-              <span class="row-name">F</span>
-              <input type="checkbox" id="F1" name="seat" value="F1" /><label for="F1">1</label> <input type="checkbox" id="F2" name="seat" value="F2" /><label for="F2">2</label>
-              <input type="checkbox" id="F3" name="seat" value="F3" /><label for="F3">3</label> <input type="checkbox" id="F4" name="seat" value="F4" /><label for="F4">4</label>
-              <span class="aisle"></span>
-              <input type="checkbox" id="F5" name="seat" value="F5" /><label for="F5">5</label> <input type="checkbox" id="F6" name="seat" value="F6" /><label for="F6">6</label>
-              <input type="checkbox" id="F7" name="seat" value="F7" /><label for="F7">7</label> <input type="checkbox" id="F8" name="seat" value="F8" /><label for="F8">8</label>
-            </div>
+              <ul class="people-grid">
+                <li>
+                  <label for="adult"><span class="p-name">일반</span><span class="p-price">14,000원</span></label>
+                  <input type="number" id="adult" name="adult" min="0" value="2" />
+                </li>
+                <li>
+                  <label for="teen"><span class="p-name">청소년</span><span class="p-price">11,000원</span></label>
+                  <input type="number" id="teen" name="teen" min="0" value="0" />
+                </li>
+                <li>
+                  <label for="elder"><span class="p-name">경로</span><span class="p-price">7,000원</span></label>
+                  <input type="number" id="elder" name="elder" min="0" value="0" />
+                </li>
+                <li>
+                  <label for="senior"><span class="p-name">우대</span><span class="p-price">7,000원</span></label>
+                  <input type="number" id="senior" name="senior" min="0" value="0" />
+                </li>
+              </ul>
 
-            <ul class="seat-legend">
-              <li class="lg-free">선택 가능</li>
-              <li class="lg-pick">선택한 좌석</li>
-              <li class="lg-taken">예매 완료</li>
-            </ul>
-          </fieldset>
+              <p class="screen-label"><strong>▲ 스크린</strong></p>
+              <div class="seat-grid" role="group" aria-label="좌석 선택">
+                <span class="row-name">A</span>
+                <input type="checkbox" id="A1" name="seat" value="A1" /><label for="A1">1</label> <input type="checkbox" id="A2" name="seat" value="A2" /><label for="A2">2</label> <input type="checkbox" id="A3" name="seat" value="A3" /><label for="A3">3</label> <input type="checkbox" id="A4" name="seat" value="A4" /><label for="A4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="A5" name="seat" value="A5" /><label for="A5">5</label> <input type="checkbox" id="A6" name="seat" value="A6" /><label for="A6">6</label> <input type="checkbox" id="A7" name="seat" value="A7" /><label for="A7">7</label> <input type="checkbox" id="A8" name="seat" value="A8" /><label for="A8">8</label>
+                <span class="row-end"></span>
+                <span class="row-name">B</span>
+                <input type="checkbox" id="B1" name="seat" value="B1" /><label for="B1">1</label> <input type="checkbox" id="B2" name="seat" value="B2" /><label for="B2">2</label> <input type="checkbox" id="B3" name="seat" value="B3" disabled /><label for="B3">3</label> <input type="checkbox" id="B4" name="seat" value="B4" disabled /><label for="B4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="B5" name="seat" value="B5" /><label for="B5">5</label> <input type="checkbox" id="B6" name="seat" value="B6" /><label for="B6">6</label> <input type="checkbox" id="B7" name="seat" value="B7" /><label for="B7">7</label> <input type="checkbox" id="B8" name="seat" value="B8" /><label for="B8">8</label>
+                <span class="row-end"></span>
+                <span class="row-name">C</span>
+                <input type="checkbox" id="C1" name="seat" value="C1" /><label for="C1">1</label> <input type="checkbox" id="C2" name="seat" value="C2" /><label for="C2">2</label> <input type="checkbox" id="C3" name="seat" value="C3" /><label for="C3">3</label> <input type="checkbox" id="C4" name="seat" value="C4" /><label for="C4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="C5" name="seat" value="C5" /><label for="C5">5</label> <input type="checkbox" id="C6" name="seat" value="C6" disabled /><label for="C6">6</label> <input type="checkbox" id="C7" name="seat" value="C7" /><label for="C7">7</label> <input type="checkbox" id="C8" name="seat" value="C8" /><label for="C8">8</label>
+                <span class="row-end"></span>
+                <span class="row-name">D</span>
+                <input type="checkbox" id="D1" name="seat" value="D1" /><label for="D1">1</label> <input type="checkbox" id="D2" name="seat" value="D2" /><label for="D2">2</label> <input type="checkbox" id="D3" name="seat" value="D3" /><label for="D3">3</label> <input type="checkbox" id="D4" name="seat" value="D4" /><label for="D4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="D5" name="seat" value="D5" checked /><label for="D5">5</label> <input type="checkbox" id="D6" name="seat" value="D6" checked /><label for="D6">6</label> <input type="checkbox" id="D7" name="seat" value="D7" /><label for="D7">7</label> <input type="checkbox" id="D8" name="seat" value="D8" /><label for="D8">8</label>
+                <span class="row-end"></span>
+                <span class="row-name">E</span>
+                <input type="checkbox" id="E1" name="seat" value="E1" /><label for="E1">1</label> <input type="checkbox" id="E2" name="seat" value="E2" /><label for="E2">2</label> <input type="checkbox" id="E3" name="seat" value="E3" /><label for="E3">3</label> <input type="checkbox" id="E4" name="seat" value="E4" /><label for="E4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="E5" name="seat" value="E5" /><label for="E5">5</label> <input type="checkbox" id="E6" name="seat" value="E6" /><label for="E6">6</label> <input type="checkbox" id="E7" name="seat" value="E7" disabled /><label for="E7">7</label> <input type="checkbox" id="E8" name="seat" value="E8" disabled /><label for="E8">8</label>
+                <span class="row-end"></span>
+                <span class="row-name">F</span>
+                <input type="checkbox" id="F1" name="seat" value="F1" /><label for="F1">1</label> <input type="checkbox" id="F2" name="seat" value="F2" /><label for="F2">2</label> <input type="checkbox" id="F3" name="seat" value="F3" /><label for="F3">3</label> <input type="checkbox" id="F4" name="seat" value="F4" /><label for="F4">4</label>
+                <span class="aisle"></span>
+                <input type="checkbox" id="F5" name="seat" value="F5" /><label for="F5">5</label> <input type="checkbox" id="F6" name="seat" value="F6" /><label for="F6">6</label> <input type="checkbox" id="F7" name="seat" value="F7" /><label for="F7">7</label> <input type="checkbox" id="F8" name="seat" value="F8" /><label for="F8">8</label>
+                <span class="row-end"></span>
+                <p class="picked">선택한 좌석 <span class="p-A1">A1</span><span class="p-A2">A2</span><span class="p-A3">A3</span><span class="p-A4">A4</span><span class="p-A5">A5</span><span class="p-A6">A6</span><span class="p-A7">A7</span><span class="p-A8">A8</span><span class="p-B1">B1</span><span class="p-B2">B2</span><span class="p-B5">B5</span><span class="p-B6">B6</span><span class="p-B7">B7</span><span class="p-B8">B8</span><span class="p-C1">C1</span><span class="p-C2">C2</span><span class="p-C3">C3</span><span class="p-C4">C4</span><span class="p-C5">C5</span><span class="p-C7">C7</span><span class="p-C8">C8</span><span class="p-D1">D1</span><span class="p-D2">D2</span><span class="p-D3">D3</span><span class="p-D4">D4</span><span class="p-D5">D5</span><span class="p-D6">D6</span><span class="p-D7">D7</span><span class="p-D8">D8</span><span class="p-E1">E1</span><span class="p-E2">E2</span><span class="p-E3">E3</span><span class="p-E4">E4</span><span class="p-E5">E5</span><span class="p-E6">E6</span><span class="p-F1">F1</span><span class="p-F2">F2</span><span class="p-F3">F3</span><span class="p-F4">F4</span><span class="p-F5">F5</span><span class="p-F6">F6</span><span class="p-F7">F7</span><span class="p-F8">F8</span></p>
+              </div>
+
+              <ul class="seat-legend">
+                <li><span class="box box-free"></span>선택 가능</li>
+                <li><span class="box box-pick"></span>선택한 좌석</li>
+                <li><span class="box box-taken"></span>예매 완료</li>
+              </ul>
+            </fieldset>
+          </div>
 
           <aside class="booking-summary" aria-labelledby="sum-title">
             <h2 id="sum-title">예매 정보</h2>
@@ -193,23 +176,18 @@
               </div>
             </div>
             <dl>
-              <dt>인원</dt>
-              <dd class="sum-people"><span class="pp pp-none">선택 안 함 (0명)</span><span class="pp pp-adult"></span><span class="pp pp-teen"></span><span class="pp pp-senior"></span></dd>
-              <dt>선택 좌석</dt>
-              <dd class="sum-seats">
-                <span class="st st-none">-</span><span class="st st-A1">A1</span><span class="st st-A2">A2</span><span class="st st-A3">A3</span><span class="st st-A4">A4</span
-                ><span class="st st-A5">A5</span><span class="st st-A6">A6</span><span class="st st-A7">A7</span><span class="st st-A8">A8</span><span class="st st-B1">B1</span
-                ><span class="st st-B2">B2</span><span class="st st-B3">B3</span><span class="st st-B4">B4</span><span class="st st-B5">B5</span><span class="st st-B6">B6</span
-                ><span class="st st-B7">B7</span><span class="st st-B8">B8</span><span class="st st-C1">C1</span><span class="st st-C2">C2</span><span class="st st-C3">C3</span
-                ><span class="st st-C4">C4</span><span class="st st-C5">C5</span><span class="st st-C6">C6</span><span class="st st-C7">C7</span><span class="st st-C8">C8</span
-                ><span class="st st-D1">D1</span><span class="st st-D2">D2</span><span class="st st-D3">D3</span><span class="st st-D4">D4</span><span class="st st-D5">D5</span
-                ><span class="st st-D6">D6</span><span class="st st-D7">D7</span><span class="st st-D8">D8</span><span class="st st-E1">E1</span><span class="st st-E2">E2</span
-                ><span class="st st-E3">E3</span><span class="st st-E4">E4</span><span class="st st-E5">E5</span><span class="st st-E6">E6</span><span class="st st-E7">E7</span
-                ><span class="st st-E8">E8</span><span class="st st-F1">F1</span><span class="st st-F2">F2</span><span class="st st-F3">F3</span><span class="st st-F4">F4</span
-                ><span class="st st-F5">F5</span><span class="st st-F6">F6</span><span class="st st-F7">F7</span><span class="st st-F8">F8</span>
-              </dd>
-              <dt>결제 금액</dt>
-              <dd><strong class="sum-total"></strong></dd>
+              <div class="info-row">
+                <dt>인원</dt>
+                <dd>일반 2명</dd>
+              </div>
+              <div class="info-row">
+                <dt>선택 좌석</dt>
+                <dd>D5, D6</dd>
+              </div>
+              <div class="info-row">
+                <dt>결제 금액</dt>
+                <dd><strong class="sum-total">28,000원</strong></dd>
+              </div>
             </dl>
             <button type="submit" class="btn-booking">다음</button>
           </aside>

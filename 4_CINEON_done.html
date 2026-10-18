@@ -90,13 +90,14 @@
     <div class="layout">
       <nav aria-label="예매 단계">
         <ol>
-          <li>✓ 01 상영시간 <small>(완료)</small></li>
-          <li>✓ 02 인원/좌석 <small>(완료)</small></li>
-          <li aria-current="step"><strong>03 결제</strong> <small>(완료)</small></li>
+          <li class="step-done">✓ 01 상영시간 <small>(완료)</small></li>
+          <li class="step-done">✓ 02 인원/좌석 <small>(완료)</small></li>
+          <li class="step-current" aria-current="step"><strong>03 결제</strong> <small>(완료)</small></li>
         </ol>
       </nav>
 
       <main class="done">
+        <span class="done-icon">✓</span>
         <h1>결제가 완료되었습니다</h1>
         <p>예매 내용은 이메일로 안내됩니다.</p>
         <p><a href="4_CINEON_timetable.html">다른 영화 예매하기</a></p>
