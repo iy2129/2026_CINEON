@@ -506,15 +506,49 @@ main.done p {
   margin: 0 0 28px;
   color: #666;
 }
-main.done p a {
-  display: inline-block;
-  padding: 14px 28px;
+.done-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 480px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.done-actions .done-primary {
+  width: 100%;
+  height: 52px;
   border-radius: 10px;
-  background-color: #e53935;
   color: #fff;
+  font-size: 17px;
   font-weight: 700;
+}
+
+.done-secondary-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.done-secondary-actions .done-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 0;
+  min-height: 46px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background: #fff;
+  color: #555;
+  font-size: 16px;
+  font-weight: 600;
   text-decoration: none;
 }
-main.done p a:hover {
-  background-color: #c62828;
+
+.done-secondary-actions .done-secondary:hover {
+  border-color: #111;
+  background: #f3f3f4;
+  color: #111;
 }
