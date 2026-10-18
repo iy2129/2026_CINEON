@@ -5,8 +5,8 @@
 .payment-layout {
   display: flex;
   align-items: flex-start;
-  gap: 32px;
-  max-width: 1236px;
+  gap: 24px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 40px 24px 80px;
 }
@@ -58,12 +58,12 @@
 }
 
 .payment-steps {
-  width: 180px;
+  width: 160px;
   flex-shrink: 0;
 }
 
 .payment-side {
-  width: 320px;
+  width: 300px;
   flex-shrink: 0;
 }
 

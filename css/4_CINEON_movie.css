@@ -24,9 +24,9 @@ main p {
 .movie-layout {
     display: flex;
     align-items: flex-start;
-    max-width: 1320px;
+    max-width: 1148px;
     margin: 0 auto;
-    padding: 80px 32px;
+    padding: 80px 24px;
 }
 
 .movie-content {

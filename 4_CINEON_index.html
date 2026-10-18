@@ -180,30 +180,7 @@
                                     <a class="btn-booking" href="#" title="영화 예매하기">예매하기</a>
                                 </div>
                             </article>
-                            <article class="movie-card">
-                                <a class="movie-poster" href="#" title="영화 상세 보기">
-                                    <img src="images/poster-guardians.jpg" alt="전자오락수호대 포스터">
-                                    <span class="movie-rank">5</span>
-                                    <span class="age-rating"> <img src="images/icon_12.svg" alt="12세 이용가"> </span>
-                                    <div class="movie-overlay">
-                                        <p class="movie-summary">플레이어가 게임을 즐길 수 있도록 무대 뒤에서 세팅하는 비밀 조직 ‘전자오락수호대’.
-                                            게임 속 모든 것을 만드는 그들의 최우선 수칙은 보안 유지다.
-                                            “절대로 게임 플레이어에게 정체를 들키지 말 것!”
-                                        </p>
-                                        <div class="movie-review">관람평 <strong>8.2</strong></div>
-                                    </div>
-                                </a>
-                                <h3 class="movie-title">전자오락수호대</h3>
-                                <div class="movie-actions">
-                                    <label class="movie-like">
-                                        <input type="checkbox">
-                                        <span class="movie-like-off movie-heart">♡</span>
-                                        <span class="movie-like-on movie-heart">♥</span>
-                                        <span class="movie-like-count">2.7k</span>
-                                    </label>
-                                    <a class="btn-booking" href="#" title="영화 예매하기">예매하기</a>
-                                </div>
-                            </article>
+
                     </div>
                 </div>
                 <div class="movie-shortcuts">
@@ -222,6 +199,65 @@
                         <button type="button"><img src="images/icon_search.svg" alt="검색" width="24" height="24"></button>
                     </div>
                 </div>
+
+
+
+                <section class="nearby-section" aria-labelledby="nearby-heading">
+                    <div class="nearby-header">
+                        <h2 class="section-heading" id="nearby-heading">지금 바로 볼 수 있는 영화!</h2>
+                        <div class="nearby-controls">
+                            <span class="nearby-theater"><img src="images/icon_location.svg" alt="위치" width="20" height="24">CINE:ON 강남점</span>
+                            <button type="button" title="위치 재설정">위치 재설정</button>
+                            <select class="nearby-branch-select" name="nearby-branch" title="영화관 지점 선택" aria-label="영화관 지점 선택">
+                                <option value="" disabled selected>지점 선택</option>
+                                <option value="gangnam">강남점</option>
+                                <option value="sinchon">신촌점</option>
+                            </select>
+                        </div>
+                    </div>
+                    <ul class="nearby-movies">
+                        <li class="nearby-movie">
+                            <img class="nearby-poster" src="images/poster-chiikawa.jpg" alt="극장판 치이카와: 인어 섬의 비밀 포스터" width="52" height="52">
+                            <img class="nearby-age" src="images/icon_all.svg" alt="전체 이용가" width="18" height="18">
+                            <h3 title="극장판 치이카와: 인어 섬의 비밀">극장판 치이카와: 인어 섬의 비밀</h3>
+                            <a class="nearby-session" href="4_CINEON_timetable.html" title="극장판 치이카와: 인어 섬의 비밀 13:15 상영시간표 보기">
+                                <strong><time datetime="13:15">13:15</time></strong><span class="nearby-end">- <time datetime="14:54">14:54</time></span>
+                                <span class="nearby-hall">5관</span>
+                                <span class="nearby-seats"><strong>48</strong><span>/ 120석</span></span>
+                            </a>
+                        </li>
+                        <li class="nearby-movie">
+                            <img class="nearby-poster" src="images/poster-tazza.jpg" alt="타짜: 벨제붑의 노래 포스터" width="52" height="52">
+                            <img class="nearby-age" src="images/icon_19.svg" alt="청소년 이용불가" width="18" height="18">
+                            <h3 title="타짜: 벨제붑의 노래">타짜: 벨제붑의 노래</h3>
+                            <a class="nearby-session" href="4_CINEON_timetable.html" title="타짜: 벨제붑의 노래 13:25 상영시간표 보기">
+                                <strong><time datetime="13:25">13:25</time></strong><span class="nearby-end">- <time datetime="15:35">15:35</time></span>
+                                <span class="nearby-hall">2관</span>
+                                <span class="nearby-seats"><strong>72</strong><span>/ 150석</span></span>
+                            </a>
+                        </li>
+                        <li class="nearby-movie">
+                            <img class="nearby-poster" src="images/poster-odyssey.jpg" alt="오디세이 포스터" width="52" height="52">
+                            <img class="nearby-age" src="images/icon_15.svg" alt="15세 이용가" width="18" height="18">
+                            <h3 title="오디세이">오디세이</h3>
+                            <a class="nearby-session" href="4_CINEON_timetable.html" title="오디세이 13:40 상영시간표 보기">
+                                <strong><time datetime="13:40">13:40</time></strong><span class="nearby-end">- <time datetime="16:10">16:10</time></span>
+                                <span class="nearby-hall">3관</span>
+                                <span class="nearby-seats"><strong>36</strong><span>/ 180석</span></span>
+                            </a>
+                        </li>
+                        <li class="nearby-movie">
+                            <img class="nearby-poster" src="images/poster-lookback.jpg" alt="룩백 포스터" width="52" height="52">
+                            <img class="nearby-age" src="images/icon_12.svg" alt="12세 이용가" width="18" height="18">
+                            <h3 title="룩백">룩백</h3>
+                            <a class="nearby-session" href="4_CINEON_timetable.html" title="룩백 13:55 상영시간표 보기">
+                                <strong><time datetime="13:55">13:55</time></strong><span class="nearby-end">- <time datetime="14:53">14:53</time></span>
+                                <span class="nearby-hall">1관</span>
+                                <span class="nearby-seats"><strong>64</strong><span>/ 100석</span></span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
 
             </section>
 
@@ -306,20 +342,7 @@
                                 </a>
                                 <h3 class="movie-title">룩백</h3>
                             </article>
-                            <article class="movie-card">
-                                <a class="movie-poster" href="#" title="영화 상세 보기">
-                                    <img src="images/poster-age.jpg" alt="철들 무렵 포스터">
-                                    <span class="age-rating"> <img src="images/icon_12.svg" alt="12세 이용가"> </span>
-                                    <div class="movie-overlay">
-                                        <p class="movie-summary">유.아.독.존 철부지 시한부 아빠 <br>
-                                            고.군.분.투 명배우 지망생 딸 <br>   
-                                            유.유.자.적 싱글 라이프 엄마...
-                                        </p>
-                                        <div class="movie-review">관람평 <strong>9.3</strong></div>
-                                    </div>
-                                </a>
-                                <h3 class="movie-title">철들 무렵</h3>
-                            </article>
+
                     </div>
                 </div>
 
