@@ -1,4 +1,3 @@
-/* 기본 설정 */
 main,
 main * {
     box-sizing: border-box;
@@ -10,94 +9,168 @@ main {
     line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-
-
-/*공통 제목 */
-main h1 {
-    font-size: 36px;
-}
-
-main h2 {
-    font-size: 26px;
-}
-
-main h3 {
-    font-size: 20px;
-}
-
 main p {
-    font-size: 16px;
+    font-size: 19px;
+}
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 
 
-/*영화 상단 소개*/
-.movie-hero {
-    padding: 60px 0;
-}
-
-.movie-summary {
+.movie-layout {
     display: flex;
-    gap: 60px;
-    margin-top: 0;
+    align-items: flex-start;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 80px 32px;
 }
 
-.movie-poster {
-    width: 300px;
+.movie-content {
+    width: 60%;
+    padding-right: 40px;
+}
+
+.movie-sidebar {
+    width: 40%;
+    position: sticky;
+    top: 104px;
+}
+
+.movie-layout .container {
+    width: 100%;
     margin: 0;
 }
 
-.movie-poster img {
+.movie-content .section-heading {
+    font-size: 27px;
+    line-height: 1.4;
+    margin: 0 0 20px;
+}
+
+
+
+.movie-story-section,
+.movie-events-section,
+.trailer-section,
+.stillcut-section {
+    padding-top: 43px;
+    margin-top: 50px;
+    border-top: 1px solid #e8e8e8;
+}
+
+
+
+.movie-poster {
     width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+}
+
+.movie-poster img {
     display: block;
+    width: 100%;
+    height: auto;
     border-radius: 10px;
 }
 
-.movie-info {
-    min-width: 0;
-    flex: 1;
+
+
+.movie-grade {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-left: 8px;
+    object-fit: contain;
 }
 
-.movie-grade { display: inline-block; width: 36px; height: 36px; object-fit: contain; vertical-align: middle; }
+.sidebar-title {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    font-size: 32px;
+    line-height: 1.4;
+}
+
+.movie-detail-box {
+    padding: 20px 20px 10px;
+    border: 1px solid #cccccc;
+    border-radius: 14px;
+    background-color: white;
+}
+
+.person-name {
+    color: #222222;
+    text-decoration: none;
+}
+
+.person-name:hover {
+    text-decoration: underline;
+}
+
+.movie-detail-section {
+    margin-top: 40px;
+}
+
+.detail-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.detail-label {
+    display: block;
+    width: 72px;
+    min-width: 72px;
+    font-size: 16px;
+    color: #666666;
+    line-height: 1.7;
+}
+
+.movie-detail-box .detail-content {
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.7;
+}
+
+.meta-grade {
+    color: #20a65a;
+    font-weight: 700;
+}
+
+.meta-grade-adult {
+    color: #c62828;
+}
 
 .movie-meta {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 8px 0;
-    color: #222222;
+    margin: 3px 0 0;
+    font-size: 19px;
+    line-height: 1.7;
 }
 
-.movie-meta > span { display: inline-flex; align-items: center; gap: 3px; padding: 0 10px; border-left: 1px solid #aaaaaa; line-height: 1.3; }
-.movie-meta > span:first-child { padding-left: 0; border-left: none; }
-.movie-meta strong { font-weight: 700; }
-.movie-meta .meta-grade { color: #20a65a; font-weight: 700; }
-.movie-meta .meta-grade-adult { color: #c62828; }
-.meta-clock { position: relative; display: inline-block; width: 16px; height: 16px; margin-right: 3px; border: 1px solid currentColor; border-radius: 50%; }
-.meta-clock::before { content: ""; position: absolute; top: 3px; left: 7px; width: 1px; height: 5px; background: currentColor; }
-.meta-clock::after { content: ""; position: absolute; top: 7px; left: 4px; width: 4px; height: 1px; background: currentColor; }
+.movie-meta span {
+    display: inline-block;
+    margin-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #cccccc;
+}
 
-.movie-description {
-    height: 150px;
-    overflow-y: auto;
-    padding-right: 12px;
-    margin: 24px 0;
-    line-height: 1.8;
-    scrollbar-width: thin;
-    scrollbar-color: #999999 #f2f2f2;
+.movie-meta span:first-child {
+    padding-left: 0;
+    border-left: 0;
 }
 
 
 
-/*영화 주요 지표*/
 .movie-stats-section {
-    padding: 35px 0;
+    margin-top: 20px;
+    padding: 16px 8px;
+    border-radius: 8px;
     background-color: #faf8f8;
 }
 
@@ -108,323 +181,275 @@ main p {
 }
 
 .stat-item {
-    padding: 20px 40px;
+    width: 33%;
 }
 
 .stat-label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
+    font-size: 14px;
     color: #666666;
 }
 
 .stat-value {
-    font-size: 28px;
+    font-size: 20px;
 }
 
 
 
-/*영화 정보*/
-.movie-detail-section {
-    padding: 100px 0 0;
+.movie-sidebar .sidebar-booking {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 48px;
+    margin-top: 0;
+    font-size: 18px;
+    font-weight: 700;
 }
 
-.movie-detail-section .section-heading {
-    margin-bottom: 20px;
+.movie-sidebar .sidebar-booking:hover {
+    background-color: #c62828;
 }
 
-.movie-detail-box {
-    padding: 24px 30px;
-    background-color: #faf8f8;
+.movie-sidebar .sidebar-booking:active {
+    background-color: #a51e1e;
+}
+
+.movie-actions {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.share-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 48px;
+    height: 48px;
+    margin-right: 8px;
+    border: 1px solid #dddddd;
+    border-radius: 12px;
+    background-color: #ffffff;
+}
+
+.share-button img {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+
+.share-button:hover {
+    background-color: #eeeeee;
+}
+
+.detail-like {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 72px;
+    height: 48px;
+    margin-right: 8px;
+    padding: 0;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
+    background-color: #ffffff;
+    color: #333333;
+    font-size: 14px;
+    cursor: pointer;
 }
 
-.movie-detail-box strong {
-    display: inline-block;
-    width: 50px;
+.detail-like input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
 }
 
-.movie-detail-box p {
-    margin: 0 0 10px;
-    line-height: 1.7;
+.detail-like-off,
+.detail-like-on {
+    width: 20px;
+    margin-right: 3px;
+    font-size: 20px;
+    line-height: 1;
+    text-align: center;
 }
 
-.movie-events-section{
-    padding: 100px 0 0;
+.detail-like-on {
+    display: none;
+    color: #e53935;
 }
 
-.event-section .section-heading {
-    margin-bottom: 20px;
+.detail-like input:checked ~ .detail-like-off {
+    display: none;
+}
+
+.detail-like input:checked ~ .detail-like-on {
+    display: block;
+}
+
+
+
+.movie-content .movie-story-section .section-heading {
+    margin-bottom: 14px;
+}
+
+.movie-description {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+.movie-events-section {
+    margin-top: 43px;
+}
+
+.event-entry {
+    margin-bottom: 24px;
+}
+
+.event-entry:last-child {
+    margin-bottom: 0;
+}
+
+.event-card {
+    display: flex;
+    align-items: flex-start;
     color: #222222;
+    text-decoration: none;
 }
 
-.trailer-section {
-    padding: 100px 0 0;
+.event-image {
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    min-width: 120px;
+    max-width: 120px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #eeeeee;
 }
 
-.trailer-section .section-heading {
-    margin-bottom: 20px;
+.event-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.stillcut-section {
-    padding: 100px 0 0;
+.event-info {
+    flex-grow: 1;
 }
 
-.stillcut-section .section-heading {
-    margin-bottom: 20px;
+.event-category {
+    display: inline-block;
+    padding: 3px 6px;
+    border-radius: 4px;
+    background-color: #eeeeee;
+    color: #666666;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.event-title {
+    margin: 8px 0 0;
+    font-size: 19px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+main .event-period {
+    margin: 8px 0 0;
+    color: #777777;
+    font-size: 15px;
+}
+
+.event-card:hover .event-title {
+    text-decoration: underline;
 }
 
 
 
-/*트레일러*/
 .trailer-list {
     display: flex;
-    gap: 16px;
+    flex-wrap: wrap;
+    align-items: flex-start;
 }
 
 .trailer-card {
-    flex: 1 1 0;
-    min-width: 0;
-    margin: 0;
+    width: 31%;
+    margin: 0 2% 0 0;
+}
+
+.trailer-preview {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    text-decoration: none;
+    background-color: #000000;
 }
 
 .trailer-card img {
-    width: 100%;
-    aspect-ratio: 5 / 3;
-    object-fit: cover;
     display: block;
-    border-radius: 8px;
-    transition: 0.3s;
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
 }
 
 .trailer-card figcaption {
     margin-top: 10px;
+    font-size: 16px;
 }
 
-
-
-/*스틸컷*/
-.stillcut-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-}
-
-.stillcut-grid img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 8px;
-}
-
-
-
-
-/*하단 예매*/
-.booking-section {
-    padding: 70px 0;
-    text-align: center;
-    background-color: #f7f7f7;
-}
-
-
-
-/*두 영화가 함께 사용하는 미디어 장식과 작은 화면 설정*/
-.movie-poster { flex-shrink: 0; }
-.movie-poster img { aspect-ratio: 2 / 3; object-fit: cover; }
-.movie-grade-adult { background-color: #c62828; border-color: #c62828; color: #ffffff; font-weight: 700; }
-.trailer-preview { display: block; position: relative; overflow: hidden; border-radius: 8px; cursor: pointer; text-decoration: none; }
-.play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 48px; height: 48px; border-radius: 50%; background: rgba(0, 0, 0, 0.6); color: white; text-align: center; line-height: 48px; }
-.video-bar { position: absolute; left: 10px; right: 10px; bottom: 10px; height: 4px; background: rgba(255, 255, 255, 0.6); border-radius: 2px; }
-.media-note { color: #777; font-size: 14px; }
-a:focus-visible { outline: 3px solid #d90000; outline-offset: 4px; }
-@media (max-width: 700px) {
-    .movie-summary { flex-direction: column; gap: 24px; }
-    .movie-poster { width: 240px; max-width: 100%; }
-    .movie-stats { flex-direction: column; }
-    .stat-item { padding: 12px; }
-    .trailer-list { flex-wrap: wrap; }
-    .trailer-card { flex-basis: 100%; max-width: 300px; }
-    .stillcut-grid { grid-template-columns: 1fr; }
-    .stillcut-grid img { height: auto; aspect-ratio: 5 / 3; }
-    .movie-detail-box strong { display: block; }
-}
-
-
-
-/*세로 스틸컷도 전체 사진이 보이도록 원본 비율 유지*/
-.stillcut-grid { align-items: start; }
-.stillcut-grid img { height: auto; aspect-ratio: auto; display: block; }
-
-
-
-/*스틸컷: 원본 비율을 유지하며 세 개의 열에 사진을 쌓기*/
-.stillcut-count { font-size: 14px; font-weight: normal; color: #666; }
-.stillcut-gallery { width: 100%; }
-.stillcut-gallery .stillcut-grid { display: flex; align-items: flex-start; gap: 10px; }
-.stillcut-gallery .stillcut-grid > .stillcut-link,
-.stillcut-column { width: calc((100% - 20px) / 3); }
-.stillcut-column { display: flex; flex-direction: column; gap: 10px; }
-.stillcut-gallery .stillcut-grid img { height: auto; max-height: none; aspect-ratio: auto; object-fit: initial; border-radius: 6px; display: block;  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.12); }
-.stillcut-column img { width: 100%; }
-.stillcut-more { margin-top: 12px; }
-.stillcut-more summary { padding: 8px; border: 1px solid #ddd; text-align: center; font-size: 14px; cursor: pointer; list-style: none; }
-.stillcut-more summary::-webkit-details-marker { display: none; }
-.stillcut-more summary:hover { background-color: #f7f7f7; }
-.stillcut-more .less-label { display: none; }
-.stillcut-more[open] .more-label { display: none; }
-.stillcut-more[open] .less-label { display: inline; }
-.stillcut-extra { margin-top: 10px; }
-@media (max-width: 700px) {
-    .stillcut-gallery .stillcut-grid { gap: 6px; }
-    .stillcut-column { gap: 6px; }
-    .stillcut-gallery .stillcut-grid > .stillcut-link,
-    .stillcut-column { width: calc((100% - 12px) / 3); }
-}
-
-
-/*이벤트 카드 디자인 */
-.event-list { display: flex; flex-wrap: wrap; gap: 24px 32px; }
-.event-card { display: flex; align-items: flex-start; gap: 20px; min-width: 0; color: #222222; text-decoration: none; }
-.event-image { flex: 0 0 120px; width: 120px; aspect-ratio: 1 / 1; overflow: hidden; border-radius: 8px; background: #eee; }
-.event-image img { display: block; width: 100%; height: 100%; object-fit: cover; }
-.event-info { flex: 1; min-width: 0; }
-.event-category { display: inline-block; padding: 3px 6px; border-radius: 4px; background: #eee; color: #666; font-size: 14px; font-weight: 600; }
-.event-section .event-title { display: block; margin: 15px 0 0; font-size: 16px; font-weight: 700; line-height: 1.5; overflow-wrap: anywhere; }
-.event-entry {
-    flex: 0 0 calc((100% - 32px) / 2);
-    min-width: 0;
-}
-main .event-preview-note { margin: 24px 0 0; color: #666666; font-size: 12px; }
-@media (max-width: 700px) {
-    .event-entry { flex-basis: 100%; }
-}
-
-
-
-/* 이벤트 제목 아래 진행 기간 */
-main .event-period { margin: 1px 0 0; color: #777777; font-size: 12px; line-height: 1.6; }
-
-
-
-/* 감독 및 출연진 이름 링크 */
-.movie-detail-box .person-name {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.movie-detail-box .person-name:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
-}
-
-
-
-/* 스틸컷 확대: 사진 링크의 주소와 :target을 연결 */
-.stillcut-link { display: block; min-width: 0; cursor: pointer; }
-.stillcut-column .stillcut-link { width: 100%; }
-.stillcut-lightbox { display: none; position: fixed; inset: 0; z-index: 1000; align-items: center; justify-content: center; padding: 50px 24px; box-sizing: border-box; }
-.stillcut-lightbox:target { display: flex; }
-.lightbox-backdrop { position: absolute; inset: 0; background: rgba(0, 0, 0, 0.85); }
-.lightbox-content { position: relative; width: 800px; height: 520px; max-width: calc(100vw - 48px); max-height: calc(100vh - 120px); background: transparent; }
-.lightbox-content img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.lightbox-close { position: absolute; top: -44px; right: 0; width: 36px; height: 36px; line-height: 36px; text-align: center; color: #ffffff; font-size: 36px; text-decoration: none; cursor: pointer; }
-
-
-
-/* 확대 사진 이전·다음 이동 */
-.lightbox-prev,
-.lightbox-next {
+.play-button {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 56px;
-    border-radius: 6px;
-    background: rgba(0, 0, 0, 0.4);
-    color: #ffffff;
+    top: 40%;
+    left: 45%;
+    color: white;
     font-size: 28px;
-    text-decoration: none;
-    cursor: pointer;
 }
-.lightbox-prev { left: 8px; }
-.lightbox-next { right: 8px; }
-.lightbox-prev:hover,
-.lightbox-next:hover { background: #000000bf; }
-.lightbox-counter {
-    position: absolute;
-    bottom: -34px;
-    left: 0;
+
+.trailer-preview:hover img {
+    opacity: 0.65;
+}
+
+
+
+.stillcut-section {
+    margin-top: 44px;
+}
+
+.stillcut-count {
+    font-size: 16px;
+    font-weight: normal;
+    color: #666666;
+}
+
+.stillcut-grid {
+    display: flex;
+    align-items: flex-start;
+}
+
+.stillcut-column {
+    width: 32%;
+    margin-right: 1%;
+}
+
+.stillcut-link {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stillcut-link img {
+    display: block;
     width: 100%;
-    text-align: center;
-    color: #ffffff;
-    font-size: 14px;
+    height: auto;
+    border-radius: 6px;
 }
-
-/* 영화 상세: 왼쪽 콘텐츠 6 / 오른쪽 고정 정보 4 */
-.movie-layout { display: flex; align-items: flex-start; gap: 40px; width: 100%; max-width: 1320px; margin: 0 auto; padding: 80px 32px 80px; }
-.movie-content { flex: 6 1 0; min-width: 0; }
-.movie-sidebar { flex: 4 1 0; min-width: 0; position: sticky; top: 24px; max-height: calc(100vh - 48px); overflow-y: auto; padding: 0 8px 8px 0; border: none; border-radius: 0; background: #fff; scrollbar-width: thin; }
-.movie-layout .container { width: 100%; max-width: none; margin: 0; }
-.sidebar-heading { display: flex; align-items: flex-start; gap: 20px; }
-.movie-poster-section .movie-poster { width: 100%; max-width: 480px; margin: 0 auto; }
-.movie-poster-section .movie-poster img { width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
-.movie-content .movie-story-section { margin-top: 48px; }
-.sidebar-heading-copy { flex: 1; min-width: 0; }
-.movie-sidebar .sidebar-title { margin: 12px 0 0; font-size: 24px; line-height: 1.4; word-break: keep-all; }
-.movie-sidebar .movie-grade { width: 28px; height: 28px; }
-.movie-sidebar .movie-meta { margin: 24px 0; font-size: 13px; }
-.movie-sidebar .movie-detail-section { padding: 0; }
-.movie-sidebar .movie-detail-section .section-heading { font-size: 18px; margin: 0 0 12px; }
-.movie-sidebar .movie-detail-box { padding: 20px; background: #fff; border: 1px solid #cccccc; border-radius: 14px; }
-.movie-sidebar .movie-detail-box p { font-size: 13px; }
-.movie-sidebar .movie-detail-box strong { width: 40px; }
-.movie-sidebar .movie-stats-section { padding: 16px 8px; margin-top: 20px; border-radius: 8px; }
-.movie-sidebar .movie-stats { display: flex; flex-direction: row; gap: 8px; }
-.movie-sidebar .stat-item { flex: 1; min-width: 0; padding: 0; }
-.movie-sidebar .stat-label { font-size: 11px; margin-bottom: 6px; }
-.movie-sidebar .stat-value { font-size: 17px; overflow-wrap: anywhere; }
-.movie-sidebar .sidebar-booking { display: flex; justify-content: center; width: 100%; margin-top: 20px; height: 48px; font-weight: 700; }
-.movie-content .movie-description { height: auto; overflow: visible; padding: 0; margin: 20px 0 0; line-height: 1.9; }
-.movie-content .movie-events-section,
-.movie-content .trailer-section,
-.movie-content .stillcut-section { padding: 40px 0 0; margin-top: 40px; border-top: 1px solid #e8e8e8; }
-.movie-content .section-heading { margin: 0 0 20px; font-size: 24px; }
-.movie-content .event-entry { flex-basis: 100%; }
-.movie-content .event-image { width: 120px; flex-basis: 120px; }
-.movie-content .trailer-list { flex-wrap: nowrap; }
-.movie-content .trailer-card { flex: 1 1 0; max-width: none; }
-.movie-content .trailer-card figcaption { font-size: 13px; }
-@media (max-width: 900px) {
-    .movie-layout { flex-direction: column; padding: 80px 24px; }
-    .movie-content, .movie-sidebar { width: 100%; flex: auto; }
-    .movie-sidebar { position: static; max-height: none; overflow: visible; }
-}
-
-.stillcut-continuous .stillcut-hidden { display: none; }
-.stillcut-continuous:has(> .stillcut-more[open]) .stillcut-hidden { display: block; }
-
-/* 예매 버튼 반응 */
-.movie-sidebar .sidebar-booking { transition: background-color 0.2s, transform 0.2s; }
-.movie-sidebar .sidebar-booking:hover { background-color: #c62828; transform: translateY(-2px); }
-.movie-sidebar .sidebar-booking:active { transform: translateY(0); }
-@media (prefers-reduced-motion: reduce) {
-    .movie-sidebar .sidebar-booking { transition: none; }
-    .movie-sidebar .sidebar-booking:hover { transform: none; }
-}
-
-/* 누적관객수 도움말 */
-.audience-help { display: inline-block; position: relative; vertical-align: middle; }
-.audience-help-button { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; padding: 0; border: 1px solid #888; border-radius: 50%; background: #fff; color: #666; font: inherit; font-size: 1em; font-weight: 700; cursor: help; }
-.audience-tooltip { display: none; position: absolute; bottom: calc(100% + 10px); right: -6px; z-index: 40; width: 320px; padding: 12px 14px; border: 1px solid #ddd; border-radius: 6px; background: #fff; box-shadow: 0 4px 14px rgba(0,0,0,0.12); color: #555; font-size: 12px; font-weight: 400; line-height: 1.5; text-align: center; white-space: nowrap; }
-.audience-tooltip::after { content: ""; position: absolute; bottom: -7px; right: 12px; width: 12px; height: 12px; background: #fff; border-right: 1px solid #ddd; border-bottom: 1px solid #ddd; transform: rotate(45deg); }
-.audience-help:hover .audience-tooltip,
-.audience-help:focus-within .audience-tooltip { display: block; }
-.audience-help::before { content: ""; position: absolute; bottom: 100%; right: -6px; width: 320px; height: 12px; }
-.audience-help-button:focus-visible { outline: 2px solid #d90000; outline-offset: 3px; }
-
-.event-card { cursor: pointer; }
-.event-card:hover .event-title { text-decoration: underline; text-underline-offset: 4px; }
