@@ -69,19 +69,19 @@ form aside dl { display: grid; grid-template-columns: 76px 1fr; gap: 8px 12px; m
 dt { color: #777; font-size: 14px; }
 dd { margin: 0; }
 
-.layout form[action*="done"] {
+.layout form[action] {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
   gap: 24px 32px;
   align-items: start;
 }
-.layout form[action*="done"] > fieldset {
+.layout form[action] > fieldset {
   grid-column: 1;
   padding: 24px;
   border: 1px solid #ddd;
   border-radius: 12px;
 }
-.layout form[action*="done"] legend { padding: 0 8px; font-size: 18px; font-weight: 700; }
+.layout form[action] legend { padding: 0 8px; font-size: 18px; font-weight: 700; }
 
 fieldset p { margin: 0 0 10px; }
 fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
@@ -129,18 +129,6 @@ main.done p a {
   text-decoration: none;
 }
 main.done p a:hover { background: #c62828; }
-
-@media (max-width: 900px) {
-  .layout { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 24px 16px 60px; }
-  .layout > nav { position: static; }
-  .layout > nav ol { display: flex; border-left: 0; border-bottom: 3px solid #eee; }
-  .layout > nav li { flex: 1; padding: 10px 6px; font-size: 14px; text-align: center; }
-  .layout > nav li small { display: none; }
-  .layout > nav li[aria-current="step"] { font-size: 15px; }
-  .layout > nav li[aria-current="step"]::before { left: 0; right: 0; top: auto; bottom: -3px; width: auto; height: 3px; }
-  .layout form[action*="done"] { grid-template-columns: minmax(0, 1fr); }
-  aside { grid-column: 1; grid-row: auto; position: static; }
-}
 
 .people { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
 .people .p-name { width: 150px; font-weight: 600; }
