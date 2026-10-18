@@ -26,8 +26,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 38px;
-  border-radius: 999px;
+  height: 42px;
+  width: 60px;
+  border-radius: 20px;
   color: #999;
   font-size: 16px;
   font-weight: 600;
@@ -270,7 +271,7 @@
   padding: 24px 0;
   border-radius: 16px;
   border: 1px solid #eeeaea;
-  background: #f4f3f3;
+  background: #f3f3f4;
   box-shadow: 0 2px 10px rgba(222, 207, 207, 0.2);
 }
 
@@ -358,8 +359,8 @@
 }
 
 .exclusive-movies {
-  margin-top: 24px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 .exclusive-movies .section-heading {
@@ -556,7 +557,7 @@
   height: 120px;
   overflow: hidden;
   border-radius: 8px;
-  background: #eee;
+  background: #f3f3f4;
 }
 
 .event-image img {
@@ -680,10 +681,9 @@
   text-underline-offset: 2px;
 }
 
-/* 지금 바로 볼 수 있는 영화 */
 .nearby-section {
   max-width: 1100px;
-  margin: 88px auto 0;
+  margin: 95px auto 0;
   color: #222;
 }
 
@@ -692,7 +692,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .nearby-controls {
@@ -705,7 +705,7 @@
   display: inline-flex;
   align-items: center;
   margin-right: 10px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -715,21 +715,23 @@
 
 .nearby-controls button,
 .nearby-branch-select {
+  box-sizing: border-box;
+  height: 30px;
   margin-left: 8px;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  background: #fff;
-  color: #555;
+  padding: 0 12px;
+  border: 1px solid #333;
+  border-radius: 16px;
+  background: #333;
+  color: #fff;
   font-family: inherit;
-  font-size: 13px;
+  font-size: 12px;
   cursor: pointer;
 }
 
 .nearby-controls button:hover,
 .nearby-branch-select:hover {
-  border-color: #777;
-  background: #f5f5f5;
+  border-color: #444;
+  background: #444;
 }
 
 .nearby-movies {
@@ -748,8 +750,8 @@
   width: 48.5%;
   min-width: 0;
   min-height: 96px;
-  padding: 20px 8px;
-  border-bottom: 1px solid #d6d6d6;
+  padding: 16px 8px;
+  border-bottom: 1px solid #e6e6e6;
 }
 
 .nearby-poster {
@@ -757,7 +759,7 @@
   height: 52px;
   flex-shrink: 0;
   margin-right: 12px;
-  border-radius: 50%;
+  border-radius: 8px;
   object-fit: cover;
 }
 
@@ -768,7 +770,7 @@
   white-space: nowrap;
   text-overflow: ellipsis;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .nearby-age {
@@ -785,7 +787,7 @@
   flex-shrink: 0;
   margin-left: auto;
   padding: 12px 14px;
-  border: 1px solid #c9c9c9;
+  border: 1px solid #ddd;
   border-radius: 12px;
   background: #fff;
   color: #555;
@@ -812,7 +814,7 @@
   margin-left: 12px;
   padding: 3px 6px;
   border-radius: 4px;
-  background: #f4f4f4;
+  background: #f3f3f4;
   color: #777;
 }
 
@@ -825,4 +827,9 @@
   border-color: #e53935;
   background: #fff5f5;
   color: #e53935;
+}
+
+.nearby-branch-select option {
+  background: #fff;
+  color: #333;
 }

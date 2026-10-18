@@ -10,7 +10,7 @@ main {
 }
 
 main p {
-    font-size: 19px;
+    font-size: 16px;
 }
 
 .site-header {
@@ -24,12 +24,12 @@ main p {
     align-items: flex-start;
     max-width: 1148px;
     margin: 0 auto;
-    padding: 80px 24px;
+    padding: 56px 24px;
 }
 
 .movie-content {
     width: 60%;
-    padding-right: 40px;
+    padding-right: 64px;
 }
 
 .movie-sidebar {
@@ -44,7 +44,7 @@ main p {
 }
 
 .movie-content .section-heading {
-    font-size: 27px;
+    font-size: 26px;
     line-height: 1.4;
     margin: 0 0 20px;
 }
@@ -54,13 +54,13 @@ main p {
 .trailer-section,
 .stillcut-section {
     padding-top: 43px;
-    margin-top: 50px;
+    margin-top: 56px;
     border-top: 1px solid #e8e8e8;
 }
 
 .movie-poster {
     width: 100%;
-    max-width: 480px;
+    max-width: 340px;
     margin: 0 auto;
 }
 
@@ -73,11 +73,11 @@ main p {
 }
 
 .movie-section-nav {
-    width: 98%;
+    width: 100%;
     position: sticky;
     top: 80px;
     z-index: 90;
-    margin-top: 50px;
+    margin-top: 56px;
     padding: 8px 0 0;
     border-radius: 0 0 12px 12px;
     background-color: #ffffff;
@@ -87,8 +87,7 @@ main p {
     display: flex;
     padding: 4px;
     border-radius: 12px;
-    background-color: #f5f5f5;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    background-color: #f7f7f8;
 }
 
 .movie-section-nav a {
@@ -96,20 +95,26 @@ main p {
     align-items: center;
     justify-content: center;
     width: 25%;
-    min-height: 48px;
-    padding: 8px 4px;
-    border-radius: 8px;
-    color: #666666;
-    font-size: 16px;
-    font-weight: 700;
+    min-height: 56px;
+    padding: 8px;
+    border-radius: 12px;
+    color: #333;
+    font-size: 17px;
+    font-weight: 400;
     text-align: center;
     text-decoration: none;
+    transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
-.movie-section-nav a:hover,
-.movie-section-nav a:focus {
-    color: #e53935;
-    background-color: #ffffff;
+.movie-content:not(:has(.movie-section-anchor:target)) .movie-section-nav a[href="#movie-overview"],
+.movie-content:has(#movie-overview:target) .movie-section-nav a[href="#movie-overview"],
+.movie-content:has(#movie-events:target) .movie-section-nav a[href="#movie-events"],
+.movie-content:has(#movie-clips:target) .movie-section-nav a[href="#movie-clips"],
+.movie-content:has(#movie-gallery:target) .movie-section-nav a[href="#movie-gallery"] {
+    color: #333;
+    background-color: #fff;
+    font-weight: 700;
+    box-shadow: inset 0 0 0 1px #999;
 }
 
 .movie-section-anchor {
@@ -123,23 +128,24 @@ main p {
     display: flex;
     align-items: center;
     margin: 0;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 1.4;
 }
 
 .movie-grade {
     display: inline-block;
-    width: 32px;
-    height: 32px;
-    margin-left: 8px;
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    margin-right: 10px;
     object-fit: contain;
 }
 
 .movie-meta {
     display: flex;
     flex-wrap: wrap;
-    margin: 3px 0 0;
-    font-size: 19px;
+    margin: 8px 0 0;
+    font-size: 15px;
     line-height: 1.7;
 }
 
@@ -192,7 +198,7 @@ main p {
 
 .movie-detail-box .detail-content {
     margin: 0;
-    font-size: 19px;
+    font-size: 16px;
     line-height: 1.7;
 }
 
@@ -209,7 +215,7 @@ main p {
     margin-top: 20px;
     padding: 16px 8px;
     border-radius: 8px;
-    background-color: #faf8f8;
+    background-color: #f7f7f8;
 }
 
 .movie-stats {
@@ -306,7 +312,7 @@ main p {
 }
 
 .share-button:hover {
-    background-color: #eeeeee;
+    background-color: #f7f7f8;
 }
 
 .movie-sidebar .sidebar-booking {
@@ -329,7 +335,7 @@ main p {
 }
 
 .movie-story-section {
-    margin-top: 43px;
+    margin-top: 56px;
     padding-top: 0;
     border-top: 0;
 }
@@ -344,7 +350,7 @@ main p {
 }
 
 .movie-events-section {
-    margin-top: 43px;
+    margin-top: 56px;
 }
 
 .event-entry {
@@ -370,7 +376,7 @@ main p {
     max-width: 120px;
     overflow: hidden;
     border-radius: 8px;
-    background-color: #eeeeee;
+    background-color: #f7f7f8;
 }
 
 .event-image img {
@@ -388,7 +394,7 @@ main p {
     display: inline-block;
     padding: 3px 6px;
     border-radius: 4px;
-    background-color: #f5f5f5;
+    background-color: #f7f7f8;
     color: #666666;
     font-size: 14px;
     font-weight: 700;
@@ -397,7 +403,7 @@ main p {
 
 .event-title {
     margin: 8px 0 0;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
     line-height: 1.5;
 }
@@ -461,7 +467,7 @@ main .event-period {
 }
 
 .stillcut-section {
-    margin-top: 44px;
+    margin-top: 56px;
 }
 
 .stillcut-count {

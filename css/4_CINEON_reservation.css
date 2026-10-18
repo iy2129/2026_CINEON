@@ -97,11 +97,11 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
   top: 24px;
   min-width: 0;
   padding: 24px;
-  border: 2.5px solid #f17e7e;
+  border: 0;
   border-radius: 16px;
-  background: #fff;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(160, 123, 123, 0.18);
+  background: #333;
+  color: #f5f5f5;
+  box-shadow: none;
 }
 
 .booking-summary h2 {
@@ -116,7 +116,7 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
   gap: 14px;
   margin-bottom: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #555;
 }
 
 .booking-summary .show-poster {
@@ -135,12 +135,12 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
   min-width: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: #555;
+  color: #ddd;
   overflow-wrap: anywhere;
 }
 
 .booking-summary .show-title {
-  color: #111;
+  color: #fff;
   font-size: 16px;
   line-height: 1.4;
 }
@@ -169,7 +169,7 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
 }
 
 .booking-summary dt {
-  color: #777;
+  color: #ccc;
   font-size: 14px;
 }
 
@@ -185,7 +185,7 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
 }
 
 .booking-summary dd strong {
-  color: #e53935;
+  color: #ff9995;
   font-size: 26px;
   line-height: 40px;
   white-space: nowrap;
@@ -201,7 +201,7 @@ fieldset p label { display: inline-block; width: 150px; font-weight: 600; }
   margin: 0 6px 4px 0;
   padding: 1px 8px;
   border-radius: 999px;
-  background: #f3f3f5;
+  background: #f3f3f4;
   color: #111;
   font-size: 14px;
   font-weight: 700;
@@ -422,7 +422,7 @@ form:has(#a4:checked):has(#t1:checked) label[for="s2"], form:has(#a4:checked):ha
 form:has(#a4:checked):has(#t2:checked) label[for="s1"], form:has(#a4:checked):has(#t2:checked) label[for="s2"], form:has(#a4:checked):has(#t2:checked) label[for="s3"], form:has(#a4:checked):has(#t2:checked) label[for="s4"], form:has(#a4:checked):has(#t2:checked) label[for="s5"], form:has(#a4:checked):has(#t2:checked) label[for="s6"],
 form:has(#a5:checked):has(#t0:checked) label[for="s2"], form:has(#a5:checked):has(#t0:checked) label[for="s3"], form:has(#a5:checked):has(#t0:checked) label[for="s4"], form:has(#a5:checked):has(#t0:checked) label[for="s5"], form:has(#a5:checked):has(#t0:checked) label[for="s6"],
 form:has(#a5:checked):has(#t1:checked) label[for="s1"], form:has(#a5:checked):has(#t1:checked) label[for="s2"], form:has(#a5:checked):has(#t1:checked) label[for="s3"], form:has(#a5:checked):has(#t1:checked) label[for="s4"], form:has(#a5:checked):has(#t1:checked) label[for="s5"], form:has(#a5:checked):has(#t1:checked) label[for="s6"],
-form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):has(#t0:checked) label[for="s2"], form:has(#a6:checked):has(#t0:checked) label[for="s3"], form:has(#a6:checked):has(#t0:checked) label[for="s4"], form:has(#a6:checked):has(#t0:checked) label[for="s5"], form:has(#a6:checked):has(#t0:checked) label[for="s6"] { color: #ccc; background: #f5f5f5; border-color: #e5e5e5; cursor: not-allowed; pointer-events: none; }
+form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):has(#t0:checked) label[for="s2"], form:has(#a6:checked):has(#t0:checked) label[for="s3"], form:has(#a6:checked):has(#t0:checked) label[for="s4"], form:has(#a6:checked):has(#t0:checked) label[for="s5"], form:has(#a6:checked):has(#t0:checked) label[for="s6"] { color: #ccc; background: #f3f3f4; border-color: #e5e5e5; cursor: not-allowed; pointer-events: none; }
 
 .people .p-name { width: 210px; }
 
@@ -433,13 +433,13 @@ form:has(#a6:checked):has(#t0:checked) label[for="s1"], form:has(#a6:checked):ha
 .seat-grid label:hover { border-color: #e53935; }
 .seat-grid input:checked + label { border-color: #e53935; background: #e53935; color: #fff; font-weight: 700; }
 .seat-grid input:focus-visible + label { outline: 2px solid #333; outline-offset: 2px; }
-.seat-grid input:disabled + label { border-color: #ddd; background: #e5e5e5; color: #aaa; cursor: not-allowed; }
-.seat-grid input:disabled + label::after { content: "×"; position: absolute; inset: 0; color: #888; font-size: 22px; line-height: 36px; }
+.seat-grid input:disabled + label { border-color: #aaa; background: #bdbdbf; color: #666; font-size: 0; cursor: not-allowed; }
+.seat-grid input:disabled + label::after { content: "×"; position: absolute; inset: 0; color: #666; font-size: 22px; line-height: 34px; }
 .seat-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 24px; margin: 18px 0 8px; padding: 0; list-style: none; font-size: 14px; }
 .seat-legend li { display: flex; align-items: center; gap: 6px; }
 .seat-legend li::before { content: ""; width: 16px; height: 16px; border: 1px solid #999; border-radius: 4px 4px 2px 2px; background: #fff; }
 .seat-legend .lg-pick::before { border-color: #e53935; background: #e53935; }
-.seat-legend .lg-taken::before { border-color: #ddd; background: #e5e5e5; }
+.seat-legend .lg-taken::before { border-color: #aaa; background: #bdbdbf; }
 .seat-grid ~ p { margin: 0; text-align: center; }
 
 .layout form aside .btn-booking { cursor: not-allowed; pointer-events: none; }
@@ -697,6 +697,10 @@ form:has(#a5:checked):has(#t1:checked):has(#s0:checked):has(.seat-grid > input:c
 form:has(#a6:checked):has(#t0:checked):has(#s0:checked):has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked):not(:has(.seat-grid > input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked ~ input:checked)) aside .btn-booking { opacity: 1; cursor: pointer; pointer-events: auto; }
 
 .screen-label { margin: 0 0 14px; }
-.screen-label strong { display: block; padding: 12px; border-radius: 60px 60px 0 0; background: #ccc; color: #333; text-align: center; font-size: 14px; }
+.screen-label strong { display: block; padding: 12px; border-radius: 60px 60px 0 0; background: #f3f3f4; color: #333; text-align: center; font-size: 14px; }
 
 form:has(#a0:checked):has(#t0:checked):has(#s0:checked) .seat-hint { display: block; }
+
+.booking-summary .need {
+  color: #ffb4b0;
+}

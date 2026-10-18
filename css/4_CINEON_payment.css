@@ -163,7 +163,7 @@
 .payment-method-panel {
   padding: 20px;
   border-radius: 12px;
-  background: #f8f8fa;
+  background: #f3f3f4;
 }
 
 .payment-method-panel > p:first-child {
@@ -297,7 +297,7 @@
   margin: 16px 0;
   padding: 4px;
   border-radius: 12px;
-  background: #f3f4f5;
+  background: #f3f3f4;
 }
 
 .payment-discount-tab,
@@ -359,7 +359,7 @@
 
 .payment-coupons label:hover span,
 .payment-methods label:hover span {
-  background: #f5f5f7;
+  background: #f3f3f4;
   box-shadow: inset 0 0 0 1px #999;
 }
 
@@ -420,11 +420,11 @@
   top: 24px;
   min-width: 0;
   padding: 24px;
-  border: 2.5px solid #f17e7e;
+  border: 0;
   border-radius: 16px;
-  background: #fff;
-  color: #333;
-  box-shadow: 0 2px 8px rgba(160, 123, 123, 0.18);
+  background: #333;
+  color: #f5f5f5;
+  box-shadow: none;
 }
 
 .payment-summary h2 {
@@ -439,7 +439,7 @@
   gap: 14px;
   margin-bottom: 18px;
   padding-bottom: 18px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #555;
 }
 
 .payment-summary .show-poster {
@@ -458,12 +458,12 @@
   min-width: 0;
   font-size: 14px;
   line-height: 1.5;
-  color: #555;
+  color: #ddd;
   overflow-wrap: anywhere;
 }
 
 .payment-summary .show-title {
-  color: #111;
+  color: #fff;
   font-size: 16px;
   line-height: 1.4;
 }
@@ -497,7 +497,7 @@
   width: 64px;
   margin-right: 12px;
   flex-shrink: 0;
-  color: #777;
+  color: #ccc;
   font-size: 14px;
 }
 
@@ -515,7 +515,7 @@
 }
 
 .payment-summary dd strong {
-  color: #e53935;
+  color: #ff9995;
   font-size: 26px;
   line-height: 40px;
   white-space: nowrap;
@@ -525,12 +525,12 @@
 .payment-info-row-discount {
   padding-top: 10px;
   padding-bottom: 10px;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
 }
 
 .payment-summary .payment-discount-amount {
-  color: #e53935;
+  color: #ff9995;
   font-weight: 700;
 }
 
@@ -548,7 +548,7 @@
   margin: 0 6px 4px 0;
   padding: 1px 8px;
   border-radius: 999px;
-  background: #f3f3f5;
+  background: #f3f3f4;
   color: #111;
   font-size: 14px;
   font-weight: 700;
