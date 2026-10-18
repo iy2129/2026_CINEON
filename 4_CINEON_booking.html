@@ -72,7 +72,7 @@
       </div>
     </header>
 
-    <nav class="page-path">
+    <nav class="page-path" title="현재 위치">
       <ol>
         <li>
           <a href="4_CINEON_index.html" class="page-path-home">
@@ -81,14 +81,15 @@
         </li>
         <li><span class="page-path-separator">&gt;</span><span>예매</span></li>
         <li><span class="page-path-separator">&gt;</span><a href="4_CINEON_timetable.html">상영시간표</a></li>
+        <li><span class="page-path-separator">&gt;</span><span>인원/좌석</span></li>
       </ol>
     </nav>
 
     <div class="layout">
-      <nav>
+      <nav title="예매 단계">
         <ol>
           <li class="step-done">01 상영시간</li>
-          <li class="step-current" aria-current="step"><strong>02 인원/좌석</strong></li>
+          <li class="step-current"><strong>02 인원/좌석</strong></li>
           <li>03 결제</li>
         </ol>
       </nav>
@@ -121,7 +122,7 @@
               </ul>
 
               <p class="screen-label"><strong>▲ 스크린</strong></p>
-              <div class="seat-grid" role="group">
+              <div class="seat-grid">
                 <span class="row-name">A</span>
                 <input type="checkbox" id="A1" name="seat" value="A1" /><label for="A1">1</label> <input type="checkbox" id="A2" name="seat" value="A2" /><label for="A2">2</label> <input type="checkbox" id="A3" name="seat" value="A3" /><label for="A3">3</label> <input type="checkbox" id="A4" name="seat" value="A4" /><label for="A4">4</label>
                 <span class="aisle"></span>
@@ -152,7 +153,6 @@
                 <span class="aisle"></span>
                 <input type="checkbox" id="F5" name="seat" value="F5" /><label for="F5">5</label> <input type="checkbox" id="F6" name="seat" value="F6" /><label for="F6">6</label> <input type="checkbox" id="F7" name="seat" value="F7" /><label for="F7">7</label> <input type="checkbox" id="F8" name="seat" value="F8" /><label for="F8">8</label>
                 <span class="row-end"></span>
-
               </div>
 
               <ul class="seat-legend">
@@ -164,7 +164,7 @@
           </div>
 
           <aside class="booking-summary">
-            <h2 id="sum-title">예매 정보</h2>
+            <h2>예매 정보</h2>
             <div class="show-info">
               <img class="show-poster" src="images/4_poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터" />
               <div class="show-text">

@@ -73,7 +73,7 @@
       </div>
     </header>
 
-    <nav class="page-path">
+    <nav class="page-path" title="현재 위치">
       <ol>
         <li>
           <a href="4_CINEON_index.html" class="page-path-home">
@@ -81,14 +81,14 @@
           </a>
         </li>
         <li><span class="page-path-separator">&gt;</span><span>예매</span></li>
-        <li><span class="page-path-separator">&gt;</span><a href="4_CINEON_timetable.html" aria-current="page">상영시간표</a></li>
+        <li><span class="page-path-separator">&gt;</span><span>상영시간표</span></li>
       </ol>
     </nav>
 
     <div class="t-layout">
-      <nav>
+      <nav title="예매 단계">
         <ol>
-          <li class="step-current" aria-current="step"><strong>01 상영시간</strong></li>
+          <li class="step-current"><strong>01 상영시간</strong></li>
           <li>02 인원/좌석</li>
           <li>03 결제</li>
         </ol>
@@ -101,36 +101,36 @@
           <fieldset class="date-bar">
             <legend>날짜 선택</legend>
             <ul>
-            <li>
-              <input type="radio" id="d-15" name="date" value="2026-10-15" checked />
-              <label for="d-15">15<span>·오늘</span></label>
-            </li>
-            <li>
-              <input type="radio" id="d-16" name="date" value="2026-10-16" />
-              <label for="d-16">16<span>·내일</span></label>
-            </li>
-            <li class="sat">
-              <input type="radio" id="d-17" name="date" value="2026-10-17" />
-              <label for="d-17">17<span>·토</span></label>
-            </li>
-            <li class="sun">
-              <input type="radio" id="d-18" name="date" value="2026-10-18" />
-              <label for="d-18">18<span>·일</span></label>
-            </li>
-            <li>
-              <input type="radio" id="d-19" name="date" value="2026-10-19" />
-              <label for="d-19">19<span>·월</span></label>
-            </li>
-            <li>
-              <input type="radio" id="d-20" name="date" value="2026-10-20" />
-              <label for="d-20">20<span>·화</span></label>
-            </li>
-            <li>
-              <input type="radio" id="d-21" name="date" value="2026-10-21" />
-              <label for="d-21">21<span>·수</span></label>
-            </li>
+              <li>
+                <input type="radio" id="d-15" name="date" value="2026-10-15" checked />
+                <label for="d-15">15<span>·오늘</span></label>
+              </li>
+              <li>
+                <input type="radio" id="d-16" name="date" value="2026-10-16" />
+                <label for="d-16">16<span>·내일</span></label>
+              </li>
+              <li class="sat">
+                <input type="radio" id="d-17" name="date" value="2026-10-17" />
+                <label for="d-17">17<span>·토</span></label>
+              </li>
+              <li class="sun">
+                <input type="radio" id="d-18" name="date" value="2026-10-18" />
+                <label for="d-18">18<span>·일</span></label>
+              </li>
+              <li>
+                <input type="radio" id="d-19" name="date" value="2026-10-19" />
+                <label for="d-19">19<span>·월</span></label>
+              </li>
+              <li>
+                <input type="radio" id="d-20" name="date" value="2026-10-20" />
+                <label for="d-20">20<span>·화</span></label>
+              </li>
+              <li>
+                <input type="radio" id="d-21" name="date" value="2026-10-21" />
+                <label for="d-21">21<span>·수</span></label>
+              </li>
               <li class="cal">
-                <input type="date" id="cal-date" name="calendar" value="2026-10-15" min="2026-10-15" max="2026-10-21" />
+                <input type="date" id="cal-date" name="calendar" title="날짜 직접 선택" value="2026-10-15" min="2026-10-15" max="2026-10-21" />
               </li>
             </ul>
           </fieldset>
@@ -144,74 +144,74 @@
               <td class="left movie-cell">
                 <div class="scroll">
                   <ul class="list">
-                      <li>
-                        <input type="radio" id="m-chiikawa" name="movie" value="chiikawa" checked />
-                        <label for="m-chiikawa"><img class="age" src="images/4_icon_all.svg" alt="전체 이용가" width="22" height="22" />극장판 치이카와: 인어 섬의 비밀</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-tazza" name="movie" value="tazza" />
-                        <label for="m-tazza"><img class="age" src="images/4_icon_19.svg" alt="청소년 이용불가" width="22" height="22" />타짜: 벨제붑의 노래</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-odyssey" name="movie" value="odyssey" />
-                        <label for="m-odyssey"><img class="age" src="images/4_icon_15.svg" alt="15세 이용가" width="22" height="22" />오디세이</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-whale" name="movie" value="whale" />
-                        <label for="m-whale"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />웨일폴: 고래에 먹힌 남자</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-guardians" name="movie" value="guardians" />
-                        <label for="m-guardians"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />전자오락수호대</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-lookback" name="movie" value="lookback" />
-                        <label for="m-lookback"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />룩백</label>
-                      </li>
-                      <li>
-                        <input type="radio" id="m-age" name="movie" value="age" />
-                        <label for="m-age"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />철들 무렵</label>
-                      </li>
+                    <li>
+                      <input type="radio" id="m-chiikawa" name="movie" value="chiikawa" checked />
+                      <label for="m-chiikawa"><img class="age" src="images/4_icon_all.svg" alt="전체 이용가" width="22" height="22" />극장판 치이카와: 인어 섬의 비밀</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-tazza" name="movie" value="tazza" />
+                      <label for="m-tazza"><img class="age" src="images/4_icon_19.svg" alt="청소년 이용불가" width="22" height="22" />타짜: 벨제붑의 노래</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-odyssey" name="movie" value="odyssey" />
+                      <label for="m-odyssey"><img class="age" src="images/4_icon_15.svg" alt="15세 이용가" width="22" height="22" />오디세이</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-whale" name="movie" value="whale" />
+                      <label for="m-whale"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />웨일폴: 고래에 먹힌 남자</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-guardians" name="movie" value="guardians" />
+                      <label for="m-guardians"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />전자오락수호대</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-lookback" name="movie" value="lookback" />
+                      <label for="m-lookback"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />룩백</label>
+                    </li>
+                    <li>
+                      <input type="radio" id="m-age" name="movie" value="age" />
+                      <label for="m-age"><img class="age" src="images/4_icon_12.svg" alt="12세 이용가" width="22" height="22" />철들 무렵</label>
+                    </li>
                   </ul>
                 </div>
               </td>
               <td rowspan="3">
                 <ul class="times">
                   <li>
-                  <input type="radio" id="s-chiikawa-gangnam-0" name="showtime" value="chiikawa-gangnam-09:40" />
-                  <label for="s-chiikawa-gangnam-0">
-                    <span class="t-main"><span class="sun">☀</span> <strong>09:40</strong> ~ 11:19</span>
-                    <small>5관 · 2D · 잔여 24/48석</small>
-                  </label>
-              </li>
+                    <input type="radio" id="s-chiikawa-gangnam-0" name="showtime" value="chiikawa-gangnam-09:40" />
+                    <label for="s-chiikawa-gangnam-0">
+                      <span class="t-main"><span class="sun">☀</span> <strong>09:40</strong> ~ 11:19</span>
+                      <small>5관 · 2D · 잔여 24/48석</small>
+                    </label>
+                  </li>
                   <li>
-                  <input type="radio" id="s-chiikawa-gangnam-1" name="showtime" value="chiikawa-gangnam-11:50" checked />
-                  <label for="s-chiikawa-gangnam-1">
-                    <span class="t-main"><strong>11:50</strong> ~ 13:29</span>
-                    <small>5관 · 2D · 잔여 31/48석</small>
-                  </label>
-              </li>
+                    <input type="radio" id="s-chiikawa-gangnam-1" name="showtime" value="chiikawa-gangnam-11:50" checked />
+                    <label for="s-chiikawa-gangnam-1">
+                      <span class="t-main"><strong>11:50</strong> ~ 13:29</span>
+                      <small>5관 · 2D · 잔여 31/48석</small>
+                    </label>
+                  </li>
                   <li>
-                  <input type="radio" id="s-chiikawa-gangnam-2" name="showtime" value="chiikawa-gangnam-14:00" />
-                  <label for="s-chiikawa-gangnam-2">
-                    <span class="t-main"><strong>14:00</strong> ~ 15:39</span>
-                    <small>5관 · 2D · 잔여 40/48석</small>
-                  </label>
-              </li>
+                    <input type="radio" id="s-chiikawa-gangnam-2" name="showtime" value="chiikawa-gangnam-14:00" />
+                    <label for="s-chiikawa-gangnam-2">
+                      <span class="t-main"><strong>14:00</strong> ~ 15:39</span>
+                      <small>5관 · 2D · 잔여 40/48석</small>
+                    </label>
+                  </li>
                   <li>
-                  <input type="radio" id="s-chiikawa-gangnam-3" name="showtime" value="chiikawa-gangnam-16:10" />
-                  <label for="s-chiikawa-gangnam-3">
-                    <span class="t-main"><strong>16:10</strong> ~ 17:49</span>
-                    <small>5관 · 2D · 잔여 29/48석</small>
-                  </label>
-              </li>
+                    <input type="radio" id="s-chiikawa-gangnam-3" name="showtime" value="chiikawa-gangnam-16:10" />
+                    <label for="s-chiikawa-gangnam-3">
+                      <span class="t-main"><strong>16:10</strong> ~ 17:49</span>
+                      <small>5관 · 2D · 잔여 29/48석</small>
+                    </label>
+                  </li>
                   <li>
-                  <input type="radio" id="s-chiikawa-gangnam-4" name="showtime" value="chiikawa-gangnam-18:20" />
-                  <label for="s-chiikawa-gangnam-4">
-                    <span class="t-main"><strong>18:20</strong> ~ 19:59</span>
-                    <small>5관 · 2D · 잔여 12/48석</small>
-                  </label>
-              </li>
+                    <input type="radio" id="s-chiikawa-gangnam-4" name="showtime" value="chiikawa-gangnam-18:20" />
+                    <label for="s-chiikawa-gangnam-4">
+                      <span class="t-main"><strong>18:20</strong> ~ 19:59</span>
+                      <small>5관 · 2D · 잔여 12/48석</small>
+                    </label>
+                  </li>
                 </ul>
               </td>
             </tr>
