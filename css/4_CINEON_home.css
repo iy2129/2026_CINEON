@@ -444,18 +444,12 @@
   flex-shrink: 0;
 }
 
-.curation-shade {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.curation-section .movie-poster {
   background: #000;
-  opacity: 0;
 }
 
-.curation-section .movie-poster:hover .curation-shade {
-  opacity: 0.2;
+.curation-section .movie-poster:hover img {
+  opacity: 0.8;
 }
 
 .curation-info {
@@ -552,13 +546,12 @@
 }
 
 .event-image {
-  position: relative;
   flex: 0 0 120px;
   width: 120px;
   height: 120px;
   overflow: hidden;
   border-radius: 8px;
-  background: #f3f3f4;
+  background: #000;
 }
 
 .event-image img {
@@ -568,19 +561,8 @@
   object-fit: cover;
 }
 
-.event-image::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background: #000;
-  opacity: 0;
-}
-
-.event-card:hover .event-image::after {
-  opacity: 0.2;
+.event-card:hover .event-image img {
+  opacity: 0.8;
 }
 
 .event-info {

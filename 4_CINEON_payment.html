@@ -22,6 +22,7 @@
                 <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
 
                 <nav class="main-nav">
+                <div class="submenu-background"></div>
                 <ul class="nav-list">
                     <li><a href="#" title="영화">영화</a>
                     <ul class="submenu">
@@ -92,11 +93,11 @@
                 </ol>
             </nav>
 
+            <form id="payment-form" class="payment-form" action="4_CINEON_done.html" method="get">
             <main class="payment-main">
                 <div class="payment-header">
                     <h2 class="section-heading">결제</h2>
                 </div>
-                <form id="payment-form" class="payment-form" action="4_CINEON_done.html" method="get">
                     <section class="payment-section">
                         <div class="payment-section-heading">
                             <h3 class="payment-subtitle">할인 적용</h3>
@@ -114,13 +115,10 @@
                             </label>
                         </div>
                         <div class="payment-coupons">
-                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
-                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
-                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
-                            <label title="스토어 교환권 선택"><input type="radio" name="discount-coupon" value="coupon-4"><span>스토어 교환권</span></label>
-                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-5"><span>모바일 관람권</span></label>
-                            <label title="페이즈 금액권 선택"><input type="radio" name="discount-coupon" value="coupon-6"><span>페이즈 금액권</span></label>
-                            <label title="중앙패밀리 선택"><input type="radio" name="discount-coupon" value="coupon-7"><span>중앙패밀리</span></label>
+                            <label title="할인쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
+                            <label title="VIP 영화쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
+                            <label title="모바일 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-4"><span>모바일 관람권</span></label>
                         </div>
                         <div class="payment-coupon-options">
                             <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
@@ -192,7 +190,6 @@
                             <li>현장 취소 시 영화 상영시간 이전까지만 가능합니다.</li>
                         </ul>
                     </section>
-                </form>
             </main>
 
             <aside class="payment-summary payment-side">
@@ -229,9 +226,10 @@
             </dl>
             <div class="summary-actions">
               <a href="4_CINEON_booking.html" class="summary-back" title="인원·좌석 선택 페이지로 돌아가기">이전</a>
-              <button type="submit" form="payment-form" class="btn-booking" title="필수 약관 동의 후 결제 완료 페이지로 이동">결제하기</button>
+              <button type="submit" class="btn-booking" title="필수 약관 동의 후 결제 완료 페이지로 이동">결제하기</button>
             </div>
           </aside>
+            </form>
         </div>
 
         <footer class="site-footer">

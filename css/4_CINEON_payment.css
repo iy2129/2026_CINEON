@@ -56,6 +56,15 @@
   flex-shrink: 0;
 }
 
+.payment-form {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  flex-grow: 1;
+  width: 0;
+  min-width: 0;
+}
+
 .payment-main {
   flex-grow: 1;
   width: 0;
@@ -75,6 +84,11 @@
   margin: 16px 0 16px;
   font-size: 24px;
   font-weight: 600;
+}
+
+.payment-section .payment-subtitle {
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .payment-main button,
@@ -169,13 +183,7 @@
 
 
 .payment-methods legend {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  overflow: hidden;
-  clip-path: inset(50%);
-  white-space: nowrap;
+  display: none;
 }
 
 .payment-consent {
@@ -261,6 +269,10 @@
   border: 0px;
   text-decoration: underline;
   text-underline-offset: 2px;
+}
+
+.payment-discount-reset:hover {
+  color: #222;
 }
 
 .payment-discount-tabs {
@@ -362,6 +374,7 @@
 }
 
 .payment-coupon-options input {
+  cursor: pointer;
   width: 18px;
   height: 18px;
   margin: 0;
