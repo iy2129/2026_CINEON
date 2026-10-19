@@ -222,7 +222,7 @@ main p {
 .movie-stats-section {
     margin-top: 20px;
     padding: 16px 8px;
-    border-radius: 8px;
+    border-radius: 14px;
     background-color: #f7f7f8;
 }
 
@@ -263,7 +263,7 @@ main p {
     margin-right: 8px;
     padding: 0;
     border: 1px solid #e0e0e0;
-    border-radius: 8px;
+    border-radius: 12px;
     background-color: #ffffff;
     color: #333333;
     font-size: 14px;
@@ -414,8 +414,8 @@ main p {
     display: inline-block;
     padding: 3px 6px;
     border-radius: 4px;
-    background-color: #e4e4e6;
-    color: #444;
+    background-color: #eee;
+    color: #666;
     font-size: 14px;
     font-weight: 700;
     line-height: normal;

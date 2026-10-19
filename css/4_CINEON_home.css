@@ -116,7 +116,7 @@
   height: 0;
   padding-top: 143.91%;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 12px;
   box-shadow: 5px 5px 12px rgba(6, 6, 6, 0.1);
 }
 
@@ -221,7 +221,7 @@
   height: 40px;
   padding: 0;
   border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border-radius: 12px;
   background: #fff;
   color: #333;
   cursor: pointer;
@@ -285,17 +285,6 @@
   color: #d90000;
 }
 
-.movie-shortcuts > a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  border-left: 1px solid #ddd;
-  border-right: 1px solid #ddd;
-  color: #333;
-  text-decoration: none;
-}
-
 .movie-search {
   display: flex;
   align-items: center;
@@ -349,13 +338,12 @@
   text-underline-offset: 4px;
 }
 
-.movie-timetable button {
-  flex: 0 0 24px;
+.movie-timetable img {
+  display: block;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
   margin-left: 12px;
-  padding: 0;
-  border: 0;
-  background: none;
-  cursor: pointer;
 }
 
 .exclusive-movies {
@@ -365,10 +353,6 @@
 
 .exclusive-movies .section-heading {
   margin-bottom: 28px;
-}
-
-.exclusive-movies .more-movies {
-  top: 8px;
 }
 
 .exclusive-movies .movie-list {
@@ -503,16 +487,6 @@
   min-width: 0;
 }
 
-.curation-card h4 {
-  margin: 12px 0 0;
-  font-size: 18px;
-  font-weight: 500;
-  color: #fff;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
 .event-section {
   padding: 48px 24px 70px;
   background: #4a0202;
@@ -574,8 +548,8 @@
   display: inline-block;
   padding: 3px 6px;
   border-radius: 4px;
-  background: #e3d0d4;
-  color: #401010;
+  background: #eee;
+  color: #666;
   font-size: 14px;
   font-weight: 700;
 }

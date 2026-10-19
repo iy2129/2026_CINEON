@@ -28,22 +28,14 @@
   position: relative;
   padding: 14px 0 14px 20px;
   font-size: 17px;
-  color: #555;
+  color: #aaa;
 }
 
 .payment-steps .payment-step-current {
+  margin-left: -3px;
+  border-left: 3px solid #e53935;
   color: #e53935;
   font-size: 19px;
-}
-
-.payment-steps .payment-step-current::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: -3px;
-  width: 3px;
-  background: #e53935;
 }
 
 .payment-steps {
@@ -88,7 +80,7 @@
 
 .payment-section .payment-subtitle {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .payment-main button,
@@ -106,10 +98,6 @@
   margin-bottom: 40px;
   padding-bottom: 32px;
   border-bottom: 1px solid #ddd;
-}
-
-.payment-section:last-child {
-  margin-bottom: 0;
 }
 
 .payment-section-heading {
@@ -158,26 +146,20 @@
   border-radius: 12px;
   box-shadow: inset 0 0 0 1px #ccc;
   text-align: center;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .payment-methods input:checked + span {
   background: #fff5f5;
   color: #e53935;
   box-shadow: inset 0 0 0 1px #e53935;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .payment-method-panel {
   padding: 12px;
   border-radius: 12px;
   background: #f3f3f4;
-}
-
-.payment-method-panel > p:first-child {
-  margin-top: 0;
-  line-height: 1.7;
-  font-size: 15px;
 }
 
 
@@ -253,14 +235,12 @@
   list-style: none;
 }
 
-.payment-refund-notice li::before {
-  content: "- ";
-}
 
 
 
-.payment-discount-reset {
+.payment-main .payment-discount-reset {
   align-self: flex-end;
+  font-size: 14px;
   padding: 0 12px;
   line-height: 24px;
   background: #fff;
@@ -319,22 +299,23 @@
 }
 
 .payment-discount-tab span {
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .payment-coupons {
   display: flex;
   flex-wrap: wrap;
-  margin: -6px;
+  margin: -4px;
 }
 
 .payment-coupons label {
   box-sizing: border-box;
   width: 25%;
-  padding: 6px;
+  padding: 4px;
 }
 
 .payment-coupons span {
+  font-size: 15px;
   background: #fff;
   box-shadow: inset 0 0 0 1px #ccc;
 }
@@ -357,6 +338,9 @@
   background: #fff5f5;
   color: #e53935;
   box-shadow: inset 0 0 0 1px #e53935;
+}
+
+.payment-coupons input:checked + span {
   font-weight: 600;
 }
 
@@ -418,16 +402,16 @@
 .payment-summary .show-info {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
   margin-bottom: 14px;
   padding-bottom: 12px;
   border-bottom: 1px solid #555;
 }
 
 .payment-summary .show-poster {
-  flex: none;
   width: 84px;
+  min-width: 84px;
   height: 120px;
+  margin-right: 14px;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.18);
@@ -436,18 +420,28 @@
 .payment-summary .show-text {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  flex-grow: 1;
+  width: 0;
   min-width: 0;
   font-size: 15px;
   line-height: 1.5;
   color: #ddd;
-  overflow-wrap: anywhere;
+}
+
+.payment-summary .show-text span {
+  margin-top: 8px;
 }
 
 .payment-summary .show-title {
+  word-break: break-all;
   color: #fff;
   font-size: 17px;
   line-height: 1.4;
+}
+
+.payment-summary .show-datetime {
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .payment-summary .show-title .age {
@@ -477,9 +471,8 @@
 }
 
 .payment-summary dt {
-  width: 64px;
-  margin-right: 12px;
-  flex-shrink: 0;
+  width: 76px;
+  min-width: 76px;
   color: #ccc;
   font-size: 15px;
 }
@@ -498,11 +491,11 @@
 }
 
 .payment-summary dd strong {
+  display: block;
   color: #ff7770;
   font-size: 26px;
-  line-height: 40px;
+  line-height: 24px;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;
 }
 
 .payment-info-row-discount {
@@ -522,9 +515,8 @@
   width: 0;
   flex-grow: 1;
   padding: 0 8px;
-  height: 52px;
+  height: 48px;
   margin-top: 0;
-  border-radius: 12px;
   font-size: 17px;
   font-weight: 700;
 }
