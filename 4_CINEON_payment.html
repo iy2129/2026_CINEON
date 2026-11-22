@@ -116,13 +116,17 @@
                             </label>
                         </div>
                         <div class="payment-coupons">
-                            <label title="할인쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
-                            <label title="VIP 영화쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
-                            <label title="CINE:ON 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
-                            <label title="모바일 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-4"><span>모바일 관람권</span></label>
+                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1" data-amount="3000"><span>할인쿠폰(3)<small>3,000원 할인</small></span></label>
+                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2" data-amount="5000"><span>VIP 영화쿠폰<small>5,000원 할인</small></span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000"><span>CINE:ON 관람권<small>14,000원 할인</small></span></label>
+                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-4" data-amount="14000"><span>모바일 관람권<small>14,000원 할인</small></span></label>
                         </div>
                         <div class="payment-coupon-options">
                             <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
+                        </div>
+                        <div id="payment-points" hidden>
+                            <label for="payment-point-amount">사용할 포인트 (최대 1,000 P)</label>
+                            <input id="payment-point-amount" type="number" min="0" max="1000" step="1" value="0" disabled>
                         </div>
                         <p class="payment-hint">· 기프티콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은 [모바일 관람권]에서 사용하실 수 있습니다.</p>
                     </section>
@@ -137,7 +141,7 @@
                         </fieldset>
 
                         <div class="payment-method-panel">
-                            <select id="payment-card" name="card" title="카드사 선택">
+                            <select id="payment-card" name="card" required title="카드사 선택">
                                 <option value="">카드사를 선택해 주세요</option>
                                 <option>신한카드</option>
                                 <option>삼성카드</option>
@@ -149,6 +153,12 @@
                                 <option>NH농협카드</option>
                                 <option>BC카드</option>
                             </select>
+                            <select id="payment-simple" required title="간편결제 서비스 선택" hidden disabled>
+                                <option value="">간편결제 서비스를 선택해 주세요</option>
+                                <option>카카오페이</option>
+                                <option>네이버페이</option>
+                            </select>
+                            <p id="payment-mobile" hidden>휴대폰 결제로 진행합니다.</p>
                         </div>
                     </section>
 
@@ -214,15 +224,15 @@
                         </div>
                         <div class="payment-info-row">
                             <dt>금액</dt>
-                            <dd>28,000원</dd>
+                            <dd id="payment-base" data-amount="28000">28,000원</dd>
                         </div>
                         <div class="payment-info-row payment-info-row-discount">
                             <dt class="payment-discount-label">할인 적용</dt>
-                            <dd class="payment-discount-amount">-3,000원</dd>
+                            <dd class="payment-discount-amount" aria-live="polite">0원</dd>
                         </div>
                         <div class="payment-info-row">
                             <dt>결제 금액</dt>
-                            <dd><strong class="sum-total">25,000원</strong></dd>
+                            <dd><strong class="sum-total">28,000원</strong></dd>
                         </div>
                     </dl>
                     <div class="summary-actions">
@@ -243,5 +253,6 @@
             </div>
         </footer>
 
+        <script src="js/4_CINEON_payment.js"></script>
     </body>
 </html>

@@ -1,0 +1,65 @@
+{
+  "now": [
+    {
+      "title": "극장판 치이카와: 인어 섬의 비밀",
+      "poster": "images/4_poster-chiikawa.jpg",
+      "detail": "4_CINEON_movie01.html",
+      "ageIcon": "images/4_icon_all.svg",
+      "ageLabel": "전체 이용가",
+      "summary": "어느 날, 광장에서 쉬고 있던 치이카와와 가르마 앞에 얼굴에 전단지를 붙인 토끼가 나타난다. 그곳엔 “특별한 섬으로의 초대”라는 글귀가 적혀 있는데...\n\n“섬에서 간단한 토벌만 해도 보수 100배!” “한정 섬라멘과 한정 디저트까지, 달콤한 것도 매콤한 것도 사실상 무료”\n\n솔깃한 문구에 이끌린 치이카와와...",
+      "rating": "9.1",
+      "likes": "2.3k"
+    },
+    {
+      "title": "타짜: 벨제붑의 노래",
+      "poster": "images/4_poster-tazza.jpg",
+      "detail": "4_CINEON_movie02.html",
+      "ageIcon": "images/4_icon_19.svg",
+      "ageLabel": "청소년 이용불가",
+      "summary": "중세 유럽, 종교인들은 카드가 악마의 도구라고 생각했다. 특히 죽음을 뜻하는 스페이드 13장엔 모두 악마의 이름이 들어 있다. 지옥으로 떨어진 추락한 천사 '루시퍼'와 지옥의 기존 지배자 '벨제붑'. 두 악마는 모든 것을 걸고 도박으로 승부를 내기로 결정했다.\n\n타고난 끗발로 사람의 마음을 사로잡는 '장태영'(변요한)과 천부적인...",
+      "rating": "8.4",
+      "likes": "1.8k"
+    },
+    {
+      "title": "오디세이",
+      "poster": "images/4_poster-odyssey.jpg",
+      "detail": "#",
+      "ageIcon": "images/4_icon_15.svg",
+      "ageLabel": "15세 이용가",
+      "summary": "이 시대 영화계 최고의 거장 크리스토퍼 놀란 감독의 새로운 신화 \n 인류 최고의 고전 [오디세이아]가 스크린에 펼쳐진다!\n\n10년간 이어진 트로이 전쟁을 승리로 이끈 영웅 '오디세우스'(맷 데이먼)는 왕의 부재를 틈타 침탈과 권력 다툼이 벌어진 왕국에서 그를 기다리고 있는 아내 '페넬로페'(앤 해서웨이)와...",
+      "rating": "9.5",
+      "likes": "3.6k"
+    },
+    {
+      "title": "웨일폴: 고래에 먹힌 남자",
+      "poster": "images/4_poster-whalefall.jpg",
+      "detail": "#",
+      "ageIcon": "images/4_icon_12.svg",
+      "ageLabel": "12세 이용가",
+      "summary": "산 채로 고래에게 먹혔다!\n\n사라진 아버지의 유해를 찾기 위해 바다로 뛰어든 다이버 ‘제이’(오스틴 에이브람스). 하지만 심해에서 거센 물살에 휩쓸려 무게 60톤, 길이 24m에 다르는 거대한 향유고래에 산 채로 먹히고 만다.\n\n공기 탱크의 잔압계는 점점 빠르게...",
+      "rating": "7.9",
+      "likes": "1.2k"
+    },
+    {
+      "title": "전자오락수호대",
+      "poster": "images/4_poster-guardians.jpg",
+      "detail": "#",
+      "ageIcon": "images/4_icon_12.svg",
+      "ageLabel": "12세 이용가",
+      "summary": "플레이어가 게임을 즐길 수 있도록 무대 뒤에서 세팅하는 비밀 조직 ‘전자오락수호대’. 게임 속 모든 것을 만드는 그들의 최우선 수칙은 보안 유지다...",
+      "rating": "8.2",
+      "likes": null
+    },
+    {
+      "title": "룩백",
+      "poster": "images/4_poster-lookback.jpg",
+      "detail": "#",
+      "ageIcon": "images/4_icon_12.svg",
+      "ageLabel": "12세 이용가",
+      "summary": "학교 신문에서 네컷 만화를 그리는 자신만만한 소녀 ‘후지노’와 그를 동경하지만 세상 밖이 두려워 방 안에 틀어박힌 외톨이 ‘쿄모토’...",
+      "rating": "8.8",
+      "likes": null
+    }
+  ],
+  "coming-soon": []
+}

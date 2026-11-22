@@ -1,0 +1,56 @@
+.done-icon[hidden],
+.done-actions .done-primary[hidden] {
+  display: none;
+}
+
+.done-icon,
+#done-details {
+  animation: done-reveal 240ms ease both;
+}
+
+#done-details {
+  margin: 0 0 16px;
+  padding: 12px 18px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  text-align: left;
+}
+
+#done-details > div {
+  display: grid;
+  grid-template-columns: 85px 1fr;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+#done-details dt {
+  font-weight: 700;
+}
+
+#done-details dd {
+  margin: 0;
+}
+
+.done-actions :is(button, a) {
+  transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
+}
+
+.done-actions :is(button, a):active {
+  transform: scale(0.97);
+}
+
+@keyframes done-reveal {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .done-icon,
+  #done-details {
+    animation: none;
+  }
+
+  .done-actions :is(button, a) {
+    transition: none;
+  }
+}

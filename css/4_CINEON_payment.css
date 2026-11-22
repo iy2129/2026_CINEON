@@ -315,6 +315,8 @@
 }
 
 .payment-coupons span {
+  flex-direction: column;
+  gap: 2px;
   font-size: 15px;
   background: #fff;
   box-shadow: inset 0 0 0 1px #ccc;
@@ -534,4 +536,47 @@
 
 .payment-section-heading .payment-subtitle {
   margin-bottom: 0;
+}
+
+.payment-coupons[hidden],
+.payment-coupon-options label[hidden] {
+  display: none;
+}
+
+#payment-points label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#payment-point-amount {
+  width: 110px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+}
+
+.payment-coupons input:disabled + span {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.payment-form :is(button, .summary-back, label span) {
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.payment-form button:active,
+.payment-form .summary-back:active {
+  transform: scale(0.97);
+}
+
+.payment-form input:focus-visible + span {
+  outline: 2px solid #770716;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-form :is(button, .summary-back, label span) {
+    transition: none;
+  }
 }

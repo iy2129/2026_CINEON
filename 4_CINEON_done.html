@@ -12,6 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/4_CINEON_common.css">
         <link rel="stylesheet" href="css/4_CINEON_reservation.css">
+        <link rel="stylesheet" href="css/4_CINEON_done.css">
     </head>
     <body>
         <header class="site-header">
@@ -96,11 +97,18 @@
             </nav>
 
             <main class="done">
-                <span class="done-icon">✓</span>
-                <h1>결제가 완료되었습니다</h1>
-                <p>예매 내용은 이메일로 안내됩니다.</p>
+                <span class="done-icon" aria-hidden="true" hidden>✓</span>
+                <h1>예매 내역을 찾을 수 없습니다</h1>
+                <p id="done-message">결제 화면에서 예매를 완료해 주세요.</p>
                 <div class="done-actions">
-                    <button type="button" class="btn-booking done-primary">예매 내역 확인하기</button>
+                    <button type="button" class="btn-booking done-primary" aria-expanded="false" aria-controls="done-details" hidden>예매 내역 확인하기</button>
+                    <dl id="done-details" hidden>
+                        <div><dt>영화</dt><dd id="done-movie"></dd></div>
+                        <div><dt>상영</dt><dd id="done-show"></dd></div>
+                        <div><dt>인원·좌석</dt><dd id="done-seats"></dd></div>
+                        <div><dt>결제수단</dt><dd id="done-method"></dd></div>
+                        <div><dt>결제 금액</dt><dd id="done-total"></dd></div>
+                    </dl>
                     <div class="done-secondary-actions">
                         <a href="4_CINEON_timetable.html" class="done-secondary">다른 영화 예매하기</a>
                         <a href="4_CINEON_index.html" class="done-secondary">홈으로 돌아가기</a>
@@ -121,5 +129,6 @@
                 <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
             </div>
         </footer>
+        <script src="js/4_CINEON_done.js"></script>
     </body>
 </html>
