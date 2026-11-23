@@ -281,16 +281,12 @@ main p {
 
 .detail-like-off,
 .detail-like-on {
-    width: 20px;
+    flex-shrink: 0;
     margin-right: 3px;
-    font-size: 20px;
-    line-height: 1;
-    text-align: center;
 }
 
 .detail-like-on {
     display: none;
-    color: #e53935;
 }
 
 .detail-like input:checked ~ .detail-like-off {

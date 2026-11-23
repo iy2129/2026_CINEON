@@ -33,8 +33,8 @@ function makeMovieCard(movie, rank) {
         actions.innerHTML = '<a class="btn-booking" href="4_CINEON_timetable.html">예매하기</a>';
         if (movie.likes !== null) {
             actions.innerHTML = '<label class="movie-like"><input type="checkbox">' +
-                '<span class="movie-like-off movie-heart" aria-hidden="true">♡</span>' +
-                '<span class="movie-like-on movie-heart" aria-hidden="true">♥</span>' +
+                '<img class="movie-like-off movie-heart" src="images/4_icon_heart_off.svg" alt="" width="20" height="20">' +
+                '<img class="movie-like-on movie-heart" src="images/4_icon_heart_on.svg" alt="" width="20" height="20">' +
                 '<span class="movie-like-count"></span></label>' + actions.innerHTML;
 
             const like = actions.querySelector("input");

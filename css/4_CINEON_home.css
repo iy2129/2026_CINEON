@@ -32,7 +32,7 @@
   align-items: center;
   justify-content: center;
   height: 42px;
-  width: 60px;
+  width: 108px;
   border-radius: 20px;
   color: #999;
   font-size: 16px;
@@ -42,7 +42,6 @@
 }
 
 .movie-status-tab input:checked + span {
-  padding: 0 24px;
   background: #333;
   color: #fff;
 }
@@ -239,21 +238,12 @@
 }
 
 .movie-heart {
-  font-size: 20px;
-  line-height: 1;
-}
-
-.movie-like-off, .movie-like-on {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 20px;
+  display: block;
   flex-shrink: 0;
 }
 
 .movie-like-on {
   display: none;
-  color: #e53935;
 }
 
 .movie-like input:checked ~ .movie-like-off {
@@ -261,7 +251,7 @@
 }
 
 .movie-like input:checked ~ .movie-like-on {
-  display: flex;
+  display: block;
 }
 
 .movie-actions .btn-booking {
@@ -830,7 +820,6 @@
 
 .movie-arrow,
 .movie-like,
-.movie-status-tab span,
 .movie-section button,
 .movie-section .btn-booking,
 .event-title {

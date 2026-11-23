@@ -130,7 +130,11 @@ body {
   left: 50%;
   width: 440px;
   box-sizing: border-box;
-  display: none;
+  display: flex;
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 180ms ease, visibility 180ms;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
@@ -142,7 +146,11 @@ body {
 }
 
 .submenu-background {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform 180ms ease, opacity 180ms ease, visibility 180ms;
   position: absolute;
   top: 100%;
   left: 0;
@@ -155,16 +163,36 @@ body {
   box-shadow: 0 3px 6px rgba(89, 89, 89, 0.04);
 }
 
-.main-nav:hover .submenu-background {
-  display: block;
+.main-nav:hover .submenu-background,
+.nav-list > li:hover .submenu {
+  visibility: visible;
+  opacity: 1;
 }
 
-.nav-list li:hover .submenu {
-  display: flex;
+.main-nav:hover .submenu-background {
+  transform: scaleY(1);
+}
+
+.nav-list > li:hover .submenu {
+  pointer-events: auto;
 }
 
 .submenu li {
   margin: 0 14px;
+  transform: translateY(-6px);
+  transition: transform 180ms ease;
+}
+
+.nav-list > li:hover .submenu li {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .submenu,
+  .submenu-background,
+  .submenu li {
+    transition: none;
+  }
 }
 
 .logo,
