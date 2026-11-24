@@ -231,14 +231,31 @@ body {
   margin-left: auto;
 }
 
-.user-menu > a {
+.user-menu > a,
+.user-menu-name,
+.user-menu-logout {
   font-size: 14px;
   color: #777777;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.user-menu > a:hover {
+.user-menu-name {
+  color: #000;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.user-menu-logout {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.user-menu > a:hover,
+.user-menu-logout:hover {
   color: #222222;
   text-decoration: underline;
   text-underline-offset: 2px;

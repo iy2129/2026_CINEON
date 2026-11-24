@@ -58,8 +58,8 @@
                 </nav>
 
                 <div class="user-menu">
-                    <a href="#" title="로그인">로그인</a>
-                    <a href="#" title="회원가입">회원가입</a>
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
 
                     <button type="button" class="icon-btn">
                         <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
@@ -159,6 +159,20 @@
                             </a>
                         </li>
                     </ul>
+                </section>
+
+                <section class="review-section" aria-labelledby="review-heading">
+                    <div class="nearby-header review-header">
+                        <h2 class="section-heading" id="review-heading">
+                            <button type="button" class="review-more" aria-controls="review-list" aria-expanded="false" disabled>지금 뜨는 관람평 <span class="heading-arrow" aria-hidden="true">›</span></button>
+                        </h2>
+                    </div>
+                    <div class="movie-list-section review-slider">
+                        <button type="button" class="movie-arrow movie-prev" aria-label="이전 관람평" disabled>‹</button>
+                        <button type="button" class="movie-arrow movie-next" aria-label="다음 관람평" disabled>›</button>
+                        <div class="movie-list review-list" id="review-list"></div>
+                        <p class="movie-message" role="status">관람평을 불러오는 중입니다.</p>
+                    </div>
                 </section>
 
             </section>
@@ -326,6 +340,7 @@
         </footer>
 
         <script src="js/4_CINEON_home.js"></script>
+        <script src="js/4_CINEON_auth.js"></script>
     </body>
 
 
