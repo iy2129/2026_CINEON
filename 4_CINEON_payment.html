@@ -98,7 +98,7 @@
                     <section class="payment-section">
                         <div class="payment-section-heading">
                             <h3 class="payment-subtitle">할인 적용</h3>
-                            <button type="reset" class="payment-discount-reset" title="선택한 결제 항목을 초기 상태로 되돌리기">초기화</button>
+                            <button type="button" class="payment-discount-reset" title="할인 적용 항목 초기화">초기화</button>
                         </div>
 
                         <div class="payment-discount-tabs">
@@ -112,17 +112,33 @@
                             </label>
                         </div>
                         <div class="payment-coupons">
-                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1" data-amount="3000"><span>할인쿠폰(3)<small>3,000원 할인</small></span></label>
-                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2" data-amount="5000"><span>VIP 영화쿠폰<small>5,000원 할인</small></span></label>
-                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000"><span>CINE:ON 관람권<small>14,000원 할인</small></span></label>
-                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-4" data-amount="14000"><span>모바일 관람권<small>14,000원 할인</small></span></label>
+                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰</span></label>
+                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2" data-amount="5000" data-count="0"><span>VIP 영화쿠폰</span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000" data-count="0"><span>CINE:ON 관람권</span></label>
+                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-4" data-amount="14000" data-count="0"><span>모바일 관람권</span></label>
                         </div>
+                        <select id="payment-coupon-choice" aria-label="할인쿠폰 선택" hidden disabled>
+                            <option value="">할인쿠폰을 선택해 주세요</option>
+                            <option value="3000">영화 예매 할인쿠폰 (3,000원)</option>
+                            <option value="2000">주중 관람 할인쿠폰 (2,000원)</option>
+                            <option value="1000">회원 할인쿠폰 (1,000원)</option>
+                        </select>
+                        <p class="payment-coupon-detail" role="status" hidden></p>
                         <div class="payment-coupon-options">
                             <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
                         </div>
-                        <div id="payment-points" hidden>
-                            <label for="payment-point-amount">사용할 포인트 (최대 1,000 P)</label>
-                            <input id="payment-point-amount" type="number" min="0" max="1000" step="1" value="0" disabled>
+                        <div id="payment-points" data-balance="1000" hidden>
+                            <div class="payment-point-controls">
+                                <div class="payment-point-heading">
+                                    <label for="payment-point-amount">포인트</label>
+                                    <p id="payment-point-balance"></p>
+                                </div>
+                                <div class="payment-point-field">
+                                    <input id="payment-point-amount" type="number" min="0" step="1" placeholder="0" aria-describedby="payment-point-balance" disabled>
+                                    <span aria-hidden="true">원</span>
+                                </div>
+                                <button type="button" id="payment-point-all" disabled>모두 사용</button>
+                            </div>
                         </div>
                         <p class="payment-hint">· 기프티콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은 [모바일 관람권]에서 사용하실 수 있습니다.</p>
                     </section>
