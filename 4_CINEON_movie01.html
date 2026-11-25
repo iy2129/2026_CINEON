@@ -14,6 +14,7 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap">
         <link rel="stylesheet" href="css/4_CINEON_common.css">
         <link rel="stylesheet" href="css/4_CINEON_movie.css">
+        <script src="js/4_CINEON_movie_events.js" defer></script>
     </head>
 
     <body>
@@ -86,7 +87,7 @@
         </nav>
 
 
-        <main>
+        <main data-movie-id="chiikawa">
             <div class="movie-layout">
                 <div class="movie-content">
                     <section class="movie-poster-section">
@@ -124,43 +125,21 @@
                             과연 그 섬에는 어떤 비밀이 숨겨져 있을까...?!
                         </p>
                     </section>
-                    <section class="movie-events-section event-section">
+                    <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
                         <hr class="movie-section-divider">
                         <div class="container">
                             <span class="movie-section-anchor" id="movie-events"></span>
                             <h2 class="section-heading" id="movie-events-title">이벤트</h2>
-                            <div class="event-list">
-                                <div class="event-entry">
-                                    <a class="event-card" href="#" title="이벤트 상세 보기">
-                                        <div class="event-image"><img src="images/4_movie01_02.jpg" alt=""></div>
-                                        <div class="event-info">
-                                            <span class="event-category">관람 특전</span>
-                                            <h3 class="event-title">인어 섬의 추억을 담은 한정 포스터</h3>
-                                            <p class="event-period">26.10.07(수) ~ 26.11.07(토)</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="event-entry">
-                                    <a class="event-card" href="#" title="이벤트 상세 보기">
-                                        <div class="event-image"><img src="images/4_movie01_03.jpg" alt=""></div>
-                                        <div class="event-info">
-                                            <span class="event-category">현장 이벤트</span>
-                                            <h3 class="event-title">친구들과 함께하는 특별한 상영회</h3>
-                                            <p class="event-period">26.10.14(수) ~ 26.10.20(화)</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="event-entry">
-                                    <a class="event-card" href="#" title="이벤트 상세 보기">
-                                        <div class="event-image"><img src="images/4_movie01_04.jpg" alt=""></div>
-                                        <div class="event-info">
-                                            <span class="event-category">소장 굿즈</span>
-                                            <h3 class="event-title">작은 티켓에 담은 커다란 모험</h3>
-                                            <p class="event-period">26.10.17(토) ~ 26.10.20(화)</p>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div class="event-filter">
+                                <label for="movie-event-filter">이벤트 상태</label>
+                                <select id="movie-event-filter" disabled>
+                                    <option value="all" selected>전체</option>
+                                    <option value="ongoing">진행 중</option>
+                                </select>
                             </div>
+                            <p class="event-message" role="status"></p>
+                            <div class="event-list"></div>
+                            <noscript><p>이벤트를 보려면 JavaScript를 켜 주세요.</p></noscript>
                         </div>
                     </section>
                     <section class="trailer-section">
@@ -221,33 +200,20 @@
                         <hr class="movie-section-divider">
                         <div class="container">
                             <span class="movie-section-anchor" id="movie-gallery"></span>
-                            <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(16)</span></h2>
+                            <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(4)</span></h2>
                             <div class="stillcut-gallery">
                                 <div class="stillcut-grid">
                                     <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_poster-chiikawa.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_poster-chiikawa.jpg" alt="치이카와 영화 포스터"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 6"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 9"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 12"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 15"></a>
+                                        <a class="stillcut-link" href="images/4_poster-chiikawa.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_poster-chiikawa.jpg" alt="치이카와 영화 포스터"></a>
                                     </div>
                                     <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 영화 장면 1"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 4"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 7"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 10"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_04.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_04.jpg" alt="치이카와 스틸컷 13"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 16"></a>
+                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 1"></a>
+                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 2"></a>
                                     </div>
                                     <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 영화 장면 2"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 5"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_04.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_04.jpg" alt="치이카와 스틸컷 8"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 11"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" title="스틸컷 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 14"></a>
+                                        <a class="stillcut-link" href="images/4_movie01_04.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_04.jpg" alt="치이카와 스틸컷 3"></a>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </section>
@@ -275,9 +241,14 @@
 
                             <div class="movie-stats">
 
-                                <div class="stat-item">
-                                    <span class="stat-label">실관람 평점</span>
-                                    <strong class="stat-value">9.1</strong>
+                                <div class="stat-item stat-rating">
+                                    <span class="stat-rating-label">실관람 평점</span>
+                                    <strong class="stat-value">
+                                        <svg class="stat-rating-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                            <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9-6.2-3.3-6.2 3.3 1.2-6.9-5-4.9 6.9-1z"/>
+                                        </svg>
+                                        9.1
+                                    </strong>
                                 </div>
 
                                 <div class="stat-item">
@@ -298,12 +269,12 @@
 
                     </section>
                     <div class="movie-actions">
-                        <label class="detail-like">
-                            <input type="checkbox">
-                            <span class="detail-like-off">♡</span>
-                            <span class="detail-like-on">♥</span>
+                        <button type="button" class="detail-like" aria-label="영화 찜하기" aria-pressed="false" disabled>
+                            <svg class="detail-like-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                <path d="M12 21S3 15.7 3 9.4a5.1 5.1 0 0 1 9-3.3 5.1 5.1 0 0 1 9 3.3C21 15.7 12 21 12 21Z"/>
+                            </svg>
                             <span class="detail-like-count">2.3k</span>
-                        </label>
+                        </button>
                         <a class="share-button" href="#" title="영화 공유하기"><img src="images/4_icon_share.svg" alt="영화 공유하기" width="24" height="24"></a>
                         <a href="4_CINEON_timetable.html" class="btn-booking sidebar-booking" title="영화 예매하기">예매하기</a>
                     </div>
