@@ -58,15 +58,11 @@
                 </nav>
 
                 <div class="user-menu">
-                    <a href="#" title="로그인">로그인</a>
-                    <a href="#" title="회원가입">회원가입</a>
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
 
                     <button type="button" class="icon-btn">
                         <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
-                    </button>
-
-                    <button type="button" class="icon-btn menu-toggle">
-                        <img src="images/4_icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
                     </button>
                 </div>
             </div>
@@ -86,13 +82,13 @@
         </nav>
 
         <div class="payment-layout">
-            <nav class="payment-steps" title="예매 단계">
+            <div class="payment-steps" title="예매 단계">
                 <ol>
                     <li>01 상영시간</li>
                     <li>02 인원/좌석</li>
-                    <li class="payment-step-current"><strong>03 결제</strong></li>
+                    <li class="payment-step-current" aria-current="step"><strong>03 결제</strong></li>
                 </ol>
-            </nav>
+            </div>
 
             <form id="payment-form" class="payment-form" action="4_CINEON_done.html" method="get">
                 <main class="payment-main">
@@ -102,7 +98,7 @@
                     <section class="payment-section">
                         <div class="payment-section-heading">
                             <h3 class="payment-subtitle">할인 적용</h3>
-                            <button type="reset" class="payment-discount-reset" title="선택한 결제 항목을 초기 상태로 되돌리기">초기화</button>
+                            <button type="button" class="payment-discount-reset" title="할인 적용 항목 초기화">초기화</button>
                         </div>
 
                         <div class="payment-discount-tabs">
@@ -116,13 +112,33 @@
                             </label>
                         </div>
                         <div class="payment-coupons">
-                            <label title="할인쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-1"><span>할인쿠폰(3)</span></label>
-                            <label title="VIP 영화쿠폰 선택"><input type="checkbox" name="discount-coupon" value="coupon-2"><span>VIP 영화쿠폰</span></label>
-                            <label title="CINE:ON 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-3"><span>CINE:ON 관람권</span></label>
-                            <label title="모바일 관람권 선택"><input type="checkbox" name="discount-coupon" value="coupon-4"><span>모바일 관람권</span></label>
+                            <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰</span></label>
+                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2" data-amount="5000" data-count="0"><span>VIP 영화쿠폰</span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000" data-count="0"><span>CINE:ON 관람권</span></label>
+                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-4" data-amount="14000" data-count="0"><span>모바일 관람권</span></label>
                         </div>
+                        <select id="payment-coupon-choice" aria-label="할인쿠폰 선택" hidden disabled>
+                            <option value="">할인쿠폰을 선택해 주세요</option>
+                            <option value="3000">영화 예매 할인쿠폰 (3,000원)</option>
+                            <option value="2000">주중 관람 할인쿠폰 (2,000원)</option>
+                            <option value="1000">회원 할인쿠폰 (1,000원)</option>
+                        </select>
+                        <p class="payment-coupon-detail" role="status" hidden></p>
                         <div class="payment-coupon-options">
                             <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
+                        </div>
+                        <div id="payment-points" data-balance="1000" hidden>
+                            <div class="payment-point-controls">
+                                <div class="payment-point-heading">
+                                    <label for="payment-point-amount">포인트</label>
+                                    <p id="payment-point-balance"></p>
+                                </div>
+                                <div class="payment-point-field">
+                                    <input id="payment-point-amount" type="number" min="0" step="1" placeholder="0" aria-describedby="payment-point-balance" disabled>
+                                    <span aria-hidden="true">원</span>
+                                </div>
+                                <button type="button" id="payment-point-all" disabled>모두 사용</button>
+                            </div>
                         </div>
                         <p class="payment-hint">· 기프티콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은 [모바일 관람권]에서 사용하실 수 있습니다.</p>
                     </section>
@@ -137,7 +153,7 @@
                         </fieldset>
 
                         <div class="payment-method-panel">
-                            <select id="payment-card" name="card" title="카드사 선택">
+                            <select id="payment-card" name="card" required title="카드사 선택">
                                 <option value="">카드사를 선택해 주세요</option>
                                 <option>신한카드</option>
                                 <option>삼성카드</option>
@@ -149,6 +165,12 @@
                                 <option>NH농협카드</option>
                                 <option>BC카드</option>
                             </select>
+                            <select id="payment-simple" required title="간편결제 서비스 선택" hidden disabled>
+                                <option value="">간편결제 서비스를 선택해 주세요</option>
+                                <option>카카오페이</option>
+                                <option>네이버페이</option>
+                            </select>
+                            <p id="payment-mobile" hidden>휴대폰 결제로 진행합니다.</p>
                         </div>
                     </section>
 
@@ -214,15 +236,15 @@
                         </div>
                         <div class="payment-info-row">
                             <dt>금액</dt>
-                            <dd>28,000원</dd>
+                            <dd id="payment-base" data-amount="28000">28,000원</dd>
                         </div>
                         <div class="payment-info-row payment-info-row-discount">
                             <dt class="payment-discount-label">할인 적용</dt>
-                            <dd class="payment-discount-amount">-3,000원</dd>
+                            <dd class="payment-discount-amount" aria-live="polite">0원</dd>
                         </div>
                         <div class="payment-info-row">
                             <dt>결제 금액</dt>
-                            <dd><strong class="sum-total">25,000원</strong></dd>
+                            <dd><strong class="sum-total">28,000원</strong></dd>
                         </div>
                     </dl>
                     <div class="summary-actions">
@@ -243,5 +265,7 @@
             </div>
         </footer>
 
+        <script src="js/4_CINEON_payment.js"></script>
+        <script src="js/4_CINEON_auth.js"></script>
     </body>
 </html>

@@ -295,18 +295,18 @@ main p {
     outline-offset: 2px;
 }
 
-.detail-like-icon {
-    width: 20px;
-    height: 20px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 1.8;
-    stroke-linejoin: round;
+.detail-like-off,
+.detail-like-on {
+    flex-shrink: 0;
 }
 
-.detail-like[aria-pressed="true"] .detail-like-icon {
-    color: #e53935;
-    fill: currentColor;
+.detail-like-on,
+.detail-like[aria-pressed="true"] .detail-like-off {
+    display: none;
+}
+
+.detail-like[aria-pressed="true"] .detail-like-on {
+    display: block;
 }
 
 .share-button {

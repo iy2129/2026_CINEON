@@ -60,15 +60,11 @@
                 </nav>
 
                 <div class="user-menu">
-                    <a href="#" title="로그인">로그인</a>
-                    <a href="#" title="회원가입">회원가입</a>
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
 
                     <button type="button" class="icon-btn">
                         <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
-                    </button>
-
-                    <button type="button" class="icon-btn menu-toggle">
-                        <img src="images/4_icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
                     </button>
                 </div>
             </div>
@@ -87,13 +83,13 @@
         </nav>
 
         <div class="t-layout">
-            <nav title="예매 단계">
+            <div class="booking-steps" title="예매 단계">
                 <ol>
-                    <li class="step-current"><strong>01 상영시간</strong></li>
+                    <li class="step-current" aria-current="step"><strong>01 상영시간</strong></li>
                     <li>02 인원/좌석</li>
                     <li>03 결제</li>
                 </ol>
-            </nav>
+            </div>
 
             <main class="quick">
                 <h1>상영시간표</h1>
@@ -260,5 +256,6 @@
                 <p>COPYRIGHT © CINE:ON, Inc. All rights reserved</p>
             </div>
         </footer>
+        <script src="js/4_CINEON_auth.js"></script>
     </body>
 </html>

@@ -60,15 +60,11 @@
                 </nav>
 
                 <div class="user-menu">
-                    <a href="#" title="로그인">로그인</a>
-                    <a href="#" title="회원가입">회원가입</a>
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
 
                     <button type="button" class="icon-btn">
                         <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
-                    </button>
-
-                    <button type="button" class="icon-btn menu-toggle">
-                        <img src="images/4_icon_menu.svg" alt="메뉴 아이콘" width="24" height="24">
                     </button>
                 </div>
             </div>
@@ -267,9 +263,8 @@
                     </section>
                     <div class="movie-actions">
                         <button type="button" class="detail-like" aria-label="영화 찜하기" aria-pressed="false" disabled>
-                            <svg class="detail-like-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                                <path d="M12 21S3 15.7 3 9.4a5.1 5.1 0 0 1 9-3.3 5.1 5.1 0 0 1 9 3.3C21 15.7 12 21 12 21Z"/>
-                            </svg>
+                            <img class="detail-like-off" src="images/4_icon_heart_off.svg" alt="" width="20" height="20">
+                            <img class="detail-like-on" src="images/4_icon_heart_on.svg" alt="" width="20" height="20">
                             <span class="detail-like-count">1.8k</span>
                         </button>
                         <a class="share-button" href="#" title="영화 공유하기"><img src="images/4_icon_share.svg" alt="영화 공유하기" width="24" height="24"></a>
@@ -289,6 +284,7 @@
             </div>
         </footer>
 
+        <script src="js/4_CINEON_auth.js"></script>
     </body>
 
 </html>

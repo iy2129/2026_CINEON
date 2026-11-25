@@ -1,0 +1,123 @@
+.auth-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.auth-page .auth-main {
+  flex: 1;
+}
+
+.auth-main {
+  padding: 64px 24px 80px;
+}
+
+.auth-panel {
+  box-sizing: border-box;
+  max-width: 460px;
+  margin: 0 auto;
+  padding: 36px;
+  border: 1px solid #eeeaea;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.auth-panel .section-heading {
+  margin-bottom: 24px;
+  overflow-wrap: anywhere;
+  text-align: center;
+}
+
+.auth-form {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-form[hidden] {
+  display: none;
+}
+
+.auth-form label {
+  color: #333;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.auth-form input {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  margin-bottom: 8px;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  color: #333;
+  font: inherit;
+}
+
+.auth-panel :is(input, button, a):focus-visible {
+  outline: 2px solid #770716;
+  outline-offset: 2px;
+}
+
+.auth-panel .btn-booking,
+.auth-logout {
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 46px;
+  margin-top: 8px;
+  font-size: 16px;
+}
+
+.auth-panel button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.auth-switch,
+.auth-message {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.auth-switch,
+.auth-signed-in {
+  text-align: center;
+}
+
+.auth-switch a {
+  margin-left: 4px;
+  color: #b52525;
+  font-weight: 700;
+  text-underline-offset: 3px;
+}
+
+.auth-message {
+  margin: 16px 0 0;
+  color: #b52525;
+  overflow-wrap: anywhere;
+}
+
+.auth-logout {
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+  cursor: pointer;
+}
+
+.auth-logout:hover {
+  background: #f3f3f4;
+}
+
+@media (max-width: 480px) {
+  .auth-main {
+    padding: 40px 16px 56px;
+  }
+
+  .auth-panel {
+    padding: 24px;
+  }
+}

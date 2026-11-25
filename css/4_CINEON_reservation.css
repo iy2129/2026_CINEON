@@ -15,25 +15,25 @@
   min-width: 0;
 }
 
-.layout nav {
+.layout .booking-steps {
   width: 160px;
   min-width: 160px;
   margin-right: 24px;
   position: sticky;
   top: 96px;
 }
-.layout nav ol {
+.layout .booking-steps ol {
   margin: 0;
   padding: 0;
   list-style-type: none;
   border-left: 3px solid #eee;
 }
-.layout nav li {
+.layout .booking-steps li {
   padding: 14px 0 14px 20px;
   color: #aaa;
   font-size: 17px;
 }
-.layout nav li.step-current {
+.layout .booking-steps li.step-current {
   margin-left: -3px;
   padding-left: 20px;
   border-left: 3px solid #e53935;

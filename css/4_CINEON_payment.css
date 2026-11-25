@@ -369,15 +369,22 @@
   color: #333;
 }
 
-.payment-method-panel select {
+.payment-method-panel select,
+#payment-coupon-choice {
   width: 100%;
   height: 44px;
-  padding: 0 12px;
+  padding: 0 40px 0 12px;
   border: 1px solid #ccc;
   border-radius: 12px;
-  background: #fff;
+  appearance: none;
+  background: linear-gradient(45deg, transparent 50%, #555 50%) right 21px center / 5px 5px no-repeat,
+    linear-gradient(135deg, #555 50%, transparent 50%) right 16px center / 5px 5px no-repeat #fff;
   color: #333;
   font-size: 15px;
+}
+
+#payment-coupon-choice {
+  margin-top: 12px;
 }
 
 .payment-summary {
@@ -534,4 +541,108 @@
 
 .payment-section-heading .payment-subtitle {
   margin-bottom: 0;
+}
+
+.payment-coupons[hidden],
+.payment-coupon-options label[hidden] {
+  display: none;
+}
+
+.payment-coupon-detail {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: #f3f3f4;
+  color: #333;
+  font-size: 14px;
+}
+
+.payment-point-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 2.2fr) minmax(0, 1.5fr) minmax(0, 0.75fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.payment-point-heading {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 6px;
+}
+
+.payment-point-field {
+  position: relative;
+}
+
+#payment-point-amount {
+  box-sizing: border-box;
+  width: 100%;
+  height: 42px;
+  padding: 8px 30px 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font: inherit;
+  text-align: right;
+  appearance: textfield;
+}
+
+#payment-point-amount::-webkit-inner-spin-button {
+  appearance: none;
+}
+
+.payment-point-field span {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+#payment-point-all {
+  min-height: 42px;
+  padding: 0 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  color: #333;
+  font: inherit;
+  cursor: pointer;
+}
+
+#payment-point-all:hover {
+  background: #f3f3f4;
+}
+
+#payment-point-balance {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+.payment-coupons input:disabled:not(:checked) + span {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.payment-form :is(button, .summary-back, label span) {
+  transition: background-color 160ms ease, color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.payment-form button:active,
+.payment-form .summary-back:active {
+  transform: scale(0.97);
+}
+
+.payment-form input:focus-visible + span {
+  outline: 2px solid #770716;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-form :is(button, .summary-back, label span) {
+    transition: none;
+  }
 }
