@@ -298,3 +298,83 @@
   margin: 0 6px 0 0;
   font-weight: 400;
 }
+
+.quick .pick {
+  word-break: keep-all;
+}
+.empty {
+  padding: 16px 8px;
+  color: #888;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.times .empty {
+  width: 100%;
+}
+.list input:disabled + label {
+  background-color: transparent;
+  color: #bbb;
+  cursor: not-allowed;
+}
+.list input:disabled + label .age {
+  opacity: 0.4;
+}
+.m-title {
+  flex: 1;
+}
+.no-show {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  font-weight: 400;
+}
+.times input:disabled + label {
+  border-color: #eee;
+  background-color: #f7f7f7;
+  color: #aaa;
+  cursor: not-allowed;
+}
+.badge {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 2px 8px;
+  border-radius: 6px;
+  background-color: #fff1e6;
+  color: #d35400;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 700;
+}
+.badge-off {
+  background-color: #eee;
+  color: #888;
+}
+.end-filter {
+  margin-left: auto;
+  margin-right: 12px;
+  font-size: 13px;
+  font-weight: 400;
+}
+.end-filter select {
+  margin-left: 4px;
+  padding: 3px 6px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 13px;
+}
+.q-submit {
+  align-items: center;
+  justify-content: space-between;
+}
+.pick-summary {
+  margin: 0 16px 0 0;
+  color: #333;
+  font-size: 15px;
+  font-weight: 600;
+}
+.q-submit .btn-booking:disabled {
+  background-color: #ccc;
+  box-shadow: none;
+  cursor: not-allowed;
+}
