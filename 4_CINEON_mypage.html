@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ko" class="mypage-root">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)">
+        <meta name="team" content="4조">
+
+        <title>마이페이지 | CINE:ON</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/4_CINEON_common.css">
+        <link rel="stylesheet" href="css/4_CINEON_mypage.css">
+    </head>
+
+    <body class="mypage-page">
+        <header class="site-header">
+            <div class="header-inner">
+
+                <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+
+                <nav class="main-nav">
+                    <div class="submenu-background"></div>
+                    <ul class="nav-list">
+                        <li><a href="#" title="영화">영화</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="전체영화">전체영화</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="예매">예매</a>
+                            <ul class="submenu">
+                                <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="영화관">영화관</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="전체영화관">전체영화관</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="이벤트">이벤트</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                                <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                                <li><a href="#" title="시사회">시사회</a></li>
+                                <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="스토어">스토어</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="매점">매점</a></li>
+                                <li><a href="#" title="굿즈">굿즈</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="user-menu">
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
+
+                    <button type="button" class="icon-btn">
+                        <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="mypage-layout" hidden>
+            <aside class="mypage-sidebar" aria-labelledby="mypage-title">
+                <div class="mypage-sidebar-inner">
+                    <h1 class="section-heading" id="mypage-title"><a href="#home">MY CINE:ON</a></h1>
+                    <p class="mypage-account-label" id="mypage-account-label">나의 계정</p>
+                    <nav class="mypage-menu" aria-labelledby="mypage-account-label">
+                        <div class="mypage-menu-group">
+                            <h2>예매관리</h2>
+                            <ul>
+                                <li><a href="#bookings">예매내역</a></li>
+                                <li><a href="#booking-cancellations">취소내역</a></li>
+                            </ul>
+                        </div>
+                        <div class="mypage-menu-group">
+                            <h2>포인트</h2>
+                            <ul>
+                                <li><a href="#points">포인트 적립/사용 내역</a></li>
+                            </ul>
+                        </div>
+                        <div class="mypage-menu-group">
+                            <h2>쿠폰</h2>
+                            <ul>
+                                <li><a href="#coupons">쿠폰 보유내역</a></li>
+                                <li><a href="#coupon-usage">쿠폰 사용내역</a></li>
+                            </ul>
+                        </div>
+                        <div class="mypage-menu-group">
+                            <h2>문의 내역</h2>
+                            <ul>
+                                <li><a href="#inquiries">내 문의 내역</a></li>
+                            </ul>
+                        </div>
+                        <div class="mypage-menu-group">
+                            <h2>회원정보수정</h2>
+                            <ul>
+                                <li><a href="#profile-settings">회원정보수정</a></li>
+                                <li><a href="#account-withdrawal">회원탈퇴</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </aside>
+
+            <section class="mypage-content" aria-label="마이페이지 본문" tabindex="0">
+                <div class="mypage-content-inner">
+                    <div class="mypage-profile-view">
+                        <header class="mypage-profile">
+                            <div class="mypage-profile-card">
+                                <div class="mypage-profile-identity">
+                                    <span class="mypage-avatar" aria-hidden="true"></span>
+                                    <div class="mypage-profile-name">
+                                        <div class="mypage-profile-name-row">
+                                            <p class="mypage-nickname" data-preview-name="시네산책">시네산책</p>
+                                            <div class="mypage-profile-actions">
+                                                <a href="#profile-settings" class="mypage-edit-profile" aria-label="프로필 수정">수정</a>
+                                                <button type="button" class="mypage-share-profile" aria-label="프로필 공유" disabled>공유</button>
+                                            </div>
+                                        </div>
+                                        <p class="mypage-followers">
+                                            <span>팔로워 <strong>0</strong></span>
+                                            <span>팔로잉 <strong>1</strong></span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <dl class="mypage-profile-stats" aria-label="프로필 활동">
+                                    <div><dt><a href="#bookings">예매내역</a></dt><dd aria-label="미연결">—</dd></div>
+                                    <div class="mypage-rating-stat">
+                                        <dt><a href="#ratings">평가</a></dt>
+                                        <dd class="mypage-rating-count">0</dd>
+                                    </div>
+                                    <div><dt>컬렉션</dt><dd>0</dd></div>
+                                </dl>
+                                <p class="mypage-share-status" role="status"></p>
+                            </div>
+                            <dl class="mypage-benefits" aria-label="쿠폰과 포인트">
+                                <div><dt><a href="#coupons">쿠폰</a></dt><dd aria-label="미연결">—</dd></div>
+                                <div><dt><a href="#points">포인트</a></dt><dd aria-label="미연결">—</dd></div>
+                            </dl>
+                        </header>
+
+                        <div class="mypage-tabs" role="tablist" aria-label="관람 기록">
+                            <button id="mypage-tab-home" type="button" role="tab" aria-controls="mypage-home" aria-selected="true" data-view="home">홈</button>
+                            <button id="mypage-tab-activity" type="button" role="tab" aria-controls="mypage-activity" aria-selected="false" tabindex="-1" data-view="activity">활동</button>
+                            <button id="mypage-tab-calendar" type="button" role="tab" aria-controls="mypage-calendar" aria-selected="false" tabindex="-1" data-view="calendar">캘린더</button>
+                        </div>
+
+                        <p class="mypage-record-note" role="status"></p>
+
+                        <section id="mypage-home" class="mypage-panel" role="tabpanel" aria-labelledby="mypage-tab-home" tabindex="0">
+                            <div class="mypage-summary">
+                                <section class="mypage-card mypage-duration-card" aria-labelledby="mypage-duration-title">
+                                    <h2 id="mypage-duration-title">영화 감상 시간</h2>
+                                    <div class="mypage-card-body">
+                                        <p class="mypage-duration">—</p>
+                                    </div>
+                                </section>
+                                <section class="mypage-card mypage-tags-card" aria-labelledby="mypage-tags-title" hidden>
+                                    <h2 id="mypage-tags-title">영화 선호 태그</h2>
+                                    <div class="mypage-card-body">
+                                        <ul class="mypage-tags"></ul>
+                                    </div>
+                                </section>
+                                <section class="mypage-card mypage-genres-card" aria-labelledby="mypage-genres-title">
+                                    <h2 id="mypage-genres-title">영화 선호 장르</h2>
+                                    <div class="mypage-card-body">
+                                        <ul class="mypage-genres"></ul>
+                                    </div>
+                                </section>
+                            </div>
+
+                            <section class="mypage-history" aria-labelledby="mypage-history-title">
+                                <h2 id="mypage-history-title">영화 관람 내역 <span class="mypage-history-count"></span></h2>
+                                <p class="mypage-tag-status mypage-visually-hidden" role="status"></p>
+                                <ul id="mypage-posters" class="mypage-posters">
+                                    <li class="mypage-posters-more-item" hidden>
+                                        <button type="button" class="mypage-posters-more" aria-controls="mypage-posters">
+                                            <img class="mypage-posters-preview" alt="" aria-hidden="true" loading="lazy">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </li>
+                                </ul>
+                            </section>
+                        </section>
+
+                        <section id="mypage-activity" class="mypage-panel" role="tabpanel" aria-labelledby="mypage-tab-activity" tabindex="0" hidden>
+                            <section class="mypage-activity-section" aria-labelledby="mypage-activity-ratings-title">
+                                <header class="mypage-activity-heading">
+                                    <h2 id="mypage-activity-ratings-title">평가 <span class="mypage-history-count mypage-activity-rating-count"></span></h2>
+                                    <a href="#ratings" class="mypage-activity-all">평가 전체 보기 <span aria-hidden="true">›</span></a>
+                                </header>
+                                <p class="mypage-activity-empty mypage-activity-ratings-empty">아직 작성한 영화 평가가 없어요.</p>
+                                <ul class="mypage-activity-posters mypage-activity-ratings"></ul>
+                            </section>
+                            <section class="mypage-activity-section" aria-labelledby="mypage-activity-wishes-title">
+                                <header class="mypage-activity-heading">
+                                    <h2 id="mypage-activity-wishes-title">보고싶어요 <span class="mypage-history-count mypage-wish-count"></span></h2>
+                                </header>
+                                <p class="mypage-activity-empty mypage-wishes-empty">하트를 누른 영화가 여기에 보여요.</p>
+                                <ul class="mypage-activity-posters mypage-activity-wishes"></ul>
+                            </section>
+                        </section>
+
+                        <section id="mypage-calendar" class="mypage-panel" role="tabpanel" aria-labelledby="mypage-tab-calendar" tabindex="0" hidden>
+                            <div class="mypage-calendar-header">
+                                <button type="button" class="mypage-month-prev" aria-label="이전 달">‹</button>
+                                <h2 class="mypage-month" aria-live="polite"></h2>
+                                <button type="button" class="mypage-month-next" aria-label="다음 달">›</button>
+                            </div>
+                            <div class="mypage-calendar-weekdays" aria-hidden="true"><span>일</span><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span></div>
+                            <ol class="mypage-calendar-days" aria-label="이달의 날짜"></ol>
+                            <ul class="mypage-calendar-movies" aria-label="이달의 관람 기록"></ul>
+                            <p class="mypage-calendar-empty" hidden>이달의 관람 기록이 없습니다.</p>
+                        </section>
+                        <section class="mypage-ratings" aria-labelledby="mypage-ratings-title" hidden>
+                            <header class="mypage-ratings-header">
+                                <h2 id="mypage-ratings-title" tabindex="-1">내 영화 평가</h2>
+                                <a href="#home">‹ 홈으로</a>
+                            </header>
+                            <p class="mypage-ratings-empty">아직 작성한 영화 평가가 없어요.</p>
+                            <ul class="mypage-ratings-list"></ul>
+                        </section>
+                    </div>
+
+                    <section class="mypage-service-view" aria-labelledby="mypage-service-title" hidden>
+                        <h2 id="mypage-service-title"></h2>
+                        <p>이 화면은 준비 중입니다.</p>
+                    </section>
+                </div>
+            </section>
+        </main>
+
+        <script src="js/4_CINEON_auth.js"></script>
+        <script src="js/4_CINEON_mypage.js"></script>
+    </body>
+</html>

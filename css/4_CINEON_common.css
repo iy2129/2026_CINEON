@@ -1,4 +1,6 @@
 html {
+  --cineon-booking-color: #e53935;
+  --cineon-rating-color: #eab308;
   overflow-x: auto;
   overflow-y: scroll;
 }
@@ -35,7 +37,7 @@ html {
   padding: 0 24px;
   border: 0;
   border-radius: 12px;
-  background: #e53935;
+  background: var(--cineon-booking-color);
   color: #fff;
   font-family: inherit;
   font-size: 16px;
@@ -240,7 +242,7 @@ body {
   white-space: nowrap;
 }
 
-.user-menu-name {
+.user-menu > .user-menu-name {
   color: #000;
   font-size: 15px;
   font-weight: 500;

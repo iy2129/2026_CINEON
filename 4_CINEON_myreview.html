@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="남서영(2513044), 송다원(2315286), 윤인영(2511268)">
+        <meta name="team" content="4조">
+
+        <title>내 영화 평가 | CINE:ON</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Asta+Sans:wght@300..800&display=swap" rel="stylesheet">
+
+        <link rel="stylesheet" href="css/4_CINEON_common.css">
+        <link rel="stylesheet" href="css/4_CINEON_mypage.css">
+    </head>
+
+    <body class="my-review-page">
+        <header class="site-header">
+            <div class="header-inner">
+
+                <a href="4_CINEON_index.html" class="logo" title="CINE:ON 홈">CINE:ON</a>
+
+                <nav class="main-nav">
+                    <div class="submenu-background"></div>
+                    <ul class="nav-list">
+                        <li><a href="#" title="영화">영화</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="전체영화">전체영화</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="예매">예매</a>
+                            <ul class="submenu">
+                                <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="영화관">영화관</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="전체영화관">전체영화관</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="이벤트">이벤트</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
+                                <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
+                                <li><a href="#" title="시사회">시사회</a></li>
+                                <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" title="스토어">스토어</a>
+                            <ul class="submenu">
+                                <li><a href="#" title="매점">매점</a></li>
+                                <li><a href="#" title="굿즈">굿즈</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="user-menu">
+                    <a href="4_CINEON_login.html" title="로그인">로그인</a>
+                    <a href="4_CINEON_signup.html" title="회원가입">회원가입</a>
+
+                    <button type="button" class="icon-btn">
+                        <img src="images/4_icon_search.svg" alt="검색 아이콘" width="24" height="24">
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <main class="my-review-main" data-account-page hidden>
+            <p class="my-review-message my-review-container" role="status">영화 정보를 불러오는 중이에요.</p>
+            <article class="my-review-film" hidden>
+                <header class="my-review-hero">
+                    <img class="my-review-backdrop" alt="">
+                    <div class="my-review-container my-review-hero-content">
+                        <a href="4_CINEON_mypage.html" class="my-review-back">‹ 마이페이지</a>
+                        <h1></h1>
+                        <p class="my-review-meta"></p>
+                    </div>
+                </header>
+
+                <div class="my-review-container">
+                    <div class="my-review-overview">
+                        <img class="my-review-poster" alt="">
+                        <section class="my-review-panel" aria-labelledby="my-review-title">
+                            <h2 id="my-review-title">내 평가</h2>
+                            <p class="my-review-date"></p>
+                            <fieldset class="my-review-stars">
+                                <legend class="mypage-visually-hidden">내 별점 (5점 만점)</legend>
+                                <div class="my-review-rating-control">
+                                    <span class="rating-stars" aria-hidden="true"></span>
+                                    <div class="my-review-star-options"></div>
+                                </div>
+                            </fieldset>
+                            <p class="my-review-comment"></p>
+                            <details class="my-review-editor">
+                                <summary>평가 작성</summary>
+                                <form id="my-review-form">
+                                    <label for="my-review-comment-input">관람평</label>
+                                    <textarea id="my-review-comment-input" name="comment" rows="4" maxlength="500" placeholder="영화를 보고 느낀 점을 적어보세요."></textarea>
+                                    <button type="submit">저장</button>
+                                </form>
+                            </details>
+                            <p class="my-review-save-status" role="status"></p>
+                        </section>
+                    </div>
+
+                    <section class="my-review-story" aria-labelledby="my-review-story-title">
+                        <h2 id="my-review-story-title">줄거리</h2>
+                        <p></p>
+                        <a class="my-review-detail" hidden>영화 상세 보기 ›</a>
+                    </section>
+                </div>
+            </article>
+        </main>
+
+        <script src="js/4_CINEON_auth.js"></script>
+        <script src="js/4_CINEON_myreview.js"></script>
+    </body>
+</html>

@@ -5,10 +5,13 @@ const authSessionKey = "cineon-current-user";
 const userMenu = document.querySelector(".user-menu");
 const loginLink = userMenu.querySelector('a[href="4_CINEON_login.html"]');
 const signupLink = userMenu.querySelector('a[href="4_CINEON_signup.html"]');
-const accountName = document.createElement("span");
+const mypageLayout = document.querySelector(".mypage-layout, [data-account-page]");
+const accountName = document.createElement("a");
 const menuLogout = document.createElement("button");
 
 accountName.className = "user-menu-name";
+accountName.href = "4_CINEON_mypage.html";
+accountName.title = "마이페이지";
 accountName.hidden = true;
 menuLogout.type = "button";
 menuLogout.className = "user-menu-logout";
@@ -21,9 +24,48 @@ function readAccount(username) {
     return JSON.parse(localStorage.getItem("cineon-account-" + username));
 }
 
+function personalReviewStorageKey(username, movieId) {
+    return "cineon:personal-review:" + JSON.stringify([username, movieId]);
+}
+
+function movieWishKey(poster) {
+    return "cineon:movie-wish:" + poster;
+}
+
+function isMovieWished(poster) {
+    const saved = localStorage.getItem(movieWishKey(poster));
+    if (saved !== null) {
+        return saved === "true";
+    }
+    const id = poster.match(/4_poster-([^.]+)\.[^.]+$/)?.[1];
+    return localStorage.getItem("cineon-like-" + poster) === "true" ||
+        Boolean(id && localStorage.getItem("cineon:movie-like:" + id) === "true");
+}
+
+function setMovieWished(poster, wished) {
+    localStorage.setItem(movieWishKey(poster), String(wished));
+}
+
 function showAuthMessage(text) {
     authMessage.innerText = text;
     authMessage.hidden = false;
+}
+
+function showMypageAccount(account) {
+    if (!mypageLayout) {
+        return;
+    }
+    if (!account) {
+        mypageLayout.hidden = true;
+        window.location.replace(loginLink.href);
+        return;
+    }
+
+    const nickname = mypageLayout.querySelector(".mypage-nickname");
+    if (nickname) {
+        nickname.textContent = nickname.dataset.previewName || account.name + "님";
+    }
+    mypageLayout.hidden = false;
 }
 
 function updateAccountMenu() {
@@ -34,6 +76,7 @@ function updateAccountMenu() {
     accountName.innerText = account ? account.name + "님" : "";
     accountName.hidden = !account;
     menuLogout.hidden = !account;
+    showMypageAccount(account);
 
     if (loginForm) {
         loginForm.hidden = Boolean(account);
@@ -56,12 +99,35 @@ function hashDemoPassword(username, password) {
     });
 }
 
-try {
-    updateAccountMenu();
-} catch (error) {
-    if (authForm) {
-        showAuthMessage("브라우저 저장소를 사용할 수 없습니다.");
+function refreshAccountMenu() {
+    try {
+        updateAccountMenu();
+    } catch (error) {
+        showMypageAccount(null);
+        if (authForm) {
+            showAuthMessage("브라우저 저장소를 사용할 수 없습니다.");
+        }
     }
+}
+
+refreshAccountMenu();
+
+if (mypageLayout) {
+    if (mypageLayout.classList.contains("mypage-layout")) {
+        accountName.setAttribute("aria-current", "page");
+    }
+
+    window.addEventListener("pageshow", function (event) {
+        if (event.persisted) {
+            refreshAccountMenu();
+        }
+    });
+
+    window.addEventListener("storage", function (event) {
+        if (event.key === authSessionKey || event.key === null) {
+            refreshAccountMenu();
+        }
+    });
 }
 
 if (authForm && window.crypto && crypto.subtle) {

@@ -1,11 +1,98 @@
 const movieMain = document.querySelector("main[data-movie-id]");
 const movieId = movieMain.dataset.movieId;
 
+function setupMovieTabs() {
+    const tabBar = movieMain.querySelector(".movie-tab-bar");
+    const tabsStart = movieMain.querySelector(".movie-tabs-start");
+    const tabs = Array.from(tabBar.querySelectorAll('[role="tab"]'));
+    const overview = movieMain.querySelector(".movie-overview-panel");
+    const sectionLinks = overview.querySelectorAll(".movie-section-nav a");
+
+    function selectTab(selectedTab) {
+        for (const tab of tabs) {
+            const selected = tab === selectedTab;
+            tab.setAttribute("aria-selected", String(selected));
+            tab.tabIndex = selected ? 0 : -1;
+            document.getElementById(tab.getAttribute("aria-controls")).hidden = !selected;
+        }
+    }
+
+    function activateTab(tab) {
+        if (tab.getAttribute("aria-selected") === "true") {
+            return;
+        }
+
+        const wasSticky = tabsStart.getBoundingClientRect().top < tabBar.getBoundingClientRect().top;
+        selectTab(tab);
+        if (wasSticky) {
+            tabsStart.scrollIntoView({ behavior: "instant" });
+        }
+    }
+
+    function syncSectionLink() {
+        const hash = window.location.hash;
+        const currentSection = hash || "#movie-overview";
+        for (const link of sectionLinks) {
+            if (link.getAttribute("href") === currentSection) {
+                link.setAttribute("aria-current", "location");
+            } else {
+                link.removeAttribute("aria-current");
+            }
+        }
+
+        const target = document.getElementById(hash.slice(1));
+        if (overview.hidden && overview.contains(target)) {
+            selectTab(tabs[0]);
+            target.scrollIntoView();
+        }
+    }
+
+    for (const tab of tabs) {
+        tab.addEventListener("click", function () {
+            activateTab(tab);
+        });
+    }
+
+    tabBar.addEventListener("keydown", function (event) {
+        const index = tabs.indexOf(event.target);
+        if (index < 0) {
+            return;
+        }
+
+        let nextIndex;
+        switch (event.key) {
+            case "ArrowLeft":
+                nextIndex = (index - 1 + tabs.length) % tabs.length;
+                break;
+            case "ArrowRight":
+                nextIndex = (index + 1) % tabs.length;
+                break;
+            case "Home":
+                nextIndex = 0;
+                break;
+            case "End":
+                nextIndex = tabs.length - 1;
+                break;
+            default:
+                return;
+        }
+        event.preventDefault();
+        const nextTab = tabs[nextIndex];
+        activateTab(nextTab);
+        nextTab.focus({ preventScroll: true });
+    });
+
+    tabBar.hidden = false;
+    syncSectionLink();
+    window.addEventListener("hashchange", syncSectionLink);
+}
+
+setupMovieTabs();
+
 const eventSection = movieMain.querySelector(".movie-events-section");
-const eventFilter = eventSection.querySelector("#movie-event-filter");
 const eventList = eventSection.querySelector(".event-list");
+const eventCount = eventSection.querySelector(".movie-event-count");
 const eventMessage = eventSection.querySelector(".event-message");
-let movieEvents = [];
 
 function getToday() {
     const today = new Date();
@@ -15,24 +102,13 @@ function getToday() {
     return [year, month, day].join("-");
 }
 
-function getEventStatus(movieEvent, today) {
-    // YYYY-MM-DD 형식은 문자열 순서로 날짜를 비교할 수 있다.
-    if (today < movieEvent.startDate) {
-        return "예정";
-    }
-    if (today > movieEvent.endDate) {
-        return "종료";
-    }
-    return "진행 중";
-}
-
 function formatEventDate(date) {
     const [year, month, day] = date.split("-");
     const weekday = "일월화수목금토"[new Date(date + "T00:00:00").getDay()];
     return year.slice(2) + "." + month + "." + day + "(" + weekday + ")";
 }
 
-function createEventCard(movieEvent, status) {
+function createEventCard(movieEvent) {
     const entry = document.createElement("div");
     entry.className = "event-entry";
     entry.innerHTML = `
@@ -40,7 +116,7 @@ function createEventCard(movieEvent, status) {
             <div class="event-image"><img alt=""></div>
             <div class="event-info">
                 <span class="event-category"></span>
-                <span class="event-status"></span>
+                <span class="event-status">진행 중</span>
                 <h3 class="event-title"></h3>
                 <p class="event-period"></p>
             </div>
@@ -49,53 +125,44 @@ function createEventCard(movieEvent, status) {
 
     entry.querySelector("img").src = movieEvent.image;
     entry.querySelector(".event-category").textContent = movieEvent.category;
-    entry.querySelector(".event-status").textContent = status;
     entry.querySelector(".event-title").textContent = movieEvent.title;
     entry.querySelector(".event-period").textContent =
         formatEventDate(movieEvent.startDate) + " ~ " + formatEventDate(movieEvent.endDate);
     return entry;
 }
 
-function renderEvents() {
+function renderEvents(movieEvents) {
     const today = getToday();
-    const ongoingOnly = eventFilter.value === "ongoing";
-    const visibleEvents = ongoingOnly
-        ? movieEvents.filter(function (movieEvent) {
-            return getEventStatus(movieEvent, today) === "진행 중";
-        })
-        : movieEvents;
+    // YYYY-MM-DD 형식은 문자열 순서로 날짜를 비교할 수 있다.
+    const ongoingEvents = movieEvents.filter(function (movieEvent) {
+        return movieEvent.startDate <= today && today <= movieEvent.endDate;
+    });
 
     eventList.replaceChildren();
-    for (const movieEvent of visibleEvents) {
-        eventList.appendChild(createEventCard(movieEvent, getEventStatus(movieEvent, today)));
+    for (const movieEvent of ongoingEvents) {
+        eventList.appendChild(createEventCard(movieEvent));
     }
 
-    if (visibleEvents.length > 0) {
-        eventMessage.textContent = "이벤트 " + visibleEvents.length + "건";
-    } else {
-        eventMessage.textContent = ongoingOnly
-            ? "진행 중인 이벤트가 없습니다."
-            : "표시할 이벤트가 없습니다.";
-    }
+    eventCount.textContent = ongoingEvents.length > 0 ? "(" + ongoingEvents.length + ")" : "";
+    eventMessage.textContent = ongoingEvents.length === 0 ? "진행 중인 이벤트가 없습니다." : "";
 }
 
-eventFilter.addEventListener("change", renderEvents);
-
-eventMessage.textContent = "이벤트를 불러오는 중입니다.";
-fetch("data/4_CINEON_movie_events.json")
-    .then(function (response) {
+function fetchMovieJson(path) {
+    return fetch(path).then(function (response) {
         if (!response.ok) {
             throw new Error("HTTP " + response.status);
         }
         return response.json();
-    })
+    });
+}
+
+eventMessage.textContent = "이벤트를 불러오는 중입니다.";
+fetchMovieJson("data/4_CINEON_movie_events.json")
     .then(function (data) {
         if (!data || !Array.isArray(data[movieId])) {
             throw new Error("영화별 이벤트 목록이 없습니다.");
         }
-        movieEvents = data[movieId];
-        renderEvents();
-        eventFilter.disabled = false;
+        renderEvents(data[movieId]);
     })
     .catch(function (error) {
         eventList.replaceChildren();
@@ -104,11 +171,12 @@ fetch("data/4_CINEON_movie_events.json")
     });
 
 const movieLikeButton = movieMain.querySelector(".detail-like");
-const movieLikeKey = "cineon:movie-like:" + movieId;
+const movieLikePoster = movieMain.querySelector(".movie-poster img").getAttribute("src");
+const movieLikeKey = movieWishKey(movieLikePoster);
 
 function restoreMovieLike() {
     try {
-        const liked = localStorage.getItem(movieLikeKey) === "true";
+        const liked = isMovieWished(movieLikePoster);
         movieLikeButton.setAttribute("aria-pressed", String(liked));
     } catch (error) {
         console.warn("찜 상태를 불러오지 못했습니다.", error);
@@ -123,11 +191,7 @@ movieLikeButton.addEventListener("click", function () {
     movieLikeButton.setAttribute("aria-pressed", String(liked));
 
     try {
-        if (liked) {
-            localStorage.setItem(movieLikeKey, "true");
-        } else {
-            localStorage.removeItem(movieLikeKey);
-        }
+        setMovieWished(movieLikePoster, liked);
     } catch (error) {
         console.warn("찜 상태를 저장하지 못했습니다.", error);
     }
@@ -257,3 +321,94 @@ function setupMovieMediaViewer() {
 }
 
 setupMovieMediaViewer();
+
+function setupMovieSeries() {
+    const section = movieMain.querySelector(".movie-series-section");
+    if (!section) {
+        return;
+    }
+
+    const list = section.querySelector(".movie-series-list");
+    const template = section.querySelector(".movie-series-template");
+    fetchMovieJson("data/4_CINEON_movie_series.json")
+        .then(function (movies) {
+            if (!Array.isArray(movies) || movies.length === 0) {
+                return;
+            }
+
+            movies.sort(function (first, second) {
+                return first.releaseDate.localeCompare(second.releaseDate);
+            });
+            for (const movie of movies) {
+                const card = template.content.cloneNode(true);
+                card.querySelector("img").src = movie.poster;
+                card.querySelector(".movie-series-title").textContent = movie.title;
+                const release = card.querySelector("time");
+                release.dateTime = movie.releaseDate;
+                release.textContent = movie.releaseDate.split("-").join(".") + " 개봉";
+                list.appendChild(card);
+            }
+            section.hidden = false;
+        })
+        .catch(function (error) {
+            console.error("시리즈 영화 로드 오류:", error);
+        });
+}
+
+setupMovieSeries();
+
+function createMovieReviewCard(review) {
+    const card = document.createElement("li");
+    card.className = "movie-review-card";
+    card.innerHTML = `
+        <div class="movie-review-author">
+            <img class="movie-review-avatar" alt="" width="36" height="36">
+            <div class="movie-review-byline"><strong></strong><span></span></div>
+            <span class="movie-review-score">
+                <img src="images/4_icon_star.svg" alt="평점" width="16" height="16"><span></span>
+            </span>
+        </div>
+        <p class="movie-review-text"></p>
+        <span class="movie-review-stats">
+            <img src="images/4_icon_thumb_up.svg" alt="" width="18" height="18"><span></span>
+        </span>
+    `;
+
+    card.querySelector(".movie-review-avatar").src = review.avatar;
+    card.querySelector(".movie-review-byline strong").textContent = review.author;
+    card.querySelector(".movie-review-byline span").textContent = review.daysAgo === 0 ? "오늘" : review.daysAgo + "일 전";
+    card.querySelector(".movie-review-score span").textContent = review.rating;
+    card.querySelector(".movie-review-text").textContent = review.text;
+    card.querySelector(".movie-review-stats span").textContent = "좋아요 " + review.likes;
+    return card;
+}
+
+function setupMovieReviews() {
+    const panel = movieMain.querySelector(".movie-review-panel");
+    const count = panel.querySelector(".movie-review-count");
+    const message = panel.querySelector(".movie-review-message");
+    const list = panel.querySelector(".movie-review-list");
+    const pageName = window.location.pathname.split("/").pop();
+
+    fetchMovieJson("data/4_CINEON_movies.json")
+        .then(function (movies) {
+            const movie = movies.now.find(function (item) {
+                return item.detail === pageName;
+            });
+            if (!movie || !movie.review) {
+                count.textContent = "0건";
+                message.textContent = "등록된 관람평이 없습니다.";
+                return;
+            }
+
+            list.appendChild(createMovieReviewCard(movie.review));
+            count.textContent = list.childElementCount + "건";
+            message.textContent = "";
+        })
+        .catch(function (error) {
+            message.textContent = "관람평을 불러오지 못했습니다.";
+            console.error("관람평 로드 오류:", error);
+        });
+}
+
+setupMovieReviews();
