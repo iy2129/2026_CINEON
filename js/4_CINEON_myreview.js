@@ -62,10 +62,11 @@ function loadPersonalReview() {
     reviewEditor.open = false;
     saveReviewStatus.textContent = "";
     try {
-        loadedReviewKey = personalReviewKey();
+        const username = localStorage.getItem(authSessionKey);
+        loadedReviewKey = username ? personalReviewStorageKey(username, requestedFilm) : null;
         reviewEditor.hidden = !loadedReviewKey;
         ratingField.disabled = !loadedReviewKey;
-        showPersonalReview(loadedReviewKey ? JSON.parse(localStorage.getItem(loadedReviewKey)) : null);
+        showPersonalReview(username ? readPersonalReview(username, requestedFilm) : null);
     } catch (error) {
         reviewEditor.hidden = true;
         ratingField.disabled = true;

@@ -81,6 +81,16 @@
   line-height: 1.55;
 }
 
+.auth-demo {
+  margin: 10px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #f7f5f4;
+  color: #555;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
 .auth-switch,
 .auth-signed-in {
   text-align: center;

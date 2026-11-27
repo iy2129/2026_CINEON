@@ -2,6 +2,20 @@ const authForm = document.querySelector(".auth-form");
 const authMessage = document.getElementById("auth-message");
 const loginForm = document.getElementById("login-form");
 const authSessionKey = "cineon-current-user";
+const demoAccounts = new Map([
+    ["cineon-demo", {
+        name: "시네산책",
+        passwordHash: "2d3f445947b7daba7192e88f01912eb342364fa89dafbb674433e7a7ee2c41f6",
+        reviews: {
+            chiikawa: { rating: 4.5, comment: "섬의 풍경과 친구들이 서로 챙겨 주는 장면이 기억에 남았어요." },
+            tazza: { rating: 4, comment: "서로의 패를 읽으려는 두 친구의 긴장감이 좋았어요." }
+        }
+    }],
+    ["hamada", {
+        name: "하마다",
+        passwordHash: "4bff8e4199f149676265ccc1057f0c22be9e95a0bfa545ba4cefd0e800c8a0aa"
+    }]
+]);
 const userMenu = document.querySelector(".user-menu");
 const loginLink = userMenu.querySelector('a[href="4_CINEON_login.html"]');
 const signupLink = userMenu.querySelector('a[href="4_CINEON_signup.html"]');
@@ -21,11 +35,21 @@ userMenu.insertBefore(accountName, signupLink);
 userMenu.insertBefore(menuLogout, signupLink);
 
 function readAccount(username) {
-    return JSON.parse(localStorage.getItem("cineon-account-" + username));
+    const localAccount = JSON.parse(localStorage.getItem("cineon-account-" + username));
+    return localAccount || demoAccounts.get(username) || null;
 }
 
 function personalReviewStorageKey(username, movieId) {
     return "cineon:personal-review:" + JSON.stringify([username, movieId]);
+}
+
+function readPersonalReview(username, movieId) {
+    const saved = localStorage.getItem(personalReviewStorageKey(username, movieId));
+    if (saved !== null) {
+        return JSON.parse(saved);
+    }
+    const reviews = demoAccounts.get(username)?.reviews;
+    return reviews && Object.hasOwn(reviews, movieId) ? reviews[movieId] : null;
 }
 
 function movieWishKey(poster) {
@@ -158,6 +182,10 @@ if (authForm && window.crypto && crypto.subtle) {
                     return;
                 }
                 localStorage.setItem(authSessionKey, username);
+                if (demoAccounts.has(username)) {
+                    window.location.href = accountName.href;
+                    return;
+                }
                 loginForm.reset();
                 authMessage.hidden = true;
                 updateAccountMenu();
