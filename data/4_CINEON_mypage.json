@@ -3,6 +3,7 @@
         "id": "chiikawa",
         "title": "극장판 치이카와: 인어 섬의 비밀",
         "date": "2026-11-08",
+        "ticket": { "start": "13:15", "auditorium": "2관", "seats": ["F8", "F9"], "guests": { "일반": 1, "청소년": 1 }, "format": "2D" },
         "genres": [
             "애니메이션"
         ],
@@ -17,6 +18,7 @@
         "id": "tazza",
         "title": "타짜: 벨제붑의 노래",
         "date": "2026-11-21",
+        "ticket": { "start": "19:10", "auditorium": "4관", "seats": ["G10", "G11"], "guests": { "일반": 2 }, "format": "2D" },
         "genres": [
             "범죄",
             "드라마"
@@ -32,6 +34,7 @@
         "id": "odyssey",
         "title": "오디세이",
         "date": "2026-11-04",
+        "ticket": { "start": "18:00", "auditorium": "IMAX관", "seats": ["H12", "H13"], "guests": { "일반": 2 }, "format": "2D" },
         "genres": ["모험", "판타지"],
         "tags": ["모험", "신화", "가족"],
         "minutes": 172,
@@ -42,6 +45,7 @@
         "id": "whalefall",
         "title": "웨일폴: 고래에 먹힌 남자",
         "date": "2026-11-12",
+        "ticket": { "start": "20:20", "auditorium": "SCREENX관", "seats": ["E7"], "guests": { "일반": 1 }, "format": "2D" },
         "genres": ["스릴러"],
         "tags": ["생존", "바다", "긴장감"],
         "minutes": 106,
@@ -51,7 +55,8 @@
     {
         "id": "guardians",
         "title": "전자오락수호대",
-        "date": "2026-11-25",
+        "date": "2026-11-27",
+        "ticket": { "start": "16:05", "auditorium": "4DX관", "seats": ["D13", "D14"], "guests": { "청소년": 2 }, "format": "2D" },
         "genres": ["애니메이션", "모험"],
         "tags": ["게임", "모험", "우정"],
         "minutes": 110,
@@ -62,6 +67,7 @@
         "id": "lookback",
         "title": "룩백",
         "date": "2026-11-27",
+        "ticket": { "start": "11:15", "auditorium": "2관", "seats": ["C6"], "guests": { "청소년": 1 }, "format": "2D" },
         "genres": ["드라마"],
         "tags": ["우정", "성장", "창작"],
         "minutes": 100,
@@ -72,6 +78,7 @@
         "id": "age",
         "title": "철들 무렵",
         "date": "2026-11-16",
+        "ticket": { "start": "15:30", "auditorium": "1관", "seats": ["F5", "F6"], "guests": { "일반": 1, "경로": 1 }, "format": "2D" },
         "genres": ["드라마"],
         "tags": ["가족", "성장", "돌봄"],
         "minutes": 105,

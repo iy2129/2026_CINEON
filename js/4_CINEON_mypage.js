@@ -8,6 +8,8 @@ const mypageTabs = Array.from(mypageTabBar.querySelectorAll("[role=tab]"));
 const ratingsSection = document.querySelector(".mypage-ratings");
 const ratingsHeading = document.getElementById("mypage-ratings-title");
 const ratingsLink = document.querySelector(".mypage-rating-stat a");
+const heartsHeading = document.getElementById("mypage-activity-wishes-title");
+const heartsLink = document.querySelector(".mypage-heart-stat a");
 const mypageLogo = document.querySelector(".logo");
 
 new ResizeObserver(function () {
@@ -18,11 +20,13 @@ new ResizeObserver(function () {
 
 function renderMypageRoute() {
     const hash = window.location.hash;
+    const showHearts = hash === "#hearts";
+    const tabHash = showHearts ? "#activity" : hash;
     const activeLink = mypageLinks.find(function (link) {
         return link.hash === hash;
     });
     const requestedTab = mypageTabs.find(function (tab) {
-        return "#" + tab.dataset.view === hash;
+        return "#" + tab.dataset.view === tabHash;
     });
     const activeTab = requestedTab || mypageTabs[0];
     const showService = Boolean(activeLink && !requestedTab);
@@ -40,10 +44,12 @@ function renderMypageRoute() {
     serviceView.hidden = !showService;
     ratingsSection.hidden = !showRatings;
     mypageTabBar.hidden = showRatings;
-    if (showRatings) {
-        ratingsLink.setAttribute("aria-current", "location");
-    } else {
-        ratingsLink.removeAttribute("aria-current");
+    for (const [link, current] of [[ratingsLink, showRatings], [heartsLink, showHearts]]) {
+        if (current) {
+            link.setAttribute("aria-current", "location");
+        } else {
+            link.removeAttribute("aria-current");
+        }
     }
     if (showService) {
         serviceTitle.textContent = activeLink.textContent;
@@ -55,9 +61,10 @@ function renderMypageRoute() {
         tab.tabIndex = selected ? 0 : -1;
         document.getElementById(tab.getAttribute("aria-controls")).hidden = !selected || showRatings;
     }
-    if (showRatings) {
-        ratingsHeading.focus({ preventScroll: true });
-        ratingsHeading.scrollIntoView();
+    if (showRatings || showHearts) {
+        const heading = showRatings ? ratingsHeading : heartsHeading;
+        heading.focus({ preventScroll: true });
+        heading.scrollIntoView();
     } else {
         window.scrollTo({ top: 0 });
     }
@@ -112,14 +119,13 @@ const activityRatingCount = document.querySelector(".mypage-activity-rating-coun
 const activityRatingsEmpty = document.querySelector(".mypage-activity-ratings-empty");
 const wishList = document.querySelector(".mypage-activity-wishes");
 const wishCount = document.querySelector(".mypage-wish-count");
+const heartCount = document.querySelector(".mypage-heart-count");
 const wishesEmpty = document.querySelector(".mypage-wishes-empty");
 const ratingsList = ratingsSection.querySelector(".mypage-ratings-list");
 const ratingsEmpty = ratingsSection.querySelector(".mypage-ratings-empty");
 const ratingCount = document.querySelector(".mypage-rating-count");
 const monthLabel = document.querySelector(".mypage-month");
 const calendarDays = document.querySelector(".mypage-calendar-days");
-const calendarMovies = document.querySelector(".mypage-calendar-movies");
-const calendarEmpty = document.querySelector(".mypage-calendar-empty");
 let month = new Date();
 let historyMovies = [];
 let wishMovies;
@@ -183,23 +189,12 @@ function makeMovieTile(movie, href, rating) {
     return row;
 }
 
-function makeCalendarMovie(movie) {
-    const row = document.createElement("li");
-    const title = document.createElement("strong");
-    const date = document.createElement("time");
-    title.textContent = movie.title;
-    date.dateTime = movie.date;
-    date.textContent = movie.date.split("-").join(".");
-    row.append(title, date);
-    return row;
-}
-
 function renderRatings() {
     const username = localStorage.getItem(authSessionKey);
     const ratings = [];
     for (const movie of username ? historyMovies : []) {
         try {
-            const review = JSON.parse(localStorage.getItem(personalReviewStorageKey(username, movie.id)));
+            const review = readPersonalReview(username, movie.id);
             if (review && Number.isFinite(review.rating) && Number.isInteger(review.rating * 2) &&
                 review.rating >= 0.5 && review.rating <= 5) {
                 ratings.push({ movie, review });
@@ -255,10 +250,69 @@ function renderRatings() {
 function renderWishes() {
     const movies = (wishMovies || historyMovies).filter(movie => isMovieWished(movie.poster));
     wishCount.textContent = movies.length;
+    heartCount.textContent = movies.length;
     wishesEmpty.hidden = movies.length > 0;
     wishList.replaceChildren(...movies.map(function (movie) {
         return makeMovieTile(movie, movie.detail !== "#" ? movie.detail : null);
     }));
+}
+
+function makeHistoryPoster(movie) {
+    const href = movie.detail || "#";
+    const row = makeMovieTile(movie, href);
+    const link = row.querySelector("a");
+    if (href === "#") {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+        });
+    }
+    const ticket = movie.ticket;
+    if (!ticket) {
+        return row;
+    }
+
+    const image = row.querySelector(".mypage-tile-poster");
+    const title = row.querySelector("strong");
+    title.id = "mypage-history-film-" + movie.id;
+    link.setAttribute("aria-labelledby", title.id);
+    const frame = document.createElement("figure");
+    frame.className = "mypage-history-poster";
+    const overlay = document.createElement("figcaption");
+    overlay.className = "mypage-ticket-overlay";
+    overlay.id = "mypage-ticket-" + movie.id;
+    link.setAttribute("aria-describedby", overlay.id);
+
+    const start = Date.parse(movie.date + "T" + ticket.start + ":00Z");
+    const end = new Date(start + movie.minutes * 60000).toISOString().slice(11, 16);
+    const details = [
+        ["mypage-ticket-title", movie.title],
+        ["", movie.date.replaceAll("-", ".")],
+        ["", ticket.start + "–" + end],
+        ["", ticket.auditorium + " | " + ticket.seats.join(", ")]
+    ];
+    for (const [className, text] of details) {
+        const line = document.createElement("p");
+        line.className = className;
+        line.textContent = text;
+        overlay.appendChild(line);
+    }
+
+    const types = document.createElement("p");
+    types.className = "mypage-ticket-types";
+    const guestLabels = Object.entries(ticket.guests).map(function ([type, count]) {
+        return type + " " + count;
+    });
+    for (const label of [...guestLabels, ticket.format]) {
+        const badge = document.createElement("span");
+        badge.className = "mypage-ticket-type";
+        badge.textContent = label;
+        types.appendChild(badge);
+    }
+    overlay.appendChild(types);
+
+    image.replaceWith(frame);
+    frame.append(image, overlay);
+    return row;
 }
 
 function renderPosters(tag) {
@@ -266,9 +320,7 @@ function renderPosters(tag) {
         return (movie.tags || []).includes(tag);
     }) : historyMovies;
     visiblePosterRows = 1;
-    posterList.replaceChildren(...movies.map(function (movie) {
-        return makeMovieTile(movie);
-    }), posterMoreItem);
+    posterList.replaceChildren(...movies.map(makeHistoryPoster), posterMoreItem);
     historyCount.textContent = movies.length;
     tagStatus.textContent = (tag || "전체") + " · " + movies.length + "편";
     updatePosterRows();
@@ -379,6 +431,8 @@ function findTagPosition(size, width, positions, index) {
 window.addEventListener("resize", layoutTags);
 
 function renderTags() {
+    const filterTooltip = "이 태그의 관람 영화 보기";
+    const resetTooltip = "전체 관람 내역 보기";
     const tagCounts = new Map();
     for (const movie of historyMovies) {
         for (const tag of new Set(movie.tags || [])) {
@@ -400,6 +454,7 @@ function renderTags() {
         const button = document.createElement("button");
         button.type = "button";
         button.textContent = tag;
+        button.title = filterTooltip;
         button.setAttribute("aria-controls", posterList.id);
         button.setAttribute("aria-pressed", "false");
         button.style.setProperty("--tag-size", Math.min(16 + (count - 2) * 8, 32) + "px");
@@ -409,8 +464,10 @@ function renderTags() {
             const selected = pressed !== button;
             if (pressed) {
                 pressed.setAttribute("aria-pressed", "false");
+                pressed.title = filterTooltip;
             }
             button.setAttribute("aria-pressed", String(selected));
+            button.title = selected ? resetTooltip : filterTooltip;
             renderPosters(selected ? tag : "");
         });
         item.appendChild(button);
@@ -449,21 +506,54 @@ function renderHistory() {
     renderTags();
 }
 
+function makeCalendarPoster(date, movies) {
+    const tile = document.createElement("div");
+    const titles = movies.map(movie => movie.title).join(", ");
+    tile.className = "mypage-calendar-day-poster";
+    tile.title = date.replaceAll("-", ".") + " · " + titles;
+    tile.setAttribute("role", "img");
+    tile.setAttribute("aria-label", date + " 관람 영화 " + movies.length + "편, " + titles);
+
+    const stack = document.createElement("span");
+    stack.className = "mypage-calendar-stack";
+    stack.setAttribute("aria-hidden", "true");
+    for (const movie of movies.slice(0, 3).reverse()) {
+        const poster = document.createElement("img");
+        poster.src = movie.poster;
+        poster.alt = "";
+        poster.loading = "lazy";
+        stack.appendChild(poster);
+    }
+    if (movies.length > 1) {
+        const badge = document.createElement("span");
+        badge.className = "mypage-calendar-badge";
+        badge.textContent = movies.length;
+        stack.appendChild(badge);
+    }
+    tile.appendChild(stack);
+    return tile;
+}
+
 function renderCalendar() {
     const year = month.getFullYear();
     const monthIndex = month.getMonth();
+    const today = new Date();
+    const todayInMonth = today.getFullYear() === year && today.getMonth() === monthIndex;
     const monthPrefix = year + "-" + String(monthIndex + 1).padStart(2, "0");
     const movies = historyMovies.filter(function (movie) {
-        return movie.date.startsWith(monthPrefix);
+        return movie.date.startsWith(monthPrefix + "-");
     });
-    const watchedDays = new Set(movies.map(function (movie) {
-        return Number(movie.date.slice(-2));
-    }));
+    const moviesByDate = new Map();
+    for (const movie of movies) {
+        if (!moviesByDate.has(movie.date)) {
+            moviesByDate.set(movie.date, []);
+        }
+        moviesByDate.get(movie.date).push(movie);
+    }
     const firstDay = new Date(year, monthIndex, 1).getDay();
     const dayCount = new Date(year, monthIndex + 1, 0).getDate();
-    monthLabel.textContent = year + "년 " + (monthIndex + 1) + "월";
+    monthLabel.textContent = year + ". " + (monthIndex + 1);
     calendarDays.replaceChildren();
-    calendarMovies.replaceChildren();
 
     for (let blank = 0; blank < firstDay; blank++) {
         const cell = document.createElement("li");
@@ -472,23 +562,24 @@ function renderCalendar() {
     }
     for (let day = 1; day <= dayCount; day++) {
         const cell = document.createElement("li");
-        const date = document.createElement("span");
-        date.textContent = day;
-        if (watchedDays.has(day)) {
-            date.className = "mypage-watched-day";
-            const label = document.createElement("span");
-            label.className = "mypage-visually-hidden";
-            label.textContent = "일 관람";
-            date.appendChild(label);
+        const date = monthPrefix + "-" + String(day).padStart(2, "0");
+        const dayMovies = moviesByDate.get(date);
+        const isToday = todayInMonth && day === today.getDate();
+        if (dayMovies) {
+            const tile = makeCalendarPoster(date, dayMovies);
+            if (isToday) {
+                tile.setAttribute("aria-current", "date");
+            }
+            cell.appendChild(tile);
+        } else {
+            cell.className = "mypage-calendar-day-number";
+            cell.textContent = day;
+            if (isToday) {
+                cell.setAttribute("aria-current", "date");
+            }
         }
-        cell.appendChild(date);
         calendarDays.appendChild(cell);
     }
-
-    for (const movie of movies) {
-        calendarMovies.appendChild(makeCalendarMovie(movie));
-    }
-    calendarEmpty.hidden = movies.length > 0;
 }
 
 function changeMonth(offset) {
@@ -516,7 +607,7 @@ fetch("data/4_CINEON_movies.json")
         renderWishes();
     })
     .catch(function (error) {
-        console.warn("보고싶어요 영화 목록을 불러오지 못했습니다.", error);
+        console.warn("하트 영화 목록을 불러오지 못했습니다.", error);
     });
 
 fetch("data/4_CINEON_mypage.json")
