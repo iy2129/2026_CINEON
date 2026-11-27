@@ -95,121 +95,144 @@
                             >
                         </figure>
                     </section>
-                    <nav class="movie-section-nav">
+                    <div class="movie-tabs-start" aria-hidden="true"></div>
+                    <div class="movie-tab-bar" role="tablist" aria-label="영화 상세" hidden>
                         <div class="movie-section-nav-links">
-                            <a href="#movie-overview" title="주요정보 바로가기">주요정보</a>
-                            <a href="#movie-events" title="이벤트 바로가기">이벤트</a>
-                            <a href="#movie-clips" title="무비클립 바로가기">무비클립</a>
-                            <a href="#movie-gallery" title="포스터/스틸컷 바로가기">포스터/스틸컷</a>
+                            <button type="button" role="tab" id="movie-tab-overview" aria-controls="movie-panel-overview" aria-selected="true">주요정보</button>
+                            <button type="button" role="tab" id="movie-tab-reviews" aria-controls="movie-panel-reviews" aria-selected="false" tabindex="-1">실관람평</button>
                         </div>
-                    </nav>
-                    <section class="movie-story-section">
-                        <span class="movie-section-anchor" id="movie-overview"></span>
-                        <h2 class="section-heading" id="story-title">줄거리</h2>
-                        <p class="movie-description">
-                            <strong>중세 유럽, 종교인들은 카드가 악마의 도구라고 생각했다.</strong><br>
-                            <strong>특히 죽음을 뜻하는 스페이드 13장엔 모두 악마의 이름이 들어 있다.</strong><br>
-                            <strong>지옥으로 떨어진 추락한 천사 '루시퍼'와 지옥의 기존 지배자 '벨제붑'.</strong><br>
-                            <strong>두 악마는 모든 것을 걸고 도박으로 승부를 내기로 결정했다.</strong><br>
-                            <br>
-                            타고난 끗발로 사람의 마음을 사로잡는 '장태영'(변요한)과<br>
-                            천부적인 머리와 노력으로 스스로를 증명하는 '박태영'(노재원).<br>
-                            학창 시절부터 절친한 친구인 두 사람은 온라인 카지노 사업에 뛰어들며 승승장구하고,<br>
-                            사업의 성공이 커질수록 럭키한 장태만 주목받자, 박태의 질투는 조용히 자라난다.<br>
-                            <br>
-                            성공의 꼭대기에서 질투는 배신으로 변한다.<br>
-                            장태영은 베트남 출장 중 박태영의 예상치 못한 배신으로 나락에 떨어지고,<br>
-                            기적적으로 살아남아 전설의 타짜 ‘곽동욱’에게 포커를 사사 받는다.<br>
-                            <br>
-                            한편, 야쿠자 조직이 배후에 있는 '가네코'(미요시 아야카)는<br>
-                            한국의 온라인 카지노 사업에 관심을 갖고<br>
-                            일본과 베트남의 거물들이 참여한 거액의 글로벌 도박판을 셋팅 한다.<br>
-                            <br>
-                            벼랑 끝 도박판,<br>
-                            같은 이름, 다른 운명의 친구 장태영과 박태영은 마침내 그 곳에서 마주하는데…<br>
-                            <br>
-                            <strong>원작 팬들이 가장 극찬한 &lt;타짜&gt; 시리즈의 피날레</strong><br>
-                            <strong>추석은 타짜!</strong>
-                        </p>
-                    </section>
-                    <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
-                        <hr class="movie-section-divider">
-                        <div class="container">
-                            <span class="movie-section-anchor" id="movie-events"></span>
-                            <h2 class="section-heading" id="movie-events-title">이벤트</h2>
-                            <div class="event-filter">
-                                <label for="movie-event-filter">이벤트 상태</label>
-                                <select id="movie-event-filter" disabled>
-                                    <option value="all" selected>전체</option>
-                                    <option value="ongoing">진행 중</option>
-                                </select>
+                    </div>
+                    <div class="movie-overview-panel" id="movie-panel-overview" role="tabpanel" aria-labelledby="movie-tab-overview">
+                        <nav class="movie-section-nav" aria-label="주요정보 섹션">
+                            <div class="movie-section-nav-links">
+                                <a href="#movie-overview">줄거리</a>
+                                <a href="#movie-events">이벤트</a>
+                                <a href="#movie-clips">무비클립</a>
+                                <a href="#movie-gallery">포스터/스틸컷</a>
                             </div>
-                            <p class="event-message" role="status"></p>
-                            <div class="event-list"></div>
-                            <noscript><p>이벤트를 보려면 JavaScript를 켜 주세요.</p></noscript>
-                        </div>
-                    </section>
-                    <section class="trailer-section">
-                        <hr class="movie-section-divider"><div class="container"><span class="movie-section-anchor" id="movie-clips"></span>
-                            <h2 class="section-heading">무비클립 (3)</h2><div class="trailer-list"><figure class="trailer-card">
+                        </nav>
+                        <section class="movie-story-section">
+                            <span class="movie-section-anchor" id="movie-overview"></span>
+                            <h2 class="section-heading" id="story-title">줄거리</h2>
+                            <p class="movie-description">
+                                <strong>중세 유럽, 종교인들은 카드가 악마의 도구라고 생각했다.</strong><br>
+                                <strong>특히 죽음을 뜻하는 스페이드 13장엔 모두 악마의 이름이 들어 있다.</strong><br>
+                                <strong>지옥으로 떨어진 추락한 천사 '루시퍼'와 지옥의 기존 지배자 '벨제붑'.</strong><br>
+                                <strong>두 악마는 모든 것을 걸고 도박으로 승부를 내기로 결정했다.</strong><br>
+                                <br>
+                                타고난 끗발로 사람의 마음을 사로잡는 '장태영'(변요한)과<br>
+                                천부적인 머리와 노력으로 스스로를 증명하는 '박태영'(노재원).<br>
+                                학창 시절부터 절친한 친구인 두 사람은 온라인 카지노 사업에 뛰어들며 승승장구하고,<br>
+                                사업의 성공이 커질수록 럭키한 장태만 주목받자, 박태의 질투는 조용히 자라난다.<br>
+                                <br>
+                                성공의 꼭대기에서 질투는 배신으로 변한다.<br>
+                                장태영은 베트남 출장 중 박태영의 예상치 못한 배신으로 나락에 떨어지고,<br>
+                                기적적으로 살아남아 전설의 타짜 ‘곽동욱’에게 포커를 사사 받는다.<br>
+                                <br>
+                                한편, 야쿠자 조직이 배후에 있는 '가네코'(미요시 아야카)는<br>
+                                한국의 온라인 카지노 사업에 관심을 갖고<br>
+                                일본과 베트남의 거물들이 참여한 거액의 글로벌 도박판을 셋팅 한다.<br>
+                                <br>
+                                벼랑 끝 도박판,<br>
+                                같은 이름, 다른 운명의 친구 장태영과 박태영은 마침내 그 곳에서 마주하는데…<br>
+                                <br>
+                                <strong>원작 팬들이 가장 극찬한 &lt;타짜&gt; 시리즈의 피날레</strong><br>
+                                <strong>추석은 타짜!</strong>
+                            </p>
+                        </section>
+                        <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
+                            <hr class="movie-section-divider">
+                            <div class="container">
+                                <span class="movie-section-anchor" id="movie-events"></span>
+                                <h2 class="section-heading" id="movie-events-title">이벤트 <span class="movie-event-count"></span></h2>
+                                <p class="event-message" role="status"></p>
+                                <div class="event-list"></div>
+                                <noscript><p>이벤트를 보려면 JavaScript를 켜 주세요.</p></noscript>
+                            </div>
+                        </section>
+                        <section class="trailer-section">
+                            <hr class="movie-section-divider"><div class="container"><span class="movie-section-anchor" id="movie-clips"></span>
+                                <h2 class="section-heading">무비클립 (3)</h2><div class="trailer-list"><figure class="trailer-card">
 
-                                    <a href="https://youtu.be/oOfV91n0GB8?si=nerfXqYBm6xiKzGM" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie02_02.jpg"
-                                    alt="타짜 라이벌 예고편 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/oOfV91n0GB8?si=nerfXqYBm6xiKzGM" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie02_02.jpg"
+                                        alt="타짜 라이벌 예고편 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    라이벌 예고편
-                                    </figcaption>
+                                        <figcaption>
+                                        라이벌 예고편
+                                        </figcaption>
 
-                                </figure>
-                                <figure class="trailer-card">
+                                    </figure>
+                                    <figure class="trailer-card">
 
-                                    <a href="https://youtu.be/_HESc336Ex8?si=g4vH8WweGmWb-_L9" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie02_03.jpg"
-                                    alt="타짜 제작기 영상 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/_HESc336Ex8?si=g4vH8WweGmWb-_L9" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie02_03.jpg"
+                                        alt="타짜 제작기 영상 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    제작기 영상
-                                    </figcaption>
+                                        <figcaption>
+                                        제작기 영상
+                                        </figcaption>
 
-                                </figure>
-                                <figure class="trailer-card">
+                                    </figure>
+                                    <figure class="trailer-card">
 
-                                    <a href="https://youtu.be/aMOrloU5Bho?si=x3riuYY57dpE53u9" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie02_02.jpg"
-                                    alt="타짜 메인 예고편 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/aMOrloU5Bho?si=x3riuYY57dpE53u9" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie02_02.jpg"
+                                        alt="타짜 메인 예고편 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    메인 예고편
-                                    </figcaption>
+                                        <figcaption>
+                                        메인 예고편
+                                        </figcaption>
 
-                                </figure>
+                                    </figure>
 
-                            </div></div></section>
-                    <section id="stillcuts" class="stillcut-section stillcut-tazza">
-                        <hr class="movie-section-divider">
-                        <div class="container">
-                            <span class="movie-section-anchor" id="movie-gallery"></span>
-                            <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(4)</span></h2>
-                            <div class="stillcut-gallery">
-                                <div class="stillcut-grid">
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_poster-tazza.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_poster-tazza.jpg" alt="타짜 영화 포스터"></a>
-                                    </div>
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie02_02.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_02.jpg" alt="타짜 스틸컷 1"></a>
-                                        <a class="stillcut-link" href="images/4_movie02_03.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_03.jpg" alt="타짜 스틸컷 2"></a>
-                                    </div>
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie02_04.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_04.jpg" alt="타짜 스틸컷 3"></a>
+                                </div></div></section>
+                        <section id="stillcuts" class="stillcut-section stillcut-tazza">
+                            <hr class="movie-section-divider">
+                            <div class="container">
+                                <span class="movie-section-anchor" id="movie-gallery"></span>
+                                <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(4)</span></h2>
+                                <div class="stillcut-gallery">
+                                    <div class="stillcut-grid">
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_poster-tazza.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_poster-tazza.jpg" alt="타짜 영화 포스터"></a>
+                                        </div>
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_movie02_02.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_02.jpg" alt="타짜 스틸컷 1"></a>
+                                            <a class="stillcut-link" href="images/4_movie02_03.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_03.jpg" alt="타짜 스틸컷 2"></a>
+                                        </div>
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_movie02_04.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie02_04.jpg" alt="타짜 스틸컷 3"></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </section>
+                        <section class="movie-series-section" aria-labelledby="movie-series-title" hidden>
+                            <h2 class="section-heading" id="movie-series-title">타짜 시리즈</h2>
+                            <ul class="movie-series-list"></ul>
+                            <template class="movie-series-template">
+                                <li>
+                                    <div class="movie-series-poster">
+                                        <img alt="" loading="lazy">
+                                    </div>
+                                    <h3 class="movie-series-title"></h3>
+                                    <time></time>
+                                </li>
+                            </template>
+                        </section>
+                    </div>
+                    <div class="movie-review-panel" id="movie-panel-reviews" role="tabpanel" aria-labelledby="movie-tab-reviews" tabindex="0" hidden>
+                        <button class="movie-review-write" type="button" aria-label="관람평 작성 (준비 중)" disabled>관람평 작성</button>
+                        <div class="movie-review-summary">
+                            <h2>실관람평 <span class="movie-review-count"></span></h2>
                         </div>
-                    </section>
+                        <p class="movie-review-message" role="status">관람평을 불러오는 중입니다.</p>
+                        <ul class="movie-review-list" role="list"></ul>
+                    </div>
                 </div>
                 <aside class="movie-sidebar">
                     <h1 class="sidebar-title"><img class="movie-grade" src="images/4_icon_19.svg" alt="청소년관람불가">타짜: 벨제붑의 노래</h1>

@@ -1,0 +1,1069 @@
+@media (prefers-reduced-motion: no-preference) {
+    html.mypage-root {
+        scroll-behavior: smooth;
+    }
+}
+
+body.mypage-page {
+    --mypage-logo-color: #bb2a1c;
+    --mypage-header-height: 73px;
+    --mypage-sidebar-top: calc(var(--mypage-header-height) + 14px);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    min-height: 100dvh;
+}
+
+.mypage-page .site-header {
+    flex-shrink: 0;
+}
+
+.mypage-page .logo {
+    color: var(--mypage-logo-color);
+}
+
+.mypage-layout {
+    flex: 1;
+    grid-template-columns: minmax(0, 3fr) minmax(0, 7fr);
+}
+
+.mypage-layout:not([hidden]) {
+    display: grid;
+}
+
+.mypage-sidebar,
+.mypage-content {
+    box-sizing: border-box;
+    min-width: 0;
+    padding: 95px 24px 32px;
+}
+
+.mypage-sidebar {
+    padding-inline-start: min(
+        calc(var(--mypage-logo-edge, 180px) + clamp(32px, 4vw, 72px)),
+        max(24px, 100% - 170px)
+    );
+    padding-inline-end: 20px;
+    background-color: #fff;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.06);
+}
+
+.mypage-sidebar-inner {
+    position: sticky;
+    top: var(--mypage-sidebar-top);
+    max-height: calc(100dvh - var(--mypage-sidebar-top) - 14px);
+    overflow-y: auto;
+}
+
+.mypage-sidebar .section-heading {
+    font-size: 24px;
+}
+
+.mypage-account-label {
+    margin: 10px 0 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.mypage-menu ul,
+.mypage-panel ul,
+.mypage-panel ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mypage-menu {
+    margin-top: 16px;
+}
+
+.mypage-menu-group {
+    padding-block: 19px;
+    border-bottom: 1px solid #eee;
+}
+
+.mypage-menu-group:last-child {
+    border-bottom: 0;
+}
+
+.mypage-menu-group h2 {
+    margin: 0 0 10px;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.mypage-menu a {
+    display: inline-block;
+    padding-block: 6px;
+    color: #626262;
+    font-size: 14px;
+    line-height: 1.5;
+    text-decoration: underline transparent;
+    text-underline-offset: 4px;
+    transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.mypage-menu a:hover,
+.mypage-menu a:focus-visible,
+.mypage-menu a[aria-current="location"] {
+    color: #400f0b;
+    text-decoration-color: currentColor;
+}
+
+.mypage-content {
+    padding-inline: clamp(24px, 5vw, 80px);
+}
+
+.mypage-content:focus-visible {
+    outline-offset: -2px;
+}
+
+.mypage-content-inner {
+    max-width: 840px;
+    margin-inline: auto;
+}
+
+.mypage-profile-view {
+    --mypage-profile-bottom-gap: 22px;
+    --mypage-tab-top-padding: 12px;
+}
+
+.mypage-profile {
+    display: grid;
+    grid-template-columns: minmax(0, 2.15fr) minmax(0, 1fr);
+    gap: 16px;
+    padding-bottom: var(--mypage-profile-bottom-gap);
+}
+
+.mypage-profile-card,
+.mypage-benefits {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid #e8e5e4;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.mypage-profile-identity,
+.mypage-profile-name-row {
+    display: flex;
+    align-items: center;
+}
+
+.mypage-profile-identity {
+    gap: 14px;
+}
+
+.mypage-profile-name {
+    flex: 1;
+    min-width: 0;
+}
+
+.mypage-profile-name-row {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    margin-bottom: 5px;
+}
+
+.mypage-avatar {
+    position: relative;
+    display: block;
+    flex: 0 0 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: #f4f4f5;
+    color: #a2a2a5;
+}
+
+.mypage-avatar::before,
+.mypage-avatar::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: currentColor;
+}
+
+.mypage-avatar::before {
+    top: 16px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+}
+
+.mypage-avatar::after {
+    top: 36px;
+    width: 34px;
+    height: 18px;
+    border-radius: 18px 18px 4px 4px;
+}
+
+.mypage-nickname {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.mypage-followers {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #626262;
+    font-size: 15px;
+}
+
+.mypage-followers strong {
+    color: #292929;
+}
+
+.mypage-followers > span + span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.mypage-followers > span + span::before {
+    content: "";
+    width: 1px;
+    height: 0.9em;
+    margin-inline-end: 10px;
+    background: #d4cecc;
+}
+
+.mypage-followers > span + span strong {
+    margin-inline-start: 0.25em;
+}
+
+.mypage-profile-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin: 16px 0 0;
+    padding: 12px 0;
+    border-radius: 9px;
+    background: #f7f5f4;
+    text-align: center;
+}
+
+.mypage-profile-stats > div {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2px;
+}
+
+.mypage-profile-stats > div + div {
+    border-inline-start: 1px solid #ece6e4;
+}
+
+.mypage-profile-stats dt,
+.mypage-benefits dt {
+    color: #626262;
+    font-size: 15px;
+}
+
+.mypage-profile-stats dd,
+.mypage-benefits dd {
+    margin: 0;
+    color: #400f0b;
+    font-size: 21px;
+    font-weight: 750;
+}
+
+.mypage-profile-stats > div,
+.mypage-benefits > div {
+    position: relative;
+}
+
+.mypage-profile-stats a,
+.mypage-benefits a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.mypage-profile-stats a::after,
+.mypage-benefits a::after {
+    content: "";
+    position: absolute;
+    inset: -5px 4px;
+    border-radius: 8px;
+}
+
+.mypage-profile-stats a:hover,
+.mypage-profile-stats a[aria-current],
+.mypage-benefits a:hover {
+    color: #400f0b;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.mypage-profile-stats a:focus-visible::after,
+.mypage-benefits a:focus-visible::after {
+    outline: 2px solid #400f0b;
+}
+
+.mypage-benefits {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    margin: 0;
+}
+
+.mypage-benefits > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 4px;
+}
+
+.mypage-benefits > div + div {
+    border-top: 1px solid #ece6e4;
+}
+
+.mypage-profile-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.mypage-profile-actions > * {
+    padding: 4px 9px;
+    border: 1px solid #e1dddc;
+    border-radius: 8px;
+    background: #fff;
+    color: #333;
+    font: inherit;
+    font-size: 13px;
+    text-align: center;
+}
+
+.mypage-profile-actions > :hover {
+    background: #f6f5f5;
+}
+
+.mypage-edit-profile {
+    text-decoration: none;
+}
+
+.mypage-share-profile {
+    cursor: pointer;
+}
+
+.mypage-share-status {
+    margin: 6px 0 0;
+    color: #626262;
+    font-size: 13px;
+}
+
+.mypage-share-status:empty {
+    margin: 0;
+}
+
+.mypage-tabs {
+    gap: 4px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.mypage-tabs:not([hidden]) {
+    display: flex;
+}
+
+.mypage-tabs button {
+    min-width: 76px;
+    padding: var(--mypage-tab-top-padding) 14px 10px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: transparent;
+    color: #666;
+    font: inherit;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.mypage-tabs button:hover,
+.mypage-tabs button[aria-selected="true"] {
+    color: #400f0b;
+}
+
+.mypage-tabs button[aria-selected="true"] {
+    border-bottom-color: currentColor;
+    font-weight: 700;
+}
+
+.mypage-record-note {
+    margin-block: 14px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.mypage-record-note:empty {
+    margin: 0;
+}
+
+.mypage-summary {
+    display: grid;
+    gap: 28px 16px;
+    margin-top: calc(var(--mypage-profile-bottom-gap) + var(--mypage-tab-top-padding));
+}
+
+.mypage-summary:has(> .mypage-tags-card:not([hidden])) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.mypage-card:not([hidden]) {
+    display: flex;
+    flex-direction: column;
+}
+
+.mypage-card-body {
+    flex: 1;
+    margin-top: 12px;
+    padding: 20px 22px;
+    border: 1px solid #e8e5e4;
+    border-radius: 12px;
+}
+
+.mypage-duration-card .mypage-card-body {
+    display: grid;
+    place-items: center;
+}
+
+.mypage-genres-card {
+    grid-column: 1 / -1;
+}
+
+.mypage-card h2,
+.mypage-history h2,
+.mypage-panel > h2,
+.mypage-calendar-header h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.mypage-panel .mypage-genres {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+    text-align: center;
+}
+
+.mypage-genres li {
+    display: grid;
+    gap: 2px;
+    padding-block: 6px;
+    font-size: 16px;
+}
+
+.mypage-genres span {
+    font-size: 14px;
+}
+
+.mypage-tags-card .mypage-card-body {
+    background-image: radial-gradient(
+        ellipse closest-side at center,
+        color-mix(in srgb, var(--cineon-booking-color) 8%, transparent),
+        transparent 92%
+    );
+}
+
+.mypage-panel .mypage-tags {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    max-width: 300px;
+    margin-inline: auto;
+}
+
+.mypage-tags li {
+    max-width: 100%;
+}
+
+.mypage-panel .mypage-tags.is-positioned {
+    position: relative;
+    display: block;
+    height: var(--tag-cloud-height);
+}
+
+.mypage-tags.is-positioned li {
+    position: absolute;
+    top: var(--tag-top);
+    left: var(--tag-left);
+    width: var(--tag-width);
+}
+
+.mypage-tags button {
+    max-width: 100%;
+    min-height: 40px;
+    padding: 3px 7px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--cineon-booking-color);
+    font: inherit;
+    font-size: var(--tag-size, 16px);
+    font-weight: var(--tag-weight, 400);
+    overflow-wrap: anywhere;
+    cursor: pointer;
+}
+
+.mypage-tags button[aria-pressed="false"]:hover {
+    background: #f9eded;
+}
+
+.mypage-tags button[aria-pressed="true"] {
+    text-decoration: underline 2px currentColor;
+    text-underline-offset: 4px;
+}
+
+.mypage-genres span,
+.mypage-panel time,
+.mypage-calendar-empty,
+.mypage-service-view p {
+    color: #626262;
+}
+
+.mypage-duration {
+    margin: 0;
+    color: var(--cineon-booking-color);
+    font-size: 28px;
+    font-weight: 750;
+    font-variant-numeric: tabular-nums;
+    text-align: center;
+}
+
+.mypage-history {
+    margin-top: 30px;
+}
+
+.mypage-history-count {
+    margin-inline-start: 2px;
+    color: #626262;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.mypage-panel :is(.mypage-posters, .mypage-activity-posters) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(0, 108px));
+    gap: 14px;
+    margin-top: 12px;
+}
+
+.mypage-posters-more {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 8px;
+    background: #272727;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.mypage-posters-more span {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-size: 22px;
+    font-weight: 750;
+}
+
+.mypage-panel .mypage-activity-posters a {
+    display: block;
+    color: #242424;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.mypage-panel .mypage-activity-posters a:hover {
+    color: var(--mypage-logo-color);
+    text-decoration: none;
+}
+
+.mypage-tile-poster,
+.mypage-posters-preview {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #f4f4f5;
+    box-shadow: 2px 4px 8px rgba(6, 6, 6, 0.1);
+    transition: filter 160ms ease;
+}
+
+.mypage-activity-posters a:hover .mypage-tile-poster,
+.mypage-activity-posters a:focus-visible .mypage-tile-poster {
+    filter: brightness(0.8);
+}
+
+.mypage-posters-preview {
+    filter: brightness(0.42);
+}
+
+.mypage-posters-more:hover .mypage-posters-preview {
+    filter: brightness(0.33);
+}
+
+:is(.mypage-posters, .mypage-activity-posters) strong {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+}
+
+.mypage-panel a:hover {
+    color: #400f0b;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.mypage-panel time {
+    font-size: 14px;
+}
+
+.mypage-activity-section {
+    margin-top: 30px;
+}
+
+.mypage-activity-section + .mypage-activity-section {
+    margin-top: 36px;
+}
+
+.mypage-activity-heading {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.mypage-activity-heading h2 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.mypage-activity-all,
+.mypage-activity-empty {
+    color: #626262;
+    font-size: 14px;
+}
+
+.mypage-activity-all {
+    text-decoration: none;
+}
+
+.mypage-activity-empty {
+    margin: 12px 0 0;
+}
+
+.mypage-activity-score {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-top: 4px;
+    color: #524542;
+    font-size: 13px;
+}
+
+.mypage-activity-score::before {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: var(--cineon-rating-color);
+    mask: url("../images/4_icon_star.svg") center / contain no-repeat;
+}
+
+.mypage-panel .mypage-calendar-movies {
+    margin-top: 12px;
+}
+
+.mypage-calendar-movies li {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.mypage-calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 6px 12px;
+}
+
+.mypage-calendar-header button {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+    background: #fff;
+    color: #400f0b;
+    font: inherit;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.mypage-calendar-header button:hover {
+    background: #f6f5f5;
+}
+
+.mypage-calendar-weekdays,
+.mypage-calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+    text-align: center;
+}
+
+.mypage-calendar-weekdays {
+    padding-block: 8px;
+    color: #626262;
+    font-size: 14px;
+}
+
+.mypage-calendar-days li {
+    display: grid;
+    place-items: center;
+    min-height: 46px;
+    border-top: 1px solid #eee;
+}
+
+.mypage-watched-day {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #400f0b;
+    color: #fff;
+}
+
+.mypage-visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.mypage-ratings {
+    margin-top: 24px;
+}
+
+.mypage-ratings-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.mypage-ratings-header h2 {
+    margin: 0;
+    scroll-margin-top: calc(var(--mypage-header-height) + 24px);
+    font-size: 22px;
+}
+
+.mypage-ratings-header a {
+    color: #626262;
+}
+
+.mypage-ratings-empty {
+    padding: 28px 16px;
+    border-radius: 12px;
+    background: #f7f5f4;
+    color: #626262;
+    text-align: center;
+}
+
+.mypage-ratings-list {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mypage-ratings-list a {
+    display: grid;
+    grid-template-columns: 74px minmax(0, 1fr);
+    gap: 18px;
+    padding: 16px;
+    border: 1px solid #e8e5e4;
+    border-radius: 12px;
+    color: #242424;
+    text-decoration: none;
+}
+
+.mypage-ratings-list a:hover,
+.mypage-ratings-list a:focus-visible {
+    background: #faf8f7;
+}
+
+.mypage-ratings-list img {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.mypage-ratings-list h3 {
+    margin: 2px 0 0;
+    font-size: 17px;
+}
+
+.mypage-rating-score {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin: 5px 0 8px;
+    color: #524542;
+    font-size: 14px;
+}
+
+.rating-stars {
+    --rating-star-size: 21px;
+    display: inline-block;
+    width: calc(5 * var(--rating-star-size));
+    height: var(--rating-star-size);
+    background: linear-gradient(to right, var(--cineon-rating-color) var(--rating-preview-fill, var(--rating-fill, 0%)), #dedad8 0);
+    mask: url("../images/4_icon_star.svg") left center / var(--rating-star-size) 100% repeat-x;
+}
+
+.mypage-rating-comment {
+    margin: 0;
+    color: #555;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.my-review-page {
+    background: #faf9f8;
+    color: #242424;
+}
+
+.my-review-page .logo {
+    color: #bb2a1c;
+}
+
+.my-review-container {
+    box-sizing: border-box;
+    max-width: 1080px;
+    margin-inline: auto;
+    padding-inline: 32px;
+}
+
+.my-review-message {
+    margin-block: 48px;
+}
+
+.my-review-hero {
+    position: relative;
+    display: grid;
+    align-items: end;
+    min-height: 370px;
+    overflow: hidden;
+    background: #231716;
+    color: #fff;
+}
+
+.my-review-backdrop,
+.my-review-hero::after {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+}
+
+.my-review-backdrop {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 34%;
+}
+
+.my-review-hero::after {
+    content: "";
+    width: 100%;
+    background: linear-gradient(90deg, #231716 15%, rgb(35 23 22 / 52%) 63%, transparent),
+        linear-gradient(0deg, rgb(35 23 22 / 72%), transparent 70%);
+}
+
+.my-review-hero-content {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    padding-block: 40px;
+}
+
+.my-review-back {
+    display: inline-block;
+    color: inherit;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.my-review-hero h1 {
+    max-width: 650px;
+    margin: 14px 0 6px;
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+.my-review-meta,
+.my-review-date {
+    margin: 0;
+    font-size: 14px;
+}
+
+.my-review-overview {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    align-items: start;
+    gap: 28px;
+    margin-top: 32px;
+}
+
+.my-review-poster {
+    display: block;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 2px 4px 8px rgb(6 6 6 / 10%);
+}
+
+.my-review-panel,
+.my-review-story {
+    padding: 24px;
+    border: 1px solid #e8e5e4;
+    border-radius: 12px;
+    background: #fff;
+}
+
+.my-review-panel h2,
+.my-review-story h2 {
+    margin: 0 0 8px;
+    font-size: 22px;
+}
+
+.my-review-date,
+.my-review-save-status {
+    color: #666;
+}
+
+.my-review-stars {
+    margin: 12px 0 0;
+    padding: 0;
+    border: 0;
+}
+
+.my-review-rating-control {
+    position: relative;
+    display: inline-grid;
+    border-radius: 6px;
+}
+
+.my-review-rating-control .rating-stars {
+    --rating-star-size: 42px;
+}
+
+.my-review-star-options {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+}
+
+.my-review-star-options input {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.my-review-rating-control:has(input:focus-visible) {
+    outline: 2px solid #400f0b;
+    outline-offset: 3px;
+}
+
+.my-review-comment,
+.my-review-story p {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    line-height: 1.7;
+}
+
+.my-review-editor summary {
+    display: inline-block;
+    padding: 8px 14px;
+    border: 1px solid #e1dddc;
+    border-radius: 8px;
+    color: #400f0b;
+    cursor: pointer;
+}
+
+.my-review-editor summary:hover {
+    background: #f6f5f5;
+}
+
+.my-review-editor form {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.my-review-editor textarea {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #d8d2d0;
+    border-radius: 8px;
+    font: inherit;
+    resize: vertical;
+}
+
+.my-review-editor button {
+    justify-self: start;
+    padding: 7px 20px;
+    border: 0;
+    border-radius: 8px;
+    background: #400f0b;
+    color: #fff;
+    font: inherit;
+    cursor: pointer;
+}
+
+.my-review-save-status {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.my-review-save-status:empty {
+    margin: 0;
+}
+
+.my-review-story {
+    margin-block: 32px 56px;
+}
+
+.my-review-detail {
+    color: #400f0b;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mypage-menu a,
+    .mypage-tile-poster,
+    .mypage-posters-preview {
+        transition: none;
+    }
+}

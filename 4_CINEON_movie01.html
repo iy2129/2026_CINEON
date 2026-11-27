@@ -95,124 +95,134 @@
                             >
                         </figure>
                     </section>
-                    <nav class="movie-section-nav">
+                    <div class="movie-tabs-start" aria-hidden="true"></div>
+                    <div class="movie-tab-bar" role="tablist" aria-label="영화 상세" hidden>
                         <div class="movie-section-nav-links">
-                            <a href="#movie-overview" title="주요정보 바로가기">주요정보</a>
-                            <a href="#movie-events" title="이벤트 바로가기">이벤트</a>
-                            <a href="#movie-clips" title="무비클립 바로가기">무비클립</a>
-                            <a href="#movie-gallery" title="포스터/스틸컷 바로가기">포스터/스틸컷</a>
+                            <button type="button" role="tab" id="movie-tab-overview" aria-controls="movie-panel-overview" aria-selected="true">주요정보</button>
+                            <button type="button" role="tab" id="movie-tab-reviews" aria-controls="movie-panel-reviews" aria-selected="false" tabindex="-1">실관람평</button>
                         </div>
-                    </nav>
-                    <section class="movie-story-section">
-                        <span class="movie-section-anchor" id="movie-overview"></span>
-                        <h2 class="section-heading" id="story-title">줄거리</h2>
-                        <p class="movie-description">
-                            어느 날, 광장에서 쉬고 있던 치이카와와 가르마 앞에 얼굴에 전단지를 붙인 토끼가 나타난다.<br>
-                            그곳엔 “특별한 섬으로의 초대”라는 글귀가 적혀 있는데...<br>
-                            <br>
-                            “섬에서 간단한 토벌만 해도 보수 100배!”<br>
-                            “한정 섬라멘과 한정 디저트까지, 달콤한 것도 매콤한 것도 사실상 무료”<br>
-                            <br>
-                            솔깃한 문구에 이끌린 치이카와와 친구들은 섬에서 열리는 행사에 참가하기로 한다.<br>
-                            초대장의 내용이 어딘가 수상하다고 느끼는 해달과,<br>
-                            부푼 마음으로 배에 오르는 치이카와와 친구들.<br>
-                            <br>
-                            모두가 기대를 안은 채 특별한 섬에 도착하는데!<br>
-                            과연 그 섬에는 어떤 비밀이 숨겨져 있을까...?!
-                        </p>
-                    </section>
-                    <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
-                        <hr class="movie-section-divider">
-                        <div class="container">
-                            <span class="movie-section-anchor" id="movie-events"></span>
-                            <h2 class="section-heading" id="movie-events-title">이벤트</h2>
-                            <div class="event-filter">
-                                <label for="movie-event-filter">이벤트 상태</label>
-                                <select id="movie-event-filter" disabled>
-                                    <option value="all" selected>전체</option>
-                                    <option value="ongoing">진행 중</option>
-                                </select>
+                    </div>
+                    <div class="movie-overview-panel" id="movie-panel-overview" role="tabpanel" aria-labelledby="movie-tab-overview">
+                        <nav class="movie-section-nav" aria-label="주요정보 섹션">
+                            <div class="movie-section-nav-links">
+                                <a href="#movie-overview">줄거리</a>
+                                <a href="#movie-events">이벤트</a>
+                                <a href="#movie-clips">무비클립</a>
+                                <a href="#movie-gallery">포스터/스틸컷</a>
                             </div>
-                            <p class="event-message" role="status"></p>
-                            <div class="event-list"></div>
-                            <noscript><p>이벤트를 보려면 JavaScript를 켜 주세요.</p></noscript>
-                        </div>
-                    </section>
-                    <section class="trailer-section">
-                        <hr class="movie-section-divider">
+                        </nav>
+                        <section class="movie-story-section">
+                            <span class="movie-section-anchor" id="movie-overview"></span>
+                            <h2 class="section-heading" id="story-title">줄거리</h2>
+                            <p class="movie-description">
+                                어느 날, 광장에서 쉬고 있던 치이카와와 가르마 앞에 얼굴에 전단지를 붙인 토끼가 나타난다.<br>
+                                그곳엔 “특별한 섬으로의 초대”라는 글귀가 적혀 있는데...<br>
+                                <br>
+                                “섬에서 간단한 토벌만 해도 보수 100배!”<br>
+                                “한정 섬라멘과 한정 디저트까지, 달콤한 것도 매콤한 것도 사실상 무료”<br>
+                                <br>
+                                솔깃한 문구에 이끌린 치이카와와 친구들은 섬에서 열리는 행사에 참가하기로 한다.<br>
+                                초대장의 내용이 어딘가 수상하다고 느끼는 해달과,<br>
+                                부푼 마음으로 배에 오르는 치이카와와 친구들.<br>
+                                <br>
+                                모두가 기대를 안은 채 특별한 섬에 도착하는데!<br>
+                                과연 그 섬에는 어떤 비밀이 숨겨져 있을까...?!
+                            </p>
+                        </section>
+                        <section class="movie-events-section event-section" aria-labelledby="movie-events-title">
+                            <hr class="movie-section-divider">
+                            <div class="container">
+                                <span class="movie-section-anchor" id="movie-events"></span>
+                                <h2 class="section-heading" id="movie-events-title">이벤트 <span class="movie-event-count"></span></h2>
+                                <p class="event-message" role="status"></p>
+                                <div class="event-list"></div>
+                                <noscript><p>이벤트를 보려면 JavaScript를 켜 주세요.</p></noscript>
+                            </div>
+                        </section>
+                        <section class="trailer-section">
+                            <hr class="movie-section-divider">
 
-                        <div class="container">
+                            <div class="container">
 
-                            <span class="movie-section-anchor" id="movie-clips"></span>
-                            <h2 class="section-heading">무비클립</h2>
+                                <span class="movie-section-anchor" id="movie-clips"></span>
+                                <h2 class="section-heading">무비클립</h2>
 
-                            <div class="trailer-list">
+                                <div class="trailer-list">
 
-                                <figure class="trailer-card">
+                                    <figure class="trailer-card">
 
-                                    <a href="https://youtu.be/rpq0SLwpMmQ?si=pHWqxB9AV60M5bdt" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie01_02.jpg"
-                                    alt="극장판 치이카와 티저 예고편 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/rpq0SLwpMmQ?si=pHWqxB9AV60M5bdt" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie01_02.jpg"
+                                        alt="극장판 치이카와 티저 예고편 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    티저 예고편
-                                    </figcaption>
+                                        <figcaption>
+                                        티저 예고편
+                                        </figcaption>
 
-                                </figure>
+                                    </figure>
 
-                                <figure class="trailer-card">
+                                    <figure class="trailer-card">
 
-                                    <a href="https://youtu.be/-DjykB2XImc?si=kAp3A04GRzE7cdqu" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie01_03.jpg"
-                                    alt="극장판 치이카와 메인 예고편 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/-DjykB2XImc?si=kAp3A04GRzE7cdqu" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie01_03.jpg"
+                                        alt="극장판 치이카와 메인 예고편 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    메인 예고편
-                                    </figcaption>
+                                        <figcaption>
+                                        메인 예고편
+                                        </figcaption>
 
-                                </figure>
+                                    </figure>
 
-                                <figure class="trailer-card">
+                                    <figure class="trailer-card">
 
-                                    <a href="https://youtu.be/WH3pagKiHQU?si=xrIzenFyOUzCls3f" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
-                                    src="images/4_movie01_02.jpg"
-                                    alt="극장판 치이카와 더빙 예고편 장면"
-                                        ><span class="play-button">▶</span></a>
+                                        <a href="https://youtu.be/WH3pagKiHQU?si=xrIzenFyOUzCls3f" class="trailer-preview" target="_blank" title="무비클립 재생하기"><img
+                                        src="images/4_movie01_02.jpg"
+                                        alt="극장판 치이카와 더빙 예고편 장면"
+                                            ><span class="play-button">▶</span></a>
 
-                                    <figcaption>
-                                    더빙 예고편
-                                    </figcaption>
+                                        <figcaption>
+                                        더빙 예고편
+                                        </figcaption>
 
-                                </figure>
+                                    </figure>
+
+                                </div>
 
                             </div>
 
-                        </div>
-
-                    </section>
-                    <section id="stillcuts" class="stillcut-section">
-                        <hr class="movie-section-divider">
-                        <div class="container">
-                            <span class="movie-section-anchor" id="movie-gallery"></span>
-                            <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(4)</span></h2>
-                            <div class="stillcut-gallery">
-                                <div class="stillcut-grid">
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_poster-chiikawa.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_poster-chiikawa.jpg" alt="치이카와 영화 포스터"></a>
-                                    </div>
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 1"></a>
-                                        <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 2"></a>
-                                    </div>
-                                    <div class="stillcut-column">
-                                        <a class="stillcut-link" href="images/4_movie01_04.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_04.jpg" alt="치이카와 스틸컷 3"></a>
+                        </section>
+                        <section id="stillcuts" class="stillcut-section">
+                            <hr class="movie-section-divider">
+                            <div class="container">
+                                <span class="movie-section-anchor" id="movie-gallery"></span>
+                                <h2 class="section-heading">포스터/스틸컷 <span class="stillcut-count">(4)</span></h2>
+                                <div class="stillcut-gallery">
+                                    <div class="stillcut-grid">
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_poster-chiikawa.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_poster-chiikawa.jpg" alt="치이카와 영화 포스터"></a>
+                                        </div>
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_movie01_02.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_02.jpg" alt="치이카와 스틸컷 1"></a>
+                                            <a class="stillcut-link" href="images/4_movie01_03.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_03.jpg" alt="치이카와 스틸컷 2"></a>
+                                        </div>
+                                        <div class="stillcut-column">
+                                            <a class="stillcut-link" href="images/4_movie01_04.jpg" target="_blank" rel="noopener" title="이미지 보기 (새 탭 열림)"><img src="images/4_movie01_04.jpg" alt="치이카와 스틸컷 3"></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </section>
+                    </div>
+                    <div class="movie-review-panel" id="movie-panel-reviews" role="tabpanel" aria-labelledby="movie-tab-reviews" tabindex="0" hidden>
+                        <button class="movie-review-write" type="button" aria-label="관람평 작성 (준비 중)" disabled>관람평 작성</button>
+                        <div class="movie-review-summary">
+                            <h2>실관람평 <span class="movie-review-count"></span></h2>
                         </div>
-                    </section>
+                        <p class="movie-review-message" role="status">관람평을 불러오는 중입니다.</p>
+                        <ul class="movie-review-list" role="list"></ul>
+                    </div>
                 </div>
                 <aside class="movie-sidebar">
                     <h1 class="sidebar-title"><img class="movie-grade" src="images/4_icon_all.svg" alt="전체관람가">극장판 치이카와: 인어 섬의 비밀</h1>

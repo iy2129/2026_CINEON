@@ -78,56 +78,248 @@ main p {
     box-shadow: 2px 4px 8px rgba(6, 6, 6, 0.1);
 }
 
+.movie-tabs-start {
+    margin-top: 56px;
+    scroll-margin-top: 72px;
+}
+
+.movie-tab-bar,
 .movie-section-nav {
     width: 98%;
     position: sticky;
+    padding-top: 8px;
+    background-color: #fff;
+}
+
+.movie-tab-bar {
     top: 72px;
+    z-index: 91;
+}
+
+.movie-section-nav {
+    top: 128px;
     z-index: 90;
-    margin-top: 56px;
-    padding: 8px 0 0;
-    border-radius: 0 0 12px 12px;
-    background-color: #ffffff;
+}
+
+.movie-tab-bar[hidden] + .movie-overview-panel .movie-section-nav {
+    top: 72px;
 }
 
 .movie-section-nav-links {
     display: flex;
-    padding: 4px;
-    border-radius: 12px;
-    background-color: #f7f7f8;
+    background-color: #fff;
 }
 
+.movie-tab-bar button,
 .movie-section-nav a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 25%;
-    min-height: 52px;
     padding: 8px;
-    border-radius: 12px;
-    color: #333;
-    font-size: 16px;
-    font-weight: 400;
+    border: 0;
+    background-color: transparent;
+    color: #656565;
+    font: inherit;
     text-align: center;
     text-decoration: none;
-    transition: background 0.15s, color 0.15s, box-shadow 0.15s;
 }
 
+.movie-tab-bar .movie-section-nav-links {
+    box-shadow: inset 0 -2px #e6e2e2;
+}
+
+.movie-tab-bar button {
+    position: relative;
+    flex: 1;
+    min-height: 48px;
+}
+
+.movie-tab-bar button::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #4a0202;
+    pointer-events: none;
+    transform: scaleX(0);
+    transform-origin: center;
+    content: "";
+}
+
+.movie-tab-bar button[aria-selected="true"] {
+    color: #4a0202;
+    font-weight: 700;
+}
+
+.movie-tab-bar button[aria-selected="true"]::after {
+    transform: scaleX(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
+
+    .movie-tab-bar button::after {
+        transition: transform 0.2s ease;
+    }
+}
+
+.movie-section-nav a {
+    position: relative;
+    min-height: 46px;
+    padding-inline: 20px;
+    font-size: 14px;
+}
+
+.movie-section-nav a + a::before {
+    position: absolute;
+    inset-inline-start: 0;
+    width: 1px;
+    height: 14px;
+    background-color: #ddd;
+    content: "";
+}
+
+.movie-section-nav a[aria-current="location"],
 .movie-content:not(:has(.movie-section-anchor:target)) .movie-section-nav a[href="#movie-overview"],
 .movie-content:has(#movie-overview:target) .movie-section-nav a[href="#movie-overview"],
 .movie-content:has(#movie-events:target) .movie-section-nav a[href="#movie-events"],
 .movie-content:has(#movie-clips:target) .movie-section-nav a[href="#movie-clips"],
 .movie-content:has(#movie-gallery:target) .movie-section-nav a[href="#movie-gallery"] {
-    color: #333;
-    background-color: #fff;
+    color: #4a0202;
     font-weight: 700;
-    box-shadow: inset 0 0 0 1px #999;
+}
+
+.movie-tab-bar button:focus-visible,
+.movie-section-nav a:focus-visible,
+.movie-review-panel:focus-visible {
+    outline: 2px solid #333;
+    outline-offset: -2px;
 }
 
 .movie-section-anchor {
     display: block;
-    position: relative;
-    top: -160px;
     height: 0;
+    scroll-margin-top: 194px;
+}
+
+.movie-tab-bar[hidden] + .movie-overview-panel .movie-section-anchor {
+    scroll-margin-top: 138px;
+}
+
+.movie-review-panel {
+    width: 98%;
+    min-height: 320px;
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: 14px;
+    background-color: #f7f7f8;
+}
+
+.movie-review-write {
+    width: 100%;
+    min-height: 46px;
+    padding: 8px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #555;
+    font: inherit;
+    font-weight: 600;
+}
+
+.movie-review-summary {
+    margin: 28px 0 32px;
+}
+
+.movie-review-summary h2 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.movie-review-count {
+    margin-left: 3px;
+}
+
+main .movie-review-message {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+}
+
+.movie-review-list {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.movie-review-card {
+    padding: 20px;
+    border: 1px solid #eeeaea;
+    border-radius: 16px;
+    background-color: #fff;
+}
+
+.movie-review-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #eeeaea;
+}
+
+.movie-review-avatar {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.movie-review-byline {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 2px 8px;
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.movie-review-byline span {
+    color: #767676;
+    font-size: 13px;
+}
+
+.movie-review-score,
+.movie-review-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+}
+
+.movie-review-score {
+    flex-shrink: 0;
+    padding: 3px 8px;
+    border: 1px solid #eeeaea;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+main .movie-review-text {
+    margin: 16px 0 12px;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.movie-review-stats {
+    color: #555;
 }
 
 .sidebar-title {
@@ -264,7 +456,7 @@ main p {
     width: 18px;
     height: 18px;
     vertical-align: -2px;
-    fill: #eab308;
+    fill: var(--cineon-rating-color);
 }
 
 .movie-actions {
@@ -365,34 +557,8 @@ main p {
     line-height: 1.6;
 }
 
-.movie-events-section .event-filter {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
-.movie-events-section .event-filter select {
-    padding: 6px 10px;
-    border: 1px solid #767676;
-    border-radius: 6px;
-    background-color: #fff;
-    color: #333;
-}
-
-.movie-events-section .event-filter select,
-.movie-events-section .event-filter option {
-    font: inherit;
-}
-
-.movie-events-section .event-filter select:focus-visible {
-    outline: 2px solid #333;
-    outline-offset: 2px;
-}
-
 main .movie-events-section .event-message {
-    margin: 0 0 16px;
+    margin: 0;
     color: #555;
     font-size: 14px;
 }
@@ -517,6 +683,7 @@ main .event-period {
     opacity: 0.65;
 }
 
+.movie-event-count,
 .stillcut-count {
     font-size: 16px;
     font-weight: normal;
@@ -550,6 +717,54 @@ main .event-period {
 
 .stillcut-link:hover img {
     opacity: 0.8;
+}
+
+.movie-series-section {
+    width: 98%;
+    margin-top: 56px;
+    padding: 24px 20px;
+    border-radius: 12px;
+    background-color: #4a0202;
+    color: #fff;
+}
+
+.movie-series-section .section-heading {
+    color: inherit;
+}
+
+.movie-series-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.movie-series-poster {
+    aspect-ratio: 2 / 3;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #290303;
+}
+
+.movie-series-poster img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.movie-series-title {
+    margin: 8px 0 2px;
+    font-size: 15px;
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+.movie-series-list time {
+    color: #e2c8c8;
+    font-size: 13px;
 }
 
 .stillcut-link:focus-visible,

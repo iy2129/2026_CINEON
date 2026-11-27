@@ -54,18 +54,27 @@ function makeMovieCard(movie, rank, status) {
                 '<span class="movie-like-count"></span></label>' + actions.innerHTML;
 
             const like = actions.querySelector("input");
-            const likeKey = "cineon-like-" + movie.poster;
             like.setAttribute("aria-label", movie.title + " 좋아요");
             actions.querySelector(".movie-like-count").innerText = movie.likes;
-            like.checked = localStorage.getItem(likeKey) === "true";
+            like.checked = isMovieWished(movie.poster);
             like.addEventListener("change", function () {
-                localStorage.setItem(likeKey, like.checked);
+                setMovieWished(movie.poster, like.checked);
             });
+            like.dataset.wishPoster = movie.poster;
         }
         card.appendChild(actions);
     }
     return card;
 }
+
+function refreshHomeHearts() {
+    for (const like of ranking.querySelectorAll("input[data-wish-poster]")) {
+        like.checked = isMovieWished(like.dataset.wishPoster);
+    }
+}
+
+window.addEventListener("storage", refreshHomeHearts);
+window.addEventListener("pageshow", refreshHomeHearts);
 
 function makeReviewCard(movie) {
     const review = movie.review;

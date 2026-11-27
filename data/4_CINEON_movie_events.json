@@ -3,22 +3,22 @@
         {
             "title": "인어 섬의 추억을 담은 한정 포스터",
             "category": "관람 특전",
-            "startDate": "2026-10-07",
-            "endDate": "2026-11-07",
+            "startDate": "2026-11-20",
+            "endDate": "2026-12-13",
             "image": "images/4_movie01_02.jpg"
         },
         {
             "title": "친구들과 함께하는 특별한 상영회",
             "category": "현장 이벤트",
-            "startDate": "2026-10-14",
-            "endDate": "2026-10-20",
+            "startDate": "2026-11-24",
+            "endDate": "2026-12-14",
             "image": "images/4_movie01_03.jpg"
         },
         {
             "title": "작은 티켓에 담은 커다란 모험",
             "category": "소장 굿즈",
-            "startDate": "2026-10-17",
-            "endDate": "2026-10-20",
+            "startDate": "2026-11-26",
+            "endDate": "2026-12-17",
             "image": "images/4_movie01_04.jpg"
         }
     ],
@@ -26,22 +26,22 @@
         {
             "title": "승부의 순간을 담은 한정 포스터",
             "category": "관람 특전",
-            "startDate": "2026-10-14",
-            "endDate": "2026-10-27",
+            "startDate": "2026-11-21",
+            "endDate": "2026-12-15",
             "image": "images/4_movie02_02.jpg"
         },
         {
             "title": "영화가 끝난 뒤, 더 깊어지는 이야기",
             "category": "특별 상영",
-            "startDate": "2026-10-17",
-            "endDate": "2026-10-25",
+            "startDate": "2026-11-19",
+            "endDate": "2026-12-18",
             "image": "images/4_movie02_03.jpg"
         },
         {
             "title": "당신의 한 수, 컬렉션 티켓",
             "category": "소장 굿즈",
-            "startDate": "2026-10-21",
-            "endDate": "2026-11-03",
+            "startDate": "2026-11-18",
+            "endDate": "2026-12-16",
             "image": "images/4_movie02_04.jpg"
         }
     ]
