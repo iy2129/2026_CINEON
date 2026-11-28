@@ -112,15 +112,14 @@ function createEventCard(movieEvent) {
     const entry = document.createElement("div");
     entry.className = "event-entry";
     entry.innerHTML = `
-        <article class="event-card">
+        <a class="event-card" href="#" title="이벤트 상세 보기">
             <div class="event-image"><img alt=""></div>
             <div class="event-info">
                 <span class="event-category"></span>
-                <span class="event-status">진행 중</span>
                 <h3 class="event-title"></h3>
                 <p class="event-period"></p>
             </div>
-        </article>
+        </a>
     `;
 
     entry.querySelector("img").src = movieEvent.image;
@@ -130,6 +129,12 @@ function createEventCard(movieEvent) {
         formatEventDate(movieEvent.startDate) + " ~ " + formatEventDate(movieEvent.endDate);
     return entry;
 }
+
+eventList.addEventListener("click", function (event) {
+    if (event.target.closest('.event-card[href="#"]')) {
+        event.preventDefault();
+    }
+});
 
 function renderEvents(movieEvents) {
     const today = getToday();
