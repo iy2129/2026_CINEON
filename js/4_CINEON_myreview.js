@@ -123,13 +123,7 @@ function renderReviewFilm(movie) {
 }
 
 if (!reviewPage.hidden) {
-    fetch("data/4_CINEON_mypage.json")
-        .then(function (response) {
-            if (!response.ok) {
-                throw new Error("HTTP " + response.status);
-            }
-            return response.json();
-        })
+    loadWatched()
         .then(function (movies) {
             const movie = movies.find(record => record.id === requestedFilm);
             if (movie) {

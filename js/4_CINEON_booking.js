@@ -39,7 +39,7 @@ let manual = false;
 if (!booking || !booking.schedule) {
     alert("상영시간을 먼저 선택해주세요.");
     location.href = "4_CINEON_timetable.html";
-} else {
+} else if (requireLogin("4_CINEON_booking.html")) {
     fetch("data/4_CINEON_data.json")
         .then(response => response.json())
         .then(result => {
@@ -47,6 +47,11 @@ if (!booking || !booking.schedule) {
             theater = findById(result.theaters, booking.theater);
             addDemoSchedule(result.schedules);
             schedule = findById(result.schedules, booking.schedule);
+            return fetch("data/4_CINEON_history.json");
+        })
+        .then(response => response.json())
+        .then(history => {
+            reservations = loadReservations(history.reservations);
             start();
         })
         .catch(error => {
@@ -510,8 +515,16 @@ function drawSummary() {
 function saveBooking() {
     booking.people = people;
     booking.seats = getSortedSeats();
+    booking.total = getTotalPrice();
     booking.discount = getDiscount();
-    booking.price = getTotalPrice() - booking.discount;
+    booking.price = booking.total - booking.discount;
+    booking.title = movie.title;
+    booking.age = movie.age;
+    booking.poster = movie.poster;
+    booking.place = document.getElementById("show-place").innerText;
+    booking.time_text = document.getElementById("show-time").innerText;
+    booking.start = schedule.start;
+    booking.people_text = sum_people.innerText;
     localStorage.setItem("cineon_booking", JSON.stringify(booking));
 }
 

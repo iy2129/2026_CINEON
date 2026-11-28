@@ -1,0 +1,377 @@
+{
+  "reservations": [
+    {
+      "id": "CN1137",
+      "user": "cineon-demo",
+      "schedule": "odyssey-sinchon-3",
+      "date": "2026-11-04",
+      "seats": ["D5", "D6"],
+      "people": { "adult": 2, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 28000,
+      "paid": 28000,
+      "booked": "2026-11-02",
+      "canceled": false
+    },
+    {
+      "id": "CN1274",
+      "user": "cineon-demo",
+      "schedule": "chiikawa-sinchon-2",
+      "date": "2026-11-08",
+      "seats": ["B3", "B4"],
+      "people": { "adult": 1, "teen": 1, "elder": 0, "senior": 0 },
+      "price": 25000,
+      "paid": 22000,
+      "booked": "2026-11-06",
+      "canceled": false,
+      "coupon": "영화 예매 할인쿠폰",
+      "coupon_amount": 3000
+    },
+    {
+      "id": "CN1411",
+      "user": "cineon-demo",
+      "schedule": "whale-suwon-2",
+      "date": "2026-11-12",
+      "seats": ["F7"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 14000,
+      "booked": "2026-11-10",
+      "canceled": false
+    },
+    {
+      "id": "CN1548",
+      "user": "cineon-demo",
+      "schedule": "odyssey-gangnam-2",
+      "date": "2026-11-14",
+      "seats": ["D3", "D4"],
+      "people": { "adult": 2, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 28000,
+      "paid": 28000,
+      "booked": "2026-11-10",
+      "canceled": true,
+      "fee": 0
+    },
+    {
+      "id": "CN1685",
+      "user": "cineon-demo",
+      "schedule": "age-gangnam-1",
+      "date": "2026-11-16",
+      "seats": ["E2", "E3"],
+      "people": { "adult": 1, "teen": 0, "elder": 1, "senior": 0 },
+      "price": 21000,
+      "paid": 21000,
+      "booked": "2026-11-14",
+      "canceled": false
+    },
+    {
+      "id": "CN1822",
+      "user": "cineon-demo",
+      "schedule": "tazza-gangnam-3",
+      "date": "2026-11-21",
+      "seats": ["C5", "C6"],
+      "people": { "adult": 2, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 28000,
+      "paid": 28000,
+      "booked": "2026-11-19",
+      "canceled": false
+    },
+    {
+      "id": "CN1959",
+      "user": "cineon-demo",
+      "schedule": "guardians-gangnam-3",
+      "date": "2026-11-27",
+      "seats": ["D6", "D7"],
+      "people": { "adult": 0, "teen": 2, "elder": 0, "senior": 0 },
+      "price": 22000,
+      "paid": 22000,
+      "booked": "2026-11-25",
+      "canceled": false
+    },
+    {
+      "id": "CN2096",
+      "user": "cineon-demo",
+      "schedule": "lookback-gangnam-1",
+      "date": "2026-11-27",
+      "seats": ["B4"],
+      "people": { "adult": 0, "teen": 1, "elder": 0, "senior": 0 },
+      "price": 11000,
+      "paid": 11000,
+      "booked": "2026-11-25",
+      "canceled": false
+    },
+    {
+      "id": "CN2233",
+      "user": "cineon-demo",
+      "schedule": "chiikawa-gangnam-5",
+      "after": 1,
+      "seats": ["D3", "D4"],
+      "people": { "adult": 1, "teen": 1, "elder": 0, "senior": 0 },
+      "price": 25000,
+      "paid": 25000,
+      "canceled": false
+    },
+    {
+      "id": "CN2370",
+      "user": "cineon-demo",
+      "schedule": "tazza-gangnam-3",
+      "after": 3,
+      "seats": ["D3", "D4"],
+      "people": { "adult": 2, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 28000,
+      "paid": 28000,
+      "canceled": false
+    },
+    {
+      "id": "CN3211",
+      "user": "hamada",
+      "schedule": "tazza-seomyeon-3",
+      "date": "2026-11-07",
+      "seats": ["F8"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 14000,
+      "booked": "2026-11-07",
+      "canceled": false
+    },
+    {
+      "id": "CN3422",
+      "user": "hamada",
+      "schedule": "whale-seomyeon-2",
+      "date": "2026-11-13",
+      "seats": ["F8"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 11000,
+      "booked": "2026-11-13",
+      "canceled": false,
+      "coupon": "영화 예매 할인쿠폰",
+      "coupon_amount": 3000
+    },
+    {
+      "id": "CN3633",
+      "user": "hamada",
+      "schedule": "odyssey-suwon-3",
+      "date": "2026-11-20",
+      "seats": ["F8"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 14000,
+      "booked": "2026-11-20",
+      "canceled": false
+    },
+    {
+      "id": "CN3844",
+      "user": "hamada",
+      "schedule": "guardians-seomyeon-2",
+      "date": "2026-11-26",
+      "seats": ["F8"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 14000,
+      "booked": "2026-11-26",
+      "canceled": false
+    },
+    {
+      "id": "CN4055",
+      "user": "hamada",
+      "schedule": "whale-seomyeon-2",
+      "after": 2,
+      "seats": ["F8"],
+      "people": { "adult": 1, "teen": 0, "elder": 0, "senior": 0 },
+      "price": 14000,
+      "paid": 14000,
+      "canceled": false
+    }
+  ],
+  "wallets": {
+    "cineon-demo": {
+      "points": [
+        {
+          "date": "2026-10-30",
+          "title": "회원가입 축하 포인트",
+          "amount": 1000
+        },
+        {
+          "date": "2026-11-04",
+          "title": "관람 적립",
+          "amount": 280
+        },
+        {
+          "date": "2026-11-08",
+          "title": "관람 적립",
+          "amount": 220
+        },
+        {
+          "date": "2026-11-12",
+          "title": "포인트 결제 사용",
+          "amount": -460
+        },
+        {
+          "date": "2026-11-12",
+          "title": "관람 적립",
+          "amount": 140
+        },
+        {
+          "date": "2026-11-16",
+          "title": "관람 적립",
+          "amount": 210
+        },
+        {
+          "date": "2026-11-21",
+          "title": "관람 적립",
+          "amount": 280
+        },
+        {
+          "date": "2026-11-25",
+          "title": "스토어 포인트 사용",
+          "amount": -1000
+        },
+        {
+          "date": "2026-11-27",
+          "title": "관람 적립",
+          "amount": 220
+        },
+        {
+          "date": "2026-11-27",
+          "title": "관람 적립",
+          "amount": 110
+        }
+      ],
+      "coupons": [
+        {
+          "name": "영화 예매 할인쿠폰",
+          "amount": 3000,
+          "kind": "할인쿠폰",
+          "expire": "2026-12-31",
+          "used": "2026-11-08"
+        },
+        {
+          "name": "영화 예매 할인쿠폰",
+          "amount": 3000,
+          "kind": "할인쿠폰",
+          "expire": "2026-12-31",
+          "used": ""
+        },
+        {
+          "name": "주중 관람 할인쿠폰",
+          "amount": 2000,
+          "kind": "할인쿠폰",
+          "expire": "2026-12-15",
+          "used": ""
+        },
+        {
+          "name": "회원 할인쿠폰",
+          "amount": 1000,
+          "kind": "할인쿠폰",
+          "expire": "2027-01-31",
+          "used": ""
+        },
+        {
+          "name": "주말 관람 할인쿠폰",
+          "amount": 5000,
+          "kind": "할인쿠폰",
+          "expire": "2026-11-20",
+          "used": ""
+        },
+        {
+          "name": "CINE:ON 관람권",
+          "amount": 14000,
+          "kind": "관람권",
+          "expire": "2026-11-25",
+          "used": ""
+        }
+      ]
+    },
+    "hamada": {
+      "points": [
+        {
+          "date": "2026-10-25",
+          "title": "회원가입 축하 포인트",
+          "amount": 1000
+        },
+        {
+          "date": "2026-11-07",
+          "title": "관람 적립",
+          "amount": 140
+        },
+        {
+          "date": "2026-11-13",
+          "title": "관람 적립",
+          "amount": 110
+        },
+        {
+          "date": "2026-11-20",
+          "title": "관람 적립",
+          "amount": 140
+        },
+        {
+          "date": "2026-11-26",
+          "title": "관람 적립",
+          "amount": 140
+        },
+        {
+          "date": "2026-11-22",
+          "title": "포인트 결제 사용",
+          "amount": -500
+        }
+      ],
+      "coupons": [
+        {
+          "name": "영화 예매 할인쿠폰",
+          "amount": 3000,
+          "kind": "할인쿠폰",
+          "expire": "2026-12-31",
+          "used": "2026-11-13"
+        },
+        {
+          "name": "회원 할인쿠폰",
+          "amount": 1000,
+          "kind": "할인쿠폰",
+          "expire": "2027-01-31",
+          "used": ""
+        },
+        {
+          "name": "심야 관람 할인쿠폰",
+          "amount": 2000,
+          "kind": "할인쿠폰",
+          "expire": "2026-12-05",
+          "used": ""
+        },
+        {
+          "name": "CINE:ON 관람권",
+          "amount": 14000,
+          "kind": "관람권",
+          "expire": "2026-12-20",
+          "used": ""
+        },
+        {
+          "name": "주말 관람 할인쿠폰",
+          "amount": 5000,
+          "kind": "할인쿠폰",
+          "expire": "2026-11-15",
+          "used": ""
+        }
+      ]
+    }
+  },
+  "welcome": [
+    {
+      "name": "회원가입 축하 할인쿠폰",
+      "amount": 3000,
+      "kind": "할인쿠폰",
+      "days": 30
+    },
+    {
+      "name": "회원 할인쿠폰",
+      "amount": 1000,
+      "kind": "할인쿠폰",
+      "days": 60
+    },
+    {
+      "name": "CINE:ON 관람권",
+      "amount": 14000,
+      "kind": "관람권",
+      "days": 14
+    }
+  ]
+}
