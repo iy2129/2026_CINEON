@@ -105,15 +105,18 @@ window.addEventListener("hashchange", renderMypageRoute);
 renderMypageRoute();
 
 const genreList = document.querySelector(".mypage-genres");
-const durationOutput = document.querySelector(".mypage-duration");
 const posterList = document.querySelector(".mypage-posters");
 const posterMoreItem = document.querySelector(".mypage-posters-more-item");
 const posterMoreButton = document.querySelector(".mypage-posters-more");
 const posterMorePreview = posterMoreButton.querySelector("img");
 const posterMoreCount = posterMoreButton.querySelector("span");
-const historyCount = document.querySelector(".mypage-history-count");
+const historySummary = document.querySelector(".mypage-history-summary");
+const historyCount = historySummary.querySelector(".mypage-history-count");
+const historyFilter = historySummary.querySelector(".mypage-history-filter");
 const tagList = document.querySelector(".mypage-tags");
 const tagStatus = document.querySelector(".mypage-tag-status");
+const filterTooltip = "이 태그의 관람 영화 보기";
+const resetTooltip = "전체 관람 내역 보기";
 const activityRatings = document.querySelector(".mypage-activity-ratings");
 const activityRatingCount = document.querySelector(".mypage-activity-rating-count");
 const activityRatingsEmpty = document.querySelector(".mypage-activity-ratings-empty");
@@ -135,11 +138,13 @@ const shareStatus = document.querySelector(".mypage-share-status");
 const shareProfile = document.querySelector(".mypage-share-profile");
 shareProfile.addEventListener("click", async function () {
     const nickname = document.querySelector(".mypage-nickname").textContent;
+    const totalMinutes = historyMovies.reduce((sum, movie) => sum + movie.minutes, 0);
+    const duration = Math.floor(totalMinutes / 60) + "시간 " + totalMinutes % 60 + "분";
     const profileText = [
         "CINE:ON | " + nickname,
         "예시 관람 기록",
         "관람한 영화 " + historyMovies.length + "편",
-        "감상 시간 " + durationOutput.textContent
+        "감상 시간 " + duration
     ].join("\n");
     shareStatus.textContent = "";
     try {
@@ -258,9 +263,11 @@ function renderWishes() {
 }
 
 function makeHistoryPoster(movie) {
-    const href = movie.detail || "#";
+    const href = "#"; // 예매 내역 페이지가 완성되면 연결할 경로
     const row = makeMovieTile(movie, href);
     const link = row.querySelector("a");
+    const image = row.querySelector(".mypage-tile-poster");
+    image.title = "예매 내역 보기";
     if (href === "#") {
         link.addEventListener("click", function (event) {
             event.preventDefault();
@@ -271,7 +278,6 @@ function makeHistoryPoster(movie) {
         return row;
     }
 
-    const image = row.querySelector(".mypage-tile-poster");
     const title = row.querySelector("strong");
     title.id = "mypage-history-film-" + movie.id;
     link.setAttribute("aria-labelledby", title.id);
@@ -321,9 +327,24 @@ function renderPosters(tag) {
     }) : historyMovies;
     visiblePosterRows = 1;
     posterList.replaceChildren(...movies.map(makeHistoryPoster), posterMoreItem);
-    historyCount.textContent = movies.length;
+    historyFilter.textContent = tag ? "#" + tag : "전체";
+    historyFilter.classList.toggle("is-filtered", Boolean(tag));
+    historyCount.textContent = movies.length + "편";
     tagStatus.textContent = (tag || "전체") + " · " + movies.length + "편";
     updatePosterRows();
+}
+
+function setHistoryTag(button) {
+    const pressed = tagList.querySelector('[aria-pressed="true"]');
+    if (pressed) {
+        pressed.setAttribute("aria-pressed", "false");
+        pressed.title = filterTooltip;
+    }
+    if (button) {
+        button.setAttribute("aria-pressed", "true");
+        button.title = resetTooltip;
+    }
+    renderPosters(button?.textContent);
 }
 
 function updatePosterRows() {
@@ -431,8 +452,6 @@ function findTagPosition(size, width, positions, index) {
 window.addEventListener("resize", layoutTags);
 
 function renderTags() {
-    const filterTooltip = "이 태그의 관람 영화 보기";
-    const resetTooltip = "전체 관람 내역 보기";
     const tagCounts = new Map();
     for (const movie of historyMovies) {
         for (const tag of new Set(movie.tags || [])) {
@@ -460,15 +479,7 @@ function renderTags() {
         button.style.setProperty("--tag-size", Math.min(16 + (count - 2) * 8, 32) + "px");
         button.style.setProperty("--tag-weight", Math.min(400 + (count - 2) * 300, 800));
         button.addEventListener("click", function () {
-            const pressed = tagList.querySelector('[aria-pressed="true"]');
-            const selected = pressed !== button;
-            if (pressed) {
-                pressed.setAttribute("aria-pressed", "false");
-                pressed.title = filterTooltip;
-            }
-            button.setAttribute("aria-pressed", String(selected));
-            button.title = selected ? resetTooltip : filterTooltip;
-            renderPosters(selected ? tag : "");
+            setHistoryTag(button.getAttribute("aria-pressed") === "true" ? null : button);
         });
         item.appendChild(button);
         tagList.appendChild(item);
@@ -480,28 +491,35 @@ function renderTags() {
 
 function renderHistory() {
     const genres = new Map();
-    let totalMinutes = 0;
     for (const movie of historyMovies) {
-        totalMinutes += movie.minutes;
         for (const genre of movie.genres) {
             genres.set(genre, (genres.get(genre) || 0) + 1);
         }
     }
 
     const displayedGenres = Array.from(genres).sort(function (first, second) {
-        return first[1] - second[1] || first[0].localeCompare(second[0], "ko");
-    }).slice(0, 3);
+        return second[1] - first[1] || first[0].localeCompare(second[0], "ko");
+    }).slice(0, 5);
+    const maxCount = displayedGenres[0]?.[1] || 1;
     for (const [genre, count] of displayedGenres) {
         const item = document.createElement("li");
         const name = document.createElement("strong");
         const detail = document.createElement("span");
+        const plot = document.createElement("div");
+        const bar = document.createElement("span");
         name.textContent = genre;
         detail.textContent = count + "편";
-        item.append(name, detail);
+        detail.className = "mypage-visually-hidden";
+        item.title = genre + " " + detail.textContent;
+        plot.className = "mypage-genre-plot";
+        bar.className = "mypage-genre-bar";
+        bar.style.setProperty("--genre-share", count / maxCount);
+        bar.setAttribute("aria-hidden", "true");
+        plot.append(detail, bar);
+        item.append(name, plot);
         genreList.appendChild(item);
     }
 
-    durationOutput.textContent = Math.floor(totalMinutes / 60) + "시간 " + totalMinutes % 60 + "분";
     renderPosters();
     renderTags();
 }
@@ -607,7 +625,7 @@ fetch("data/4_CINEON_movies.json")
         renderWishes();
     })
     .catch(function (error) {
-        console.warn("하트 영화 목록을 불러오지 못했습니다.", error);
+        console.warn("좋아요 영화 목록을 불러오지 못했습니다.", error);
     });
 
 fetch("data/4_CINEON_mypage.json")

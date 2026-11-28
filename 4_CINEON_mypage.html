@@ -159,10 +159,10 @@
 
                         <section id="mypage-home" class="mypage-panel" role="tabpanel" aria-labelledby="mypage-tab-home" tabindex="0">
                             <div class="mypage-summary">
-                                <section class="mypage-card mypage-duration-card" aria-labelledby="mypage-duration-title">
-                                    <h2 id="mypage-duration-title">영화 감상 시간</h2>
+                                <section class="mypage-card mypage-genres-card" aria-labelledby="mypage-genres-title">
+                                    <h2 id="mypage-genres-title">영화 선호 장르</h2>
                                     <div class="mypage-card-body">
-                                        <p class="mypage-duration">—</p>
+                                        <ul class="mypage-genres"></ul>
                                     </div>
                                 </section>
                                 <section class="mypage-card mypage-tags-card" aria-labelledby="mypage-tags-title" hidden>
@@ -171,16 +171,17 @@
                                         <ul class="mypage-tags"></ul>
                                     </div>
                                 </section>
-                                <section class="mypage-card mypage-genres-card" aria-labelledby="mypage-genres-title">
-                                    <h2 id="mypage-genres-title">영화 선호 장르</h2>
-                                    <div class="mypage-card-body">
-                                        <ul class="mypage-genres"></ul>
-                                    </div>
-                                </section>
                             </div>
 
                             <section class="mypage-history" aria-labelledby="mypage-history-title">
-                                <h2 id="mypage-history-title">영화 관람 내역 <span class="mypage-history-count"></span></h2>
+                                <div class="mypage-history-heading">
+                                    <h2 id="mypage-history-title">영화 관람 내역</h2>
+                                    <div class="mypage-history-summary">
+                                        <span aria-hidden="true">|</span>
+                                        <span class="mypage-history-filter">전체</span>
+                                        <span class="mypage-history-count"></span>
+                                    </div>
+                                </div>
                                 <p class="mypage-tag-status mypage-visually-hidden" role="status"></p>
                                 <ul id="mypage-posters" class="mypage-posters">
                                     <li class="mypage-posters-more-item" hidden>
@@ -204,9 +205,9 @@
                             </section>
                             <section class="mypage-activity-section" aria-labelledby="mypage-activity-wishes-title">
                                 <header class="mypage-activity-heading">
-                                    <h2 id="mypage-activity-wishes-title" tabindex="-1">하트 <span class="mypage-history-count mypage-wish-count"></span></h2>
+                                    <h2 id="mypage-activity-wishes-title" tabindex="-1">좋아요 <span class="mypage-history-count mypage-wish-count"></span></h2>
                                 </header>
-                                <p class="mypage-activity-empty mypage-wishes-empty">하트를 누른 영화가 여기에 보여요.</p>
+                                <p class="mypage-activity-empty mypage-wishes-empty">좋아요를 누른 영화가 여기에 보여요.</p>
                                 <ul class="mypage-activity-posters mypage-activity-wishes"></ul>
                             </section>
                         </section>

@@ -140,7 +140,7 @@ main p {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: #4a0202;
+    background-color: currentColor;
     pointer-events: none;
     transform: scaleX(0);
     transform-origin: center;
@@ -148,7 +148,7 @@ main p {
 }
 
 .movie-tab-bar button[aria-selected="true"] {
-    color: #4a0202;
+    color: #000;
     font-weight: 700;
 }
 
@@ -188,7 +188,7 @@ main p {
 .movie-content:has(#movie-events:target) .movie-section-nav a[href="#movie-events"],
 .movie-content:has(#movie-clips:target) .movie-section-nav a[href="#movie-clips"],
 .movie-content:has(#movie-gallery:target) .movie-section-nav a[href="#movie-gallery"] {
-    color: #4a0202;
+    color: #000;
     font-weight: 700;
 }
 
@@ -600,25 +600,15 @@ main .movie-events-section .event-message {
     flex-grow: 1;
 }
 
-.event-category,
-.movie-events-section .event-status {
+.event-category {
     display: inline-block;
     padding: 3px 6px;
     border-radius: 4px;
     font-size: 14px;
     font-weight: 700;
     line-height: normal;
-}
-
-.event-category {
     background-color: #eee;
     color: #666;
-}
-
-.movie-events-section .event-status {
-    margin-left: 4px;
-    border: 1px solid #b8b8b8;
-    color: #333;
 }
 
 .event-title {
@@ -626,6 +616,12 @@ main .movie-events-section .event-message {
     font-size: 18px;
     font-weight: 500;
     line-height: 1.5;
+}
+
+.event-card .event-title:hover,
+.event-card:focus-visible .event-title {
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 main .event-period {
