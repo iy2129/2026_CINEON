@@ -444,4 +444,8 @@ timetable_form.addEventListener("submit", (event) => {
         booking.seats = saved.seats;
     }
     localStorage.setItem("cineon_booking", JSON.stringify(booking));
+    if (!getUser()) {
+        event.preventDefault();
+        requireLogin("4_CINEON_booking.html");
+    }
 });

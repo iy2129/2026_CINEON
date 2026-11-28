@@ -1,0 +1,358 @@
+.my-section {
+    padding-top: 20px;
+    color: #242424;
+}
+
+.my-section[hidden] {
+    display: none;
+}
+
+.my-section h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+}
+
+.my-tabs {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #e8e5e4;
+}
+
+.my-tabs a {
+    padding: 10px 16px;
+    border-bottom: 2px solid transparent;
+    color: #666;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.my-tabs a span {
+    margin-left: 2px;
+    color: #999;
+    font-size: 14px;
+}
+
+.my-tabs a:hover,
+.my-tabs a[aria-current="page"] {
+    color: #400f0b;
+}
+
+.my-tabs a[aria-current="page"] {
+    border-bottom-color: currentColor;
+    font-weight: 700;
+}
+
+.my-guide {
+    margin: 0 0 12px;
+    color: #626262;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.my-msg {
+    margin: 0 0 12px;
+    color: #bb2a1c;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.my-msg:empty {
+    display: none;
+}
+
+.my-empty {
+    padding: 48px 0;
+    color: #626262;
+    text-align: center;
+    list-style: none;
+}
+
+.my-empty a {
+    margin-left: 6px;
+    color: #400f0b;
+    font-weight: 600;
+}
+
+.ticket-list,
+.coupon-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ticket {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 14px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 6px rgb(0 0 0 / 8%);
+}
+
+.ticket.canceled {
+    background: #f7f5f4;
+}
+
+.ticket.canceled .t-poster {
+    opacity: 0.5;
+}
+
+.t-poster {
+    flex-shrink: 0;
+    width: 90px;
+    height: 128px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+.t-info {
+    flex-grow: 1;
+    min-width: 0;
+}
+
+.t-title {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.t-info dl {
+    margin: 0;
+    font-size: 14px;
+}
+
+.t-info dl div {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.t-info dt {
+    flex-shrink: 0;
+    width: 32px;
+    color: #626262;
+}
+
+.t-info dd {
+    margin: 0;
+    word-break: keep-all;
+}
+
+.t-info small {
+    color: #bb2a1c;
+}
+
+.t-number {
+    margin: 8px 0 0;
+    color: #999;
+    font-size: 12px;
+}
+
+.t-side {
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+    width: 150px;
+    text-align: center;
+}
+
+.t-note {
+    margin: 0;
+    color: #626262;
+    font-size: 12px;
+    word-break: keep-all;
+}
+
+.t-btn {
+    display: block;
+    padding: 10px 0;
+    border: 1px solid #400f0b;
+    border-radius: 8px;
+    background: #400f0b;
+    color: #fff;
+    font: inherit;
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.t-btn.line {
+    background: #fff;
+    color: #400f0b;
+}
+
+.t-btn:hover {
+    opacity: 0.85;
+}
+
+.t-badge {
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: #ece6e4;
+    color: #400f0b;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.t-badge.today {
+    background: var(--cineon-booking-color);
+    color: #fff;
+}
+
+.t-badge.now {
+    background: #242424;
+    color: #fff;
+}
+
+.my-summary {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.my-summary div {
+    flex: 1;
+    padding: 18px 20px;
+    border-radius: 12px;
+    background: #f6f5f5;
+}
+
+.my-summary p {
+    margin: 0 0 6px;
+    color: #626262;
+    font-size: 14px;
+}
+
+.my-summary strong {
+    font-size: 24px;
+}
+
+.my-summary div:first-child strong {
+    color: #bb2a1c;
+}
+
+.my-filter {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.my-filter input {
+    position: absolute;
+    opacity: 0;
+}
+
+.my-filter span {
+    display: block;
+    padding: 7px 16px;
+    border: 1px solid #e1dddc;
+    border-radius: 18px;
+    color: #626262;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.my-filter input:checked + span {
+    border-color: #400f0b;
+    background: #400f0b;
+    color: #fff;
+}
+
+.my-filter input:focus-visible + span {
+    outline: 2px solid #400f0b;
+    outline-offset: 2px;
+}
+
+.point-table {
+    width: 100%;
+    margin-bottom: 12px;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+.point-table caption {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.point-table th {
+    padding: 10px;
+    border-top: 2px solid #242424;
+    border-bottom: 1px solid #e1dddc;
+    font-weight: 600;
+}
+
+.point-table td {
+    padding: 12px 10px;
+    border-bottom: 1px solid #e8e5e4;
+    text-align: center;
+}
+
+.point-table td:nth-child(2) {
+    text-align: left;
+}
+
+.point-table .plus {
+    color: #bb2a1c;
+    font-weight: 600;
+}
+
+.point-table .minus {
+    color: #626262;
+    font-weight: 600;
+}
+
+.coupon {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 18px 20px;
+    border: 1px solid #e1dddc;
+    border-left: 6px solid var(--cineon-booking-color);
+    border-radius: 10px;
+}
+
+.coupon.off {
+    border-left-color: #ccc;
+    color: #999;
+}
+
+.c-value {
+    flex-shrink: 0;
+    width: 90px;
+    font-size: 20px;
+}
+
+.coupon div {
+    flex-grow: 1;
+}
+
+.c-name {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.c-date {
+    margin: 0;
+    color: #626262;
+    font-size: 13px;
+}
+
+.c-state {
+    flex-shrink: 0;
+    font-size: 13px;
+}

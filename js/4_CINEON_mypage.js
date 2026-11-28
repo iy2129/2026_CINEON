@@ -628,13 +628,7 @@ fetch("data/4_CINEON_movies.json")
         console.warn("좋아요 영화 목록을 불러오지 못했습니다.", error);
     });
 
-fetch("data/4_CINEON_mypage.json")
-    .then(function (response) {
-        if (!response.ok) {
-            throw new Error("HTTP " + response.status);
-        }
-        return response.json();
-    })
+loadWatched()
     .then(function (movies) {
         historyMovies = movies.sort(function (first, second) {
             return second.date.localeCompare(first.date);
@@ -646,7 +640,7 @@ fetch("data/4_CINEON_mypage.json")
         shareProfile.disabled = false;
     })
     .catch(function (error) {
-        document.querySelector(".mypage-record-note").textContent = "예시 관람 기록을 불러오지 못했습니다.";
+        document.querySelector(".mypage-record-note").textContent = "관람 기록을 불러오지 못했습니다.";
         console.error("마이페이지 관람 기록 로드 오류:", error);
     });
 

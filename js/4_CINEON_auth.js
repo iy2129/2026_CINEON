@@ -13,7 +13,11 @@ const demoAccounts = new Map([
     }],
     ["hamada", {
         name: "하마다",
-        passwordHash: "4bff8e4199f149676265ccc1057f0c22be9e95a0bfa545ba4cefd0e800c8a0aa"
+        passwordHash: "4bff8e4199f149676265ccc1057f0c22be9e95a0bfa545ba4cefd0e800c8a0aa",
+        reviews: {
+            tazza: { rating: 5, comment: "마지막 판까지 누가 속이는지 몰라서 숨 죽이고 봤어요." },
+            whale: { rating: 4.5, comment: "고래 뱃속 장면의 압박감이 대단했어요. 한 번 더 보러 갑니다." }
+        }
     }]
 ]);
 const userMenu = document.querySelector(".user-menu");
@@ -182,6 +186,12 @@ if (authForm && window.crypto && crypto.subtle) {
                     return;
                 }
                 localStorage.setItem(authSessionKey, username);
+                const back_page = sessionStorage.getItem("cineon_after_login");
+                if (back_page) {
+                    sessionStorage.removeItem("cineon_after_login");
+                    window.location.href = back_page;
+                    return;
+                }
                 if (demoAccounts.has(username)) {
                     window.location.href = accountName.href;
                     return;

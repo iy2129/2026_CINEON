@@ -25,27 +25,27 @@
                 <nav class="main-nav">
                     <div class="submenu-background"></div>
                     <ul class="nav-list">
-                        <li><a href="#" title="영화">영화</a>
+                        <li><a href="4_CINEON_index.html#movies" title="영화">영화</a>
                             <ul class="submenu">
-                                <li><a href="#" title="전체영화">전체영화</a></li>
+                                <li><a href="4_CINEON_index.html#movies" title="전체영화">전체영화</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" title="예매">예매</a>
+                        <li><a href="4_CINEON_timetable.html" title="예매">예매</a>
                             <ul class="submenu">
                                 <li><a href="4_CINEON_timetable.html" title="상영시간표">상영시간표</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" title="영화관">영화관</a>
+                        <li><a href="4_CINEON_timetable.html" title="영화관">영화관</a>
                             <ul class="submenu">
-                                <li><a href="#" title="전체영화관">전체영화관</a></li>
+                                <li><a href="4_CINEON_timetable.html" title="전체영화관">전체영화관</a></li>
                             </ul>
                         </li>
-                        <li><a href="#" title="이벤트">이벤트</a>
+                        <li><a href="4_CINEON_index.html#events" title="이벤트">이벤트</a>
                             <ul class="submenu">
-                                <li><a href="#" title="진행중 이벤트">진행중 이벤트</a></li>
-                                <li><a href="#" title="지난 이벤트">지난 이벤트</a></li>
-                                <li><a href="#" title="시사회">시사회</a></li>
-                                <li><a href="#" title="제휴/할인">제휴/할인</a></li>
+                                <li><a href="4_CINEON_index.html#events" title="진행중 이벤트">진행중 이벤트</a></li>
+                                <li><a href="4_CINEON_index.html#events" title="지난 이벤트">지난 이벤트</a></li>
+                                <li><a href="4_CINEON_index.html#events" title="시사회">시사회</a></li>
+                                <li><a href="4_CINEON_index.html#events" title="제휴/할인">제휴/할인</a></li>
                             </ul>
                         </li>
                         <li><a href="#" title="스토어">스토어</a>
@@ -113,21 +113,16 @@
                         </div>
                         <div class="payment-coupons">
                             <label title="할인쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-1"><span>할인쿠폰</span></label>
-                            <label title="VIP 영화쿠폰 선택"><input type="radio" name="discount-coupon" value="coupon-2" data-amount="5000" data-count="0"><span>VIP 영화쿠폰</span></label>
-                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000" data-count="0"><span>CINE:ON 관람권</span></label>
-                            <label title="모바일 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-4" data-amount="14000" data-count="0"><span>모바일 관람권</span></label>
+                            <label title="CINE:ON 관람권 선택"><input type="radio" name="discount-coupon" value="coupon-3" data-amount="14000" data-count="0" data-name="CINE:ON 관람권"><span>CINE:ON 관람권</span></label>
                         </div>
                         <select id="payment-coupon-choice" aria-label="할인쿠폰 선택" hidden disabled>
                             <option value="">할인쿠폰을 선택해 주세요</option>
-                            <option value="3000">영화 예매 할인쿠폰 (3,000원)</option>
-                            <option value="2000">주중 관람 할인쿠폰 (2,000원)</option>
-                            <option value="1000">회원 할인쿠폰 (1,000원)</option>
                         </select>
                         <p class="payment-coupon-detail" role="status" hidden></p>
                         <div class="payment-coupon-options">
                             <label title="할인 쿠폰 자동 적용 선택"><input type="checkbox" name="auto-coupon"> 할인 쿠폰 자동 적용</label>
                         </div>
-                        <div id="payment-points" data-balance="1000" hidden>
+                        <div id="payment-points" data-balance="0" hidden>
                             <div class="payment-point-controls">
                                 <div class="payment-point-heading">
                                     <label for="payment-point-amount">포인트</label>
@@ -140,7 +135,7 @@
                                 <button type="button" id="payment-point-all" disabled>모두 사용</button>
                             </div>
                         </div>
-                        <p class="payment-hint">· 기프티콘, 기프티쇼, 아이넘버, 도넛북, 스마트콘, 스마일콘, G마켓 예매권은 [모바일 관람권]에서 사용하실 수 있습니다.</p>
+                        <p class="payment-hint">· CINE:ON 관람권은 1장당 최대 14,000원까지 할인됩니다.</p>
                     </section>
 
                     <section class="payment-section">
@@ -218,25 +213,25 @@
                 <aside class="payment-summary payment-side">
                     <h2 id="sum-title">예매 정보</h2>
                     <div class="show-info">
-                        <img class="show-poster" src="images/4_poster-chiikawa.jpg" width="84" height="120" alt="극장판 치이카와: 인어 섬의 비밀 포스터">
+                        <img class="show-poster" src="images/4_poster-chiikawa.jpg" width="84" height="120" alt="">
                         <div class="show-text">
-                            <strong class="show-title"><img class="age" src="images/4_icon_all.svg" alt="전체 이용가" width="20" height="20">극장판 치이카와: 인어 섬의 비밀</strong>
-                            <span>강남점 5관 (2D)</span>
-                            <span class="show-datetime">2026.10.15 (목)<br>11:50 ~ 13:29</span>
+                            <strong class="show-title"></strong>
+                            <span class="show-place"></span>
+                            <span class="show-datetime"></span>
                         </div>
                     </div>
                     <dl>
                         <div class="payment-info-row">
                             <dt>인원</dt>
-                            <dd class="sum-people">일반 2명</dd>
+                            <dd class="sum-people">-</dd>
                         </div>
                         <div class="payment-info-row">
                             <dt>선택 좌석</dt>
-                            <dd class="sum-seats"><span class="payment-seat">D5</span><span class="payment-seat">D6</span></dd>
+                            <dd class="sum-seats"></dd>
                         </div>
                         <div class="payment-info-row">
                             <dt>금액</dt>
-                            <dd id="payment-base" data-amount="28000">28,000원</dd>
+                            <dd id="payment-base" data-amount="0">0원</dd>
                         </div>
                         <div class="payment-info-row payment-info-row-discount">
                             <dt class="payment-discount-label">할인 적용</dt>
@@ -244,7 +239,7 @@
                         </div>
                         <div class="payment-info-row">
                             <dt>결제 금액</dt>
-                            <dd><strong class="sum-total">28,000원</strong></dd>
+                            <dd><strong class="sum-total">0원</strong></dd>
                         </div>
                     </dl>
                     <div class="summary-actions">
@@ -265,6 +260,7 @@
             </div>
         </footer>
 
+        <script src="js/4_CINEON_common.js"></script>
         <script src="js/4_CINEON_payment.js"></script>
         <script src="js/4_CINEON_auth.js"></script>
     </body>

@@ -6,11 +6,13 @@ if (savedReceipt) {
     const receipt = JSON.parse(savedReceipt);
     document.querySelector(".done h1").innerText = "결제가 완료되었습니다";
     document.getElementById("done-message").innerText = "아래에서 예매 내역을 확인할 수 있습니다.";
+    document.getElementById("done-id").innerText = receipt.id;
     document.getElementById("done-movie").innerText = receipt.movie;
     document.getElementById("done-show").innerText = receipt.show;
     document.getElementById("done-seats").innerText = receipt.seats;
     document.getElementById("done-method").innerText = receipt.method;
     document.getElementById("done-total").innerText = receipt.total;
+    document.getElementById("done-point").innerText = receipt.point.toLocaleString("ko-KR") + "P";
     document.querySelector(".done-icon").hidden = false;
     receiptButton.hidden = false;
 }
